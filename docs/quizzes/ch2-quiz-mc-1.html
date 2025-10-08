@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MT2176 Further Calculus - The Riemann Integral Quiz</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        .quiz-container { max-width: 800px; margin: auto; }
+        .question-container { margin-bottom: 2em; border: 1px solid #ccc; padding: 1em; border-radius: 5px; }
+        .answers ul { list-style-type: none; padding: 0; }
+        .answers li { margin-bottom: 0.5em; }
+        .explanation { border-top: 1px dashed #ccc; margin-top: 1em; padding-top: 1em; display: none; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+        #controls { margin-top: 2em; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>MT2176 Further Calculus: The Riemann Integral Quiz</h1>
+    <p>This quiz covers topics on the Riemann integral. Select an answer for each question to see the explanation.</p>
+
+    <div id="quiz">
+        <!-- Questions will be dynamically inserted here if using a JS framework, but statically placed as per instructions -->
+
+        <div class="question-container" id="q1" data-correct-answer="b">
+            <p class="question">1. Which of the following represents the definition of the definite integral \(\int_a^b f(x) dx\) as a limit of Riemann sums?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q1" value="a"> A. \(\sum_{i=1}^n f(x_i^*)\)</label></li>
+                <li><label><input type="radio" name="q1" value="b"> B. \(\lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x\)</label></li>
+                <li><label><input type="radio" name="q1" value="c"> C. \(\lim_{n \to \infty} \sum_{i=1}^n \frac{f(x_i^*)}{\Delta x}\)</label></li>
+                <li><label><input type="radio" name="q1" value="d"> D. \(f(b) - f(a)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(\lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x\). The definite integral is defined as the limit of the Riemann sum as the number of subintervals \(n\) approaches infinity and the width of the largest subinterval approaches zero. The sum represents the total area of the approximating rectangles.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 98.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q2" data-correct-answer="a">
+            <p class="question">2. According to the Fundamental Theorem of Calculus, Part 1, what is \(\frac{d}{dx} \int_a^x \sin(t^2) dt\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q2" value="a"> A. \(\sin(x^2)\)</label></li>
+                <li><label><input type="radio" name="q2" value="b"> B. \(\cos(x^2)\)</label></li>
+                <li><label><input type="radio" name="q2" value="c"> C. \(2x \sin(x^2)\)</label></li>
+                <li><label><input type="radio" name="q2" value="d"> D. \(\sin(x^2) - \sin(a^2)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(\sin(x^2)\). The FTC Part 1 states that if \(F(x) = \int_a^x f(t) dt\), then \(F'(x) = f(x)\). In this case, \(f(t) = \sin(t^2)\), so the derivative is simply \(\sin(x^2)\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q3" data-correct-answer="c">
+            <p class="question">3. Using the chain rule combined with the FTC, what is \(\frac{d}{dx} \int_0^{x^3} e^{-t^2} dt\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q3" value="a"> A. \(e^{-x^6}\)</label></li>
+                <li><label><input type="radio" name="q3" value="b"> B. \(e^{-x^3}\)</label></li>
+                <li><label><input type="radio" name="q3" value="c"> C. \(3x^2 e^{-x^6}\)</label></li>
+                <li><label><input type="radio" name="q3" value="d"> D. \(-2x e^{-x^6}\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(3x^2 e^{-x^6}\). Let \(u = x^3\). The integral is \(\int_0^u e^{-t^2} dt\). By the chain rule, the derivative is \(\frac{d}{du} \left( \int_0^u e^{-t^2} dt \right) \cdot \frac{du}{dx}\). By the FTC, this becomes \(e^{-u^2} \cdot \frac{du}{dx} = e^{-(x^3)^2} \cdot (3x^2) = 3x^2 e^{-x^6}\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q4" data-correct-answer="d">
+            <p class="question">4. For a continuous function \(f\) on \([a, b]\), the upper Riemann sum \(U(P)\) and lower Riemann sum \(L(P)\) for a partition \(P\) satisfy which inequality?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q4" value="a"> A. \(U(P) < L(P)\)</label></li>
+                <li><label><input type="radio" name="q4" value="b"> B. \(U(P) = L(P)\)</label></li>
+                <li><label><input type="radio" name="q4" value="c"> C. \(U(P) > \int_a^b f(x)dx\)</label></li>
+                <li><label><input type="radio" name="q4" value="d"> D. \(L(P) \le \int_a^b f(x)dx \le U(P)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(L(P) \le \int_a^b f(x)dx \le U(P)\). The definite integral is defined as the unique number that lies between all lower sums and all upper sums. The lower sum is always less than or equal to the upper sum.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), pp. 211-212 (Section 17.3).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q5" data-correct-answer="a">
+            <p class="question">5. What is the value of \(\int_0^1 x dx\) using the limit of right-hand Riemann sums with \(n\) equal subintervals?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q5" value="a"> A. \(1/2\)</label></li>
+                <li><label><input type="radio" name="q5" value="b"> B. \(1\)</label></li>
+                <li><label><input type="radio" name="q5" value="c"> C. \(2/3\)</label></li>
+                <li><label><input type="radio" name="q5" value="d"> D. \(1/n\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The Riemann sum is \(\sum_{i=1}^n f(x_i) \Delta x\). Here, \(\Delta x = 1/n\) and \(x_i = i/n\). So the sum is \(\sum_{i=1}^n (i/n) (1/n) = \frac{1}{n^2} \sum_{i=1}^n i = \frac{1}{n^2} \frac{n(n+1)}{2} = \frac{n+1}{2n}\). The limit as \(n \to \infty\) is \(1/2\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 98.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q6" data-correct-answer="b">
+            <p class="question">6. If \(F(x) = \int_x^5 \cos(t) dt\), what is \(F'(x)\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q6" value="a"> A. \(\cos(x)\)</label></li>
+                <li><label><input type="radio" name="q6" value="b"> B. \(-\cos(x)\)</label></li>
+                <li><label><input type="radio" name="q6" value="c"> C. \(\sin(x)\)</label></li>
+                <li><label><input type="radio" name="q6" value="d"> D. \(-\sin(x)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(-\cos(x)\). We can write \(\int_x^5 \cos(t) dt = -\int_5^x \cos(t) dt\). Using the FTC, the derivative is \(-\cos(x)\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q7" data-correct-answer="d">
+            <p class="question">7. Evaluate \(\frac{d}{dx} \int_{x^2}^{x^3} \frac{1}{t} dt\).</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q7" value="a"> A. \(\frac{1}{x^3} - \frac{1}{x^2}\)</label></li>
+                <li><label><input type="radio" name="q7" value="b"> B. \(\frac{3}{x} - \frac{2}{x}\)</label></li>
+                <li><label><input type="radio" name="q7" value="c"> C. \(\ln(x)\)</label></li>
+                <li><label><input type="radio" name="q7" value="d"> D. \(\frac{1}{x}\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(1/x\). Using the Leibniz rule: \(\frac{d}{dx} \int_{h(x)}^{g(x)} f(t) dt = f(g(x))g'(x) - f(h(x))h'(x)\). Here, \(f(t) = 1/t\), \(g(x) = x^3\), \(h(x) = x^2\). So the derivative is \(\frac{1}{x^3}(3x^2) - \frac{1}{x^2}(2x) = \frac{3}{x} - \frac{2}{x} = \frac{1}{x}\). Alternatively, \(\int \frac{1}{t} dt = \ln|t|\), so the integral is \(\ln(x^3) - \ln(x^2) = 3\ln(x) - 2\ln(x) = \ln(x)\). The derivative of \(\ln(x)\) is \(1/x\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q8" data-correct-answer="c">
+            <p class="question">8. A function \(f\) is Riemann integrable on \([a, b]\) if...</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q8" value="a"> A. It is monotonic.</label></li>
+                <li><label><input type="radio" name="q8" value="b"> B. It is unbounded.</label></li>
+                <li><label><input type="radio" name="q8" value="c"> C. It is continuous, except possibly at a finite number of points.</label></li>
+                <li><label><input type="radio" name="q8" value="d"> D. It is not defined at \(a\) or \(b\).</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). A key theorem of Riemann integration states that a function is integrable on a closed interval if it is bounded and its set of discontinuities has measure zero. A finite set of points has measure zero. While continuity guarantees integrability, it is a sufficient but not necessary condition.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 98.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q9" data-correct-answer="a">
+            <p class="question">9. If \(f(x) = \int_2^x (t^2 - 3t) dt\), for what value of \(x > 0\) does \(f(x)\) have a local minimum?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q9" value="a"> A. \(x=3\)</label></li>
+                <li><label><input type="radio" name="q9" value="b"> B. \(x=2\)</label></li>
+                <li><label><input type="radio" name="q9" value="c"> C. \(x=0\)</label></li>
+                <li><label><input type="radio" name="q9" value="d"> D. \(x=3/2\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(x=3\). By the FTC, \(f'(x) = x^2 - 3x = x(x-3)\). Critical points are at \(x=0\) and \(x=3\). To find if it's a minimum, we check the second derivative: \(f''(x) = 2x - 3\). At \(x=3\), \(f''(3) = 2(3) - 3 = 3 > 0\), which indicates a local minimum.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q10" data-correct-answer="d">
+            <p class="question">10. The expression \(\lim_{n \to \infty} \sum_{i=1}^n \frac{1}{n} \left(1 + \frac{i}{n}\right)^3\) can be written as which definite integral?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q10" value="a"> A. \(\int_0^1 x^3 dx\)</label></li>
+                <li><label><input type="radio" name="q10" value="b"> B. \(\int_1^2 (1+x)^3 dx\)</label></li>
+                <li><label><input type="radio" name="q10" value="c"> C. \(\int_0^1 (1+x) dx\)</label></li>
+                <li><label><input type="radio" name="q10" value="d"> D. \(\int_1^2 x^3 dx\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(\int_1^2 x^3 dx\). Let \(x_i = 1 + i/n\). Then \(\Delta x = x_i - x_{i-1} = 1/n\). As \(i\) goes from 1 to \(n\), \(x_i\) goes from \(1+1/n\) to 2. The limit of the Riemann sum \(\sum f(x_i) \Delta x\) corresponds to the integral of \(f(x) = x^3\) from \(a=1\) to \(b=2\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 211 (Section 17.3).</em></p>
+            </div>
+        </div>
+        
+        <!-- Questions 11-20 -->
+        <div class="question-container" id="q11" data-correct-answer="b">
+            <p class="question">11. What is the derivative of \(g(x) = \int_1^{\ln x} e^t dt\) with respect to \(x\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q11" value="a"> A. \(e^{\ln x}\)</label></li>
+                <li><label><input type="radio" name="q11" value="b"> B. \(1\)</label></li>
+                <li><label><input type="radio" name="q11" value="c"> C. \(x\)</label></li>
+                <li><label><input type="radio" name="q11" value="d"> D. \(e^x/x\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is 1. Using the FTC and Chain Rule, let \(u = \ln x\). Then \(g'(x) = e^u \cdot \frac{du}{dx} = e^{\ln x} \cdot \frac{1}{x} = x \cdot \frac{1}{x} = 1\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q12" data-correct-answer="c">
+            <p class="question">12. The definition of the Riemann integral relies on the idea of a partition \(P = \{x_0, x_1, ..., x_n\}\) of an interval \([a, b]\). What does the "norm" of the partition, \(||P||\), refer to?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q12" value="a"> A. The number of points in the partition, \(n\).</label></li>
+                <li><label><input type="radio" name="q12" value="b"> B. The average length of a subinterval.</label></li>
+                <li><label><input type="radio" name="q12" value="c"> C. The length of the largest subinterval, \(\max \Delta x_i\).</label></li>
+                <li><label><input type="radio" name="q12" value="d"> D. The sum of the lengths of all subintervals.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). The formal definition of the Riemann integral requires that the limit of the Riemann sums is taken as the norm of the partition \(||P||\) approaches zero. This ensures that all subintervals become infinitesimally small, not just that the number of subintervals becomes infinite.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 98.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q13" data-correct-answer="a">
+            <p class="question">13. If \(f(x)\) is continuous and \(F(x) = \int_0^x f(t) dt\), then \(F(x)\) is...</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q13" value="a"> A. An antiderivative of \(f(x)\).</label></li>
+                <li><label><input type="radio" name="q13" value="b"> B. The derivative of \(f(x)\).</label></li>
+                <li><label><input type="radio" name="q13" value="c"> C. A constant.</label></li>
+                <li><label><input type="radio" name="q13" value="d"> D. Always increasing.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). The FTC, Part 1, explicitly states that the function defined by the integral \(F(x) = \int_a^x f(t) dt\) is an antiderivative of the integrand \(f(x)\), meaning \(F'(x) = f(x)\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 216 (Section 17.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q14" data-correct-answer="b">
+            <p class="question">14. The function \(f(x) = 1/x\) is not Riemann integrable on which of the following intervals?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q14" value="a"> A. \([1, 10]\)</label></li>
+                <li><label><input type="radio" name="q14" value="b"> B. \([-1, 1]\)</label></li>
+                <li><label><input type="radio" name="q14" value="c"> C. \([0.1, 1]\)</label></li>
+                <li><label><input type="radio" name="q14" value="d"> D. \([1, \infty)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). A condition for Riemann integrability is that the function must be bounded on the interval. The function \(f(x) = 1/x\) is unbounded at \(x=0\), which is inside the interval \([-1, 1]\). This constitutes an improper integral of the second kind.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 98.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q15" data-correct-answer="d">
+            <p class="question">15. Let \(H(x) = \frac{1}{x} \int_0^x e^{t^2} dt\). Find \(\lim_{x \to 0} H(x)\).</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q15" value="a"> A. \(0\)</label></li>
+                <li><label><input type="radio" name="q15" value="b"> B. \(\infty\)</label></li>
+                <li><label><input type="radio" name="q15" value="c"> C. \(e\)</label></li>
+                <li><label><input type="radio" name="q15" value="d"> D. \(1\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is 1. As \(x \to 0\), both the numerator \(\int_0^x e^{t^2} dt\) and the denominator \(x\) approach 0. This is an indeterminate form \(0/0\), so we can use L'Hôpital's Rule. Differentiating the numerator using the FTC gives \(e^{x^2}\). Differentiating the denominator gives 1. The limit is \(\lim_{x \to 0} \frac{e^{x^2}}{1} = e^0 = 1\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 275 (Section 18.8).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q16" data-correct-answer="a">
+            <p class="question">16. If a function \(f\) is continuous on \([a, b]\), the definite integral \(\int_a^b f(x) dx\) is defined as the limit of Riemann sums. This limit is guaranteed to exist and be unique because:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q16" value="a"> A. The supremum of the lower sums equals the infimum of the upper sums.</label></li>
+                <li><label><input type="radio" name="q16" value="b"> B. The function has an antiderivative.</label></li>
+                <li><label><input type="radio" name="q16" value="c"> C. The partition points are chosen to be the right-hand endpoints.</label></li>
+                <li><label><input type="radio" name="q16" value="d"> D. The function is non-negative.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). For a continuous function, as the partition gets finer, the difference between the upper and lower sums approaches zero. This forces their respective limits (the infimum of upper sums and supremum of lower sums) to be equal, guaranteeing a unique value for the integral.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 212 (Section 17.3).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q17" data-correct-answer="c">
+            <p class="question">17. Find \(\frac{d}{dy} \int_1^5 \ln(x^2 + y^2) dx\).</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q17" value="a"> A. \(\ln(25+y^2) - \ln(1+y^2)\)</label></li>
+                <li><label><input type="radio" name="q17" value="b"> B. \(\frac{2y}{x^2+y^2}\)</label></li>
+                <li><label><input type="radio" name="q17" value="c"> C. \(\int_1^5 \frac{2y}{x^2+y^2} dx\)</label></li>
+                <li><label><input type="radio" name="q17" value="d"> D. \(0\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). This is an application of differentiation under the integral sign (Leibniz's rule) where the limits of integration are constants. We can move the derivative with respect to \(y\) inside the integral: \(\int_1^5 \frac{\partial}{\partial y} \ln(x^2 + y^2) dx = \int_1^5 \frac{2y}{x^2+y^2} dx\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 262 (Section 18.4).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q18" data-correct-answer="b">
+            <p class="question">18. The "error function" is defined as \(erf(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} dt\). What is the derivative of \(erf(x)\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q18" value="a"> A. \(e^{-x^2}\)</label></li>
+                <li><label><input type="radio" name="q18" value="b"> B. \(\frac{2}{\sqrt{\pi}} e^{-x^2}\)</label></li>
+                <li><label><input type="radio" name="q18" value="c"> C. \(\frac{2}{\sqrt{\pi}}\)</label></li>
+                <li><label><input type="radio" name="q18" value="d"> D. It cannot be determined.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). Using the FTC, we differentiate the integral part, which gives \(e^{-x^2}\), and multiply by the constant factor \(\frac{2}{\sqrt{\pi}}\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 209 (Section 17.2).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q19" data-correct-answer="a">
+            <p class="question">19. If \(f(x)\) is an odd function (i.e., \(f(-x) = -f(x)\)) and continuous everywhere, what is the value of \(\int_{-a}^a f(x) dx\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q19" value="a"> A. \(0\)</label></li>
+                <li><label><input type="radio" name="q19" value="b"> B. \(2 \int_0^a f(x) dx\)</label></li>
+                <li><label><input type="radio" name="q19" value="c"> C. \(a f(a)\)</label></li>
+                <li><label><input type="radio" name="q19" value="d"> D. Cannot be determined.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is 0. The integral represents the signed area. For an odd function, the area from \(-a\) to 0 is the negative of the area from 0 to \(a\). Therefore, the two areas cancel each other out. \(\int_{-a}^a f(x) dx = \int_{-a}^0 f(x) dx + \int_0^a f(x) dx = -\int_0^a f(x) dx + \int_0^a f(x) dx = 0\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 100.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q20" data-correct-answer="d">
+            <p class="question">20. The Mean Value Theorem for Integrals states that for a continuous function \(f\) on \([a, b]\), there exists a number \(c\) in \((a, b)\) such that \(\int_a^b f(x) dx = f(c)(b-a)\). What does \(f(c)\) represent?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q20" value="a"> A. The maximum value of the function.</label></li>
+                <li><label><input type="radio" name="q20" value="b"> B. The minimum value of the function.</label></li>
+                <li><label><input type="radio" name="q20" value="c"> C. The slope of the tangent line.</label></li>
+                <li><label><input type="radio" name="q20" value="d"> D. The average value of the function.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (d). The value \(f(c) = \frac{1}{b-a} \int_a^b f(x) dx\) is the definition of the average (or mean) value of the function \(f\) over the interval \([a, b]\). The theorem guarantees that a continuous function actually achieves its average value at some point \(c\) in the interval.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 99.</em></p>
+            </div>
+        </div>
+        
+        <!-- Questions 21-30 -->
+        <div class="question-container" id="q21" data-correct-answer="c">
+            <p class="question">21. What is the derivative of the function \(g(x) = \int_{\sin x}^{\cos x} t^2 dt\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q21" value="a"> A. \(\cos^2(x) - \sin^2(x)\)</label></li>
+                <li><label><input type="radio" name="q21" value="b"> B. \(2\cos(x) - 2\sin(x)\)</label></li>
+                <li><label><input type="radio" name="q21" value="c"> C. \(-\sin(x)\cos^2(x) - \cos(x)\sin^2(x)\)</label></li>
+                <li><label><input type="radio" name="q21" value="d"> D. \(0\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). Using the Leibniz rule \(\frac{d}{dx} \int_{h(x)}^{g(x)} f(t) dt = f(g(x))g'(x) - f(h(x))h'(x)\), with \(f(t)=t^2\), \(g(x)=\cos x\), and \(h(x)=\sin x\), we get \(g'(x) = (\cos^2 x)(-\sin x) - (\sin^2 x)(\cos x) = -\sin(x)\cos^2(x) - \cos(x)\sin^2(x)\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q22" data-correct-answer="b">
+            <p class="question">22. The Riemann-Stieltjes integral \(\int_a^b f(x) d\alpha(x)\) reduces to the ordinary Riemann integral when:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q22" value="a"> A. \(f(x) = 1\)</label></li>
+                <li><label><input type="radio" name="q22" value="b"> B. \(\alpha(x) = x\)</label></li>
+                <li><label><input type="radio" name="q22" value="c"> C. \(\alpha(x)\) is a constant.</label></li>
+                <li><label><input type="radio" name="q22" value="d"> D. \(f(x)\) is a step function.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). The Riemann-Stieltjes sum is \(\sum f(t_r) [\alpha(x_r) - \alpha(x_{r-1})]\). If \(\alpha(x) = x\), this becomes \(\sum f(t_r) [x_r - x_{r-1}] = \sum f(t_r) \Delta x_r\), which is the ordinary Riemann sum.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 227 (Section 17.10).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q23" data-correct-answer="a">
+            <p class="question">23. If \(f(x)\) is continuous on \([a,b]\), then the function \(F(x) = \int_a^x f(t) dt\) is guaranteed to be:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q23" value="a"> A. Differentiable on \((a,b)\)</label></li>
+                <li><label><input type="radio" name="q23" value="b"> B. Monotonic on \([a,b]\)</label></li>
+                <li><label><input type="radio" name="q23" value="c"> C. Unbounded on \([a,b]\)</label></li>
+                <li><label><input type="radio" name="q23" value="d"> D. A polynomial.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). The FTC Part 1 guarantees that \(F(x)\) is not only continuous but also differentiable on the open interval \((a,b)\), and its derivative is \(f(x)\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q24" data-correct-answer="d">
+            <p class="question">24. The integral \(\int_0^1 \frac{1}{\sqrt{x}} dx\) is an example of:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q24" value="a"> A. A proper Riemann integral.</label></li>
+                <li><label><input type="radio" name="q24" value="b"> B. An improper integral of the first kind.</label></li>
+                <li><label><input type="radio" name="q24" value="c"> C. An integral that diverges.</label></li>
+                <li><label><input type="radio" name="q24" value="d"> D. An improper integral of the second kind.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (d). The interval of integration \([0, 1]\) is finite, but the integrand \(1/\sqrt{x}\) is unbounded as \(x \to 0^+\). This is the definition of an improper integral of the second kind.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 104.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q25" data-correct-answer="b">
+            <p class="question">25. Let \(f(x) = x^2\). Using a partition of \([0, 2]\) into \(n\) equal subintervals, what is the lower Riemann sum \(L(P_n)\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q25" value="a"> A. \(\frac{8}{n^3} \sum_{i=1}^n i^2\)</label></li>
+                <li><label><input type="radio" name="q25" value="b"> B. \(\frac{8}{n^3} \sum_{i=0}^{n-1} i^2\)</label></li>
+                <li><label><input type="radio" name="q25" value="c"> C. \(\frac{2}{n} \sum_{i=1}^n i^2\)</label></li>
+                <li><label><input type="radio" name="q25" value="d"> D. \(\frac{4}{n^2} \sum_{i=0}^{n-1} i\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). The width of each subinterval is \(\Delta x = 2/n\). The partition points are \(x_i = 2i/n\). Since \(f(x)=x^2\) is increasing on \([0, 2]\), the minimum value on each subinterval \([x_{i-1}, x_i]\) occurs at the left endpoint, \(x_{i-1}\). The lower sum is \(\sum_{i=1}^n f(x_{i-1}) \Delta x = \sum_{i=1}^n (\frac{2(i-1)}{n})^2 \frac{2}{n} = \frac{8}{n^3} \sum_{i=1}^n (i-1)^2 = \frac{8}{n^3} \sum_{j=0}^{n-1} j^2\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 211 (Section 17.3).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q26" data-correct-answer="a">
+            <p class="question">26. If \(f(x)\) is continuous for all \(x\), then \(\frac{d}{dx} \int_x^{x+1} f(t) dt = \)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q26" value="a"> A. \(f(x+1) - f(x)\)</label></li>
+                <li><label><input type="radio" name="q26" value="b"> B. \(f(x)\)</label></li>
+                <li><label><input type="radio" name="q26" value="c"> C. \(0\)</label></li>
+                <li><label><input type="radio" name="q26" value="d"> D. \(f(1)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). We write \(\int_x^{x+1} f(t) dt = \int_x^0 f(t) dt + \int_0^{x+1} f(t) dt = -\int_0^x f(t) dt + \int_0^{x+1} f(t) dt\). Differentiating with respect to \(x\) gives \(-f(x) + f(x+1) \cdot 1 = f(x+1) - f(x)\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q27" data-correct-answer="c">
+            <p class="question">27. The value of \(\lim_{h \to 0} \frac{1}{h} \int_x^{x+h} e^{\sin t} dt\) is:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q27" value="a"> A. \(0\)</label></li>
+                <li><label><input type="radio" name="q27" value="b"> B. \(1\)</label></li>
+                <li><label><input type="radio" name="q27" value="c"> C. \(e^{\sin x}\)</label></li>
+                <li><label><input type="radio" name="q27" value="d"> D. \(\cos(x) e^{\sin x}\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). This is the definition of the derivative of the function \(F(x) = \int_a^x e^{\sin t} dt\) (for some \(a\)). By the FTC, \(F'(x) = e^{\sin x}\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q28" data-correct-answer="b">
+            <p class="question">28. If \(f(x)\) is continuous and \(\int_0^x f(t) dt = x^2\), what is \(f(x)\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q28" value="a"> A. \(x^2\)</label></li>
+                <li><label><input type="radio" name="q28" value="b"> B. \(2x\)</label></li>
+                <li><label><input type="radio" name="q28" value="c"> C. \(x^3/3\)</label></li>
+                <li><label><input type="radio" name="q28" value="d"> D. \(2\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). Differentiate both sides of the equation with respect to \(x\). The left side becomes \(f(x)\) by the FTC. The right side becomes \(2x\). Therefore, \(f(x) = 2x\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q29" data-correct-answer="a">
+            <p class="question">29. For a partition \(P\) of \([a, b]\), if \(P'\) is a refinement of \(P\) (i.e., \(P'\) contains all the points of \(P\) and more), which of the following is true?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q29" value="a"> A. \(L(P) \le L(P')\) and \(U(P') \le U(P)\)</label></li>
+                <li><label><input type="radio" name="q29" value="b"> B. \(L(P') \le L(P)\) and \(U(P) \le U(P')\)</label></li>
+                <li><label><input type="radio" name="q29" value="c"> C. \(L(P) = L(P')\) and \(U(P) = U(P')\)</label></li>
+                <li><label><input type="radio" name="q29" value="d"> D. \(L(P) < U(P')\) but no relation between \(L(P)\) and \(L(P')\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). Refining a partition means the approximating rectangles get thinner. This allows the lower sum to increase (or stay the same) and the upper sum to decrease (or stay the same), getting closer to the true area.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 211.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q30" data-correct-answer="c">
+            <p class="question">30. The integral \(\int_0^x \frac{\sin t}{t} dt\) is a function of \(x\). What is its derivative?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q30" value="a"> A. \(\cos x\)</label></li>
+                <li><label><input type="radio" name="q30" value="b"> B. \(\frac{\cos x}{x} - \frac{\sin x}{x^2}\)</label></li>
+                <li><label><input type="radio" name="q30" value="c"> C. \(\frac{\sin x}{x}\)</label></li>
+                <li><label><input type="radio" name="q30" value="d"> D. \(1\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). This is a direct application of the FTC, Part 1. The function is often called the Sine Integral, Si(x). Note that the integrand has a removable discontinuity at t=0.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <!-- Questions 31-40 -->
+        <div class="question-container" id="q31" data-correct-answer="b">
+            <p class="question">31. If \(f(x) = \int_0^x (x-t)e^t dt\), find \(f'(x)\).</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q31" value="a"> A. \(e^x\)</label></li>
+                <li><label><input type="radio" name="q31" value="b"> B. \(e^x - 1\)</label></li>
+                <li><label><input type="radio" name="q31" value="c"> C. \(xe^x\)</label></li>
+                <li><label><input type="radio" name="q31" value="d"> D. \(e^x + x - 1\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). First, rewrite the integral as \(f(x) = x \int_0^x e^t dt - \int_0^x te^t dt\). Now differentiate using the product rule and FTC: \(f'(x) = [1 \cdot \int_0^x e^t dt + x \cdot e^x] - xe^x = \int_0^x e^t dt = e^x - 1\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q32" data-correct-answer="a">
+            <p class="question">32. Evaluate \(\frac{d}{dx} \int_1^{x^2} \sqrt{1+t^3} dt\).</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q32" value="a"> A. \(2x \sqrt{1+x^6}\)</label></li>
+                <li><label><input type="radio" name="q32" value="b"> B. \(\sqrt{1+x^2}\)</label></li>
+                <li><label><input type="radio" name="q32" value="c"> C. \(x^2 \sqrt{1+x^3}\)</label></li>
+                <li><label><input type="radio" name="q32" value="d"> D. \(0\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). Using the FTC and Chain Rule, let \(u = x^2\). Then \(\frac{d}{dx} \int_1^u \sqrt{1+t^3} dt = \sqrt{1+u^3} \cdot \frac{du}{dx} = \sqrt{1+(x^2)^3} \cdot (2x) = 2x \sqrt{1+x^6}\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 263 (Section 18.5).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q33" data-correct-answer="c">
+            <p class="question">33. The integral \(\int_0^\infty e^{-x^2} dx\) is known as the Gaussian integral. Its value is:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q33" value="a"> A. \(1\)</label></li>
+                <li><label><input type="radio" name="q33" value="b"> B. \(\sqrt{\pi}/2\)</label></li>
+                <li><label><input type="radio" name="q33" value="c"> C. \(\sqrt{\pi}/2\)</label></li>
+                <li><label><input type="radio" name="q33" value="d"> D. \(\pi\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). This is a standard result in calculus and probability theory. The integral is improper because the interval of integration is infinite.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 110.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q34" data-correct-answer="d">
+            <p class="question">34. If \(f(x)\) is continuous on \([a, b]\), then \(\int_a^b f(x) dx\) is equal to:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q34" value="a"> A. The average value of \(f(x)\) on \([a, b]\).</label></li>
+                <li><label><input type="radio" name="q34" value="b"> B. The derivative of \(f(x)\) evaluated at \(b\).</label></li>
+                <li><label><input type="radio" name="q34" value="c"> C. The limit of the upper Riemann sums.</label></li>
+                <li><label><input type="radio" name="q34" value="d"> D. The limit of the Riemann sums as the norm of the partition approaches zero.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (d). This is the fundamental definition of the definite integral. While the limit of upper sums and the limit of lower sums also equal the integral for continuous functions, the most general definition involves the norm of the partition approaching zero.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 212 (Section 17.3).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q35" data-correct-answer="b">
+            <p class="question">35. What is \(\frac{d}{dx} \int_0^x \frac{dt}{1+t^2}\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q35" value="a"> A. \(\arctan(x)\)</label></li>
+                <li><label><input type="radio" name="q35" value="b"> B. \(\frac{1}{1+x^2}\)</label></li>
+                <li><label><input type="radio" name="q35" value="c"> C. \(x\arctan(x)\)</label></li>
+                <li><label><input type="radio" name="q35" value="d"> D. \(\ln(1+x^2)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). By the FTC Part 1, the derivative of \(\int_a^x f(t) dt\) is \(f(x)\). Here, \(f(t) = \frac{1}{1+t^2}\), so the derivative is \(\frac{1}{1+x^2}\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q36" data-correct-answer="a">
+            <p class="question">36. If \(f(x)\) is continuous on \([a, b]\), then \(\int_a^b f(x) dx = \int_a^b f(t) dt\). This illustrates the principle that:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q36" value="a"> A. The variable of integration is a dummy variable.</label></li>
+                <li><label><input type="radio" name="q36" value="b"> B. The integral is always positive.</label></li>
+                <li><label><input type="radio" name="q36" value="c"> C. The integral is independent of the limits of integration.</label></li>
+                <li><label><input type="radio" name="q36" value="d"> D. The function must be positive.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). The symbol used for the variable of integration (like \(x\) or \(t\)) does not affect the value of the definite integral. It is a placeholder.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 209.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q37" data-correct-answer="c">
+            <p class="question">37. Consider the integral \(\int_0^2 x^3 dx\). If we use a partition into \(n\) equal subintervals and choose the right-hand endpoints, the Riemann sum is \(\sum_{i=1}^n (i/n)^3 (2/n)\). What is the limit of this sum as \(n \to \infty\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q37" value="a"> A. \(1\)</label></li>
+                <li><label><input type="radio" name="q37" value="b"> B. \(2\)</label></li>
+                <li><label><input type="radio" name="q37" value="c"> C. \(4\)</label></li>
+                <li><label><input type="radio" name="q37" value="d"> D. \(8\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is 4. The sum is \(\frac{2}{n^4} \sum_{i=1}^n i^3 = \frac{2}{n^4} \left( \frac{n(n+1)}{2} \right)^2 = \frac{2}{n^4} \frac{n^2(n+1)^2}{4} = \frac{(n+1)^2}{2n^2}\). As \(n \to \infty\), this limit is \(\frac{n^2}{2n^2} = 1/2\). Wait, let me recheck the calculation. \(\int_0^2 x^3 dx = [x^4/4]_0^2 = 16/4 = 4\). The limit of the Riemann sum should be 4. Let me recheck the sum formula. \(\sum_{i=1}^n i^3 = (\frac{n(n+1)}{2})^2\). The sum is \(\sum_{i=1}^n (\frac{2i}{n})^3 \frac{2}{n} = \sum_{i=1}^n \frac{8i^3}{n^3} \frac{2}{n} = \frac{16}{n^4} \sum_{i=1}^n i^3 = \frac{16}{n^4} (\frac{n(n+1)}{2})^2 = \frac{16}{n^4} \frac{n^2(n+1)^2}{4} = 4 \frac{(n+1)^2}{n^2} = 4 (1 + 1/n)^2\). The limit as \(n \to \infty\) is \(4(1)^2 = 4\). The correct answer is 4.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 98.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q38" data-correct-answer="b">
+            <p class="question">38. If \(f(x)\) is continuous on \([a, b]\), then \(\int_a^b f(x) dx\) is equal to:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q38" value="a"> A. \(f(b) - f(a)\)</label></li>
+                <li><label><input type="radio" name="q38" value="b"> B. \(F(b) - F(a)\), where \(F'(x) = f(x)\)</label></li>
+                <li><label><input type="radio" name="q38" value="c"> C. The average value of \(f(x)\) times \((b-a)\)</label></li>
+                <li><label><input type="radio" name="q38" value="d"> D. All of the above.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (d). Option (b) is the FTC Part 2. Option (c) is the definition of the average value, and the integral is indeed the average value times the interval length. Option (a) is only true if \(f(x)\) is the derivative of some function \(F(x)\) such that \(F'(x) = f(x)\), which is essentially what (b) states.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q39" data-correct-answer="a">
+            <p class="question">39. The integral \(\int_1^\infty \frac{1}{x^p} dx\) converges if and only if:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q39" value="a"> A. \(p > 1\)</label></li>
+                <li><label><input type="radio" name="q39" value="b"> B. \(p \ge 1\)</label></li>
+                <li><label><input type="radio" name="q39" value="c"> C. \(p < 1\)</label></li>
+                <li><label><input type="radio" name="q39" value="d"> D. \(p \le 1\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). This is a standard result for improper integrals of the first kind. If \(p=1\), the integral is \(\int_1^\infty \frac{1}{x} dx = [\ln x]_1^\infty\), which diverges. If \(p \ne 1\), \(\int_1^b x^{-p} dx = [\frac{x^{-p+1}}{-p+1}]_1^b = \frac{b^{1-p}}{1-p} - \frac{1}{1-p}\). For this to converge as \(b \to \infty\), we need \(1-p < 0\), which means \(p > 1\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 105.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q40" data-correct-answer="d">
+            <p class="question">40. If \(f(x)\) is continuous on \([a, b]\), then \(\frac{d}{dx} \int_a^x f(t) dt = \)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q40" value="a"> A. \(f(x)\)</label></li>
+                <li><label><input type="radio" name="q40" value="b"> B. \(f(a)\)</label></li>
+                <li><label><input type="radio" name="q40" value="c"> C. \(0\)</label></li>
+                <li><label><input type="radio" name="q40" value="d"> D. \(f(x) - f(a)\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). This is the statement of the Fundamental Theorem of Calculus, Part 1.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <!-- Questions 41-50 -->
+        <div class="question-container" id="q41" data-correct-answer="c">
+            <p class="question">41. The integral \(\int_0^1 \frac{dx}{\sqrt{1-x^2}}\), which evaluates to \(\pi/2\), is an example of:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q41" value="a"> A. A proper Riemann integral.</label></li>
+                <li><label><input type="radio" name="q41" value="b"> B. An improper integral of the first kind.</label></li>
+                <li><label><input type="radio" name="q41" value="c"> C. An improper integral of the second kind.</label></li>
+                <li><label><input type="radio" name="q41" value="d"> D. A divergent integral.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (c). The interval of integration \([0, 1]\) is finite, but the integrand \(1/\sqrt{1-x^2}\) is unbounded as \(x \to 1^-\). This makes it an improper integral of the second kind.</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 104.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q42" data-correct-answer="a">
+            <p class="question">42. If \(f(x)\) is continuous on \([a, b]\), then \(\int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x\). What is \(\Delta x\) in this formula?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q42" value="a"> A. The width of each subinterval.</label></li>
+                <li><label><input type="radio" name="q42" value="b"> B. The number of subintervals.</label></li>
+                <li><label><input type="radio" name="q42" value="c"> C. The length of the interval \(b-a\).</label></li>
+                <li><label><input type="radio" name="q42" value="d"> D. The sum of the lengths of all subintervals.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). \(\Delta x\) represents the width of each subinterval in the partition. For a partition into \(n\) equal subintervals, \(\Delta x = (b-a)/n\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 211 (Section 17.3).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q43" data-correct-answer="d">
+            <p class="question">43. Let \(f(x) = \int_1^x \frac{\ln t}{t} dt\). Find \(f'(x)\).</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q43" value="a"> A. \(\ln x\)</label></li>
+                <li><label><input type="radio" name="q43" value="b"> B. \(\frac{\ln x}{x}\)</label></li>
+                <li><label><input type="radio" name="q43" value="c"> C. \(\frac{(\ln x)^2}{2}\)</label></li>
+                <li><label><input type="radio" name="q43" value="d"> D. \(\frac{\ln x}{x}\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). By the FTC Part 1, \(f'(x) = \frac{\ln x}{x}\). Note that the integrand \(\frac{\ln t}{t}\) is continuous for \(t > 0\), so the integral is well-defined for \(x > 0\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q44" data-correct-answer="b">
+            <p class="question">44. The integral \(\int_0^1 x^n dx\) for \(n > -1\) is equal to:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q44" value="a"> A. \(1/(n+1)\)</label></li>
+                <li><label><input type="radio" name="q44" value="b"> B. \(1/(n+1)\)</label></li>
+                <li><label><input type="radio" name="q44" value="c"> C. \(1/n\)</label></li>
+                <li><label><input type="radio" name="q44" value="d"> D. \(1\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). \(\int_0^1 x^n dx = [\frac{x^{n+1}}{n+1}]_0^1 = \frac{1^{n+1}}{n+1} - \frac{0^{n+1}}{n+1} = \frac{1}{n+1}\). This requires \(n+1 > 0\), so \(n > -1\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 97.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q45" data-correct-answer="c">
+            <p class="question">45. If \(f(x)\) is continuous on \([a, b]\), then \(\int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx\) for any \(c\) in \((a, b)\). This property is called:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q45" value="a"> A. Additivity over the interval.</label></li>
+                <li><label><input type="radio" name="q45" value="b"> B. Linearity.</label></li>
+                <li><label><input type="radio" name="q45" value="c"> C. Additivity over the interval.</label></li>
+                <li><label><input type="radio" name="q45" value="d"> D. Monotonicity.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). This property states that if we split the interval of integration into subintervals, the integral over the whole interval is the sum of the integrals over the subintervals.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 210 (Section 17.2).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q46" data-correct-answer="a">
+            <p class="question">46. What is \(\frac{d}{dx} \int_x^0 \sin(t^2) dt\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q46" value="a"> A. \(-\sin(x^2)\)</label></li>
+                <li><label><input type="radio" name="q46" value="b"> B. \(\sin(x^2)\)</label></li>
+                <li><label><input type="radio" name="q46" value="c"> C. \(-2x \cos(x^2)\)</label></li>
+                <li><label><input type="radio" name="q46" value="d"> D. \(0\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). We can write \(\int_x^0 \sin(t^2) dt = -\int_0^x \sin(t^2) dt\). By the FTC Part 1, the derivative is \(-\sin(x^2)\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q47" data-correct-answer="d">
+            <p class="question">47. The integral \(\int_0^1 \ln(x) dx\) is:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q47" value="a"> A. Convergent and equal to 1.</label></li>
+                <li><label><input type="radio" name="q47" value="b"> B. Convergent and equal to 0.</label></li>
+                <li><label><input type="radio" name="q47" value="c"> C. Divergent.</label></li>
+                <li><label><input type="radio" name="q47" value="d"> D. Convergent and equal to -1.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (d). This is an improper integral of the second kind because \(\ln(x)\) is unbounded as \(x \to 0^+\). We evaluate it as \(\lim_{a \to 0^+} \int_a^1 \ln(x) dx\). Using integration by parts, \(\int \ln(x) dx = x \ln x - x\). So, \(\lim_{a \to 0^+} [x \ln x - x]_a^1 = (1 \ln 1 - 1) - \lim_{a \to 0^+} (a \ln a - a) = (0 - 1) - (0 - 0) = -1\). (Note: \(\lim_{a \to 0^+} a \ln a = 0\)).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 104.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q48" data-correct-answer="b">
+            <p class="question">48. If \(f(x)\) is continuous on \([a, b]\), then \(\int_a^b f(x) dx \ge \int_a^b g(x) dx\) whenever \(f(x) \ge g(x)\) for all \(x\) in \([a, b]\). This property is called:</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q48" value="a"> A. Linearity.</label></li>
+                <li><label><input type="radio" name="q48" value="b"> B. Monotonicity.</label></li>
+                <li><label><input type="radio" name="q48" value="c"> C. Additivity.</label></li>
+                <li><label><input type="radio" name="q48" value="d"> D. Symmetry.</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (b). This property means that the integral preserves inequalities. If one function is always greater than or equal to another, its integral over the same interval will also be greater than or equal to the other's integral.</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 210 (Section 17.2).</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q49" data-correct-answer="a">
+            <p class="question">49. What is \(\frac{d}{dx} \int_0^x \sin(t^3) dt\)?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q49" value="a"> A. \(\sin(x^3)\)</label></li>
+                <li><label><input type="radio" name="q49" value="b"> B. \(3x^2 \cos(x^3)\)</label></li>
+                <li><label><input type="radio" name="q49" value="c"> C. \(\cos(x^3)\)</label></li>
+                <li><label><input type="radio" name="q49" value="d"> D. \(\sin(x^3)/3\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is (a). By the FTC Part 1, the derivative of \(\int_a^x f(t) dt\) is \(f(x)\). Here, \(f(t) = \sin(t^3)\), so the derivative is \(\sin(x^3)\).</p>
+                <p><em>Source: Wrede, R. and Spiegel, M. Schaum's outline of advanced calculus. (London: McGraw-Hill, 2010) third edition, p. 101.</em></p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q50" data-correct-answer="a">
+            <p class="question">50. Let \(f(x) = x^2\). What is the value of \(\int_0^1 f(x) dx\) calculated as the limit of a Riemann sum using left-hand endpoints and \(n\) equal subintervals?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q50" value="a"> A. \(1/3\)</label></li>
+                <li><label><input type="radio" name="q50" value="b"> B. \(1/2\)</label></li>
+                <li><label><input type="radio" name="q50" value="c"> C. \(1\)</label></li>
+                <li><label><input type="radio" name="q50" value="d"> D. \(2/3\)</label></li>
+            </ul>
+            <div class="explanation">
+                <p>The correct answer is \(1/3\). The Riemann sum with left-hand endpoints is \(\sum_{i=0}^{n-1} f(x_i) \Delta x\). Here, \(\Delta x = 1/n\) and \(x_i = i/n\). The sum is \(\sum_{i=0}^{n-1} (\frac{i}{n})^2 \frac{1}{n} = \frac{1}{n^3} \sum_{i=0}^{n-1} i^2 = \frac{1}{n^3} \frac{(n-1)n(2n-1)}{6}\). The limit as \(n \to \infty\) is \(\frac{2n^3}{6n^3} = \frac{1}{3}\).</p>
+                <p><em>Source: Ostaszewski, A. Advanced mathematical methods. (Cambridge: Cambridge University Press, 1991), p. 211 (Section 17.3).</em></p>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="controls">
+        <button id="clear-answers">Clear My Answers</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quiz = document.getElementById('quiz');
+        const clearButton = document.getElementById('clear-answers');
+        const answers = loadAnswers();
+
+        // Load saved answers
+        for (const questionId in answers) {
+            const savedAnswer = answers[questionId];
+            const radio = quiz.querySelector(`#${questionId} input[value="${savedAnswer}"]`);
+            if (radio) {
+                radio.checked = true;
+                const questionContainer = radio.closest('.question-container');
+                showFeedback(questionContainer, savedAnswer);
+            }
+        }
+
+        quiz.addEventListener('change', function (event) {
+            if (event.target.type === 'radio') {
+                const questionContainer = event.target.closest('.question-container');
+                const questionId = questionContainer.id;
+                const selectedValue = event.target.value;
+                
+                saveAnswer(questionId, selectedValue);
+                showFeedback(questionContainer, selectedValue);
+            }
+        });
+
+        clearButton.addEventListener('click', function() {
+            // Clear cookies
+            document.cookie = "quizAnswers=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            // Uncheck all radio buttons and hide explanations
+            const allRadios = quiz.querySelectorAll('input[type="radio"]');
+            allRadios.forEach(radio => radio.checked = false);
+            
+            const allExplanations = quiz.querySelectorAll('.explanation');
+            allExplanations.forEach(exp => exp.style.display = 'none');
+
+            const allLabels = quiz.querySelectorAll('.answers li label');
+            allLabels.forEach(label => {
+                label.classList.remove('correct', 'incorrect');
+            });
+        });
+
+        function showFeedback(questionContainer, selectedValue) {
+            const correctAnswer = questionContainer.getAttribute('data-correct-answer');
+            const explanationDiv = questionContainer.querySelector('.explanation');
+            const labels = questionContainer.querySelectorAll('.answers li label');
+
+            labels.forEach(label => {
+                label.classList.remove('correct', 'incorrect');
+                const input = label.querySelector('input');
+                if (input.value === selectedValue) {
+                    if (selectedValue === correctAnswer) {
+                        label.classList.add('correct');
+                    } else {
+                        label.classList.add('incorrect');
+                    }
+                }
+            });
+
+            explanationDiv.style.display = 'block';
+        }
+
+        function saveAnswer(questionId, answer) {
+            const currentAnswers = loadAnswers();
+            currentAnswers[questionId] = answer;
+            document.cookie = "quizAnswers=" + JSON.stringify(currentAnswers) + ";path=/;max-age=" + (60 * 60 * 24 * 365);
+        }
+
+        function loadAnswers() {
+            const cookieValue = document.cookie.split('; ').find(row => row.startsWith('quizAnswers='));
+            if (cookieValue) {
+                try {
+                    return JSON.parse(cookieValue.split('=')[1]);
+                } catch (e) {
+                    return {};
+                }
+            }
+            return {};
+        }
+    });
+</script>
+
+</body>
+</html>
