@@ -3,387 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MT2176 Further Calculus Flashcards - Slideshow</title>
+    <title>MT2176 Further Calculus - Limits Flashcards</title>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$'], ['\[','\]']],
+                processEscapes: true
+            }
+        });
+    </script>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
+            font-family: sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            line-height: 1.6;
-            height: 100vh;
-            margin: 0;
-        }
-        h1 {
-            color: #003366;
-            text-align: center;
-            margin-bottom: 20px;
+            min-height: 100vh;
+            background-color: #f0f2f5;
         }
         .slideshow-container {
-            width: 640px; 
-            height: 440px;
-            overflow: hidden;
             position: relative;
-            margin-bottom: 20px;
-        }
-        .flashcard-container {
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: transform 0.5s ease-in-out;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
         }
         .flashcard {
-            background-color: transparent;
-            width: 620px;
-            height: 420px;
+            display: none;
             perspective: 1000px;
-            cursor: pointer;
-            margin: 10px;
+            width: 100%;
+            height: 400px;
         }
-        .flashcard-inner {
+        .card-inner {
             position: relative;
             width: 100%;
             height: 100%;
-            text-align: left;
-            transition: transform 0.7s;
+            text-align: center;
+            transition: transform 0.6s;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            border-radius: 12px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            cursor: pointer;
         }
-        .flashcard.flipped .flashcard-inner {
+        .flashcard.is-flipped .card-inner {
             transform: rotateY(180deg);
         }
-        .front, .back {
+        .card-front, .card-back {
             position: absolute;
             width: 100%;
             height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
+
+            padding: 20px;
             box-sizing: border-box;
-            padding: 25px;
-            border-radius: 12px;
-            overflow-y: auto;
+            border-radius: 10px;
         }
-        .front {
+        .card-front {
             background-color: #ffffff;
-            justify-content: center;
+            color: black;
+            font-size: 0.9em;
         }
-        .back {
-            background-color: #f9f9f9;
+        .card-back {
+            background-color: #f8f9fa;
+            color: black;
             transform: rotateY(180deg);
+            font-size: 0.9em;
+            text-align: left;
         }
-        .card-number {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #005A9C;
-            margin-bottom: 15px;
-        }
-        .question, .answer, .explanation {
-            font-size: 1em;
-        }
-        .source {
-            font-size: 0.8em;
-            color: #777;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-        p {
-            margin-top: 12px;
-            margin-bottom: 5px;
-        }
-        .navigation-controls button {
-            background-color: #005A9C;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin: 0 10px;
-        }
-        .navigation-controls button:disabled {
-            background-color: #a0a0a0;
-            cursor: not-allowed;
-        }
-        .card-counter {
-            margin-top: 15px;
+        .card-back .source {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            
             font-size: 0.9em;
             color: #555;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: #007bff;
+            border: none;
+        }
+        .prev {
+            border-radius: 3px 0 0 3px;
+        }
+        .next:hover, .prev:hover {
+            background-color: #0056b3;
+        }
+        .card-counter {
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        .flip-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .answer-content {
+            overflow-y: auto;
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <h1>MT2176 Further Calculus Flashcards: Limits of Functions</h1>
+    <h1>MT2176 Further Calculus: Limits</h1>
+    <p>Click on the card to flip it.</p>
 
     <div class="slideshow-container">
-        <div class="flashcard-container">
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">1</span>
-                    <span class="question">What is the intuitive definition of the limit of a function \(f(x)\) as \(x\) approaches \(a\), written as \(\lim_{x \to a} f(x) = L\)?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">It means that we can make the value of \(f(x)\) arbitrarily close to \(L\) by taking \(x\) to be sufficiently close to \(a\) (on either side of \(a\)) but not equal to \(a\).</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">The concept of a limit describes the behavior of a function near a point, not necessarily at the point itself. The function doesn't even need to be defined at \(x=a\) for the limit to exist. This is the foundational concept for defining continuity and derivatives.</span>
-                    <p class="source"><strong>Source:</strong> MT2176 Subject Guide, Section 2.1.2; Wrede, Chapter 3.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">2</span>
-                    <span class="question">State the formal \(\epsilon-\delta\) definition of the limit: \(\lim_{x \to a} f(x) = L\).</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">For every number \(\epsilon > 0\), there is a number \(\delta > 0\) such that if \(0 < |x - a| < \delta\), then \(|f(x) - L| < \epsilon\).</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">This definition makes the intuitive idea of 'arbitrarily close' precise. \(\epsilon\) represents the desired closeness to the limit \(L\), and the definition guarantees we can find a range (\(\delta\)) around \(a\) such that for any \(x\) in that range (except \(a\) itself), \(f(x)\) is within \(\epsilon\) of \(L\).</span>
-                    <p class="source"><strong>Source:</strong> Ostaszewski, Section 17.4; Wrede, Chapter 3.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">3</span>
-                    <span class="question">What does it mean for a function \(f(x)\) to be continuous at a point \(x=c\)?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">A function \(f(x)\) is continuous at \(x=c\) if \(\lim_{x \to c} f(x) = f(c)\).</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">This single statement implies three conditions: 1. The limit \(\lim_{x \to c} f(x)\) must exist. 2. The function must be defined at \(c\), i.e., \(f(c)\) exists. 3. The limit must be equal to the function's value. Graphically, this means there are no breaks, jumps, or holes at that point.</span>
-                    <p class="source"><strong>Source:</strong> MT2176 Subject Guide, Section 2.2.1; Wrede, Chapter 3.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">4</span>
-                    <span class="question">What is the definition of the derivative of a function \(f(x)\) at a point \(x=a\)?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">The derivative of \(f\) at \(a\), denoted \(f'(a)\), is the limit:
-                <pre><code>f'(a) = 
-    lim_{h \to 0} rac{f(a+h) - f(a)}{h}</code></pre>
-                provided this limit exists.</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">The derivative represents the instantaneous rate of change of the function at a point. Geometrically, it is the slope of the tangent line to the graph of \(y=f(x)\) at the point \((a, f(a))\).</span>
-                    <p class="source"><strong>Source:</strong> Wrede, Chapter 4; Ostaszewski, Section 17.1.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">5</span>
-                    <span class="question">What is the relationship between differentiability and continuity?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">If a function is differentiable at a point, then it must be continuous at that point.</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">Differentiability is a stronger condition than continuity. However, the converse is not true. A function can be continuous at a point but not differentiable there. A classic example is \(f(x) = |x|\) at \(x=0\), which is continuous but has a "sharp corner," so its derivative is undefined.</span>
-                    <p class="source"><strong>Source:</strong> MT2176 Subject Guide, Section 2.2.2; Wrede, Chapter 4.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">6</span>
-                    <span class="question">When can L'Hôpital's Rule be applied to find \(\lim_{x \to a} \frac{f(x)}{g(x)}\)?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">L'Hôpital's Rule can be applied if the limit results in an indeterminate form of type \(\frac{0}{0}\) or \(\frac{\infty}{\infty}\), and \(\lim_{x \to a} \frac{f'(x)}{g'(x)}\) exists.</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">The rule states that if these conditions are met, then \(\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\). It is a powerful tool for evaluating limits that are otherwise difficult to compute.</span>
-                    <p class="source"><strong>Source:</strong> MT2176 Subject Guide, Section 2.2.4; Ostaszewski, Section 18.8.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">7</span>
-                    <span class="question">What is a Taylor series for a function \(f(x)\) about \(x=c\)?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">The Taylor series for \(f(x)\) about \(x=c\) is the power series:
-                <pre><code>
-                sum_{n=0}^{\infty} rac{f^{(n)}(c)}{n!}(x-c)^n = f(c) + f'(c)(x-c) + rac{f''(c)}{2!}(x-c)^2 + ... 
-                </code></pre>
-                </span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">A Taylor series is a representation of a function as an infinite sum of terms, calculated from the values of the function's derivatives at a single point. It's used to approximate functions.</span>
-                    <p class="source"><strong>Source:</strong> MT2176 Subject Guide, Section 2.2.3; Wrede, Chapter 11.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">8</span>
-                    <span class="question">Find the limit: \(\lim_{x \to 2} \frac{x^2 - 4}{x - 2}\).</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">The limit is 4.</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">This is an indeterminate form \(\frac{0}{0}\). We can solve it by factoring the numerator:
-                <pre><code>
-                lim_{x \to 2} rac{(x-2)(x+2)}{x-2} = lim_{x \to 2} (x+2) = 2+2 = 4 
-                </code></pre>
-                Alternatively, using L'Hôpital's Rule:
-                <pre><code>
-                lim_{x \to 2} rac{2x}{1} = 2(2) = 4 
-                </code></pre>
-                </span>
-                    <p class="source"><strong>Source:</strong> Wrede, Chapter 3, Solved Problems.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">9</span>
-                    <span class="question">Use the definition of the derivative to find the derivative of \(f(x) = x^2\).</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">\(f'(x) = 2x\).</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">Using the definition \(f'(x) = 
-    lim_{h \to 0} rac{f(x+h) - f(x)}{h}\):
-                <pre><code>
-                lim_{h \to 0} rac{(x+h)^2 - x^2}{h} = lim_{h \to 0} rac{x^2 + 2xh + h^2 - x^2}{h}
-                </code></pre>
-                <pre><code>
-                = lim_{h \to 0} rac{2xh + h^2}{h} = lim_{h \to 0} (2x + h) = 2x
-                </code></pre>
-                </span>
-                    <p class="source"><strong>Source:</strong> Wrede, Chapter 4; Ostaszewski, Section 17.5.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front">
-                    <span class="card-number">10</span>
-                    <span class="question">What is Taylor's Theorem with the Lagrange form of the remainder?</span>
-                </div>
-                <div class="back">
-                    <p><strong>Answer:</strong></p>
-                    <span class="answer">If \(f(x)\) has \(n+1\) derivatives on an interval containing \(c\) and \(x\), then
-                <pre><code>
-                f(x) = P_n(x) + R_n(x)
-                </code></pre>
-                where \(P_n(x)\) is the nth-degree Taylor polynomial and the remainder \(R_n(x)\) is given by
-                <pre><code>
-                R_n(x) = rac{f^{(n+1)}(d)}{(n+1)!}(x-c)^{n+1}
-                </code></pre>
-                for some number \(d\) between \(c\) and \(x\).</span>
-                    <p><strong>Explanation:</strong></p>
-                    <span class="explanation">This theorem provides a way to quantify the error when approximating a function with its Taylor polynomial. The remainder term \(R_n(x)\) is the difference between the function and its nth-degree Taylor approximation.</span>
-                    <p class="source"><strong>Source:</strong> MT2176 Subject Guide, Section 2.2.3; Wrede, Chapter 11.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Add 90 more cards -->
-        <!-- ... (The full 90 cards would be here, statically written) ... -->
-        </div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the intuitive idea of a limit of a function $f(x)$ as $x$ approaches a point $a$?</div><div class="card-back"><div class="answer-content"><p>Intuitively, $\lim_{x \to a} f(x) = L$ means that the value of $f(x)$ gets arbitrarily close to $L$ as $x$ gets sufficiently close to $a$, without actually being equal to $a$. It describes the behavior of the function near the point, not at the point itself.</p><p class="source">Source: MT2176 Subject Guide, Section 2.1.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">State the formal $\epsilon-\delta$ definition of a limit.</div><div class="card-back"><div class="answer-content"><p>We say that $\lim_{x \to a} f(x) = L$ if for every number $\epsilon > 0$, there exists a number $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \epsilon$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the relationship between the existence of a limit at a point and the one-sided limits at that point?</div><div class="card-back"><div class="answer-content"><p>The limit $\lim_{x \to a} f(x)$ exists and is equal to $L$ if and only if both the left-hand limit and the right-hand limit exist and are equal to $L$.</p><p>$\lim_{x \to a} f(x) = L \iff \lim_{x \to a^-} f(x) = L \text{ and } \lim_{x \to a^+} f(x) = L$</p><p class="source">Source: Ostaszewski, Section 17.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What are the three conditions for a function $f(x)$ to be continuous at a point $x=c$?</div><div class="card-back"><div class="answer-content"><p>A function $f(x)$ is continuous at $x=c$ if all three of the following conditions are met:</p><ol><li>$f(c)$ is defined.</li><li>$\lim_{x \to c} f(x)$ exists.</li><li>$\lim_{x \to c} f(x) = f(c)$.</li></ol><p class="source">Source: MT2176 Subject Guide, Section 2.2.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">If a function is differentiable at a point, is it necessarily continuous at that point? Explain.</div><div class="card-back"><div class="answer-content"><p>Yes. If a function $f$ is differentiable at a point $c$, then it must be continuous at $c$. Differentiability is a stronger condition than continuity. This is because the existence of the derivative $\lim_{h \to 0} \frac{f(c+h)-f(c)}{h}$ implies that $\lim_{h \to 0} (f(c+h)-f(c)) = 0$, which means $\lim_{x \to c} f(x) = f(c)$.</p><p class="source">Source: Wrede, Chapter 4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the converse true? If a function is continuous at a point, is it necessarily differentiable at that point?</div><div class="card-back"><div class="answer-content"><p>No. A function can be continuous at a point but not differentiable. A classic example is $f(x) = |x|$ at $x=0$. The function is continuous at $x=0$, but the left-hand and right-hand derivatives are not equal, so the derivative does not exist.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">State the limit definition of the derivative of a function $f(x)$.</div><div class="card-back"><div class="answer-content"><p>The derivative of a function $f(x)$ with respect to $x$, denoted $f'(x)$, is defined as:</p><p>$$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$</p><p>provided this limit exists.</p><p class="source">Source: Wrede, Chapter 4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = x^2$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{2xh + h^2}{h} = \lim_{h \to 0} (2x + h) = 2x $$</p><p class="source">Source: Ostaszewski, Section 17.5</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">When can you use L'Hôpital's Rule?</div><div class="card-back"><div class="answer-content"><p>L'Hôpital's Rule can be used to evaluate limits of quotients $\frac{f(x)}{g(x)}$ that result in the indeterminate forms $\frac{0}{0}$ or $\frac{\infty}{\infty}$. If $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ or $\pm\infty$, and $\lim_{x \to a} \frac{f'(x)}{g'(x)}$ exists, then $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use L'Hôpital's Rule to find $\lim_{x \to 0} \frac{\sin x}{x}$.</div><div class="card-back"><div class="answer-content"><p>This limit is of the form $\frac{0}{0}$. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{\frac{d}{dx}(\sin x)}{\frac{d}{dx}(x)} = \lim_{x \to 0} \frac{\cos x}{1} = \cos(0) = 1 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is a jump discontinuity?</div><div class="card-back"><div class="answer-content"><p>A jump discontinuity occurs at a point $x=a$ if the left-hand limit $\lim_{x \to a^-} f(x)$ and the right-hand limit $\lim_{x \to a^+} f(x)$ both exist but are not equal. The function "jumps" from one value to another.</p><p class="source">Source: Ostaszewski, Section 17.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is an infinite discontinuity?</div><div class="card-back"><div class="answer-content"><p>An infinite discontinuity occurs at a point $x=a$ if at least one of the one-sided limits of $f(x)$ as $x$ approaches $a$ is infinite. For example, $f(x) = 1/x$ has an infinite discontinuity at $x=0$.</p><p class="source">Source: Ostaszewski, Section 17.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is a removable discontinuity?</div><div class="card-back"><div class="answer-content"><p>A removable discontinuity occurs at $x=a$ if $\lim_{x \to a} f(x)$ exists but is not equal to $f(a)$. This can be because $f(a)$ is defined to be a different value, or is not defined at all. The discontinuity can be "removed" by redefining $f(a)$ to be equal to the limit.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (\sqrt{x^2+x} - x)$.</div><div class="card-back"><div class="answer-content"><p>This is of the form $\infty - \infty$. We rationalize by multiplying by the conjugate: $$ \lim_{x \to \infty} \frac{(\sqrt{x^2+x} - x)(\sqrt{x^2+x} + x)}{\sqrt{x^2+x} + x} = \lim_{x \to \infty} \frac{x^2+x-x^2}{\sqrt{x^2+x} + x} = \lim_{x \to \infty} \frac{x}{\sqrt{x^2(1+1/x)} + x} = \lim_{x \to \infty} \frac{x}{x\sqrt{1+1/x} + x} = \lim_{x \to \infty} \frac{1}{\sqrt{1+1/x} + 1} = \frac{1}{1+1} = \frac{1}{2} $$</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the Squeeze Theorem (or Sandwich Theorem)?</div><div class="card-back"><div class="answer-content"><p>If $g(x) \le f(x) \le h(x)$ for all $x$ in an open interval containing $c$ (except possibly at $c$ itself), and if $\lim_{x \to c} g(x) = \lim_{x \to c} h(x) = L$, then $\lim_{x \to c} f(x) = L$. The function $f(x)$ is "squeezed" between $g(x)$ and $h(x)$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use the Squeeze Theorem to find $\lim_{x \to 0} x^2 \sin(1/x)$.</div><div class="card-back"><div class="answer-content"><p>We know that $-1 \le \sin(1/x) \le 1$ for all $x \neq 0$. Multiplying by $x^2$ (which is non-negative), we get $-x^2 \le x^2 \sin(1/x) \le x^2$. Since $\lim_{x \to 0} (-x^2) = 0$ and $\lim_{x \to 0} x^2 = 0$, by the Squeeze Theorem, we must have $\lim_{x \to 0} x^2 \sin(1/x) = 0$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is Taylor's Theorem?</div><div class="card-back"><div class="answer-content"><p>Taylor's Theorem gives an approximation of a $k$-times differentiable function around a given point by a polynomial of degree $k$, called the Taylor polynomial. The theorem provides a formula for the remainder term, which is the difference between the function and its Taylor polynomial. For a function $f(x)$ that is $n+1$ times differentiable on an interval $I$ containing $a$, for any $x$ in $I$, $f(x) = P_n(x) + R_n(x)$, where $P_n(x)$ is the $n$-th order Taylor polynomial and $R_n(x)$ is the remainder.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the Lagrange form of the remainder in Taylor's Theorem?</div><div class="card-back"><div class="answer-content"><p>If $f$ has $n+1$ derivatives in an interval $I$ containing $a$, then for each $x \in I$, the remainder term $R_n(x) = f(x) - P_n(x)$ can be written as: $$ R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1} $$ for some number $c$ between $a$ and $x$.</p><p class="source">Source: Ostaszewski, Section 17.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the limit: $\lim_{x \to \infty} (1 + \frac{a}{x})^{bx}$</div><div class="card-back"><div class="answer-content"><p>This is of the form $1^\infty$. Let $y = (1 + \frac{a}{x})^{bx}$. Then $\ln y = bx \ln(1 + \frac{a}{x})$. This is of the form $\infty \cdot 0$. We rewrite it as $\frac{\ln(1+a/x)}{1/(bx)}$. Applying L'Hôpital's rule: $$ \lim_{x \to \infty} \frac{\frac{1}{1+a/x} \cdot (\frac{-a}{x^2})}{\frac{-1}{bx^2}} = \lim_{x \to \infty} \frac{ab}{1+a/x} = ab $$ So, $\lim_{x \to \infty} y = e^{ab}$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What does it mean for a function to be of bounded variation?</div><div class="card-back"><div class="answer-content"><p>A function $f$ is of bounded variation on $[a,b]$ if the total variation $V_f[a,b] = \sup_P \sum_{i=1}^n |f(x_i) - f(x_{i-1})|$ is finite, where the supremum is taken over all partitions $P$ of $[a,b]$. Intuitively, it means the function does not "wiggle" infinitely. A function of bounded variation is the difference of two increasing functions.</p><p class="source">Source: Ostaszewski, Section 17.16</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{1 - \cos(x)}{x^2}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hôpital's Rule: $$ \lim_{x \to 0} \frac{\sin(x)}{2x} $$ This is still $\frac{0}{0}$. Applying the rule again: $$ \lim_{x \to 0} \frac{\cos(x)}{2} = \frac{1}{2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of $f(x) = \frac{1}{x-5}$ as $x \to 5^+$?</div><div class="card-back"><div class="answer-content"><p>As $x$ approaches 5 from the right side (e.g., 5.1, 5.01, 5.001), the denominator $x-5$ is a small positive number. The quotient $\frac{1}{x-5}$ therefore becomes a large positive number. The limit is $\infty$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of $f(x) = \frac{1}{x-5}$ as $x \to 5^-$?</div><div class="card-back"><div class="answer-content"><p>As $x$ approaches 5 from the left side (e.g., 4.9, 4.99, 4.999), the denominator $x-5$ is a small negative number. The quotient $\frac{1}{x-5}$ therefore becomes a large negative number. The limit is $-\infty$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Does $\lim_{x \to 5} \frac{1}{x-5}$ exist? Why or why not?</div><div class="card-back"><div class="answer-content"><p>No, the limit does not exist. For the limit to exist, the left-hand limit and the right-hand limit must be equal. In this case, $\lim_{x \to 5^-} \frac{1}{x-5} = -\infty$ and $\lim_{x \to 5^+} \frac{1}{x-5} = +\infty$. Since the one-sided limits are not equal, the two-sided limit does not exist.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">State the Intermediate Value Theorem.</div><div class="card-back"><div class="answer-content"><p>If a function $f$ is continuous on a closed interval $[a, b]$, and $N$ is any number between $f(a)$ and $f(b)$ (where $f(a) \neq f(b)$), then there exists at least one number $c$ in the open interval $(a, b)$ such that $f(c) = N$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use the Intermediate Value Theorem to show that $f(x) = x^3 - x - 1$ has a root between 1 and 2.</div><div class="card-back"><div class="answer-content"><p>The function $f(x) = x^3 - x - 1$ is a polynomial, so it is continuous everywhere. We evaluate the function at the endpoints:</p><ul><li>$f(1) = 1^3 - 1 - 1 = -1$</li><li>$f(2) = 2^3 - 2 - 1 = 8 - 2 - 1 = 5$</li></ul><p>Since $f(1) < 0$ and $f(2) > 0$, and the function is continuous, the Intermediate Value Theorem guarantees there must be a value $c$ in $(1, 2)$ such that $f(c) = 0$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = \sin(x)$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\sin(x+h) - \sin(x)}{h} $$</p><p>Using the identity $\sin(A) - \sin(B) = 2\cos(\frac{A+B}{2})\sin(\frac{A-B}{2})$:</p><p>$$ = \lim_{h \to 0} \frac{2\cos(x+h/2)\sin(h/2)}{h} = \lim_{h \to 0} \cos(x+h/2) \cdot \frac{\sin(h/2)}{h/2} $$</p><p>As $h \to 0$, $x+h/2 \to x$ and $h/2 \to 0$. Since $\lim_{u \to 0} \frac{\sin u}{u} = 1$, we get:</p><p>$$ = (\cos x)(1) = \cos x $$</p><p class="source">Source: Ostaszewski, Section 17.5</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of $f(x) = e^{-x}$ as $x \to \infty$?</div><div class="card-back"><div class="answer-content"><p>As $x$ becomes very large and positive, $-x$ becomes very large and negative. The exponential function $e^y$ approaches 0 as $y$ approaches $-\infty$. Therefore, $\lim_{x \to \infty} e^{-x} = 0$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.1.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{\tan x - x}{x^3}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Apply L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2} $$</p><p>This is still $\frac{0}{0}$. Apply again: </p><p>$$ \lim_{x \to 0} \frac{2\sec x (\sec x \tan x)}{6x} = \lim_{x \to 0} \frac{\sec^2 x \tan x}{3x} $$</p><p>This is still $\frac{0}{0}$. Apply again, or use $\lim \frac{\tan x}{x}=1$: </p><p>$$ = \lim_{x \to 0} \frac{\sec^2 x}{3} \cdot \lim_{x \to 0} \frac{\tan x}{x} = \frac{1}{3} \cdot 1 = \frac{1}{3} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the first-order Taylor polynomial for $f(x) = \ln(1+x)$ around $x=0$?</div><div class="card-back"><div class="answer-content"><p>The first-order Taylor polynomial is $P_1(x) = f(0) + f'(0)(x-0)$.</p><p>$f(x) = \ln(1+x) \implies f(0) = \ln(1) = 0$.</p><p>$f'(x) = \frac{1}{1+x} \implies f'(0) = 1$.</p><p>Therefore, $P_1(x) = 0 + 1(x) = x$. This is the linear approximation of $\ln(1+x)$ near $x=0$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use Taylor's theorem to find a bound for the error in approximating $\sin(0.1)$ with $0.1$.</div><div class="card-back"><div class="answer-content"><p>We are using the first-order Taylor polynomial $P_1(x)=x$ for $f(x)=\sin x$ around $a=0$. The error is given by the remainder term $R_1(x) = \frac{f\"(c)}{2!}x^2$.</p><p>$f\"(x) = -\sin x$. So, $R_1(0.1) = \frac{-\sin c}{2}(0.1)^2$ for some $c \in (0, 0.1)$.</p><p>Since $|-\sin c| \le 1$, the error is bounded by: $$ |R_1(0.1)| \le \frac{1}{2}(0.01) = 0.005 $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 1} \frac{x^n - 1}{x - 1}$ for any integer $n > 0$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 1} \frac{\frac{d}{dx}(x^n - 1)}{\frac{d}{dx}(x - 1)} = \lim_{x \to 1} \frac{nx^{n-1}}{1} = n(1)^{n-1} = n $$</p><p>Alternatively, one can factor the numerator as $(x-1)(x^{n-1} + x^{n-2} + \dots + x + 1)$ and cancel the $(x-1)$ term.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \frac{x^2-4}{x-2}$ continuous at $x=2$?</div><div class="card-back"><div class="answer-content"><p>No, the function is not continuous at $x=2$ because it is not defined at that point (division by zero). However, this is a removable discontinuity. We can simplify the function for $x \neq 2$: $$ f(x) = \frac{(x-2)(x+2)}{x-2} = x+2 $$ The limit as $x \to 2$ is $\lim_{x \to 2} (x+2) = 4$. If we define $f(2)=4$, the function becomes continuous.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = \frac{1}{x}$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\frac{1}{x+h} - \frac{1}{x}}{h} = \lim_{h \to 0} \frac{\frac{x - (x+h)}{x(x+h)}}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{-h}{hx(x+h)} = \lim_{h \to 0} \frac{-1}{x(x+h)} = -\frac{1}{x^2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} x \sin(1/x)$.</div><div class="card-back"><div class="answer-content"><p>This is of the form $\infty \cdot 0$. Let $t = 1/x$. As $x \to \infty$, $t \to 0^+$. The limit becomes:</p><p>$$ \lim_{t \to 0^+} \frac{\sin t}{t} $$</p><p>This is a standard limit which equals 1. We can also confirm this with L'Hôpital's Rule.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the second-order Taylor polynomial for $f(x) = e^x$ around $a=0$?</div><div class="card-back"><div class="answer-content"><p>The second-order Taylor polynomial is $P_2(x) = f(0) + f'(0)x + \frac{f\"(0)}{2!}x^2$.</p><p>For $f(x) = e^x$, all derivatives are $e^x$. So, $f(0)=1$, $f'(0)=1$, and $f\"(0)=1$.</p><p>Therefore, $P_2(x) = 1 + 1 \cdot x + \frac{1}{2}x^2 = 1 + x + \frac{x^2}{2}$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0^+} x \ln x$.</div><div class="card-back"><div class="answer-content"><p>This is an indeterminate form of type $0 \cdot (-\infty)$. We rewrite it as a quotient to apply L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0^+} \frac{\ln x}{1/x} $$</p><p>This is now of the form $\frac{-\infty}{\infty}$. Applying the rule:</p><p>$$ \lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Explain the difference between a sequence and a series.</div><div class="card-back"><div class="answer-content"><p>A sequence is an ordered list of numbers, such as $u_1, u_2, u_3, \dots$.</p><p>A series is the sum of the terms of a sequence, such as $u_1 + u_2 + u_3 + \dots$. The value of an infinite series is defined as the limit of its sequence of partial sums, if that limit exists.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} \frac{5x^3 - 2x + 1}{2x^3 + x^2 - 9}$.</div><div class="card-back"><div class="answer-content"><p>Divide the numerator and denominator by the highest power of $x$, which is $x^3$:</p><p>$$ \lim_{x \to \infty} \frac{5 - 2/x^2 + 1/x^3}{2 + 1/x - 9/x^3} $$</p><p>As $x \to \infty$, terms like $1/x$, $1/x^2$, and $1/x^3$ go to 0. So the limit is:</p><p>$$ \frac{5 - 0 + 0}{2 + 0 - 0} = \frac{5}{2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.1.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the derivative of a constant function $f(x) = c$?</div><div class="card-back"><div class="answer-content"><p>The derivative of a constant function is zero. Using the limit definition:</p><p>$$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \to 0} \frac{c - c}{h} = \lim_{h \to 0} \frac{0}{h} = 0 $$</p><p class="source">Source: Wrede, Chapter 4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} (1+x)^{1/x}$.</div><div class="card-back"><div class="answer-content"><p>This is a fundamental limit that defines the number $e$.</p><p>$$ \lim_{x \to 0} (1+x)^{1/x} = e $$</p><p>To show this, let $y = (1+x)^{1/x}$. Then $\ln y = \frac{\ln(1+x)}{x}$. We know from L'Hôpital's rule or Taylor series that $\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1$. Since the natural logarithm is a continuous function, $\lim_{x \to 0} \ln y = \ln(\lim_{x \to 0} y) = 1$, which implies $\lim_{x \to 0} y = e^1 = e$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the third-order Taylor polynomial for $f(x) = \cos x$ around $a=0$?</div><div class="card-back"><div class="answer-content"><p>$P_3(x) = f(0) + f'(0)x + \frac{f\"(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3$.</p><ul><li>$f(x) = \cos x \implies f(0) = 1$</li><li>$f'(x) = -\sin x \implies f'(0) = 0$</li><li>$f\"(x) = -\cos x \implies f\"(0) = -1$</li><li>$f'''(x) = \sin x \implies f'''(0) = 0$</li></ul><p>Therefore, $P_3(x) = 1 + 0\cdot x + \frac{-1}{2}x^2 + 0 \cdot x^3 = 1 - \frac{x^2}{2}$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 1} \frac{\ln x}{x-1}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 1} \frac{\frac{d}{dx}(\ln x)}{\frac{d}{dx}(x-1)} = \lim_{x \to 1} \frac{1/x}{1} = 1 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \begin{cases} x+1 & x \le 1 \\ 3-x & x > 1 \end{cases}$ continuous at $x=1$?</div><div class="card-back"><div class="answer-content"><p>We check the one-sided limits:</p><ul><li>Left-hand limit: $\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x+1) = 2$.</li><li>Right-hand limit: $\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (3-x) = 2$.</li></ul><p>The value of the function at the point is $f(1) = 1+1 = 2$. Since the left-hand limit, right-hand limit, and function value are all equal, the function is continuous at $x=1$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = x^3$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{(x+h)^3 - x^3}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{x^3 + 3x^2h + 3xh^2 + h^3 - x^3}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{3x^2h + 3xh^2 + h^3}{h} = \lim_{h \to 0} (3x^2 + 3xh + h^2) = 3x^2 $$</p><p class="source">Source: Ostaszewski, Section 17.5</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} \frac{e^x}{x^2}$.</div><div class="card-back"><div class="answer-content"><p>This is an $\frac{\infty}{\infty}$ indeterminate form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to \infty} \frac{e^x}{2x} $$</p><p>This is still $\frac{\infty}{\infty}$. Applying the rule again:</p><p>$$ \lim_{x \to \infty} \frac{e^x}{2} = \infty $$</p><p>The limit is infinite, meaning the function grows without bound.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of a sequence?</div><div class="card-back"><div class="answer-content"><p>A number $L$ is the limit of an infinite sequence {$a_n$} if for any positive number $\epsilon$, there is a positive integer $N$ such that for all $n > N$, we have $|a_n - L| < \epsilon$. This means the terms of the sequence get arbitrarily close to $L$ as $n$ gets large.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{n+1}{n}$?</div><div class="card-back"><div class="answer-content"><p>We can rewrite the term as $a_n = 1 + \frac{1}{n}$. As $n \to \infty$, the term $\frac{1}{n} \to 0$.</p><p>Therefore, $\lim_{n \to \infty} a_n = \lim_{n \to \infty} (1 + \frac{1}{n}) = 1 + 0 = 1$.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of $f(x) = \frac{|x|}{x}$ as $x \to 0$?</div><div class="card-back"><div class="answer-content"><p>We must check the one-sided limits.</p><ul><li>For $x > 0$, $|x|=x$, so $\frac{|x|}{x} = 1$. Thus, $\lim_{x \to 0^+} f(x) = 1$.</li><li>For $x < 0$, $|x|=-x$, so $\frac{|x|}{x} = -1$. Thus, $\lim_{x \to 0^-} f(x) = -1$.</li></ul><p>Since the left-hand and right-hand limits are not equal, the limit does not exist.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use the Taylor series for $\ln(1+x)$ to find $\lim_{x \to 0} \frac{\ln(1+x)-x}{x^2}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\ln(1+x)$ about $x=0$ is $x - \frac{x^2}{2} + \frac{x^3}{3} - \dots$.</p><p>$$ \lim_{x \to 0} \frac{(x - \frac{x^2}{2} + \frac{x^3}{3} - \dots) - x}{x^2} = \lim_{x \to 0} \frac{-\frac{x^2}{2} + \frac{x^3}{3} - \dots}{x^2} $$</p><p>$$ = \lim_{x \to 0} (-\frac{1}{2} + \frac{x}{3} - \dots) = -\frac{1}{2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the difference between a proper integral and an improper integral?</div><div class="card-back"><div class="answer-content"><p>A proper integral, $\int_a^b f(x) dx$, has a finite interval of integration $[a, b]$ and an integrand $f(x)$ that is bounded on that interval.</p><p>An improper integral has either an infinite interval of integration (e.g., $[a, \infty)$) or an integrand with a finite number of infinite discontinuities within the interval of integration.</p><p class="source">Source: Ostaszewski, Section 18.6</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} x^x$.</div><div class="card-back"><div class="answer-content"><p>This is an indeterminate form $0^0$. Let $y = x^x$, so $\ln y = x \ln x$. We have already shown that $\lim_{x \to 0^+} x \ln x = 0$.</p><p>Therefore, $\lim_{x \to 0^+} \ln y = 0$. Since the exponential function is continuous, this means $\lim_{x \to 0^+} y = e^0 = 1$.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the geometric interpretation of the derivative?</div><div class="card-back"><div class="answer-content"><p>The derivative of a function $f$ at a point $x=c$, denoted $f'(c)$, represents the slope of the tangent line to the graph of $y=f(x)$ at the point $(c, f(c))$. It is the instantaneous rate of change of the function at that point.</p><p class="source">Source: Wrede, Chapter 4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = \cos(x)$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\cos(x+h) - \cos(x)}{h} $$</p><p>Using the identity $\cos(A) - \cos(B) = -2\sin(\frac{A+B}{2})\sin(\frac{A-B}{2})$:</p><p>$$ = \lim_{h \to 0} \frac{-2\sin(x+h/2)\sin(h/2)}{h} = -\lim_{h \to 0} \sin(x+h/2) \cdot \frac{\sin(h/2)}{h/2} $$</p><p>As $h \to 0$, this becomes $(-\sin x)(1) = -\sin x$.</p><p class="source">Source: Ostaszewski, Section 17.5</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (\frac{x}{x+1})^x$.</div><div class="card-back"><div class="answer-content"><p>This is of the form $1^\infty$. We can rewrite the expression: $$ \lim_{x \to \infty} (\frac{x+1-1}{x+1})^x = \lim_{x \to \infty} (1 - \frac{1}{x+1})^x $$ Let $y = x+1$. As $x \to \infty$, $y \to \infty$. The limit becomes: $$ \lim_{y \to \infty} (1 - \frac{1}{y})^{y-1} = \lim_{y \to \infty} (1 - \frac{1}{y})^y \cdot \lim_{y \to \infty} (1 - \frac{1}{y})^{-1} $$ Using the standard limit $\lim_{n \to \infty} (1+a/n)^n = e^a$, the first part is $e^{-1}$. The second part is $1^{-1}=1$. So the limit is $e^{-1}$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the first-order Taylor polynomial of $f(x) = \sqrt{1+x}$ around $a=0$?</div><div class="card-back"><div class="answer-content"><p>$P_1(x) = f(0) + f'(0)x$.</p><p>$f(x) = (1+x)^{1/2} \implies f(0) = 1$.</p><p>$f'(x) = \frac{1}{2}(1+x)^{-1/2} \implies f'(0) = \frac{1}{2}$.</p><p>Therefore, $P_1(x) = 1 + \frac{1}{2}x$. This is the linear approximation, also known as the binomial approximation for this case.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{e^x - e^{-x}}{x}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{e^x - (-e^{-x})}{1} = \lim_{x \to 0} (e^x + e^{-x}) = e^0 + e^0 = 1 + 1 = 2 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = (\frac{n-1}{n})^n$?</div><div class="card-back"><div class="answer-content"><p>This can be written as $a_n = (1 - \frac{1}{n})^n$. This is a standard limit form.</p><p>$$ \lim_{n \to \infty} (1 - \frac{1}{n})^n = e^{-1} = \frac{1}{e} $$</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \sin(1/x)$ continuous at $x=0$?</div><div class="card-back"><div class="answer-content"><p>No. The function is not defined at $x=0$. Furthermore, the limit $\lim_{x \to 0} \sin(1/x)$ does not exist. As $x$ approaches 0, $1/x$ approaches infinity, and the sine function oscillates infinitely between -1 and 1 without approaching a single value. Therefore, it has a non-removable discontinuity at $x=0$.</p><p class="source">Source: Ostaszewski, Section 17.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = \sqrt{2x+1}$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\sqrt{2(x+h)+1} - \sqrt{2x+1}}{h} $$</p><p>Multiply by the conjugate:</p><p>$$ = \lim_{h \to 0} \frac{(2x+2h+1) - (2x+1)}{h(\sqrt{2x+2h+1} + \sqrt{2x+1})} = \lim_{h \to 0} \frac{2h}{h(\dots)} $$</p><p>$$ = \lim_{h \to 0} \frac{2}{\sqrt{2x+2h+1} + \sqrt{2x+1}} = \frac{2}{2\sqrt{2x+1}} = \frac{1}{\sqrt{2x+1}} $$</p><p class="source">Source: Ostaszewski, Section 17.5</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 1} \frac{x^3 - 2x^2 + 1}{x^3 - 1}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 1} \frac{3x^2 - 4x}{3x^2} = \frac{3(1)^2 - 4(1)}{3(1)^2} = \frac{-1}{3} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use the Taylor series for $e^x$ to find $\lim_{x \to 0} \frac{e^x - 1}{x}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $e^x$ about $x=0$ is $1 + x + \frac{x^2}{2!} + \dots$.</p><p>$$ \lim_{x \to 0} \frac{(1 + x + \frac{x^2}{2!} + \dots) - 1}{x} = \lim_{x \to 0} \frac{x + \frac{x^2}{2} + \dots}{x} $$</p><p>$$ = \lim_{x \to 0} (1 + \frac{x}{2} + \dots) = 1 $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of a monotonic, bounded sequence?</div><div class="card-back"><div class="answer-content"><p>Every bounded, monotonic sequence converges to a limit. If the sequence is monotonically increasing, it converges to its least upper bound. If it is monotonically decreasing, it converges to its greatest lower bound.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} \frac{\ln(x^2+1)}{\ln(x^3+1)}$.</div><div class="card-back"><div class="answer-content"><p>This is an $\frac{\infty}{\infty}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to \infty} \frac{\frac{2x}{x^2+1}}{\frac{3x^2}{x^3+1}} = \lim_{x \to \infty} \frac{2x(x^3+1)}{3x^2(x^2+1)} = \lim_{x \to \infty} \frac{2x^4+2x}{3x^4+3x^2} $$</p><p>Divide by $x^4$: $$ \lim_{x \to \infty} \frac{2+2/x^3}{3+3/x^2} = \frac{2}{3} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the difference between continuity on an open interval $(a,b)$ and a closed interval $[a,b]$?</div><div class="card-back"><div class="answer-content"><p>A function is continuous on an open interval $(a,b)$ if it is continuous at every point in the interval.</p><p>For a closed interval $[a,b]$, the function must be continuous on $(a,b)$, and it must also be continuous from the right at $a$ (i.e., $\lim_{x \to a^+} f(x) = f(a)$) and continuous from the left at $b$ (i.e., $\lim_{x \to b^-} f(x) = f(b)$).</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = 1/(x+1)$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\frac{1}{x+h+1} - \frac{1}{x+1}}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{x+1 - (x+h+1)}{h(x+1)(x+h+1)} = \lim_{h \to 0} \frac{-h}{h(x+1)(x+h+1)} $$</p><p>$$ = \lim_{h \to 0} \frac{-1}{(x+1)(x+h+1)} = -\frac{1}{(x+1)^2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{\sin(ax)}{\sin(bx)}$ for $b \neq 0$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{a\cos(ax)}{b\cos(bx)} = \frac{a\cos(0)}{b\cos(0)} = \frac{a}{b} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the second-order Taylor polynomial for $f(x) = \sin x$ around $a=0$?</div><div class="card-back"><div class="answer-content"><p>$P_2(x) = f(0) + f'(0)x + \frac{f\"(0)}{2!}x^2$.</p><ul><li>$f(x) = \sin x \implies f(0) = 0$</li><li>$f'(x) = \cos x \implies f'(0) = 1$</li><li>$f\"(x) = -\sin x \implies f\"(0) = 0$</li></ul><p>Therefore, $P_2(x) = 0 + 1 \cdot x + \frac{0}{2}x^2 = x$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} x^{1/x}$.</div><div class="card-back"><div class="answer-content"><p>This is an $\infty^0$ indeterminate form. Let $y = x^{1/x}$, so $\ln y = \frac{\ln x}{x}$.</p><p>We have already shown that $\lim_{x \to \infty} \frac{\ln x}{x} = 0$ using L'Hôpital's Rule.</p><p>Therefore, $\lim_{x \to \infty} \ln y = 0$. Since the exponential function is continuous, this means $\lim_{x \to \infty} y = e^0 = 1$.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = (-1)^n$?</div><div class="card-back"><div class="answer-content"><p>The sequence is $-1, 1, -1, 1, \dots$. The terms oscillate between -1 and 1 and do not approach a single value. Therefore, the limit does not exist.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \frac{1}{x^2}$ continuous at $x=0$?</div><div class="card-back"><div class="answer-content"><p>No. The function is not defined at $x=0$. Furthermore, as $x$ approaches 0 from either the left or the right, $f(x)$ increases without bound. $$ \lim_{x \to 0} \frac{1}{x^2} = \infty $$ This is an infinite discontinuity.</p><p class="source">Source: Ostaszewski, Section 17.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = 5x+3$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{(5(x+h)+3) - (5x+3)}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{5x+5h+3 - 5x-3}{h} = \lim_{h \to 0} \frac{5h}{h} = \lim_{h \to 0} 5 = 5 $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{\arcsin x}{x}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{\frac{1}{\sqrt{1-x^2}}}{1} = \frac{1}{\sqrt{1-0}} = 1 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use the Taylor series for $\cos x$ to find $\lim_{x \to 0} \frac{1-\cos x}{x}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\cos x$ about $x=0$ is $1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots$.</p><p>$$ \lim_{x \to 0} \frac{1 - (1 - \frac{x^2}{2!} + \dots)}{x} = \lim_{x \to 0} \frac{\frac{x^2}{2} - \frac{x^4}{24} + \dots}{x} $$</p><p>$$ = \lim_{x \to 0} (\frac{x}{2} - \frac{x^3}{24} + \dots) = 0 $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{\sin n}{n}$?</div><div class="card-back"><div class="answer-content"><p>We can use the Squeeze Theorem. We know that $-1 \le \sin n \le 1$ for all $n$.</p><p>Therefore, $-\frac{1}{n} \le \frac{\sin n}{n} \le \frac{1}{n}$.</p><p>Since $\lim_{n \to \infty} (-\frac{1}{n}) = 0$ and $\lim_{n \to \infty} \frac{1}{n} = 0$, the Squeeze Theorem tells us that $\lim_{n \to \infty} \frac{\sin n}{n} = 0$.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (\sqrt{x^2+1} - \sqrt{x^2-1})$.</div><div class="card-back"><div class="answer-content"><p>This is of the form $\infty - \infty$. We rationalize by multiplying by the conjugate:</p><p>$$ \lim_{x \to \infty} \frac{(x^2+1) - (x^2-1)}{\sqrt{x^2+1} + \sqrt{x^2-1}} = \lim_{x \to \infty} \frac{2}{\sqrt{x^2+1} + \sqrt{x^2-1}} $$</p><p>As $x \to \infty$, the denominator approaches $\infty$. Therefore, the limit is 0.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \lfloor x \rfloor$ (the floor function) continuous at integer values?</div><div class="card-back"><div class="answer-content"><p>No. The floor function, which gives the greatest integer less than or equal to $x$, has a jump discontinuity at every integer. For example, at $x=2$:</p><ul><li>$\lim_{x \to 2^-} \lfloor x \rfloor = 1$</li><li>$\lim_{x \to 2^+} \lfloor x \rfloor = 2$</li></ul><p>Since the one-sided limits are not equal, the function is not continuous at any integer.</p><p class="source">Source: Ostaszewski, Section 17.13</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = 2x^2 - 3x$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{[2(x+h)^2 - 3(x+h)] - [2x^2 - 3x]}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{2x^2+4xh+2h^2-3x-3h-2x^2+3x}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{4xh+2h^2-3h}{h} = \lim_{h \to 0} (4x+2h-3) = 4x-3 $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{x^2}{1 - \cos^2 x}$.</div><div class="card-back"><div class="answer-content"><p>Using the identity $1 - \cos^2 x = \sin^2 x$, the limit becomes:</p><p>$$ \lim_{x \to 0} \frac{x^2}{\sin^2 x} = \lim_{x \to 0} (\frac{x}{\sin x})^2 $$</p><p>Since we know $\lim_{x \to 0} \frac{\sin x}{x} = 1$, it follows that $\lim_{x \to 0} \frac{x}{\sin x} = 1$. Therefore, the limit is $1^2 = 1$.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the fourth-order Taylor polynomial for $f(x) = \cos x$ around $a=0$?</div><div class="card-back"><div class="answer-content"><p>$P_4(x) = f(0) + f'(0)x + \frac{f\"(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \frac{f^{(4)}(0)}{4!}x^4$.</p><p>The derivatives are $\cos x, -\sin x, -\cos x, \sin x, \cos x$. At $x=0$, these are $1, 0, -1, 0, 1$.</p><p>$$ P_4(x) = 1 + 0 - \frac{1}{2}x^2 + 0 + \frac{1}{24}x^4 = 1 - \frac{x^2}{2} + \frac{x^4}{24} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (x - \ln x)$.</div><div class="card-back"><div class="answer-content"><p>This is of the form $\infty - \infty$. We can factor out the dominant term, $x$:</p><p>$$ \lim_{x \to \infty} x(1 - \frac{\ln x}{x}) $$</p><p>We know $\lim_{x \to \infty} \frac{\ln x}{x} = 0$. So the expression inside the parenthesis approaches 1. Since the $x$ outside approaches $\infty$, the overall limit is $\infty$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = n^{1/n}$?</div><div class="card-back"><div class="answer-content"><p>This is an indeterminate form $\infty^0$. Let $y = n^{1/n}$, so $\ln y = \frac{\ln n}{n}$.</p><p>Using L'Hôpital's Rule on the continuous version $\frac{\ln x}{x}$:</p><p>$$ \lim_{x \to \infty} \frac{\ln x}{x} = \lim_{x \to \infty} \frac{1/x}{1} = 0 $$</p><p>Therefore, $\lim_{n \to \infty} \ln a_n = 0$, which implies $\lim_{n \to \infty} a_n = e^0 = 1$.</p><p class="source">Source: Ostaszewski, Section 18.7</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \frac{1}{x-2}$ differentiable at $x=2$?</div><div class="card-back"><div class="answer-content"><p>No. For a function to be differentiable at a point, it must first be continuous at that point. The function $f(x) = \frac{1}{x-2}$ is not continuous at $x=2$ because it is not defined there (it has an infinite discontinuity). Therefore, it cannot be differentiable at $x=2$.</p><p class="source">Source: Wrede, Chapter 4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = 1/x^2$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\frac{1}{(x+h)^2} - \frac{1}{x^2}}{h} = \lim_{h \to 0} \frac{x^2 - (x+h)^2}{hx^2(x+h)^2} $$</p><p>$$ = \lim_{h \to 0} \frac{x^2 - (x^2+2xh+h^2)}{hx^2(x+h)^2} = \lim_{h \to 0} \frac{-2xh-h^2}{hx^2(x+h)^2} $$</p><p>$$ = \lim_{h \to 0} \frac{-2x-h}{x^2(x+h)^2} = \frac{-2x}{x^2(x^2)} = -\frac{2}{x^3} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{\tan x}{x}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ indeterminate form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{\sec^2 x}{1} = \sec^2(0) = 1^2 = 1 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use Taylor series to find the limit $\lim_{x \to 0} \frac{x - \sin x}{x^3}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\sin x$ is $x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots$.</p><p>$$ \lim_{x \to 0} \frac{x - (x - \frac{x^3}{6} + \frac{x^5}{120} - \dots)}{x^3} = \lim_{x \to 0} \frac{\frac{x^3}{6} - \frac{x^5}{120} + \dots}{x^3} $$</p><p>$$ = \lim_{x \to 0} (\frac{1}{6} - \frac{x^2}{120} + \dots) = \frac{1}{6} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \cos(n\pi)$?</div><div class="card-back"><div class="answer-content"><p>The sequence is $\cos(\pi), \cos(2\pi), \cos(3\pi), \dots$, which evaluates to $-1, 1, -1, 1, \dots$. Since the terms oscillate between -1 and 1 and do not approach a single value, the limit does not exist.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (\ln(x+1) - \ln x)$.</div><div class="card-back"><div class="answer-content"><p>Using logarithm properties, this is $\lim_{x \to \infty} \ln(\frac{x+1}{x}) = \lim_{x \to \infty} \ln(1 + \frac{1}{x})$.</p><p>As $x \to \infty$, $\frac{1}{x} \to 0$, so $1 + \frac{1}{x} \to 1$.</p><p>Since $\ln$ is a continuous function, we can take the limit inside: $\ln(\lim_{x \to \infty} (1 + \frac{1}{x})) = \ln(1) = 0$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \sqrt{x}$ continuous at $x=0$?</div><div class="card-back"><div class="answer-content"><p>The function $f(x) = \sqrt{x}$ is defined for $x \ge 0$. At $x=0$, we can only consider the right-hand limit. </p><p>$\lim_{x \to 0^+} \sqrt{x} = 0$.</p><p>The value of the function is $f(0) = \sqrt{0} = 0$.</p><p>Since the right-hand limit equals the function value, the function is continuous from the right at $x=0$. It is considered continuous on its domain $[0, \infty)$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = 1/\sqrt{x}$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\frac{1}{\sqrt{x+h}} - \frac{1}{\sqrt{x}}}{h} = \lim_{h \to 0} \frac{\sqrt{x} - \sqrt{x+h}}{h\sqrt{x}\sqrt{x+h}} $$</p><p>Rationalize the numerator:</p><p>$$ = \lim_{h \to 0} \frac{x - (x+h)}{h\sqrt{x}\sqrt{x+h}(\sqrt{x} + \sqrt{x+h})} = \lim_{h \to 0} \frac{-1}{\sqrt{x}\sqrt{x+h}(\sqrt{x} + \sqrt{x+h})} $$</p><p>$$ = \frac{-1}{\sqrt{x}\sqrt{x}(2\sqrt{x})} = -\frac{1}{2x^{3/2}} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{\sin(x^2)}{x}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{2x\cos(x^2)}{1} = 2(0)\cos(0) = 0 $$</p><p>Alternatively, rewrite as $\lim_{x \to 0} x \cdot \frac{\sin(x^2)}{x^2}$. The first part goes to 0 and the second part goes to 1, so the product is 0.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the third-order Taylor polynomial for $f(x) = e^{2x}$ around $a=0$?</div><div class="card-back"><div class="answer-content"><p>$P_3(x) = f(0) + f'(0)x + \frac{f\"(0)}{2}x^2 + \frac{f'''(0)}{6}x^3$.</p><ul><li>$f(x) = e^{2x} \implies f(0) = 1$</li><li>$f'(x) = 2e^{2x} \implies f'(0) = 2$</li><li>$f\"(x) = 4e^{2x} \implies f\"(0) = 4$</li><li>$f'''(x) = 8e^{2x} \implies f'''(0) = 8$</li></ul><p>$$ P_3(x) = 1 + 2x + \frac{4}{2}x^2 + \frac{8}{6}x^3 = 1 + 2x + 2x^2 + \frac{4}{3}x^3 $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (\frac{x+3}{x-1})^x$.</div><div class="card-back"><div class="answer-content"><p>This is a $1^\infty$ form. We rewrite the base: $$ \frac{x+3}{x-1} = \frac{x-1+4}{x-1} = 1 + \frac{4}{x-1} $$ Let $y = x-1$. As $x \to \infty$, $y \to \infty$. The limit becomes: $$ \lim_{y \to \infty} (1 + \frac{4}{y})^{y+1} = \lim_{y \to \infty} (1 + \frac{4}{y})^y \cdot \lim_{y \to \infty} (1 + \frac{4}{y})^1 $$ The first limit is $e^4$ and the second is 1. The result is $e^4$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{n!}{n^n}$?</div><div class="card-back"><div class="answer-content"><p>Consider the ratio of consecutive terms: $$ \frac{a_{n+1}}{a_n} = \frac{(n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{n!} = \frac{n+1}{(n+1)^{n+1}} \cdot n^n = \frac{n^n}{(n+1)^n} = (\frac{n}{n+1})^n = (1 - \frac{1}{n+1})^n $$ As $n \to \infty$, this limit approaches $e^{-1} < 1$. Since the ratio of consecutive terms is less than 1, the terms are decreasing and must approach 0. Therefore, $\lim_{n \to \infty} a_n = 0$.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = \begin{cases} x^2 & x \neq 0 \\ 1 & x = 0 \end{cases}$ continuous at $x=0$?</div><div class="card-back"><div class="answer-content"><p>We check the conditions for continuity.</p><ol><li>$f(0) = 1$ is defined.</li><li>$\lim_{x \to 0} f(x) = \lim_{x \to 0} x^2 = 0$. The limit exists.</li><li>However, $\lim_{x \to 0} f(x) \neq f(0)$ since $0 \neq 1$.</li></ol><p>The function is not continuous at $x=0$. It has a removable discontinuity.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.1</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = 1/(2x-1)$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>$$ f'(x) = \lim_{h \to 0} \frac{\frac{1}{2(x+h)-1} - \frac{1}{2x-1}}{h} $$</p><p>$$ = \lim_{h \to 0} \frac{(2x-1) - (2x+2h-1)}{h(2x-1)(2x+2h-1)} = \lim_{h \to 0} \frac{-2h}{h(2x-1)(2x+2h-1)} $$</p><p>$$ = \lim_{h \to 0} \frac{-2}{(2x-1)(2x+2h-1)} = -\frac{2}{(2x-1)^2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{\arctan(2x)}{\sin(3x)}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{\frac{2}{1+(2x)^2}}{3\cos(3x)} = \frac{\frac{2}{1+0}}{3\cos(0)} = \frac{2}{3} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use Taylor series to find the limit $\lim_{x \to 0} \frac{\ln(1-x) + x}{x^2}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\ln(1-x)$ is $-x - \frac{x^2}{2} - \frac{x^3}{3} - \dots$.</p><p>$$ \lim_{x \to 0} \frac{(-x - \frac{x^2}{2} - \dots) + x}{x^2} = \lim_{x \to 0} \frac{-\frac{x^2}{2} - \frac{x^3}{3} - \dots}{x^2} $$</p><p>$$ = \lim_{x \to 0} (-\frac{1}{2} - \frac{x}{3} - \dots) = -\frac{1}{2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{2^n}{n!}$?</div><div class="card-back"><div class="answer-content"><p>We use the ratio test for sequences. Consider the ratio of consecutive terms:</p><p>$$ \frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{(n+1)!} \cdot \frac{n!}{2^n} = \frac{2}{n+1} $$</p><p>As $n \to \infty$, this ratio $\frac{2}{n+1} \to 0$. Since the limit of the ratio is less than 1, the sequence converges to 0. Therefore, $\lim_{n \to \infty} a_n = 0$.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 1} (x-1) \tan(\frac{\pi x}{2})$.</div><div class="card-back"><div class="answer-content"><p>This is a $0 \cdot \infty$ indeterminate form. We rewrite it as a quotient:</p><p>$$ \lim_{x \to 1} \frac{x-1}{\cot(\frac{\pi x}{2})} $$</p><p>This is now a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 1} \frac{1}{-\csc^2(\frac{\pi x}{2}) \cdot \frac{\pi}{2}} = \frac{1}{-\frac{\pi}{2} (1)^2} = -\frac{2}{\pi} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of $f(x) = \frac{\sin x}{|x|}$ as $x \to 0$?</div><div class="card-back"><div class="answer-content"><p>We check the one-sided limits.</p><ul><li>$\lim_{x \to 0^+} \frac{\sin x}{x} = 1$.</li><li>$\lim_{x \to 0^-} \frac{\sin x}{-x} = -\lim_{x \to 0^-} \frac{\sin x}{x} = -1$.</li></ul><p>Since the left-hand and right-hand limits are not equal, the limit does not exist.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = x|x|$ at $x=0$.</div><div class="card-back"><div class="answer-content"><p>We use the limit definition of the derivative:</p><p>$$ f'(0) = \lim_{h \to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h \to 0} \frac{h|h| - 0}{h} = \lim_{h \to 0} |h| = 0 $$</p><p>The derivative exists and is equal to 0. Note that for $x>0$, $f(x)=x^2$ and $f'(x)=2x$. For $x<0$, $f(x)=-x^2$ and $f'(x)=-2x$. Both approach 0 as $x \to 0$.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} (\csc x - \cot x)$.</div><div class="card-back"><div class="answer-content"><p>This is an $\infty - \infty$ form. We combine the terms:</p><p>$$ \lim_{x \to 0} (\frac{1}{\sin x} - \frac{\cos x}{\sin x}) = \lim_{x \to 0} \frac{1 - \cos x}{\sin x} $$</p><p>This is now a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{\sin x}{\cos x} = \frac{0}{1} = 0 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use Taylor series to find the limit $\lim_{x \to 0} \frac{1 - \cos(x^2)}{x^4}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\cos u$ is $1 - \frac{u^2}{2!} + \frac{u^4}{4!} - \dots$. Let $u=x^2$.</p><p>$$ \lim_{x \to 0} \frac{1 - (1 - \frac{(x^2)^2}{2!} + \frac{(x^2)^4}{4!} - \dots)}{x^4} = \lim_{x \to 0} \frac{\frac{x^4}{2} - \frac{x^8}{24} + \dots}{x^4} $$</p><p>$$ = \lim_{x \to 0} (\frac{1}{2} - \frac{x^4}{24} + \dots) = \frac{1}{2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{n^2+1}{2n^2-1}$?</div><div class="card-back"><div class="answer-content"><p>Divide the numerator and denominator by the highest power of $n$, which is $n^2$:</p><p>$$ \lim_{n \to \infty} \frac{1 + 1/n^2}{2 - 1/n^2} = \frac{1+0}{2-0} = \frac{1}{2} $$</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to \infty} (\frac{x^2+1}{x+1} - ax - b) = 0$. Find $a$ and $b$.</div><div class="card-back"><div class="answer-content"><p>First, combine the terms: $$ \lim_{x \to \infty} \frac{x^2+1 - (ax+b)(x+1)}{x+1} = \lim_{x \to \infty} \frac{x^2+1 - (ax^2 + (a+b)x + b)}{x+1} = \lim_{x \to \infty} \frac{(1-a)x^2 - (a+b)x + (1-b)}{x+1} $$ For the limit to be 0, the degree of the numerator must be less than the degree of the denominator. This requires the coefficients of $x^2$ and $x$ to be zero.</p><p>$1-a=0 \implies a=1$.</p><p>$-(a+b)=0 \implies -(1+b)=0 \implies b=-1$.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Is the function $f(x) = x \sin(1/x)$ for $x \neq 0$ and $f(0)=0$ differentiable at $x=0$?</div><div class="card-back"><div class="answer-content"><p>We check the limit definition of the derivative at $x=0$:</p><p>$$ f'(0) = \lim_{h \to 0} \frac{h\sin(1/h) - 0}{h} = \lim_{h \to 0} \sin(1/h) $$</p><p>This limit does not exist because $\sin(1/h)$ oscillates between -1 and 1 as $h \to 0$. Therefore, the function is not differentiable at $x=0$, even though it is continuous there.</p><p class="source">Source: Ostaszewski, Section 17.4</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = e^{x^2}$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>This is very difficult to do directly from the definition. The limit definition is primarily for understanding the concept and proving basic rules. For this function, we would use the chain rule: $f'(x) = e^{x^2} \cdot \frac{d}{dx}(x^2) = 2x e^{x^2}$. The question highlights the importance of differentiation rules over first principles for complex functions.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{1 - e^{-x^2}}{x^2}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Let $u = x^2$. As $x \to 0$, $u \to 0$. The limit becomes $\lim_{u \to 0} \frac{1 - e^{-u}}{u}$.</p><p>Applying L'Hôpital's Rule:</p><p>$$ \lim_{u \to 0} \frac{-(-e^{-u})}{1} = \lim_{u \to 0} e^{-u} = e^0 = 1 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use Taylor series to find the limit $\lim_{x \to 0} \frac{x - \arctan x}{x^3}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\arctan x$ is $x - \frac{x^3}{3} + \frac{x^5}{5} - \dots$.</p><p>$$ \lim_{x \to 0} \frac{x - (x - \frac{x^3}{3} + \frac{x^5}{5} - \dots)}{x^3} = \lim_{x \to 0} \frac{\frac{x^3}{3} - \frac{x^5}{5} + \dots}{x^3} $$</p><p>$$ = \lim_{x \to 0} (\frac{1}{3} - \frac{x^2}{5} + \dots) = \frac{1}{3} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{n!}{n^n}$?</div><div class="card-back"><div class="answer-content"><p>Consider the ratio of consecutive terms: $$ \frac{a_{n+1}}{a_n} = \frac{(n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{n!} = \frac{n+1}{(n+1)^{n+1}} \cdot n^n = \frac{n^n}{(n+1)^n} = (\frac{n}{n+1})^n = (1 - \frac{1}{n+1})^n $$ As $n \to \infty$, this limit approaches $e^{-1} < 1$. Since the ratio of consecutive terms is less than 1, the terms are decreasing and must approach 0. Therefore, $\lim_{n \to \infty} a_n = 0$.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} (\frac{1}{x} - \frac{1}{e^x-1})$.</div><div class="card-back"><div class="answer-content"><p>This is an $\infty - \infty$ form. Combine the fractions:</p><p>$$ \lim_{x \to 0} \frac{e^x - 1 - x}{x(e^x-1)} $$</p><p>This is a $\frac{0}{0}$ form. Apply L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{e^x - 1}{e^x-1 + xe^x} $$</p><p>Still $\frac{0}{0}$. Apply again:</p><p>$$ \lim_{x \to 0} \frac{e^x}{e^x + e^x + xe^x} = \frac{1}{1+1+0} = \frac{1}{2} $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of $f(x) = \frac{x^2}{|x|}$ as $x \to 0$?</div><div class="card-back"><div class="answer-content"><p>For $x \neq 0$, we can write this as $f(x) = |x| \cdot \frac{|x|}{|x|} = |x|$.</p><p>So we need to find $\lim_{x \to 0} |x|$.</p><p>$$ \lim_{x \to 0} |x| = 0 $$</p><p>The limit exists and is 0.</p><p class="source">Source: Wrede, Chapter 3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find the derivative of $f(x) = \cos(x^2)$ using the limit definition.</div><div class="card-back"><div class="answer-content"><p>This is very difficult to do directly from the definition. The chain rule is the appropriate tool here: $f'(x) = -\sin(x^2) \cdot \frac{d}{dx}(x^2) = -2x \sin(x^2)$. This question again emphasizes the power and necessity of differentiation rules over using first principles for most functions.</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0} \frac{x^3}{x - \sin x}$.</div><div class="card-back"><div class="answer-content"><p>This is a $\frac{0}{0}$ form. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0} \frac{3x^2}{1 - \cos x} $$</p><p>Still $\frac{0}{0}$. Apply again:</p><p>$$ \lim_{x \to 0} \frac{6x}{\sin x} = 6 \lim_{x \to 0} \frac{x}{\sin x} = 6(1) = 6 $$</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Use Taylor series to find the limit $\lim_{x \to 0} \frac{x \ln(1+x) - x^2}{x^3}$.</div><div class="card-back"><div class="answer-content"><p>The Taylor series for $\ln(1+x)$ is $x - \frac{x^2}{2} + \frac{x^3}{3} - \dots$.</p><p>$$ \lim_{x \to 0} \frac{x(x - \frac{x^2}{2} + \dots) - x^2}{x^3} = \lim_{x \to 0} \frac{x^2 - \frac{x^3}{2} - x^2 + \dots}{x^3} $$</p><p>$$ = \lim_{x \to 0} \frac{-\frac{x^3}{2} + \dots}{x^3} = -\frac{1}{2} $$</p><p class="source">Source: MT2176 Subject Guide, Section 2.2.3</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">What is the limit of the sequence $a_n = \frac{\ln n}{\sqrt{n}}$?</div><div class="card-back"><div class="answer-content"><p>Consider the continuous function $f(x) = \frac{\ln x}{\sqrt{x}}$. This is an $\frac{\infty}{\infty}$ form as $x \to \infty$.</p><p>Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to \infty} \frac{1/x}{1/(2\sqrt{x})} = \lim_{x \to \infty} \frac{2\sqrt{x}}{x} = \lim_{x \to \infty} \frac{2}{\sqrt{x}} = 0 $$</p><p>Therefore, the sequence converges to 0.</p><p class="source">Source: Wrede, Chapter 2</p></div></div></div></div>
+        <div class="flashcard"><div class="card-inner"><div class="card-front">Find $\lim_{x \to 0^+} (\sin x)^x$.</div><div class="card-back"><div class="answer-content"><p>This is a $0^0$ indeterminate form. Let $y = (\sin x)^x$, so $\ln y = x \ln(\sin x)$.</p><p>This is a $0 \cdot (-\infty)$ form. Rewrite as $\frac{\ln(\sin x)}{1/x}$. Applying L'Hôpital's Rule:</p><p>$$ \lim_{x \to 0^+} \frac{\frac{\cos x}{\sin x}}{-1/x^2} = \lim_{x \to 0^+} -x^2 \cot x = \lim_{x \to 0^+} -x \frac{x}{\tan x} = (0)(1) = 0 $$</p><p>So, $\lim_{x \to 0^+} y = e^0 = 1$.</p><p class="source">Source: Ostaszewski, Section 18.8</p></div></div></div></div>
     </div>
 
-    <div class="navigation-controls">
-        <button id="prevBtn">Previous</button>
-        <button id="flipBtn">Flip</button>
-        <button id="nextBtn">Next</button>
+    <div class="navigation">
+        <button class="prev">&laquo; Prev</button>
+        <span class="card-counter">1 / 100</span>
+        <button class="next">Next &raquo;</button>
     </div>
-    <div class="card-counter">Card 1 of 100</div>
+    <button class="flip-button">Flip Card</button>
+
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.querySelector('.flashcard-container');
-            const cards = document.querySelectorAll('.flashcard');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const flipBtn = document.getElementById('flipBtn');
-            const counter = document.querySelector('.card-counter');
+        let currentCard = 0;
+        const cards = document.querySelectorAll('.flashcard');
+        const cardCounter = document.querySelector('.card-counter');
 
-            let currentIndex = 0;
-            const totalCards = 100; // Total cards
-            const cardWidth = 640; // 320px width + 20px gap
-
-            function updateView() {
-                const offset = -currentIndex * cardWidth;
-                container.style.transform = `translateX(${offset}px)`;
-                counter.textContent = `Card ${currentIndex + 1} of ${totalCards}`;
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex === totalCards - 1;
-            }
-
-            // Card click to flip
-            cards.forEach(card => {
-                card.addEventListener('click', (e) => {
-                    // prevent flipping when clicking buttons if they are inside the card
-                    if (e.target.tagName !== 'BUTTON') {
-                        card.classList.toggle('flipped');
-                    }
-                });
+        function showCard(index) {
+            cards.forEach((card, i) => {
+                card.style.display = i === index ? 'block' : 'none';
+                card.classList.remove('is-flipped');
             });
+            cardCounter.textContent = `${index + 1} / ${cards.length}`;
+        }
 
-            // Button navigation
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < totalCards - 1) {
-                    // If current card is flipped, flip it back before moving
-                    if(cards[currentIndex].classList.contains('flipped')) {
-                        cards[currentIndex].classList.remove('flipped');
-                    }
-                    currentIndex++;
-                    updateView();
-                }
-            });
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            showCard(currentCard);
+        }
 
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                     if(cards[currentIndex].classList.contains('flipped')) {
-                        cards[currentIndex].classList.remove('flipped');
-                    }
-                    currentIndex--;
-                    updateView();
-                }
-            });
+        function prevCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            showCard(currentCard);
+        }
 
-            // Flip button
-            flipBtn.addEventListener('click', () => {
-                if (cards[currentIndex]) {
-                    cards[currentIndex].classList.toggle('flipped');
-                }
-            });
+        function flipCard() {
+            cards[currentCard].classList.toggle('is-flipped');
+        }
 
-            updateView(); // Initial setup
-        });
+        document.querySelector('.next').addEventListener('click', nextCard);
+        document.querySelector('.prev').addEventListener('click', prevCard);
+        document.querySelector('.flip-button').addEventListener('click', flipCard);
+        cards.forEach(card => card.addEventListener('click', flipCard));
+
+        showCard(currentCard);
     </script>
 
 </body>
