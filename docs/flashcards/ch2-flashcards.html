@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT2176 Further Calculus Flashcards</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 820px; /* 800px card width + 20px margin */
+            overflow: hidden;
+        }
+        .flashcard-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .flashcard {
+            min-width: 800px;
+            margin: 10px;
+            perspective: 1000px;
+            background-color: transparent;
+            flex-shrink: 0;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+        .front {
+            background-color: #fff;
+            color: black;
+        }
+        .back {
+            background-color: #f8f8f8;
+            color: black;
+            transform: rotateY(180deg);
+            text-align: left;
+            font-size: 1rem;
+            overflow-y: auto;
+        }
+        .back p {
+            align-self: flex-start;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        #card-counter {
+            font-size: 1.2rem;
+            margin: 0 20px;
+        }
+        .source {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MT2176 Further Calculus: The Riemann Integral & FTC</h1>
+
+    <div class="slideshow-container">
+        <div class="flashcard-slider">
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>What is the definition of the Riemann integral of a non-negative function \(f(x)\) over the interval \([a, b]\)?</p>
+                    </div>
+                    <div class="back">
+                        <p>The Riemann integral is defined using the concepts of partitions, lower sums, and upper sums.</p>
+                        <p>1. A **partition** \(P\) of \([a, b]\) is a finite set of points \(x_0, x_1, ..., x_n\) such that \(a = x_0 < x_1 < ... < x_n = b\).</p>
+                        <p>2. The **lower sum** \(L(P)\) is \(\sum_{i=1}^{n} m_i (x_i - x_{i-1})\), where \(m_i\) is the infimum of \(f(x)\) on \([x_{i-1}, x_i]\).</p>
+                        <p>3. The **upper sum** \(U(P)\) is \(\sum_{i=1}^{n} M_i (x_i - x_{i-1})\), where \(M_i\) is the supremum of \(f(x)\) on \([x_{i-1}, x_i]\).</p>
+                        <p>The Riemann integral \(\int_{a}^{b} f(x) dx\) is the unique number \(I\) that satisfies \(L(P) \le I \le U(P)\) for all partitions \(P\).</p>
+                        <p class="source">Source: Based on concepts from Ostaszewski, A. (1991). Advanced mathematical methods. Chapter 17.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>State the Fundamental Theorem of Calculus, Part 1.</p>
+                    </div>
+                    <div class="back">
+                        <p>If \(f\) is a continuous function on \([a, b]\), then the function \(F\) defined by \(F(x) = \int_{a}^{x} f(t) dt\) for \(x\) in \([a, b]\) is continuous on \([a, b]\) and differentiable on \((a, b)\), and its derivative is \(f(x)\).</p>
+                        <p>\(F\\' (x) = \frac{d}{dx} \int_{a}^{x} f(t) dt = f(x)\)</p>
+                        <p>This shows that differentiation and integration are inverse processes.</p>
+                        <p class="source">Source: Based on concepts from MT2176 Subject Guide and Ostaszewski, A. (1991).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>Use the Fundamental Theorem of Calculus to find the derivative of \(g(x) = \int_{1}^{x^2} \cos(t) dt\).</p>
+                    </div>
+                    <div class="back">
+                        <p>Let \(F(u) = \int_{1}^{u} \cos(t) dt\). By FTC Part 1, \(F\\' (u) = \cos(u)\).</p>
+                        <p>The given integral is \(g(x) = F(x^2)\). Using the chain rule:</p>
+                        <p>\(g\\' (x) = F\\' (x^2) \cdot \frac{d}{dx}(x^2) = \cos(x^2) \cdot 2x\)</p>
+                        <p>So, the derivative is \(2x \cos(x^2)\).</p>
+                        <p class="source">Source: Application of concepts from Wrede, R. C., & Spiegel, M. R. (2010).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>State the Fundamental Theorem of Calculus, Part 2.</p>
+                    </div>
+                    <div class="back">
+                        <p>If \(f\) is a continuous function on \([a, b]\) and \(F\) is any antiderivative of \(f\) (i.e., \(F\\' (x) = f(x)\)), then:</p>
+                        <p>\(\int_{a}^{b} f(x) dx = F(b) - F(a)\)</p>
+                        <p>This provides a powerful method for evaluating definite integrals.</p>
+                        <p class="source">Source: Based on concepts from MT2176 Subject Guide and Ostaszewski, A. (1991).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>Use the FTC to evaluate \(\int_{0}^{\pi} \sin(x) dx\).</p>
+                    </div>
+                    <div class="back">
+                        <p>An antiderivative of \(f(x) = \sin(x)\) is \(F(x) = -\cos(x)\).</p>
+                        <p>Applying FTC Part 2:</p>
+                        <p>\(\int_{0}^{\pi} \sin(x) dx = F(\pi) - F(0) = -\cos(\pi) - (-\cos(0))\)</p>
+                        <p>\(= -(-1) - (-1) = 1 + 1 = 2\)</p>
+                        <p class="source">Source: Application of concepts from Wrede, R. C., & Spiegel, M. R. (2010).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>What is the relationship between continuity and Riemann integrability?</p>
+                    </div>
+                    <div class="back">
+                        <p>If a function is continuous on a closed interval \([a, b]\), then it is Riemann integrable on that interval.</p>
+                        <p>However, a function does not need to be continuous to be Riemann integrable. A function is Riemann integrable if and only if it is bounded and the set of its discontinuities has measure zero (e.g., a finite number of jump discontinuities).</p>
+                        <p class="source">Source: Based on concepts from Ostaszewski, A. (1991), Chapter 17.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>Find the derivative of \(h(x) = \int_{x^2}^{x^3} e^{t^2} dt\).</p>
+                    </div>
+                    <div class="back">
+                        <p>We write \(h(x) = \int_{x^2}^{c} e^{t^2} dt + \int_{c}^{x^3} e^{t^2} dt = -\int_{c}^{x^2} e^{t^2} dt + \int_{c}^{x^3} e^{t^2} dt\).</p>
+                        <p>Differentiating using the FTC Part 1 and the chain rule:</p>
+                        <p>\(h\\' (x) = -e^{(x^2)^2} \cdot (2x) + e^{(x^3)^2} \cdot (3x^2)\)</p>
+                        <p>\(= 3x^2 e^{x^6} - 2x e^{x^4}\)</p>
+                        <p class="source">Source: Application of concepts from MT2176 Subject Guide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>What is the area of the region enclosed by the curves \(y = x^2\) and \(y = \sqrt{x}\)?</p>
+                    </div>
+                    <div class="back">
+                        <p>Intersection points: \(x^2 = \sqrt{x} \Rightarrow x^4 = x \Rightarrow x(x^3 - 1) = 0\), so \(x=0, x=1\).</p>
+                        <p>In \([0, 1]\), \(\sqrt{x} \ge x^2\). The area \(A\) is:</p>
+                        <p>\(A = \int_{0}^{1} (\sqrt{x} - x^2) dx = [\frac{2}{3}x^{3/2} - \frac{1}{3}x^3]_{0}^{1}\)</p>
+                        <p>\(= (\frac{2}{3} - \frac{1}{3}) - 0 = \frac{1}{3}\)</p>
+                        <p class="source">Source: Application of concepts from Wrede, R. C., & Spiegel, M. R. (2010).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>What is the Mean Value Theorem for Integrals?</p>
+                    </div>
+                    <div class="back">
+                        <p>If \(f\) is continuous on \([a, b]\), then there exists a number \(c\) in \([a, b]\) such that:</p>
+                        <p>\(\int_{a}^{b} f(x) dx = f(c)(b - a)\)</p>
+                        <p>The value \(f(c)\) is the average value of the function on the interval.</p>
+                        <p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="front">
+                        <p>Explain the difference between a definite and an indefinite integral.</p>
+                    </div>
+                    <div class="back">
+                        <p>A **definite integral**, \(\int_{a}^{b} f(x) dx\), is a number representing the net area under the curve of \(f(x)\) from \(a\) to \(b\).</p>
+                        <p>An **indefinite integral**, \(\int f(x) dx\), is a family of functions, \(F(x) + C\), representing all antiderivatives of \(f(x)\).</p>
+                        <p class="source">Source: Based on concepts from Ostaszewski, A. (1991).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start of 90 new cards -->
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a partition of an interval \([a, b]\)?</p></div><div class="back"><p>A partition \(P\) of an interval \([a, b]\) is a finite, ordered set of points \(x_0, x_1, ..., x_n\) such that \(a = x_0 < x_1 < ... < x_n = b\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Define the lower sum \(L(P, f)\) for a bounded function \(f\) and a partition \(P\).</p></div><div class="back"><p>The lower sum is \(L(P, f) = \sum_{i=1}^{n} m_i (x_i - x_{i-1})\), where \(m_i = \inf\{f(x) : x \in [x_{i-1}, x_i]\}\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Define the upper sum \(U(P, f)\) for a bounded function \(f\) and a partition \(P\).</p></div><div class="back"><p>The upper sum is \(U(P, f) = \sum_{i=1}^{n} M_i (x_i - x_{i-1})\), where \(M_i = \sup\{f(x) : x \in [x_{i-1}, x_i]\}\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a Riemann sum?</p></div><div class="back"><p>A Riemann sum for a function \(f\) on an interval \([a,b]\) is a sum of the form \(\sum_{i=1}^{n} f(t_i) \Delta x_i\), where \(P = \{x_0, ..., x_n\}\) is a partition of \([a,b]\), \(\Delta x_i = x_i - x_{i-1}\), and \(t_i\) is any sample point in the subinterval \([x_{i-1}, x_i]\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What does it mean for a function to be Riemann integrable?</p></div><div class="back"><p>A function \(f\) is Riemann integrable on \([a,b]\) if the lower integral and the upper integral are equal. This is equivalent to saying that for any \(\epsilon > 0\), there exists a partition \(P\) such that \(U(P, f) - L(P, f) < \epsilon\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_{0}^{2} (3x^2 - 2x + 1) dx\).</p></div><div class="back"><p>An antiderivative is \(F(x) = x^3 - x^2 + x\).</p><p>\(\int_{0}^{2} (3x^2 - 2x + 1) dx = [x^3 - x^2 + x]_{0}^{2}\)</p><p>\(= (2^3 - 2^2 + 2) - (0) = 8 - 4 + 2 = 6\)</p><p class="source">Source: Application of FTC Part 2.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the average value of \(f(x) = x^2\) on the interval \([0, 3]\).</p></div><div class="back"><p>The average value is \(\frac{1}{3-0} \int_{0}^{3} x^2 dx\).</p><p>\(\frac{1}{3} [\frac{x^3}{3}]_{0}^{3} = \frac{1}{3} (\frac{3^3}{3} - 0) = \frac{1}{3} (9) = 3\)</p><p class="source">Source: Application of Mean Value Theorem for Integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find \(\frac{d}{dx} \int_{\sin x}^{1} \ln(t) dt\).</p></div><div class="back"><p>First, reverse the limits: \(-\frac{d}{dx} \int_{1}^{\sin x} \ln(t) dt\).</p><p>Using FTC Part 1 and the chain rule:</p><p>\(= -\ln(\sin x) \cdot \cos x\)</p><p class="source">Source: Application of FTC Part 1 and Chain Rule.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the geometric interpretation of the Riemann integral?</p></div><div class="back"><p>For a non-negative function \(f(x)\), the definite integral \(\int_{a}^{b} f(x) dx\) represents the area of the region under the curve of \(y=f(x)\) from \(x=a\) to \(x=b\).</p><p>For a general function, it represents the net area (area above the x-axis minus the area below the x-axis).</p><p class="source">Source: MT2176 Subject Guide.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>True or False: All bounded functions are Riemann integrable.</p></div><div class="back"><p>False. A classic counterexample is the Dirichlet function, which is 1 for rational numbers and 0 for irrational numbers. It is bounded on \([0,1]\), but for any partition, the lower sum is 0 and the upper sum is 1, so it is not Riemann integrable.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>State the property of additivity for definite integrals.</p></div><div class="back"><p>If \(f\) is integrable on an interval containing points \(a, b, c\), then:</p><p>\(\int_{a}^{c} f(x) dx = \int_{a}^{b} f(x) dx + \int_{b}^{c} f(x) dx\)</p><p>This holds regardless of the order of \(a, b, c\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_{1}^{e} \frac{1}{x} dx\).</p></div><div class="back"><p>An antiderivative of \(f(x) = 1/x\) is \(F(x) = \ln|x|\).</p><p>\(\int_{1}^{e} \frac{1}{x} dx = [\ln|x|]_{1}^{e} = \ln(e) - \ln(1) = 1 - 0 = 1\)</p><p class="source">Source: Application of FTC Part 2.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the area of the region bounded by \(y = e^x\), \(y=0\), \(x=0\), and \(x=1\).</p></div><div class="back"><p>The area is given by the integral \(\int_{0}^{1} e^x dx\).</p><p>\(\int_{0}^{1} e^x dx = [e^x]_{0}^{1} = e^1 - e^0 = e - 1\)</p><p class="source">Source: Application of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(\int_{0}^{5} f(x) dx = 10\) and \(\int_{0}^{5} g(x) dx = 3\), find \(\int_{0}^{5} (2f(x) - 3g(x)) dx\).</p></div><div class="back"><p>Using the linearity property of integrals:</p><p>\(\int_{0}^{5} (2f(x) - 3g(x)) dx = 2\int_{0}^{5} f(x) dx - 3\int_{0}^{5} g(x) dx\)</p><p>\(= 2(10) - 3(3) = 20 - 9 = 11\)</p><p class="source">Source: Properties of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a refinement of a partition?</p></div><div class="back"><p>A partition \(P^*\) is a refinement of a partition \(P\) if \(P \subseteq P^*\). In other words, \(P^*\) contains all the points of \(P\) and possibly some more. Adding points to a partition refines it.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>How do lower and upper sums change when a partition is refined?</p></div><div class="back"><p>If \(P^*\) is a refinement of \(P\), then the lower sum increases and the upper sum decreases:</p><p>\(L(P, f) \le L(P^*, f)\) and \(U(P^*, f) \le U(P, f)\)</p><p>The sums get closer to the true value of the integral.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Give an example of a function that is not continuous but is Riemann integrable on \([0, 1]\).</p></div><div class="back"><p>The function \(f(x) = 0\) for \(x < 1/2\) and \(f(x) = 1\) for \(x \ge 1/2\) has a single jump discontinuity at \(x=1/2\). Since it is bounded and has only a finite number of discontinuities, it is Riemann integrable on \([0, 1]\).</p><p class="source">Source: MT2176 Subject Guide.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find \(\frac{d}{dx} \int_{2}^{x} \sqrt{1+t^2} dt\).</p></div><div class="back"><p>According to the Fundamental Theorem of Calculus, Part 1, if \(F(x) = \int_{a}^{x} f(t) dt\), then \(F\\' (x) = f(x)\).</p><p>Here, \(f(t) = \sqrt{1+t^2}\). So, the derivative is simply \(\sqrt{1+x^2}\).</p><p class="source">Source: Application of FTC Part 1.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_{0}^{\pi/4} \sec^2(x) dx\).</p></div><div class="back"><p>An antiderivative of \(f(x) = \sec^2(x)\) is \(F(x) = \tan(x)\).</p><p>\(\int_{0}^{\pi/4} \sec^2(x) dx = [\tan(x)]_{0}^{\pi/4} = \tan(\pi/4) - \tan(0) = 1 - 0 = 1\)</p><p class="source">Source: Application of FTC Part 2.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(f\) is odd (i.e., \(f(-x) = -f(x)\)), what is the value of \(\int_{-a}^{a} f(x) dx\)?</p></div><div class="back"><p>The integral is 0. The area from \(-a\) to 0 cancels out the area from 0 to \(a\). For example, \(\int_{-\pi}^{\pi} \sin(x) dx = 0\).</p><p class="source">Source: Properties of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(f\) is even (i.e., \(f(-x) = f(x)\)), what is the relationship between \(\int_{-a}^{a} f(x) dx\) and \(\int_{0}^{a} f(x) dx\)?</p></div><div class="back"><p>The integral over the symmetric interval is twice the integral over the half-interval:</p><p>\(\int_{-a}^{a} f(x) dx = 2 \int_{0}^{a} f(x) dx\)</p><p>For example, \(\int_{-1}^{1} x^2 dx = 2 \int_{0}^{1} x^2 dx\).</p><p class="source">Source: Properties of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Express the limit \(\lim_{n \to \infty} \sum_{i=1}^{n} \frac{i^4}{n^5}\) as a definite integral.</p></div><div class="back"><p>This is a Riemann sum for \(f(x) = x^4\) on the interval \([0, 1]\) with \(\Delta x = 1/n\) and sample points \(x_i = i/n\).</p><p>The limit is equal to the definite integral \(\int_{0}^{1} x^4 dx\).</p><p class="source">Source: Definition of the definite integral.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the purpose of the Riemann-Stieltjes integral?</p></div><div class="back"><p>It generalizes the Riemann integral to allow for integration with respect to a function \(\alpha(x)\) other than \(x\). This is crucial in physics (for mass distributions that are not uniform) and probability theory (for integrating with respect to cumulative distribution functions, including discrete ones).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the area between \(y = x\) and \(y = x^2\) for \(x \in [0, 1]\).</p></div><div class="back"><p>In \([0, 1]\), \(x \ge x^2\). The area is:</p><p>\(A = \int_{0}^{1} (x - x^2) dx = [\frac{x^2}{2} - \frac{x^3}{3}]_{0}^{1}\)</p><p>\(= (\frac{1}{2} - \frac{1}{3}) - 0 = \frac{1}{6}\)</p><p class="source">Source: Application of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Is the function \(f(x) = 1/x\) integrable on \([-1, 1]\)?</p></div><div class="back"><p>No. A function must be bounded on the interval to be Riemann integrable. The function \(f(x) = 1/x\) is unbounded at \(x=0\), which is inside the interval \([-1, 1]\). This is an improper integral.</p><p class="source">Source: MT2176 Subject Guide.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Is the function \(f(x) = 1/x\) integrable on \([1, 2]\)?</p></div><div class="back"><p>Yes. The function \(f(x) = 1/x\) is continuous on the closed interval \([1, 2]\). Since continuity implies integrability, it is Riemann integrable on this interval.</p><p class="source">Source: MT2176 Subject Guide.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(m \le f(x) \le M\) for all \(x\) in \([a, b]\), what can be said about \(\int_{a}^{b} f(x) dx\)?</p></div><div class="back"><p>The integral is bounded as well:</p><p>\(m(b-a) \le \int_{a}^{b} f(x) dx \le M(b-a)\)</p><p>This follows from the properties of upper and lower sums.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find \(\frac{d}{dx} \int_{x}^{5} (t + \sin t) dt\).</p></div><div class="back"><p>First, reverse the limits: \(-\frac{d}{dx} \int_{5}^{x} (t + \sin t) dt\).</p><p>By FTC Part 1, the derivative is \(-(x + \sin x)\).</p><p class="source">Source: Application of FTC Part 1.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_{0}^{1} (x+1)^5 dx\).</p></div><div class="back"><p>Let \(u = x+1\), so \(du = dx\). When \(x=0, u=1\). When \(x=1, u=2\).</p><p>The integral becomes \(\int_{1}^{2} u^5 du = [\frac{u^6}{6}]_{1}^{2}\)</p><p>\(= \frac{2^6}{6} - \frac{1^6}{6} = \frac{64 - 1}{6} = \frac{63}{6} = \frac{21}{2}\)</p><p class="source">Source: Application of FTC Part 2 with substitution.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the integral of a step function?</p></div><div class="back"><p>A step function is constant on a series of subintervals. The integral is the sum of the areas of the rectangles formed by the function on each subinterval. If \(f(x) = c_i\) on \((x_{i-1}, x_i))\), the integral is \(\sum_{i=1}^{n} c_i (x_i - x_{i-1})\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the derivative of \(G(x) = x \int_{2}^{x} \sin(t^2) dt\).</p></div><div class="back"><p>We must use the Product Rule and FTC Part 1.</p><p>\(G\\' (x) = (1) \cdot \int_{2}^{x} \sin(t^2) dt + x \cdot \frac{d}{dx} \int_{2}^{x} \sin(t^2) dt\)</p><p>\(= \int_{2}^{x} \sin(t^2) dt + x \sin(x^2)\)</p><p class="source">Source: Application of Product Rule and FTC Part 1.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the error bound for the Trapezoidal Rule?</p></div><div class="back"><p>The error \(E_T\) in approximating \(\int_a^b f(x) dx\) with the Trapezoidal Rule using \(n\) subintervals is bounded by:</p><p>\(|E_T| \le \frac{K(b-a)^3}{12n^2}\)</p><p>where \(K\) is an upper bound for \(|f\\' (x)|\) on \([a, b]\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the error bound for Simpson's Rule?</p></div><div class="back"><p>The error \(E_S\) in approximating \(\int_a^b f(x) dx\) with Simpson's Rule using \(n\) subintervals (where \(n\) is even) is bounded by:</p><p>\(|E_S| \le \frac{K(b-a)^5}{180n^4}\)</p><p>where \(K\) is an upper bound for \(|f^{(4)}(x)|\) (the fourth derivative) on \([a, b]\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Why does Simpson's Rule generally provide a better approximation than the Trapezoidal Rule?</p></div><div class="back"><p>The Trapezoidal Rule approximates the function with straight lines, while Simpson's Rule uses parabolas. Parabolas can more closely follow the curvature of the function, leading to a smaller error. This is also reflected in the error bound formulas, where the error for Simpson's Rule decreases with \(n^4\) compared to \(n^2\) for the Trapezoidal Rule.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int \frac{2x}{1+x^2} dx\).</p></div><div class="back"><p>This is an indefinite integral. We use substitution. Let \(u = 1+x^2\), so \(du = 2x dx\).</p><p>The integral becomes \(\int \frac{1}{u} du = \ln|u| + C\).</p><p>Substituting back, we get \(\ln(1+x^2) + C\). (Absolute value is not needed as \(1+x^2\) is always positive).</p><p class="source">Source: Application of integration techniques.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a function of bounded variation?</p></div><div class="back"><p>A function \(f\) has bounded variation on \([a,b]\) if the total variation, \(V_a^b(f) = \sup_P \sum_{i=1}^n |f(x_i) - f(x_{i-1})|\), is finite. The supremum is taken over all partitions \(P\) of \([a,b]\). Intuitively, it means the function does not "wiggle" infinitely much.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>When does the Riemann-Stieltjes integral \(\int_a^b f(x) d\alpha(x)\) exist?</p></div><div class="back"><p>A sufficient condition for the integral to exist is that \(f\) is continuous and \(\alpha\) is of bounded variation on \([a,b]\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(\alpha(x)\) is a step function with a jump of size \(s_k\) at \(x_k\), what is \(\int_a^b f(x) d\alpha(x)\)?</p></div><div class="back"><p>If \(f\) is continuous, the integral simplifies to a sum:</p><p>\(\int_a^b f(x) d\alpha(x) = \sum_k f(x_k) s_k\)</p><p>where the sum is over all jump points \(x_k\) in \((a,b)\).</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the area of one petal of the rose curve \(r = \cos(2\theta)\).</p></div><div class="back"><p>One petal is traced as \(\theta\) goes from \(-\pi/4\) to \(\pi/4\). The area in polar coordinates is \(A = \frac{1}{2} \int_a^b r^2 d\theta\).</p><p>\(A = \frac{1}{2} \int_{-\pi/4}^{\pi/4} \cos^2(2\theta) d\theta = \frac{1}{2} \int_{-\pi/4}^{\pi/4} \frac{1+\cos(4\theta)}{2} d\theta\)</p><p>\(= \frac{1}{4} [\theta + \frac{1}{4}\sin(4\theta)]_{-\pi/4}^{\pi/4} = \frac{1}{4} [(\frac{\pi}{4} + 0) - (-\frac{\pi}{4} + 0)] = \frac{\pi}{8}\)</p><p class="source">Source: Application of integration in polar coordinates.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int x e^x dx\).</p></div><div class="back"><p>We use integration by parts: \(\int u dv = uv - \int v du\).</p><p>Let \(u=x\) and \(dv = e^x dx\). Then \(du = dx\) and \(v = e^x\).</p><p>\(\int x e^x dx = x e^x - \int e^x dx = x e^x - e^x + C\)</p><p class="source">Source: Application of integration by parts.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the integral test for convergence of a series?</p></div><div class="back"><p>Suppose \(f(x)\) is a continuous, positive, decreasing function on \([1, \infty)\) and let \(a_n = f(n)\). Then the series \(\sum_{n=1}^{\infty} a_n\) is convergent if and only if the improper integral \(\int_{1}^{\infty} f(x) dx\) is convergent.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Use the integral test to determine if \(\sum_{n=1}^{\infty} \frac{1}{n^2}\) converges.</p></div><div class="back"><p>We consider the integral \(\int_{1}^{\infty} \frac{1}{x^2} dx\).</p><p>\(\int_{1}^{\infty} \frac{1}{x^2} dx = \lim_{b \to \infty} [-\frac{1}{x}]_1^b = \lim_{b \to \infty} (-\frac{1}{b} - (-1)) = 1\)</p><p>Since the integral converges, the series also converges.</p><p class="source">Source: Application of the integral test.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the volume of the solid obtained by rotating the region bounded by \(y=x^2\), \(x=1\), and \(y=0\) about the x-axis.</p></div><div class="back"><p>We use the disk method. The volume \(V\) is given by:</p><p>\(V = \pi \int_{0}^{1} [R(x)]^2 dx\), where the radius \(R(x) = x^2\).</p><p>\(V = \pi \int_{0}^{1} (x^2)^2 dx = \pi \int_{0}^{1} x^4 dx\)</p><p>\(= \pi [\frac{x^5}{5}]_0^1 = \frac{\pi}{5}\)</p><p class="source">Source: Application of definite integrals for volume.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the definition of the improper integral \(\int_a^\infty f(x) dx\)?</p></div><div class="back"><p>The improper integral is defined as the limit:</p><p>\(\int_a^\infty f(x) dx = \lim_{b \to \infty} \int_a^b f(x) dx\)</p><p>The integral is said to converge if this limit exists and is finite.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_0^\infty e^{-x} dx\).</p></div><div class="back"><p>\(\int_0^\infty e^{-x} dx = \lim_{b \to \infty} \int_0^b e^{-x} dx\)</p><p>\(= \lim_{b \to \infty} [-e^{-x}]_0^b = \lim_{b \to \infty} (-e^{-b} - (-e^0))\)</p><p>\(= \lim_{b \to \infty} (-e^{-b} + 1) = 0 + 1 = 1\)</p><p class="source">Source: Application of improper integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the p-integral test for improper integrals?</p></div><div class="back"><p>The improper integral \(\int_1^\infty \frac{1}{x^p} dx\) converges if \(p > 1\) and diverges if \(p \le 1\).</p><p>This is a useful benchmark for the comparison test for improper integrals.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the arc length of the curve \(y = \frac{2}{3}x^{3/2}\) from \(x=0\) to \(x=3\).</p></div><div class="back"><p>The arc length formula is \(L = \int_a^b \sqrt{1 + (y\\' )^2} dx\).</p><p>\(y\\' = x^{1/2}\), so \((y\\' )^2 = x\).</p><p>\(L = \int_0^3 \sqrt{1+x} dx = [\frac{2}{3}(1+x)^{3/2}]_0^3\)</p><p>\(= \frac{2}{3}(4^{3/2} - 1^{3/2}) = \frac{2}{3}(8 - 1) = \frac{14}{3}\)</p><p class="source">Source: Application of definite integrals for arc length.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(f\) is continuous, what is \(\lim_{h \to 0} \frac{1}{h} \int_x^{x+h} f(t) dt\)?</p></div><div class="back"><p>This limit is the definition of the derivative of the integral function \(F(x) = \int_c^x f(t) dt\).</p><p>By the Fundamental Theorem of Calculus, Part 1, this limit is equal to \(f(x)\).</p><p class="source">Source: Definition of derivative and FTC Part 1.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>True or False: If \(\int_a^b f(x) dx = 0\), then \(f(x) = 0\) for all \(x\) in \([a,b]\).</p></div><div class="back"><p>False. For example, \(\int_0^{2\pi} \sin(x) dx = 0\), but \(\sin(x)\) is not identically zero on \([0, 2\pi]\). The net area can be zero even if the function is not.</p><p class="source">Source: Properties of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the difference between the lower integral and the upper integral?</p></div><div class="back"><p>The lower integral is the supremum of all lower sums over all possible partitions: \(\underline{\int_a^b} f = \sup_P L(P,f)\).</p><p>The upper integral is the infimum of all upper sums over all possible partitions: \(\overline{\int_a^b} f = \inf_P U(P,f)\).</p><p>A function is Riemann integrable if and only if these two values are equal.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Calculate the lower sum for \(f(x) = x\) on \([0,1]\) with the partition \(P = \{0, 1/2, 1\}\).</p></div><div class="back"><p>The subintervals are \([0, 1/2]\) and \([1/2, 1]\). Since \(f(x)=x\) is increasing:</p><p>\(m_1 = \inf\{f(x) : x \in [0, 1/2]\} = f(0) = 0\).</p><p>\(m_2 = \inf\{f(x) : x \in [1/2, 1]\} = f(1/2) = 1/2\).</p><p>\(L(P,f) = m_1(1/2 - 0) + m_2(1 - 1/2) = 0(1/2) + (1/2)(1/2) = 1/4\).</p><p class="source">Source: Application of lower sums.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Calculate the upper sum for \(f(x) = x\) on \([0,1]\) with the partition \(P = \{0, 1/2, 1\}\).</p></div><div class="back"><p>The subintervals are \([0, 1/2]\) and \([1/2, 1]\). Since \(f(x)=x\) is increasing:</p><p>\(M_1 = \sup\{f(x) : x \in [0, 1/2]\} = f(1/2) = 1/2\).</p><p>\(M_2 = \sup\{f(x) : x \in [1/2, 1]\} = f(1) = 1\).</p><p>\(U(P,f) = M_1(1/2 - 0) + M_2(1 - 1/2) = (1/2)(1/2) + 1(1/2) = 1/4 + 1/2 = 3/4\).</p><p class="source">Source: Application of upper sums.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find a value \(c\) that satisfies the conclusion of the MVT for Integrals for \(f(x) = 3x^2\) on \([0, 2]\).</p></div><div class="back"><p>We need to find \(c\) such that \(f(c)(2-0) = \int_0^2 3x^2 dx\).</p><p>\(\int_0^2 3x^2 dx = [x^3]_0^2 = 8\).</p><p>So, \(3c^2 (2) = 8 \Rightarrow 6c^2 = 8 \Rightarrow c^2 = 4/3\).</p><p>\(c = 2/\sqrt{3}\). This value is in the interval \([0, 2]\).</p><p class="source">Source: Application of MVT for Integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(f(x) = \int_0^x (x-t) g(t) dt\), find \(f\\' (x)\).</p></div><div class="back"><p>First, expand the integral: \(f(x) = x \int_0^x g(t) dt - \int_0^x t g(t) dt\).</p><p>Now differentiate using the product rule and FTC:</p><p>\(f\\' (x) = [1 \cdot \int_0^x g(t) dt + x \cdot g(x)] - [x g(x)] = \int_0^x g(t) dt\)</p><p>Differentiate again:</p><p>\(f\\'\' (x) = g(x)\)</p><p class="source">Source: Application of FTC and Product Rule.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the relation between monotonicity and integrability?</p></div><div class="back"><p>If a function \(f\) is monotonic (either non-decreasing or non-increasing) on a closed interval \([a, b]\), then it is Riemann integrable on \([a, b]\). This is because a monotonic function is bounded and its set of discontinuities is at most countable, which has measure zero.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n \sqrt{1 - (i/n)^2}\).</p></div><div class="back"><p>This is the Riemann sum for \(f(x) = \sqrt{1-x^2}\) on the interval \([0, 1]\).</p><p>The limit is \(\int_0^1 \sqrt{1-x^2} dx\).</p><p>This integral represents the area of a quarter-circle of radius 1, which is \(\frac{\pi (1)^2}{4} = \frac{\pi}{4}\).</p><p class="source">Source: Definition of the definite integral.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the area of the region bounded by \(y = 1/x\), \(y=0\), \(x=1\), and \(x=e^2\).</p></div><div class="back"><p>The area is \(A = \int_1^{e^2} \frac{1}{x} dx\).</p><p>\(A = [\ln|x|]_1^{e^2} = \ln(e^2) - \ln(1) = 2 - 0 = 2\)</p><p class="source">Source: Application of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(f(x) \ge 0\) is continuous on \([a,b]\) and \(\int_a^b f(x) dx = 0\), what can you conclude about \(f(x)\)?</p></div><div class="back"><p>You can conclude that \(f(x) = 0\) for all \(x\) in \([a,b]\). If \(f(c) > 0\) for some \(c\), then by continuity, \(f(x) > 0\) in a small neighborhood around \(c\), which would make the integral greater than 0. This contradicts the given information.</p><p class="source">Source: Properties of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find \(\frac{d}{dx} \int_{1}^{\sqrt{x}} \frac{z^2}{z^4+1} dz\).</p></div><div class="back"><p>Let \(u = \sqrt{x} = x^{1/2}\). Then \(\frac{du}{dx} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}\).</p><p>Using FTC Part 1 and the chain rule:</p><p>\(\frac{(\sqrt{x})^2}{(\sqrt{x})^4+1} \cdot \frac{1}{2\sqrt{x}} = \frac{x}{x^2+1} \cdot \frac{1}{2\sqrt{x}} = \frac{\sqrt{x}}{2(x^2+1)}\)</p><p class="source">Source: Application of FTC Part 1 and Chain Rule.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the "net change" theorem?</p></div><div class="back"><p>The net change theorem is a restatement of the Fundamental Theorem of Calculus, Part 2. It says that the definite integral of a rate of change is the total change:</p><p>\(\int_a^b F\\' (x) dx = F(b) - F(a)\)</p><p>For example, if \(v(t)\) is the velocity of an object, \(\int_a^b v(t) dt\) is the net change in position (displacement) from time \(a\) to \(b\).</p><p class="source">Source: MT2176 Subject Guide.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>A particle's velocity is \(v(t) = t^2 - t - 6\) m/s. Find the displacement of the particle during the time period \(1 \le t \le 4\).</p></div><div class="back"><p>Displacement is the definite integral of velocity:</p><p>\(\int_1^4 (t^2 - t - 6) dt = [\frac{t^3}{3} - \frac{t^2}{2} - 6t]_1^4\)</p><p>\(= (\frac{64}{3} - 8 - 24) - (\frac{1}{3} - \frac{1}{2} - 6) = (\frac{64}{3} - 32) - (\frac{2-3-36}{6})\)</p><p>\(= \frac{64-96}{3} - \frac{-37}{6} = -\frac{32}{3} + \frac{37}{6} = \frac{-64+37}{6} = -\frac{27}{6} = -4.5\) meters.</p><p class="source">Source: Application of the Net Change Theorem.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>A particle's velocity is \(v(t) = t^2 - t - 6\) m/s. Find the total distance traveled during \(1 \le t \le 4\).</p></div><div class="back"><p>Total distance is \(\int_1^4 |v(t)| dt\). We must find where \(v(t)\) is negative. \(v(t) = (t-3)(t+2) = 0\) at \(t=3, -2\). On \([1,4]\), \(v(t)\) is negative for \(t<3\) and positive for \(t>3\).</p><p>\(\int_1^3 -(t^2-t-6) dt + \int_3^4 (t^2-t-6) dt\)</p><p>\(= [-\frac{t^3}{3} + \frac{t^2}{2} + 6t]_1^3 + [\frac{t^3}{3} - \frac{t^2}{2} - 6t]_3^4\)</p><p>\(= ((-9 + 4.5 + 18) - (-1/3 + 0.5 + 6)) + ((\frac{64}{3} - 8 - 24) - (9 - 4.5 - 18))\)</p><p>\(= (13.5 - 6.166) + (-10.667 - (-13.5)) = 7.333 + 2.833 = 10.166\) meters.</p><p class="source">Source: Application of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_0^1 \frac{x}{1+x^2} dx\).</p></div><div class="back"><p>Let \(u = 1+x^2\), so \(du = 2x dx\) and \(x dx = du/2\).</p><p>When \(x=0, u=1\). When \(x=1, u=2\).</p><p>\(\int_1^2 \frac{1}{u} \frac{du}{2} = \frac{1}{2} [\ln|u|]_1^2 = \frac{1}{2}(\ln 2 - \ln 1) = \frac{1}{2}\ln 2\)</p><p class="source">Source: Application of FTC Part 2 with substitution.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the "norm" or "mesh" of a partition \(P\)?</p></div><div class="back"><p>The norm of a partition \(P = \{x_0, x_1, ..., x_n\}\), denoted \(||P||\), is the length of the longest subinterval:</p><p>\(||P|| = \max\{x_i - x_{i-1} : i=1, ..., n\}\)</p><p>The definite integral can be defined as the limit of Riemann sums as the norm of the partition approaches zero.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the volume of the solid formed by rotating the region under \(y = \sqrt{x}\) from \(x=0\) to \(x=4\) about the y-axis.</p></div><div class="back"><p>We use the method of cylindrical shells. The volume \(V\) is:</p><p>\(V = 2\pi \int_a^b x f(x) dx\)</p><p>\(V = 2\pi \int_0^4 x \sqrt{x} dx = 2\pi \int_0^4 x^{3/2} dx\)</p><p>\(= 2\pi [\frac{2}{5}x^{5/2}]_0^4 = 2\pi (\frac{2}{5} (4^{5/2}) - 0) = 2\pi (\frac{2}{5} \cdot 32) = \frac{128\pi}{5}\)</p><p class="source">Source: Application of definite integrals for volume.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the key difference in the setup of the Riemann-Stieltjes integral compared to the Riemann integral?</p></div><div class="back"><p>In the Riemann integral, the Riemann sum is \(\sum f(t_i) \Delta x_i\), where \(\Delta x_i = x_i - x_{i-1}\) is the length of the subinterval.</p><p>In the Riemann-Stieltjes integral, the sum is \(\sum f(t_i) \Delta \alpha_i\), where \(\Delta \alpha_i = \alpha(x_i) - \alpha(x_{i-1})\) is the change in a second function, the "integrator" \(\alpha(x)\), across the subinterval.</p><p class="source">Source: Ostaszewski, A. (1991).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>If \(f(x) = \int_0^x (x-t) g(t) dt\), find \(f\\' (x)\).</p></div><div class="back"><p>First, expand the integral: \(f(x) = x \int_0^x g(t) dt - \int_0^x t g(t) dt\).</p><p>Now differentiate using the product rule and FTC:</p><p>\(f\\' (x) = [1 \cdot \int_0^x g(t) dt + x \cdot g(x)] - [x g(x)] = \int_0^x g(t) dt\)</p><p>Differentiate again:</p><p>\(f\\'\' (x) = g(x)\)</p><p class="source">Source: Application of FTC and Product Rule.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_{-2}^{3} [[x]] dx\), where \([[x]]\) is the greatest integer function.</p></div><div class="back"><p>This is a step function. We break the integral up by integer values:</p><p>\(\int_{-2}^{-1} -2 dx + \int_{-1}^{0} -1 dx + \int_{0}^{1} 0 dx + \int_{1}^{2} 1 dx + \int_{2}^{3} 2 dx\)</p><p>\(= -2(1) - 1(1) + 0(1) + 1(1) + 2(1) = -2 - 1 + 0 + 1 + 2 = 0\)</p><p class="source">Source: Integration of step functions.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the comparison test for improper integrals?</p></div><div class="back"><p>Suppose \(f\) and \(g\) are continuous functions with \(f(x) \ge g(x) \ge 0\) for \(x \ge a\).</p><p>1. If \(\int_a^\infty f(x) dx\) is convergent, then \(\int_a^\infty g(x) dx\) is convergent.</p><p>2. If \(\int_a^\infty g(x) dx\) is divergent, then \(\int_a^\infty f(x) dx\) is divergent.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Use the comparison test to determine if \(\int_1^\infty \frac{\sin^2 x}{x^2} dx\) converges.</p></div><div class="back"><p>We know that \(0 \le \sin^2 x \le 1\) for all \(x\).</p><p>Therefore, \(0 \le \frac{\sin^2 x}{x^2} \le \frac{1}{x^2}\).</p><p>We know that \(\int_1^\infty \frac{1}{x^2} dx\) converges (it's a p-integral with \(p=2>1\)).</p><p>By the comparison test, \(\int_1^\infty \frac{\sin^2 x}{x^2} dx\) also converges.</p><p class="source">Source: Application of comparison test.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the surface area of a solid of revolution?</p></div><div class="back"><p>The surface area of the solid obtained by rotating the curve \(y=f(x)\) from \(x=a\) to \(x=b\) about the x-axis is given by the integral:</p><p>\(S = 2\pi \int_a^b f(x) \sqrt{1 + [f\\' (x)]^2} dx\)</p><p>assuming \(f(x) \ge 0\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the work done in pumping all the water out of a conical tank of radius 5m and height 10m to the top of the tank. (Density of water \(\rho = 1000\) kg/m³, \(g=9.8\) m/s²).</p></div><div class="back"><p>Consider a slice of water at height \(y\) with thickness \(dy\). By similar triangles, the radius \(r\) at height \(y\) is \(r/y = 5/10 \Rightarrow r = y/2\). The volume of the slice is \(dV = \pi r^2 dy = \pi (y/2)^2 dy\). The force is \(dF = \rho g dV\). The distance to pump is \((10-y)\).</p><p>Work \(W = \int_0^{10} (10-y) \rho g \pi (y/2)^2 dy = \frac{\rho g \pi}{4} \int_0^{10} (10y^2 - y^3) dy\)</p><p>\(= \frac{\rho g \pi}{4} [\frac{10y^3}{3} - \frac{y^4}{4}]_0^{10} = \frac{\rho g \pi}{4} (\frac{10000}{3} - \frac{10000}{4}) = \frac{\rho g \pi}{4} (\frac{10000}{12}) \approx 2.57 \times 10^6\) Joules.</p><p class="source">Source: Application of definite integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Cauchy Principal Value of an improper integral?</p></div><div class="back"><p>For an integral with a singularity at \(c\) inside \([a,b]\), the Cauchy Principal Value is \(\lim_{\epsilon \to 0^+} [\int_a^{c-\epsilon} f(x) dx + \int_{c+\epsilon}^b f(x) dx]\).</p><p>For an integral on \((-\infty, \infty)\), it is \(\lim_{R \to \infty} \int_{-R}^R f(x) dx\).</p><p>This can assign a value to some integrals that would otherwise diverge.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the Cauchy Principal Value of \(\int_{-1}^1 \frac{1}{x} dx\).</p></div><div class="back"><p>The integral is improper at \(x=0\). The P.V. is:</p><p>\(\lim_{\epsilon \to 0^+} [\int_{-1}^{-\epsilon} \frac{1}{x} dx + \int_{\epsilon}^1 \frac{1}{x} dx]\)</p><p>\(= \lim_{\epsilon \to 0^+} [(\ln|-\epsilon| - \ln|-1|) + (\ln|1| - \ln|\epsilon|)]\)</p><p>\(= \lim_{\epsilon \to 0^+} [\ln(\epsilon) - 0 + 0 - \ln(\epsilon)] = \lim_{\epsilon \to 0^+} 0 = 0\)</p><p class="source">Source: Application of Cauchy Principal Value.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Gamma function?</p></div><div class="back"><p>The Gamma function \(\Gamma(z)\) is a generalization of the factorial function to complex numbers. It is defined by an improper integral:</p><p>\(\Gamma(z) = \int_0^\infty x^{z-1} e^{-x} dx\)</p><p>For a positive integer \(n\), \(\Gamma(n) = (n-1)!\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Show that \(\Gamma(1) = 1\).</p></div><div class="back"><p>Using the definition \(\Gamma(z) = \int_0^\infty x^{z-1} e^{-x} dx\):</p><p>\(\Gamma(1) = \int_0^\infty x^{1-1} e^{-x} dx = \int_0^\infty e^{-x} dx\)</p><p>\(= [-e^{-x}]_0^\infty = \lim_{b \to \infty} (-e^{-b}) - (-e^0) = 0 - (-1) = 1\)</p><p>This is consistent with \((1-1)! = 0! = 1\).</p><p class="source">Source: Application of the Gamma function.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Beta function?</p></div><div class="back"><p>The Beta function, \(B(x,y)\), is defined by the integral:</p><p>\(B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt\)</p><p>It is related to the Gamma function by \(B(x,y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a convolution of two functions?</p></div><div class="back"><p>The convolution of two functions \(f\) and \(g\), denoted \((f*g)(t)\), is defined by the integral:</p><p>\((f*g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau\)</p><p>It is used extensively in signal processing, statistics (as the distribution of a sum of random variables), and in the solution of differential equations using Laplace transforms.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Laplace Transform of a function \(f(t)\)?</p></div><div class="back"><p>The Laplace Transform of \(f(t)\), denoted \(\mathcal{L}\{f(t)\}(s) = F(s)\), is defined by the improper integral:</p><p>\(F(s) = \int_0^\infty e^{-st} f(t) dt\)</p><p>It transforms a function of time \(t\) into a function of complex frequency \(s\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Find the Laplace Transform of \(f(t) = 1\).</p></div><div class="back"><p>\(\mathcal{L}\{1\}(s) = \int_0^\infty e^{-st} (1) dt = [-\frac{1}{s}e^{-st}]_0^\infty\)</p><p>\(= \lim_{b \to \infty} (-\frac{1}{s}e^{-sb}) - (-\frac{1}{s}e^0)\)</p><p>For \(s>0\), this limit is \(0 - (-\frac{1}{s})) = \frac{1}{s}\).</p><p class="source">Source: Application of Laplace Transform.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Fourier Transform of a function \(f(t)\)?</p></div><div class="back"><p>The Fourier Transform of \(f(t)\), denoted \(\mathcal{F}\{f(t)\}(\omega) = \hat{f}(\omega)\), is defined by the integral:</p><p>\(\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt\)</p><p>It decomposes a function of time into its constituent frequencies.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a line integral?</p></div><div class="back"><p>A line integral is an integral where the function to be integrated is evaluated along a curve \(C\).</p><p>The line integral of a scalar function \(f\) along a curve \(C\) parameterized by \(\mathbf{r}(t)\) from \(t=a\) to \(t=b\) is:</p><p>\(\int_C f ds = \int_a^b f(\mathbf{r}(t)) ||\mathbf{r}\' (t)|| dt\)</p><p>It generalizes the definite integral for functions of two or more variables.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a double integral?</p></div><div class="back"><p>A double integral is an integral of a function of two variables, \(f(x,y)\), over a region \(R\) in the xy-plane.</p><p>\(\iint_R f(x,y) dA\)</p><p>It can be used to calculate the volume under the surface \(z=f(x,y)\) over the region \(R\).</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Evaluate \(\int_0^1 \int_0^2 (x+y) dx dy\).</p></div><div class="back"><p>First, integrate with respect to \(x\):</p><p>\(\int_0^1 [\frac{x^2}{2} + yx]_0^2 dy = \int_0^1 ((\frac{4}{2} + 2y) - 0) dy = \int_0^1 (2+2y) dy\)</p><p>Now, integrate with respect to \(y\):</p><p>\([2y + y^2]_0^1 = (2+1) - 0 = 3\)</p><p class="source">Source: Application of double integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is Fubini's Theorem?</p></div><div class="back"><p>Fubini's Theorem states that if \(f(x,y)\) is continuous on a rectangular region \(R = [a,b] \times [c,d]\), then the double integral can be computed as an iterated integral in either order:</p><p>\(\iint_R f(x,y) dA = \int_c^d \int_a^b f(x,y) dx dy = \int_a^b \int_c^d f(x,y) dy dx\)</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Jacobian determinant used for?</p></div><div class="back"><p>The Jacobian determinant is a factor used in changing variables in multiple integrals. If you change from variables \((x,y)\) to \((u,v)\), the differential area element changes:</p><p>\(dA = dx dy = |\frac{\partial(x,y)}{\partial(u,v)}| du dv\)</p><p>where \(|\frac{\partial(x,y)}{\partial(u,v)}|\) is the absolute value of the Jacobian determinant.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Jacobian for the change from Cartesian to polar coordinates?</p></div><div class="back"><p>The transformation is \(x = r \cos \theta\) and \(y = r \sin \theta\).</p><p>The Jacobian determinant is:</p><p>\(\frac{\partial(x,y)}{\partial(r,\theta)} = \det \begin{pmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} \end{pmatrix} = \det \begin{pmatrix} \cos \theta & -r \sin \theta \\ \sin \theta & r \cos \theta \end{pmatrix}\)</p><p>\(= (r \cos^2 \theta) - (-r \sin^2 \theta) = r(\cos^2 \theta + \sin^2 \theta) = r\)</p><p>So, \(dx dy = r dr d\theta\).</p><p class="source">Source: Application of the Jacobian.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Use polar coordinates to evaluate \(\int_{-1}^1 \int_0^{\sqrt{1-x^2}} (x^2+y^2) dy dx\).</p></div><div class="back"><p>The region is the upper half of the unit circle. In polar coordinates, this is \(0 \le r \le 1\) and \(0 \le \theta \le \pi\). The integrand \(x^2+y^2 = r^2\) and \(dy dx = r dr d\theta\).</p><p>\(\int_0^\pi \int_0^1 (r^2) r dr d\theta = \int_0^\pi \int_0^1 r^3 dr d\theta\)</p><p>\(= \int_0^\pi [\frac{r^4}{4}]_0^1 d\theta = \int_0^\pi \frac{1}{4} d\theta = [\frac{\theta}{4}]_0^\pi = \frac{\pi}{4}\)</p><p class="source">Source: Application of polar coordinates in double integrals.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is Green's Theorem?</p></div><div class="back"><p>Green's Theorem relates a line integral around a simple closed curve \(C\) to a double integral over the plane region \(D\) bounded by \(C\).</p><p>\(\oint_C (L dx + M dy) = \iint_D (\frac{\partial M}{\partial x} - \frac{\partial L}{\partial y}) dA\)</p><p>It is a two-dimensional special case of the more general Stokes' Theorem.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>Use Green's Theorem to find the area of a region \(D\).</p></div><div class="back"><p>Area is \(\iint_D 1 dA\). We need to find \(L\) and \(M\) such that \(\frac{\partial M}{\partial x} - \frac{\partial L}{\partial y} = 1\). Common choices are:</p><p>1. \(L=0, M=x\)</p><p>2. \(L=-y, M=0\)</p><p>3. \(L=-y/2, M=x/2\)</p><p>This gives three formulas for area:</p><p>\(A = \oint_C x dy = -\oint_C y dx = \frac{1}{2} \oint_C (x dy - y dx)\)</p><p class="source">Source: Application of Green's Theorem.</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is Stokes' Theorem?</p></div><div class="back"><p>Stokes' Theorem relates the surface integral of the curl of a vector field \(\mathbf{F}\) over a surface \(S\) to the line integral of the vector field over its boundary curve \(\partial S\).</p><p>\(\iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r}\)</p><p>It is a generalization of Green's Theorem to three dimensions.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Divergence Theorem (Gauss's Theorem)?</p></div><div class="back"><p>The Divergence Theorem relates the flux of a vector field \(\mathbf{F}\) through a closed surface \(S\) to the triple integral of the divergence of the field over the volume \(V\) enclosed by the surface.</p><p>\(\oiint_S \mathbf{F} \cdot d\mathbf{S} = \iiint_V (\nabla \cdot \mathbf{F}) dV\)</p><p>It relates a surface integral to a volume integral.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the physical interpretation of the divergence of a vector field?</p></div><div class="back"><p>The divergence of a vector field at a point measures the magnitude of a source or sink at that point. If \(\nabla \cdot \mathbf{F} > 0\), there is a net "flow" out of the point (a source). If \(\nabla \cdot \mathbf{F} < 0\), there is a net "flow" into the point (a sink). If \(\nabla \cdot \mathbf{F} = 0\), the field is said to be incompressible.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the physical interpretation of the curl of a vector field?</p></div><div class="back"><p>The curl of a vector field at a point measures the tendency of the field to "rotate" or "circulate" around that point. The direction of \(\nabla \times \mathbf{F}\) is the axis of rotation (by the right-hand rule), and its magnitude is the magnitude of the rotation. If \(\nabla \times \mathbf{F} = 0\), the field is said to be irrotational.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is a conservative vector field?</p></div><div class="back"><p>A vector field \(\mathbf{F}\) is conservative if it is the gradient of some scalar function \(\phi\), called the scalar potential: \(\mathbf{F} = \nabla \phi\).</p><p>An equivalent condition for a simply-connected domain is that its curl is zero: \(\nabla \times \mathbf{F} = 0\).</p><p>Line integrals of conservative fields are path-independent.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <div class="flashcard"><div class="flashcard-inner"><div class="front"><p>What is the Fundamental Theorem for Line Integrals?</p></div><div class="back"><p>If \(\mathbf{F}\) is a conservative vector field with potential function \(\phi\) (i.e., \(\mathbf{F} = \nabla \phi\)), then the line integral of \(\mathbf{F}\) along a curve \(C\) from point \(A\) to point \(B\) is:</p><p>\(\int_C \mathbf{F} \cdot d\mathbf{r} = \phi(B) - \phi(A)\)</p><p>This is analogous to FTC Part 2 for single-variable calculus.</p><p class="source">Source: Wrede, R. C., & Spiegel, M. R. (2010).</p></div></div></div>
+            <!-- End of 90 new cards -->
+
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="prev">Previous</button>
+        <button class="flip-btn">Flip</button>
+        <button class="next">Next</button>
+        <span id="card-counter"></span>
+    </div>
+
+    <script>
+        // Cookie functions
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i=0;i < ca.length;i++) {
+                let c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("flashcard");
+        const slider = document.querySelector(".flashcard-slider");
+        const cardWidth = slides.length > 0 ? slides[0].clientWidth + 20 : 820; // width + margin
+
+        // Restore position from cookie
+        let savedIndex = getCookie("flashcardIndex");
+        if (savedIndex && !isNaN(parseInt(savedIndex, 10))) {
+            let parsedIndex = parseInt(savedIndex, 10);
+            if (parsedIndex < slides.length) {
+                slideIndex = parsedIndex;
+            }
+        }
+
+        function showSlides(n) {
+            if (slides.length === 0) return;
+            slideIndex = n;
+            if (slideIndex >= slides.length) {slideIndex = 0;}
+            if (slideIndex < 0) {slideIndex = slides.length - 1;}
+            
+            // Before moving, flip the current card back to the front
+            if(slides[slideIndex].classList.contains('flipped')) {
+                slides[slideIndex].classList.remove('flipped');
+            }
+
+            slider.style.transform = `translateX(${-slideIndex * cardWidth}px)`;
+            document.getElementById('card-counter').textContent = `${slideIndex + 1} / ${slides.length}`;
+            // Save position to cookie
+            setCookie("flashcardIndex", slideIndex, 7);
+        }
+
+        function plusSlides(n) {
+            // Before moving, flip the current card back to the front
+            if(slides[slideIndex].classList.contains('flipped')) {
+                slides[slideIndex].classList.remove('flipped');
+            }
+            showSlides(slideIndex + n);
+        }
+        
+        function flipCurrentCard() {
+            if (slides.length > 0) {
+                slides[slideIndex].classList.toggle('flipped');
+            }
+        }
+
+        // Event Listeners
+        if (slides.length > 0) {
+            document.querySelectorAll('.flashcard').forEach((card, index) => {
+                // Clicking the card itself also flips it
+                card.addEventListener('click', (e) => {
+                    // Make sure we are not clicking a button inside the card
+                    if (e.target.tagName !== 'BUTTON') {
+                        flipCurrentCard();
+                    }
+                });
+            });
+
+            document.querySelector('.flip-btn').addEventListener('click', flipCurrentCard);
+            document.querySelector('.prev').addEventListener('click', () => plusSlides(-1));
+            document.querySelector('.next').addEventListener('click', () => plusSlides(1));
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    plusSlides(-1);
+                } else if (e.key === 'ArrowRight') {
+                    plusSlides(1);
+                } else if (e.key === ' ') {
+                    e.preventDefault(); // Prevent spacebar from scrolling
+                    flipCurrentCard();
+                }
+            });
+        }
+
+
+        // Initial setup
+        showSlides(slideIndex);
+    </script>
+
+</body>
+</html>
