@@ -256,9 +256,38 @@
 
 
     <script>
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
         let currentCard = 0;
         const cards = document.querySelectorAll('.flashcard');
         const cardCounter = document.querySelector('.card-counter');
+
+        const savedPosition = getCookie('flashcard_mt2176_ch1_position');
+        if (savedPosition) {
+            let savedIndex = parseInt(savedPosition, 10);
+            if (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < cards.length) {
+                currentCard = savedIndex;
+            }
+        }
 
         function showCard(index) {
             cards.forEach((card, i) => {
@@ -266,6 +295,7 @@
                 card.classList.remove('is-flipped');
             });
             cardCounter.textContent = `${index + 1} / ${cards.length}`;
+            setCookie('flashcard_mt2176_ch1_position', index, 7);
         }
 
         function nextCard() {
