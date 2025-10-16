@@ -122,7 +122,7 @@
             </div>
 
             <div class="question-block" id="q1">
-                <p><b>Question 2:</b> A function \(f(x)\) is defined as \(f(x) = \frac{\\sin(x)}{x}\) for \(x \neq 0\) and \(f(0) = 1\). Is this function continuous at \(x = 0\)?</p>
+                <p><b>Question 2:</b> A function \(f(x)\) is defined as \(f(x) = \frac{\sin(x)}{x}\) for \(x \neq 0\) and \(f(0) = 1\). Is this function continuous at \(x = 0\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q1" value="0"> <span>A. Yes</span></label>
                     <label><input type="radio" name="q1" value="1"> <span>B. No, because the limit does not exist.</span></label>
@@ -130,7 +130,7 @@
                     <label><input type="radio" name="q1" value="3"> <span>D. No, because the limit is not equal to f(0).</span></label>
                 </div>
                 <div class="explanation" id="exp1">
-                    <p><b>Explanation:</b> A function is continuous at a point \(c\) if \(\\lim_{x \to c} f(x) = f(c)\). We know from calculus that \(\\lim_{x \to 0} \frac{\\sin(x)}{x} = 1\). Since \(f(0)\) is defined as 1, the limit equals the function's value at the point, making it continuous. (Source: Wrede, 'Advanced Calculus', Chapter 3; MT2176 Subject Guide, Topic: Continuity).</p>
+                    <p><b>Explanation:</b> A function is continuous at a point \(c\) if \(\lim_{x \to c} f(x) = f(c)\). We know from calculus that \(\lim_{x \to 0} \frac{\sin(x)}{x} = 1\). Since \(f(0)\) is defined as 1, the limit equals the function's value at the point, making it continuous. (Source: Wrede, 'Advanced Calculus', Chapter 3; MT2176 Subject Guide, Topic: Continuity).</p>
                 </div>
             </div>
 
@@ -143,12 +143,12 @@
                     <label><input type="radio" name="q2" value="3"> <span>D. \(3x^2\)</span></label>
                 </div>
                 <div class="explanation" id="exp2">
-                    <p><b>Explanation:</b> The derivative is defined as \(\\lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\). Substituting \(f(x) = 3x^2 + 2\), we get \(\\lim_{h \to 0} \frac{3(x+h)^2 + 2 - (3x^2 + 2)}{h} = \\lim_{h \to 0} \frac{3(x^2 + 2xh + h^2) - 3x^2}{h} = \\lim_{h \to 0} \frac{6xh + 3h^2}{h} = \\lim_{h \to 0} (6x + 3h) = 6x\). (Source: Wrede, 'Advanced Calculus', Chapter 4; MT2176 Subject Guide, Topic: Definition of the derivative).</p>
+                    <p><b>Explanation:</b> The derivative is defined as \(\lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\). Substituting \(f(x) = 3x^2 + 2\), we get \(\lim_{h \to 0} \frac{3(x+h)^2 + 2 - (3x^2 + 2)}{h} = \lim_{h \to 0} \frac{3(x^2 + 2xh + h^2) - 3x^2}{h} = \lim_{h \to 0} \frac{6xh + 3h^2}{h} = \lim_{h \to 0} (6x + 3h) = 6x\). (Source: Wrede, 'Advanced Calculus', Chapter 4; MT2176 Subject Guide, Topic: Definition of the derivative).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q3">
-                <p><b>Question 4:</b> Evaluate \(\\lim_{x \to 0} \frac{e^x - 1}{\\sin(x)}\).</p>
+                <p><b>Question 4:</b> Evaluate \(\lim_{x \to 0} \frac{e^x - 1}{\sin(x)}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q3" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q3" value="1"> <span>B. 1</span></label>
@@ -156,12 +156,12 @@
                     <label><input type="radio" name="q3" value="3"> <span>D. The limit does not exist.</span></label>
                 </div>
                 <div class="explanation" id="exp3">
-                    <p><b>Explanation:</b> As \(x \to 0\), both the numerator and the denominator approach 0, resulting in the indeterminate form 0/0. Applying L'Hôpital's rule, we differentiate the numerator and the denominator: \(\\lim_{x \to 0} \frac{e^x}{\\cos(x)} = \frac{e^0}{\\cos(0)} = \frac{1}{1} = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4; MT2176 Subject Guide, Topic: L'Hôpital's rule).</p>
+                    <p><b>Explanation:</b> As \(x \to 0\), both the numerator and the denominator approach 0, resulting in the indeterminate form 0/0. Applying L'Hôpital's rule, we differentiate the numerator and the denominator: \(\lim_{x \to 0} \frac{e^x}{\cos(x)} = \frac{e^0}{\cos(0)} = \frac{1}{1} = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4; MT2176 Subject Guide, Topic: L'Hôpital's rule).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q4">
-                <p><b>Question 5:</b> Use a Maclaurin series to evaluate the limit \(\\lim_{x \to 0} \frac{\\cos(x) - 1 + x^2/2}{x^4}\).</p>
+                <p><b>Question 5:</b> Use a Maclaurin series to evaluate the limit \(\lim_{x \to 0} \frac{\cos(x) - 1 + x^2/2}{x^4}\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q4" value="0"> <span>A. 1/24</span></label>
                     <label><input type="radio" name="q4" value="1"> <span>B. 1/12</span></label>
@@ -169,7 +169,7 @@
                     <label><input type="radio" name="q4" value="3"> <span>D. 0</span></label>
                 </div>
                 <div class="explanation" id="exp4">
-                    <p><b>Explanation:</b> The Maclaurin series for \(\\cos(x)\) is \(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \\dots\). Substituting this into the expression gives: \(\\lim_{x \to 0} \frac{(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \\dots) - 1 + \frac{x^2}{2}}{x^4} = \\lim_{x \to 0} \frac{\\frac{x^4}{4!} - \\dots}{x^4} = \frac{1}{4!} = \frac{1}{24}\). (Source: Wrede, 'Advanced Calculus', Chapter 11; MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The Maclaurin series for \(\cos(x)\) is \(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots\). Substituting this into the expression gives: \(\lim_{x \to 0} \frac{(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots) - 1 + \frac{x^2}{2}}{x^4} = \lim_{x \to 0} \frac{\frac{x^4}{4!} - \dots}{x^4} = \frac{1}{4!} = \frac{1}{24}\). (Source: Wrede, 'Advanced Calculus', Chapter 11; MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
@@ -187,7 +187,7 @@
             </div>
 
             <div class="question-block" id="q6">
-                <p><b>Question 7:</b> Find the limit: \(\\lim_{x \to \infty} \frac{3x^2 - 2x + 5}{7x^2 + 4x - 1}\).</p>
+                <p><b>Question 7:</b> Find the limit: \(\lim_{x \to \infty} \frac{3x^2 - 2x + 5}{7x^2 + 4x - 1}\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q6" value="0"> <span>A. 3/7</span></label>
                     <label><input type="radio" name="q6" value="1"> <span>B. 5/-1</span></label>
@@ -195,7 +195,7 @@
                     <label><input type="radio" name="q6" value="3"> <span>D. \(\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp6">
-                    <p><b>Explanation:</b> To find the limit at infinity for a rational function, we can divide the numerator and the denominator by the highest power of \(x\), which is \(x^2\). This gives \(\\lim_{x \to \infty} \frac{3 - 2/x + 5/x^2}{7 + 4/x - 1/x^2} = \frac{3-0+0}{7+0-0} = \frac{3}{7}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> To find the limit at infinity for a rational function, we can divide the numerator and the denominator by the highest power of \(x\), which is \(x^2\). This gives \(\lim_{x \to \infty} \frac{3 - 2/x + 5/x^2}{7 + 4/x - 1/x^2} = \frac{3-0+0}{7+0-0} = \frac{3}{7}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@
             </div>
 
             <div class="question-block" id="q9">
-                <p><b>Question 10:</b> Evaluate \(\\lim_{x \to 0} \frac{\\tan(x) - x}{x^3}\).</p>
+                <p><b>Question 10:</b> Evaluate \(\lim_{x \to 0} \frac{\tan(x) - x}{x^3}\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q9" value="0"> <span>A. 1/3</span></label>
                     <label><input type="radio" name="q9" value="1"> <span>B. 1/2</span></label>
@@ -234,12 +234,12 @@
                     <label><input type="radio" name="q9" value="3"> <span>D. 0</span></label>
                 </div>
                 <div class="explanation" id="exp9">
-                    <p><b>Explanation:</b> This is an indeterminate form 0/0. Applying L'Hôpital's rule: \(\\lim_{x \to 0} \frac{\\sec^2(x) - 1}{3x^2}\). This is still 0/0. Applying the rule again: \(\\lim_{x \to 0} \frac{2\\sec(x)(\\sec(x)\\tan(x))}{6x} = \\lim_{x \to 0} \frac{\\sec^2(x)\\tan(x)}{3x}\). Using the known limit \(\\lim_{u \to 0} \frac{\\tan u}{u} = 1\), this becomes \(\\frac{1}{3} \\lim_{x \to 0} \\sec^2(x) \\cdot 1 = \frac{1}{3}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an indeterminate form 0/0. Applying L'Hôpital's rule: \(\lim_{x \to 0} \frac{\sec^2(x) - 1}{3x^2}\). This is still 0/0. Applying the rule again: \(\lim_{x \to 0} \frac{2\sec(x)(\sec(x)\tan(x))}{6x} = \lim_{x \to 0} \frac{\sec^2(x)\tan(x)}{3x}\). Using the known limit \(\lim_{u \to 0} \frac{\tan u}{u} = 1\), this becomes \(\frac{1}{3} \lim_{x \to 0} \sec^2(x) \cdot 1 = \frac{1}{3}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q10">
-                <p><b>Question 11:</b> If \(\\lim_{x \to c} f(x) = L\) and \(\\lim_{x \to c} g(x) = M\), what is \(\\lim_{x \to c} [f(x)g(x)]\)?</p>
+                <p><b>Question 11:</b> If \(\lim_{x \to c} f(x) = L\) and \(\lim_{x \to c} g(x) = M\), what is \(\lim_{x \to c} [f(x)g(x)]\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q10" value="0"> <span>A. L + M</span></label>
                     <label><input type="radio" name="q10" value="1"> <span>B. L - M</span></label>
@@ -252,7 +252,7 @@
             </div>
 
             <div class="question-block" id="q11">
-                <p><b>Question 12:</b> The function \(f(x) = \begin{cases} x^2 & x < 1 \\ 3-x & x \\ge 1 \\end{cases}\) is:</p>
+                <p><b>Question 12:</b> The function \(f(x) = \begin{cases} x^2 & x < 1 \ 3-x & x \ge 1 \end{cases}\) is:</p>
                 <div class="answers">
                     <label><input type="radio" name="q11" value="0"> <span>A. Continuous at x=1</span></label>
                     <label><input type="radio" name="q11" value="1"> <span>B. Differentiable at x=1</span></label>
@@ -260,25 +260,25 @@
                     <label><input type="radio" name="q11" value="3"> <span>D. Undefined at x=1</span></label>
                 </div>
                 <div class="explanation" id="exp11">
-                    <p><b>Explanation:</b> We check the left-hand and right-hand limits at x=1. \(\\lim_{x \to 1^-} f(x) = \\lim_{x \to 1^-} x^2 = 1\). \(\\lim_{x \to 1^+} f(x) = \\lim_{x \to 1^+} (3-x) = 2\). Since the left-hand and right-hand limits are not equal, the overall limit does not exist, and the function is discontinuous at x=1. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> We check the left-hand and right-hand limits at x=1. \(\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} x^2 = 1\). \(\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (3-x) = 2\). Since the left-hand and right-hand limits are not equal, the overall limit does not exist, and the function is discontinuous at x=1. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q12">
-                <p><b>Question 13:</b> What is the derivative of \(f(x) = \\ln(x)\) from first principles?</p>
+                <p><b>Question 13:</b> What is the derivative of \(f(x) = \ln(x)\) from first principles?</p>
                 <div class="answers">
                     <label><input type="radio" name="q12" value="0"> <span>A. \(x\)</span></label>
                     <label data-is-correct="true"><input type="radio" name="q12" value="1"> <span>B. \(1/x\)</span></label>
                     <label><input type="radio" name="q12" value="2"> <span>C. \(e^x\)</span></label>
-                    <label><input type="radio" name="q12" value="3"> <span>D. \(\\ln(x)\)</span></label>
+                    <label><input type="radio" name="q12" value="3"> <span>D. \(\ln(x)\)</span></label>
                 </div>
                 <div class="explanation" id="exp12">
-                    <p><b>Explanation:</b> The derivative is \(\\lim_{h \to 0} \frac{\\ln(x+h) - \\ln(x)}{h} = \\lim_{h \to 0} \frac{1}{h} \\ln(\\frac{x+h}{x}) = \\lim_{h \to 0} \\ln((1 + \frac{h}{x})^{1/h})\). Let \(u = h/x\). As \(h \to 0\), \(u \to 0\). The expression becomes \(\\frac{1}{x} \\ln(\\lim_{u \to 0}(1+u)^{1/u}) = \frac{1}{x} \\ln(e) = \frac{1}{x}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> The derivative is \(\lim_{h \to 0} \frac{\ln(x+h) - \ln(x)}{h} = \lim_{h \to 0} \frac{1}{h} \ln(\frac{x+h}{x}) = \lim_{h \to 0} \ln((1 + \frac{h}{x})^{1/h})\). Let \(u = h/x\). As \(h \to 0\), \(u \to 0\). The expression becomes \(\frac{1}{x} \ln(\lim_{u \to 0}(1+u)^{1/u}) = \frac{1}{x} \ln(e) = \frac{1}{x}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q13">
-                <p><b>Question 14:</b> Evaluate \(\\lim_{x \to \infty} (1 + \frac{a}{x})^{bx}\).</p>
+                <p><b>Question 14:</b> Evaluate \(\lim_{x \to \infty} (1 + \frac{a}{x})^{bx}\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q13" value="0"> <span>A. \(e^{ab}\)</span></label>
                     <label><input type="radio" name="q13" value="1"> <span>B. \(e^{a/b}\)</span></label>
@@ -286,12 +286,12 @@
                     <label><input type="radio" name="q13" value="3"> <span>D. \(e^{a+b}\)</span></label>
                 </div>
                 <div class="explanation" id="exp13">
-                    <p><b>Explanation:</b> Let \(y = (1 + \frac{a}{x})^{bx}\). Then \(\\ln(y) = bx \\ln(1 + \frac{a}{x})\). We evaluate \(\\lim_{x \to \infty} \frac{\\ln(1+a/x)}{1/(bx)}\). This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\\lim_{x \to \infty} \frac{\\frac{1}{1+a/x} \\cdot (-a/x^2)}{-1/(bx^2)} = \\lim_{x \to \infty} \frac{ab}{1+a/x} = ab\). Since \(\\lim \\ln(y) = ab\), we have \(\\lim y = e^{ab}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> Let \(y = (1 + \frac{a}{x})^{bx}\). Then \(\ln(y) = bx \ln(1 + \frac{a}{x})\). We evaluate \(\lim_{x \to \infty} \frac{\ln(1+a/x)}{1/(bx)}\). This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\lim_{x \to \infty} \frac{\frac{1}{1+a/x} \cdot (-a/x^2)}{-1/(bx^2)} = \lim_{x \to \infty} \frac{ab}{1+a/x} = ab\). Since \(\lim \ln(y) = ab\), we have \(\lim y = e^{ab}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q14">
-                <p><b>Question 15:</b> The first-order Taylor polynomial for \(f(x) = \\sqrt{x}\) around \(x=4\) is:</p>
+                <p><b>Question 15:</b> The first-order Taylor polynomial for \(f(x) = \sqrt{x}\) around \(x=4\) is:</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q14" value="0"> <span>A. \(2 + \frac{1}{4}(x-4)\)</span></label>
                     <label><input type="radio" name="q14" value="1"> <span>B. \(2 + \frac{1}{2}(x-4)\)</span></label>
@@ -299,7 +299,7 @@
                     <label><input type="radio" name="q14" value="3"> <span>D. \(2 - \frac{1}{8}(x-4)\)</span></label>
                 </div>
                 <div class="explanation" id="exp14">
-                    <p><b>Explanation:</b> The first-order Taylor polynomial is \(P_1(x) = f(a) + f'(a)(x-a)\). Here \(a=4\), \(f(x) = \\sqrt{x}\), so \(f(4)=2\). The derivative is \(f'(x) = \frac{1}{2\\sqrt{x}}\), so \(f'(4) = \frac{1}{4}\). Thus, \(P_1(x) = 2 + \frac{1}{4}(x-4)\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The first-order Taylor polynomial is \(P_1(x) = f(a) + f'(a)(x-a)\). Here \(a=4\), \(f(x) = \sqrt{x}\), so \(f(4)=2\). The derivative is \(f'(x) = \frac{1}{2\sqrt{x}}\), so \(f'(4) = \frac{1}{4}\). Thus, \(P_1(x) = 2 + \frac{1}{4}(x-4)\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
@@ -317,7 +317,7 @@
             </div>
 
             <div class="question-block" id="q16">
-                <p><b>Question 17:</b> What is \(\\lim_{x \to 2} \frac{x^2 - 5x + 6}{x^2 - 4}\)?</p>
+                <p><b>Question 17:</b> What is \(\lim_{x \to 2} \frac{x^2 - 5x + 6}{x^2 - 4}\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q16" value="0"> <span>A. -1/4</span></label>
                     <label><input type="radio" name="q16" value="1"> <span>B. 1/4</span></label>
@@ -325,7 +325,7 @@
                     <label><input type="radio" name="q16" value="3"> <span>D. 1</span></label>
                 </div>
                 <div class="explanation" id="exp16">
-                    <p><b>Explanation:</b> Factoring the numerator and denominator gives \(\\lim_{x \to 2} \frac{(x-2)(x-3)}{(x-2)(x+2)} = \\lim_{x \to 2} \frac{x-3}{x+2} = \frac{2-3}{2+2} = -\frac{1}{4}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> Factoring the numerator and denominator gives \(\lim_{x \to 2} \frac{(x-2)(x-3)}{(x-2)(x+2)} = \lim_{x \to 2} \frac{x-3}{x+2} = \frac{2-3}{2+2} = -\frac{1}{4}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -356,7 +356,7 @@
             </div>
 
             <div class="question-block" id="q19">
-                <p><b>Question 20:</b> Evaluate \(\\lim_{x \to 0} \frac{x^2}{1 - \\cos^2(x)}\).</p>
+                <p><b>Question 20:</b> Evaluate \(\lim_{x \to 0} \frac{x^2}{1 - \cos^2(x)}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q19" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q19" value="1"> <span>B. 1/2</span></label>
@@ -364,12 +364,12 @@
                     <label><input type="radio" name="q19" value="3"> <span>D. 2</span></label>
                 </div>
                 <div class="explanation" id="exp19">
-                    <p><b>Explanation:</b> Using the identity \(\\sin^2(x) = 1 - \\cos^2(x)\), the limit becomes \(\\lim_{x \to 0} \frac{x^2}{\\sin^2(x)} = \\lim_{x \to 0} (\frac{x}{\\sin x})^2 = (\\lim_{x \to 0} \frac{x}{\\sin x})^2 = 1^2 = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> Using the identity \(\sin^2(x) = 1 - \cos^2(x)\), the limit becomes \(\lim_{x \to 0} \frac{x^2}{\sin^2(x)} = \lim_{x \to 0} (\frac{x}{\sin x})^2 = (\lim_{x \to 0} \frac{x}{\sin x})^2 = 1^2 = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q20">
-                <p><b>Question 21:</b> The Maclaurin series for \(f(x) = (1+x)^k\) is \(1 + kx + \frac{k(k-1)}{2}x^2 + \\dots\). What is the limit of \(\\frac{(1+x)^k - 1}{x}\) as \(x \to 0\)?</p>
+                <p><b>Question 21:</b> The Maclaurin series for \(f(x) = (1+x)^k\) is \(1 + kx + \frac{k(k-1)}{2}x^2 + \dots\). What is the limit of \(\frac{(1+x)^k - 1}{x}\) as \(x \to 0\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q20" value="0"> <span>A. 1</span></label>
                     <label data-is-correct="true"><input type="radio" name="q20" value="1"> <span>B. k</span></label>
@@ -377,12 +377,12 @@
                     <label><input type="radio" name="q20" value="3"> <span>D. 0</span></label>
                 </div>
                 <div class="explanation" id="exp20">
-                    <p><b>Explanation:</b> This is the definition of the derivative of \(f(x)=(1+x)^k\) at \(x=0\). The derivative is \(f'(x) = k(1+x)^{k-1}\), so \(f'(0) = k\). Alternatively, using the series: \(\\lim_{x \to 0} \frac{(1+kx+\\dots) - 1}{x} = \\lim_{x \to 0} \frac{kx+\\dots}{x} = k\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> This is the definition of the derivative of \(f(x)=(1+x)^k\) at \(x=0\). The derivative is \(f'(x) = k(1+x)^{k-1}\), so \(f'(0) = k\). Alternatively, using the series: \(\lim_{x \to 0} \frac{(1+kx+\dots) - 1}{x} = \lim_{x \to 0} \frac{kx+\dots}{x} = k\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q21">
-                <p><b>Question 22:</b> If \(\\lim_{x \to c} f(x) = \infty\) and \(\\lim_{x \to c} g(x) = \infty\), what is \(\\lim_{x \to c} [f(x) - g(x)]\)?</p>
+                <p><b>Question 22:</b> If \(\lim_{x \to c} f(x) = \infty\) and \(\lim_{x \to c} g(x) = \infty\), what is \(\lim_{x \to c} [f(x) - g(x)]\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q21" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q21" value="1"> <span>B. \(\infty\)</span></label>
@@ -395,7 +395,7 @@
             </div>
 
             <div class="question-block" id="q22">
-                <p><b>Question 23:</b> Is the function \(f(x) = \\sin(1/x)\) continuous at \(x=0\)?</p>
+                <p><b>Question 23:</b> Is the function \(f(x) = \sin(1/x)\) continuous at \(x=0\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q22" value="0"> <span>A. Yes, it is continuous.</span></label>
                     <label><input type="radio" name="q22" value="1"> <span>B. No, it has a removable discontinuity.</span></label>
@@ -403,7 +403,7 @@
                     <label data-is-correct="true"><input type="radio" name="q22" value="3"> <span>D. No, it has an oscillating discontinuity and is not defined at x=0.</span></label>
                 </div>
                 <div class="explanation" id="exp22">
-                    <p><b>Explanation:</b> The function is not defined at \(x=0\). Furthermore, as \(x\) approaches 0, \(1/x\) approaches infinity, and \(\\sin(1/x)\) oscillates infinitely between -1 and 1. The limit does not exist, so it cannot be made continuous. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> The function is not defined at \(x=0\). Furthermore, as \(x\) approaches 0, \(1/x\) approaches infinity, and \(\sin(1/x)\) oscillates infinitely between -1 and 1. The limit does not exist, so it cannot be made continuous. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -421,20 +421,20 @@
             </div>
 
             <div class="question-block" id="q24">
-                <p><b>Question 25:</b> Evaluate \(\\lim_{x \to 0^+} x \\ln(x)\).</p>
+                <p><b>Question 25:</b> Evaluate \(\lim_{x \to 0^+} x \ln(x)\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q24" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q24" value="1"> <span>B. 1</span></label>
                     <label><input type="radio" name="q24" value="2"> <span>C. -1</span></label>
-                    <label><input type="radio" name="q24" value="3"> <span>D. \(-\\infty\)</span></label>
+                    <label><input type="radio" name="q24" value="3"> <span>D. \(-\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp24">
-                    <p><b>Explanation:</b> This is an indeterminate form \(0 \\cdot (-\\infty)\). We can rewrite it as \(\\lim_{x \to 0^+} \frac{\\ln(x)}{1/x}\), which is an \(\\infty/\\infty\) form. Applying L'Hôpital's rule: \(\\lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \\lim_{x \to 0^+} (-x) = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an indeterminate form \(0 \cdot (-\infty)\). We can rewrite it as \(\lim_{x \to 0^+} \frac{\ln(x)}{1/x}\), which is an \(\infty/\infty\) form. Applying L'Hôpital's rule: \(\lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q25">
-                <p><b>Question 26:</b> Using the Taylor expansion for \(e^x\) about \(x=0\), find the limit of \(\\frac{e^x - 1 - x}{x^2}\) as \(x \to 0\).</p>
+                <p><b>Question 26:</b> Using the Taylor expansion for \(e^x\) about \(x=0\), find the limit of \(\frac{e^x - 1 - x}{x^2}\) as \(x \to 0\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q25" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q25" value="1"> <span>B. 1</span></label>
@@ -442,7 +442,7 @@
                     <label><input type="radio" name="q25" value="3"> <span>D. 2</span></label>
                 </div>
                 <div class="explanation" id="exp25">
-                    <p><b>Explanation:</b> The Taylor (Maclaurin) series for \(e^x\) is \(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \\dots\). Substituting this gives \(\\lim_{x \to 0} \frac{(1 + x + x^2/2! + \\dots) - 1 - x}{x^2} = \\lim_{x \to 0} \frac{x^2/2 + O(x^3)}{x^2} = \frac{1}{2}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The Taylor (Maclaurin) series for \(e^x\) is \(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots\). Substituting this gives \(\lim_{x \to 0} \frac{(1 + x + x^2/2! + \dots) - 1 - x}{x^2} = \lim_{x \to 0} \frac{x^2/2 + O(x^3)}{x^2} = \frac{1}{2}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
@@ -450,8 +450,8 @@
                 <p><b>Question 27:</b> If \(f(x)\) is differentiable at a point \(c\), which of the following must be true?</p>
                 <div class="answers">
                     <label><input type="radio" name="q26" value="0"> <span>A. \(f\) is defined at \(c\).</span></label>
-                    <label><input type="radio" name="q26" value="1"> <span>B. \(\\lim_{x \to c} f(x)\) exists.</span></label>
-                    <label><input type="radio" name="q26" value="2"> <span>C. \(\\lim_{x \to c} f(x) = f(c)\).</span></label>
+                    <label><input type="radio" name="q26" value="1"> <span>B. \(\lim_{x \to c} f(x)\) exists.</span></label>
+                    <label><input type="radio" name="q26" value="2"> <span>C. \(\lim_{x \to c} f(x) = f(c)\).</span></label>
                     <label data-is-correct="true"><input type="radio" name="q26" value="3"> <span>D. All of the above.</span></label>
                 </div>
                 <div class="explanation" id="exp26">
@@ -460,7 +460,7 @@
             </div>
 
             <div class="question-block" id="q27">
-                <p><b>Question 28:</b> What is \(\\lim_{x \to 2} \frac{x^3 - 8}{x - 2}\)?</p>
+                <p><b>Question 28:</b> What is \(\lim_{x \to 2} \frac{x^3 - 8}{x - 2}\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q27" value="0"> <span>A. 4</span></label>
                     <label><input type="radio" name="q27" value="1"> <span>B. 8</span></label>
@@ -468,7 +468,7 @@
                     <label><input type="radio" name="q27" value="3"> <span>D. 16</span></label>
                 </div>
                 <div class="explanation" id="exp27">
-                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\\lim_{x \to 2} \frac{3x^2}{1} = 3(2^2) = 12\). Alternatively, factoring the numerator as a difference of cubes gives \(\\frac{(x-2)(x^2-2x+4)}{x-2} = x^2-2x+4\), which approaches 12 as \(x \to 2\). (Source: Wrede, 'Advanced Calculus', Chapter 3 & 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\lim_{x \to 2} \frac{3x^2}{1} = 3(2^2) = 12\). Alternatively, factoring the numerator as a difference of cubes gives \(\frac{(x-2)(x^2-2x+4)}{x-2} = x^2-2x+4\), which approaches 12 as \(x \to 2\). (Source: Wrede, 'Advanced Calculus', Chapter 3 & 4).</p>
                 </div>
             </div>
 
@@ -486,20 +486,20 @@
             </div>
 
             <div class="question-block" id="q29">
-                <p><b>Question 30:</b> Using the definition of the derivative, what is \(f'(a)\) for \(f(x) = \\sqrt{x}\)?</p>
+                <p><b>Question 30:</b> Using the definition of the derivative, what is \(f'(a)\) for \(f(x) = \sqrt{x}\)?</p>
                 <div class="answers">
-                    <label data-is-correct="true"><input type="radio" name="q29" value="0"> <span>A. \(\\frac{1}{2\\sqrt{a}}\)</span></label>
-                    <label><input type="radio" name="q29" value="1"> <span>B. \(\\sqrt{a}\)</span></label>
-                    <label><input type="radio" name="q29" value="2"> <span>C. \(\\frac{1}{\\sqrt{a}}\)</span</label>
-                    <label><input type="radio" name="q29" value="3"> <span>D. \(2\\sqrt{a}\)</span></label>
+                    <label data-is-correct="true"><input type="radio" name="q29" value="0"> <span>A. \(\frac{1}{2\sqrt{a}}\)</span></label>
+                    <label><input type="radio" name="q29" value="1"> <span>B. \(\sqrt{a}\)</span></label>
+                    <label><input type="radio" name="q29" value="2"> <span>C. \(\frac{1}{\sqrt{a}}\)</span</label>
+                    <label><input type="radio" name="q29" value="3"> <span>D. \(2\sqrt{a}\)</span></label>
                 </div>
                 <div class="explanation" id="exp29">
-                    <p><b>Explanation:</b> We evaluate \(\\lim_{h \to 0} \frac{\\sqrt{a+h} - \\sqrt{a}}{h}\). Multiplying by the conjugate gives \(\\lim_{h \to 0} \frac{(a+h) - a}{h(\\sqrt{a+h} + \\sqrt{a})} = \\lim_{h \to 0} \frac{h}{h(\\sqrt{a+h} + \\sqrt{a})} = \frac{1}{2\\sqrt{a}}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> We evaluate \(\lim_{h \to 0} \frac{\sqrt{a+h} - \sqrt{a}}{h}\). Multiplying by the conjugate gives \(\lim_{h \to 0} \frac{(a+h) - a}{h(\sqrt{a+h} + \sqrt{a})} = \lim_{h \to 0} \frac{h}{h(\sqrt{a+h} + \sqrt{a})} = \frac{1}{2\sqrt{a}}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q30">
-                <p><b>Question 31:</b> Evaluate \(\\lim_{x \to \infty} x \\sin(1/x)\).</p>
+                <p><b>Question 31:</b> Evaluate \(\lim_{x \to \infty} x \sin(1/x)\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q30" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q30" value="1"> <span>B. 1</span></label>
@@ -507,12 +507,12 @@
                     <label><input type="radio" name="q30" value="3"> <span>D. Does not exist.</span></label>
                 </div>
                 <div class="explanation" id="exp30">
-                    <p><b>Explanation:</b> This is an \(\infty \\cdot 0\) indeterminate form. Let \(u = 1/x\). As \(x \to \infty\), \(u \to 0^+\). The limit becomes \(\\lim_{u \to 0^+} \frac{\\sin(u)}{u}\), which is a standard limit equal to 1. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty \cdot 0\) indeterminate form. Let \(u = 1/x\). As \(x \to \infty\), \(u \to 0^+\). The limit becomes \(\lim_{u \to 0^+} \frac{\sin(u)}{u}\), which is a standard limit equal to 1. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q31">
-                <p><b>Question 32:</b> The third-order Maclaurin polynomial for \(\\sin(x)\) is:</p>
+                <p><b>Question 32:</b> The third-order Maclaurin polynomial for \(\sin(x)\) is:</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q31" value="0"> <span>A. \(x - \frac{x^3}{6}\)</span></label>
                     <label><input type="radio" name="q31" value="1"> <span>B. \(x - \frac{x^3}{3}\)</span></label>
@@ -520,12 +520,12 @@
                     <label><input type="radio" name="q31" value="3"> <span>D. \(x - x^2 + x^3\)</span></label>
                 </div>
                 <div class="explanation" id="exp31">
-                    <p><b>Explanation:</b> The Maclaurin series for \(\\sin(x)\) is \(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \\dots\). The third-order polynomial is \(x - \frac{x^3}{6}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The Maclaurin series for \(\sin(x)\) is \(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots\). The third-order polynomial is \(x - \frac{x^3}{6}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q32">
-                <p><b>Question 33:</b> If \(\\lim_{x \to c} f(x) = 5\) and the function has a removable discontinuity at \(x=c\), what can we say about \(f(c)\)?</p>
+                <p><b>Question 33:</b> If \(\lim_{x \to c} f(x) = 5\) and the function has a removable discontinuity at \(x=c\), what can we say about \(f(c)\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q32" value="0"> <span>A. \(f(c) = 5\)</span></label>
                     <label data-is-correct="true"><input type="radio" name="q32" value="1"> <span>B. \(f(c) \neq 5\) or \(f(c)\) is undefined.</span></label>
@@ -551,7 +551,7 @@
             </div>
 
             <div class="question-block" id="q34">
-                <p><b>Question 35:</b> Evaluate \(\\lim_{x \to 0} (\\csc x - \\cot x)\).</p>
+                <p><b>Question 35:</b> Evaluate \(\lim_{x \to 0} (\csc x - \cot x)\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q34" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q34" value="1"> <span>B. 1</span></label>
@@ -559,7 +559,7 @@
                     <label><input type="radio" name="q34" value="3"> <span>D. Does not exist.</span></label>
                 </div>
                 <div class="explanation" id="exp34">
-                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Rewrite as \(\\lim_{x \to 0} (\frac{1}{\\sin x} - \frac{\\cos x}{\\sin x}) = \\lim_{x \to 0} \frac{1 - \\cos x}{\\sin x}\). This is a 0/0 form. Applying L'Hôpital's rule gives \(\\lim_{x \to 0} \frac{\\sin x}{\\cos x} = \frac{0}{1} = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Rewrite as \(\lim_{x \to 0} (\frac{1}{\sin x} - \frac{\cos x}{\sin x}) = \lim_{x \to 0} \frac{1 - \cos x}{\sin x}\). This is a 0/0 form. Applying L'Hôpital's rule gives \(\lim_{x \to 0} \frac{\sin x}{\cos x} = \frac{0}{1} = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -577,7 +577,7 @@
             </div>
 
             <div class="question-block" id="q36">
-                <p><b>Question 37:</b> What is \(\\lim_{x \to 2} \frac{x^2 - 5x + 6}{x^2 - 4}\)?</p>
+                <p><b>Question 37:</b> What is \(\lim_{x \to 2} \frac{x^2 - 5x + 6}{x^2 - 4}\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q36" value="0"> <span>A. -1/4</span></label>
                     <label><input type="radio" name="q36" value="1"> <span>B. 1/4</span></label>
@@ -585,7 +585,7 @@
                     <label><input type="radio" name="q36" value="3"> <span>D. 1</span></label>
                 </div>
                 <div class="explanation" id="exp36">
-                    <p><b>Explanation:</b> Factoring the numerator and denominator gives \(\\lim_{x \to 2} \frac{(x-2)(x-3)}{(x-2)(x+2)} = \\lim_{x \to 2} \frac{x-3}{x+2} = \frac{2-3}{2+2} = -\frac{1}{4}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> Factoring the numerator and denominator gives \(\lim_{x \to 2} \frac{(x-2)(x-3)}{(x-2)(x+2)} = \lim_{x \to 2} \frac{x-3}{x+2} = \frac{2-3}{2+2} = -\frac{1}{4}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -616,7 +616,7 @@
             </div>
 
             <div class="question-block" id="q39">
-                <p><b>Question 40:</b> Evaluate \(\\lim_{x \to 0} \frac{x^2}{1 - \\cos^2(x)}\).</p>
+                <p><b>Question 40:</b> Evaluate \(\lim_{x \to 0} \frac{x^2}{1 - \cos^2(x)}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q39" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q39" value="1"> <span>B. 1/2</span></label>
@@ -624,12 +624,12 @@
                     <label><input type="radio" name="q39" value="3"> <span>D. 2</span></label>
                 </div>
                 <div class="explanation" id="exp39">
-                    <p><b>Explanation:</b> Using the identity \(\\sin^2(x) = 1 - \\cos^2(x)\), the limit becomes \(\\lim_{x \to 0} \frac{x^2}{\\sin^2(x)} = \\lim_{x \to 0} (\frac{x}{\\sin x})^2 = (\\lim_{x \to 0} \frac{x}{\\sin x})^2 = 1^2 = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> Using the identity \(\sin^2(x) = 1 - \cos^2(x)\), the limit becomes \(\lim_{x \to 0} \frac{x^2}{\sin^2(x)} = \lim_{x \to 0} (\frac{x}{\sin x})^2 = (\lim_{x \to 0} \frac{x}{\sin x})^2 = 1^2 = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q40">
-                <p><b>Question 41:</b> The Maclaurin series for \(f(x) = (1+x)^k\) is \(1 + kx + \frac{k(k-1)}{2}x^2 + \\dots\). What is the limit of \(\\frac{(1+x)^k - 1}{x}\) as \(x \to 0\)?</p>
+                <p><b>Question 41:</b> The Maclaurin series for \(f(x) = (1+x)^k\) is \(1 + kx + \frac{k(k-1)}{2}x^2 + \dots\). What is the limit of \(\frac{(1+x)^k - 1}{x}\) as \(x \to 0\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q40" value="0"> <span>A. 1</span></label>
                     <label data-is-correct="true"><input type="radio" name="q40" value="1"> <span>B. k</span></label>
@@ -637,12 +637,12 @@
                     <label><input type="radio" name="q40" value="3"> <span>D. 0</span></label>
                 </div>
                 <div class="explanation" id="exp40">
-                    <p><b>Explanation:</b> This is the definition of the derivative of \(f(x)=(1+x)^k\) at \(x=0\). The derivative is \(f'(x) = k(1+x)^{k-1}\), so \(f'(0) = k\). Alternatively, using the series: \(\\lim_{x \to 0} \frac{(1+kx+\\dots) - 1}{x} = \\lim_{x \to 0} \frac{kx+\\dots}{x} = k\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> This is the definition of the derivative of \(f(x)=(1+x)^k\) at \(x=0\). The derivative is \(f'(x) = k(1+x)^{k-1}\), so \(f'(0) = k\). Alternatively, using the series: \(\lim_{x \to 0} \frac{(1+kx+\dots) - 1}{x} = \lim_{x \to 0} \frac{kx+\dots}{x} = k\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q41">
-                <p><b>Question 42:</b> If \(\\lim_{x \to c} f(x) = \infty\) and \(\\lim_{x \to c} g(x) = \infty\), what is \(\\lim_{x \to c} [f(x) - g(x)]\)?</p>
+                <p><b>Question 42:</b> If \(\lim_{x \to c} f(x) = \infty\) and \(\lim_{x \to c} g(x) = \infty\), what is \(\lim_{x \to c} [f(x) - g(x)]\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q41" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q41" value="1"> <span>B. \(\infty\)</span></label>
@@ -655,7 +655,7 @@
             </div>
 
             <div class="question-block" id="q42">
-                <p><b>Question 43:</b> Is the function \(f(x) = \\sin(1/x)\) continuous at \(x=0\)?</p>
+                <p><b>Question 43:</b> Is the function \(f(x) = \sin(1/x)\) continuous at \(x=0\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q42" value="0"> <span>A. Yes, it is continuous.</span></label>
                     <label><input type="radio" name="q42" value="1"> <span>B. No, it has a removable discontinuity.</span></label>
@@ -663,7 +663,7 @@
                     <label data-is-correct="true"><input type="radio" name="q42" value="3"> <span>D. No, it has an oscillating discontinuity and is not defined at x=0.</span></label>
                 </div>
                 <div class="explanation" id="exp42">
-                    <p><b>Explanation:</b> The function is not defined at \(x=0\). Furthermore, as \(x\) approaches 0, \(1/x\) approaches infinity, and \(\\sin(1/x)\) oscillates infinitely between -1 and 1. The limit does not exist, so it cannot be made continuous. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> The function is not defined at \(x=0\). Furthermore, as \(x\) approaches 0, \(1/x\) approaches infinity, and \(\sin(1/x)\) oscillates infinitely between -1 and 1. The limit does not exist, so it cannot be made continuous. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -681,20 +681,20 @@
             </div>
 
             <div class="question-block" id="q44">
-                <p><b>Question 45:</b> Evaluate \(\\lim_{x \to 0^+} x \\ln(x)\).</p>
+                <p><b>Question 45:</b> Evaluate \(\lim_{x \to 0^+} x \ln(x)\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q44" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q44" value="1"> <span>B. 1</span></label>
                     <label><input type="radio" name="q44" value="2"> <span>C. -1</span></label>
-                    <label><input type="radio" name="q44" value="3"> <span>D. \(-\\infty\)</span></label>
+                    <label><input type="radio" name="q44" value="3"> <span>D. \(-\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp44">
-                    <p><b>Explanation:</b> This is an indeterminate form \(0 \\cdot (-\\infty)\). We can rewrite it as \(\\lim_{x \to 0^+} \frac{\\ln(x)}{1/x}\), which is an \(\\infty/\\infty\) form. Applying L'Hôpital's rule: \(\\lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \\lim_{x \to 0^+} (-x) = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an indeterminate form \(0 \cdot (-\infty)\). We can rewrite it as \(\lim_{x \to 0^+} \frac{\ln(x)}{1/x}\), which is an \(\infty/\infty\) form. Applying L'Hôpital's rule: \(\lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q45">
-                <p><b>Question 46:</b> Using the Taylor expansion for \(e^x\) about \(x=0\), find the limit of \(\\frac{e^x - 1 - x}{x^2}\) as \(x \to 0\).</p>
+                <p><b>Question 46:</b> Using the Taylor expansion for \(e^x\) about \(x=0\), find the limit of \(\frac{e^x - 1 - x}{x^2}\) as \(x \to 0\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q45" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q45" value="1"> <span>B. 1</span></label>
@@ -702,7 +702,7 @@
                     <label><input type="radio" name="q45" value="3"> <span>D. 2</span></label>
                 </div>
                 <div class="explanation" id="exp45">
-                    <p><b>Explanation:</b> The Taylor (Maclaurin) series for \(e^x\) is \(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \\dots\). Substituting this gives \(\\lim_{x \to 0} \frac{(1 + x + x^2/2! + \\dots) - 1 - x}{x^2} = \\lim_{x \to 0} \frac{x^2/2 + O(x^3)}{x^2} = \frac{1}{2}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The Taylor (Maclaurin) series for \(e^x\) is \(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots\). Substituting this gives \(\lim_{x \to 0} \frac{(1 + x + x^2/2! + \dots) - 1 - x}{x^2} = \lim_{x \to 0} \frac{x^2/2 + O(x^3)}{x^2} = \frac{1}{2}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
@@ -710,8 +710,8 @@
                 <p><b>Question 47:</b> If \(f(x)\) is differentiable at a point \(c\), which of the following must be true?</p>
                 <div class="answers">
                     <label><input type="radio" name="q46" value="0"> <span>A. \(f\) is defined at \(c\).</span></label>
-                    <label><input type="radio" name="q46" value="1"> <span>B. \(\\lim_{x \to c} f(x)\) exists.</span></label>
-                    <label><input type="radio" name="q46" value="2"> <span>C. \(\\lim_{x \to c} f(x) = f(c)\).</span></label>
+                    <label><input type="radio" name="q46" value="1"> <span>B. \(\lim_{x \to c} f(x)\) exists.</span></label>
+                    <label><input type="radio" name="q46" value="2"> <span>C. \(\lim_{x \to c} f(x) = f(c)\).</span></label>
                     <label data-is-correct="true"><input type="radio" name="q46" value="3"> <span>D. All of the above.</span></label>
                 </div>
                 <div class="explanation" id="exp46">
@@ -720,7 +720,7 @@
             </div>
 
             <div class="question-block" id="q47">
-                <p><b>Question 48:</b> What is \(\\lim_{x \to 2} \frac{x^3 - 8}{x - 2}\)?</p>
+                <p><b>Question 48:</b> What is \(\lim_{x \to 2} \frac{x^3 - 8}{x - 2}\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q47" value="0"> <span>A. 4</span></label>
                     <label><input type="radio" name="q47" value="1"> <span>B. 8</span></label>
@@ -728,7 +728,7 @@
                     <label><input type="radio" name="q47" value="3"> <span>D. 16</span></label>
                 </div>
                 <div class="explanation" id="exp47">
-                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\\lim_{x \to 2} \frac{3x^2}{1} = 3(2^2) = 12\). Alternatively, factoring the numerator as a difference of cubes gives \(\\frac{(x-2)(x^2-2x+4)}{x-2} = x^2-2x+4\), which approaches 12 as \(x \to 2\). (Source: Wrede, 'Advanced Calculus', Chapter 3 & 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\lim_{x \to 2} \frac{3x^2}{1} = 3(2^2) = 12\). Alternatively, factoring the numerator as a difference of cubes gives \(\frac{(x-2)(x^2-2x+4)}{x-2} = x^2-2x+4\), which approaches 12 as \(x \to 2\). (Source: Wrede, 'Advanced Calculus', Chapter 3 & 4).</p>
                 </div>
             </div>
 
@@ -746,20 +746,20 @@
             </div>
 
             <div class="question-block" id="q49">
-                <p><b>Question 50:</b> Using the definition of the derivative, what is \(f'(a)\) for \(f(x) = \\sqrt{x}\)?</p>
+                <p><b>Question 50:</b> Using the definition of the derivative, what is \(f'(a)\) for \(f(x) = \sqrt{x}\)?</p>
                 <div class="answers">
-                    <label data-is-correct="true"><input type="radio" name="q49" value="0"> <span>A. \(\\frac{1}{2\\sqrt{a}}\)</span></label>
-                    <label><input type="radio" name="q49" value="1"> <span>B. \(\\sqrt{a}\)</span></label>
-                    <label><input type="radio" name="q49" value="2"> <span>C. \(\\frac{1}{\\sqrt{a}}\)</span</label>
-                    <label><input type="radio" name="q49" value="3"> <span>D. \(2\\sqrt{a}\)</span></label>
+                    <label data-is-correct="true"><input type="radio" name="q49" value="0"> <span>A. \(\frac{1}{2\sqrt{a}}\)</span></label>
+                    <label><input type="radio" name="q49" value="1"> <span>B. \(\sqrt{a}\)</span></label>
+                    <label><input type="radio" name="q49" value="2"> <span>C. \(\frac{1}{\sqrt{a}}\)</span</label>
+                    <label><input type="radio" name="q49" value="3"> <span>D. \(2\sqrt{a}\)</span></label>
                 </div>
                 <div class="explanation" id="exp49">
-                    <p><b>Explanation:</b> We evaluate \(\\lim_{h \to 0} \frac{\\sqrt{a+h} - \\sqrt{a}}{h}\). Multiplying by the conjugate gives \(\\lim_{h \to 0} \frac{(a+h) - a}{h(\\sqrt{a+h} + \\sqrt{a})} = \\lim_{h \to 0} \frac{h}{h(\\sqrt{a+h} + \\sqrt{a})} = \frac{1}{2\\sqrt{a}}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> We evaluate \(\lim_{h \to 0} \frac{\sqrt{a+h} - \sqrt{a}}{h}\). Multiplying by the conjugate gives \(\lim_{h \to 0} \frac{(a+h) - a}{h(\sqrt{a+h} + \sqrt{a})} = \lim_{h \to 0} \frac{h}{h(\sqrt{a+h} + \sqrt{a})} = \frac{1}{2\sqrt{a}}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q50">
-                <p><b>Question 51:</b> Evaluate \(\\lim_{x \to \infty} x \\sin(1/x)\).</p>
+                <p><b>Question 51:</b> Evaluate \(\lim_{x \to \infty} x \sin(1/x)\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q50" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q50" value="1"> <span>B. 1</span></label>
@@ -767,12 +767,12 @@
                     <label><input type="radio" name="q50" value="3"> <span>D. Does not exist.</span></label>
                 </div>
                 <div class="explanation" id="exp50">
-                    <p><b>Explanation:</b> This is an \(\infty \\cdot 0\) indeterminate form. Let \(u = 1/x\). As \(x \to \infty\), \(u \to 0^+\). The limit becomes \(\\lim_{u \to 0^+} \frac{\\sin(u)}{u}\), which is a standard limit equal to 1. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty \cdot 0\) indeterminate form. Let \(u = 1/x\). As \(x \to \infty\), \(u \to 0^+\). The limit becomes \(\lim_{u \to 0^+} \frac{\sin(u)}{u}\), which is a standard limit equal to 1. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q51">
-                <p><b>Question 52:</b> The third-order Maclaurin polynomial for \(\\sin(x)\) is:</p>
+                <p><b>Question 52:</b> The third-order Maclaurin polynomial for \(\sin(x)\) is:</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q51" value="0"> <span>A. \(x - \frac{x^3}{6}\)</span></label>
                     <label><input type="radio" name="q51" value="1"> <span>B. \(x - \frac{x^3}{3}\)</span></label>
@@ -780,12 +780,12 @@
                     <label><input type="radio" name="q51" value="3"> <span>D. \(x - x^2 + x^3\)</span></label>
                 </div>
                 <div class="explanation" id="exp51">
-                    <p><b>Explanation:</b> The Maclaurin series for \(\\sin(x)\) is \(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \\dots\). The third-order polynomial is \(x - \frac{x^3}{6}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The Maclaurin series for \(\sin(x)\) is \(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots\). The third-order polynomial is \(x - \frac{x^3}{6}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q52">
-                <p><b>Question 53:</b> If \(\\lim_{x \to c} f(x) = 5\) and the function has a removable discontinuity at \(x=c\), what can we say about \(f(c)\)?</p>
+                <p><b>Question 53:</b> If \(\lim_{x \to c} f(x) = 5\) and the function has a removable discontinuity at \(x=c\), what can we say about \(f(c)\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q52" value="0"> <span>A. \(f(c) = 5\)</span></label>
                     <label data-is-correct="true"><input type="radio" name="q52" value="1"> <span>B. \(f(c) \neq 5\) or \(f(c)\) is undefined.</span></label>
@@ -811,7 +811,7 @@
             </div>
 
             <div class="question-block" id="q54">
-                <p><b>Question 55:</b> Evaluate \(\\lim_{x \to 0} (\\csc x - \\cot x)\).</p>
+                <p><b>Question 55:</b> Evaluate \(\lim_{x \to 0} (\csc x - \cot x)\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q54" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q54" value="1"> <span>B. 1</span></label>
@@ -819,7 +819,7 @@
                     <label><input type="radio" name="q54" value="3"> <span>D. Does not exist.</span></label>
                 </div>
                 <div class="explanation" id="exp54">
-                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Rewrite as \(\\lim_{x \to 0} (\frac{1}{\\sin x} - \frac{\\cos x}{\\sin x}) = \\lim_{x \to 0} \frac{1 - \\cos x}{\\sin x}\). This is a 0/0 form. Applying L'Hôpital's rule gives \(\\lim_{x \to 0} \frac{\\sin x}{\\cos x} = \frac{0}{1} = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Rewrite as \(\lim_{x \to 0} (\frac{1}{\sin x} - \frac{\cos x}{\sin x}) = \lim_{x \to 0} \frac{1 - \cos x}{\sin x}\). This is a 0/0 form. Applying L'Hôpital's rule gives \(\lim_{x \to 0} \frac{\sin x}{\cos x} = \frac{0}{1} = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -837,7 +837,7 @@
             </div>
 
             <div class="question-block" id="q56">
-                <p><b>Question 57:</b> What is \(\\lim_{x \to 3} \frac{x-3}{x^2-9}\)?</p>
+                <p><b>Question 57:</b> What is \(\lim_{x \to 3} \frac{x-3}{x^2-9}\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q56" value="0"> <span>A. 1/6</span></label>
                     <label><input type="radio" name="q56" value="1"> <span>B. 6</span></label>
@@ -845,7 +845,7 @@
                     <label><input type="radio" name="q56" value="3"> <span>D. Does not exist</span></label>
                 </div>
                 <div class="explanation" id="exp56">
-                    <p><b>Explanation:</b> Factoring the denominator gives \(\\lim_{x \to 3} \frac{x-3}{(x-3)(x+3)} = \\lim_{x \to 3} \frac{1}{x+3} = \frac{1}{6}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> Factoring the denominator gives \(\lim_{x \to 3} \frac{x-3}{(x-3)(x+3)} = \lim_{x \to 3} \frac{1}{x+3} = \frac{1}{6}\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -858,7 +858,7 @@
                     <label><input type="radio" name="q57" value="3"> <span>D. No points</span></label>
                 </div>
                 <div class="explanation" id="exp57">
-                    <p><b>Explanation:</b> The greatest integer function has a jump discontinuity at every integer, as its value changes abruptly. For example, \(\\lim_{x \to 2^-} \lfloor x \rfloor = 1\) but \(\\lim_{x \to 2^+} \lfloor x \rfloor = 2\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> The greatest integer function has a jump discontinuity at every integer, as its value changes abruptly. For example, \(\lim_{x \to 2^-} \lfloor x \rfloor = 1\) but \(\lim_{x \to 2^+} \lfloor x \rfloor = 2\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -871,12 +871,12 @@
                     <label><input type="radio" name="q58" value="3"> <span>D. \(-\sin(x)\)</span></label>
                 </div>
                 <div class="explanation" id="exp58">
-                    <p><b>Explanation:</b> The derivative is \(\\lim_{h \to 0} \frac{\\sin(x+h) - \\sin(x)}{h} = \\lim_{h \to 0} \frac{\\sin x \\cos h + \\cos x \\sin h - \\sin x}{h} = \\lim_{h \to 0} (\\sin x \frac{\\cos h - 1}{h} + \\cos x \frac{\\sin h}{h})\). Using the known limits \(\\lim_{h \to 0} \frac{\\sin h}{h} = 1\) and \(\\lim_{h \to 0} \frac{\\cos h - 1}{h} = 0\), the result is \(\\cos(x)\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> The derivative is \(\lim_{h \to 0} \frac{\sin(x+h) - \sin(x)}{h} = \lim_{h \to 0} \frac{\sin x \cos h + \cos x \sin h - \sin x}{h} = \lim_{h \to 0} (\sin x \frac{\cos h - 1}{h} + \cos x \frac{\sin h}{h})\). Using the known limits \(\lim_{h \to 0} \frac{\sin h}{h} = 1\) and \(\lim_{h \to 0} \frac{\cos h - 1}{h} = 0\), the result is \(\cos(x)\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q59">
-                <p><b>Question 60:</b> Evaluate \(\\lim_{x \to \infty} (\\sqrt{x^2+x} - x)\).</p>
+                <p><b>Question 60:</b> Evaluate \(\lim_{x \to \infty} (\sqrt{x^2+x} - x)\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q59" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q59" value="1"> <span>B. 1</span></label>
@@ -884,7 +884,7 @@
                     <label><input type="radio" name="q59" value="3"> <span>D. \(\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp59">
-                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Multiply by the conjugate: \(\\lim_{x \to \infty} \frac{(x^2+x) - x^2}{\\sqrt{x^2+x} + x} = \\lim_{x \to \infty} \frac{x}{\\sqrt{x^2+x} + x}\). Divide numerator and denominator by \(x\): \(\\lim_{x \to \infty} \frac{1}{\\sqrt{1+1/x} + 1} = \frac{1}{1+1} = \frac{1}{2}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Multiply by the conjugate: \(\lim_{x \to \infty} \frac{(x^2+x) - x^2}{\sqrt{x^2+x} + x} = \lim_{x \to \infty} \frac{x}{\sqrt{x^2+x} + x}\). Divide numerator and denominator by \(x\): \(\lim_{x \to \infty} \frac{1}{\sqrt{1+1/x} + 1} = \frac{1}{1+1} = \frac{1}{2}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -902,7 +902,7 @@
             </div>
 
             <div class="question-block" id="q61">
-                <p><b>Question 62:</b> If \(\\lim_{x \to c} f(x) = 0\) and \(\\lim_{x \to c} g(x) = \infty\), what is \(\\lim_{x \to c} [f(x)g(x)]\)?</p>
+                <p><b>Question 62:</b> If \(\lim_{x \to c} f(x) = 0\) and \(\lim_{x \to c} g(x) = \infty\), what is \(\lim_{x \to c} [f(x)g(x)]\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q61" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q61" value="1"> <span>B. \(\infty\)</span></label>
@@ -910,7 +910,7 @@
                     <label data-is-correct="true"><input type="radio" name="q61" value="3"> <span>D. Indeterminate</span></label>
                 </div>
                 <div class="explanation" id="exp61">
-                    <p><b>Explanation:</b> The form \(0 \\cdot \infty\) is indeterminate. It can be converted to a 0/0 or \(\infty/\infty\) form to be evaluated, for example, by writing it as \(f(x) / (1/g(x))\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> The form \(0 \cdot \infty\) is indeterminate. It can be converted to a 0/0 or \(\infty/\infty\) form to be evaluated, for example, by writing it as \(f(x) / (1/g(x))\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -928,7 +928,7 @@
             </div>
 
             <div class="question-block" id="q63">
-                <p><b>Question 64:</b> Evaluate \(\\lim_{x \to 0} \frac{e^x - 1 - e^{-x}}{x}\).</p>
+                <p><b>Question 64:</b> Evaluate \(\lim_{x \to 0} \frac{e^x - 1 - e^{-x}}{x}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q63" value="0"> <span>A. 1</span></label>
                     <label data-is-correct="true"><input type="radio" name="q63" value="1"> <span>B. 2</span></label>
@@ -936,12 +936,12 @@
                     <label><input type="radio" name="q63" value="3"> <span>D. -2</span></label>
                 </div>
                 <div class="explanation" id="exp63">
-                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Applying L'Hôpital's rule: \(\\lim_{x \to 0} \frac{e^x - (-e^{-x})}{1} = \frac{e^0 + e^0}{1} = 1+1=2\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Applying L'Hôpital's rule: \(\lim_{x \to 0} \frac{e^x - (-e^{-x})}{1} = \frac{e^0 + e^0}{1} = 1+1=2\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q64">
-                <p><b>Question 65:</b> Using the Taylor expansion of \(\\ln(1-x)\) about \(x=0\), find the limit of \(\\frac{x + \\ln(1-x)}{x^2}\) as \(x \to 0\).</p>
+                <p><b>Question 65:</b> Using the Taylor expansion of \(\ln(1-x)\) about \(x=0\), find the limit of \(\frac{x + \ln(1-x)}{x^2}\) as \(x \to 0\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q64" value="0"> <span>A. 1/2</span></label>
                     <label data-is-correct="true"><input type="radio" name="q64" value="1"> <span>B. -1/2</span></label>
@@ -949,7 +949,7 @@
                     <label><input type="radio" name="q64" value="3"> <span>D. -1</span></label>
                 </div>
                 <div class="explanation" id="exp64">
-                    <p><b>Explanation:</b> The Taylor series for \(\\ln(1-x)\) is \(-x - \frac{x^2}{2} - \frac{x^3}{3} - \\dots\). Substituting this gives \(\\lim_{x \to 0} \frac{x + (-x - x^2/2 - \\dots)}{x^2} = \\lim_{x \to 0} \frac{-x^2/2 + O(x^3)}{x^2} = -\frac{1}{2}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
+                    <p><b>Explanation:</b> The Taylor series for \(\ln(1-x)\) is \(-x - \frac{x^2}{2} - \frac{x^3}{3} - \dots\). Substituting this gives \(\lim_{x \to 0} \frac{x + (-x - x^2/2 - \dots)}{x^2} = \lim_{x \to 0} \frac{-x^2/2 + O(x^3)}{x^2} = -\frac{1}{2}\). (Source: MT2176 Subject Guide, Topic: Taylor series).</p>
                 </div>
             </div>
 
@@ -967,7 +967,7 @@
             </div>
 
             <div class="question-block" id="q66">
-                <p><b>Question 67:</b> What is \(\\lim_{x \to -1} \frac{x^2 - 1}{x+1}\)?</p>
+                <p><b>Question 67:</b> What is \(\lim_{x \to -1} \frac{x^2 - 1}{x+1}\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q66" value="0"> <span>A. 2</span></label>
                     <label data-is-correct="true"><input type="radio" name="q66" value="1"> <span>B. -2</span></label>
@@ -975,7 +975,7 @@
                     <label><input type="radio" name="q66" value="3"> <span>D. Does not exist</span></label>
                 </div>
                 <div class="explanation" id="exp66">
-                    <p><b>Explanation:</b> Factoring the numerator gives \(\\lim_{x \to -1} \frac{(x-1)(x+1)}{x+1} = \\lim_{x \to -1} (x-1) = -1-1 = -2\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> Factoring the numerator gives \(\lim_{x \to -1} \frac{(x-1)(x+1)}{x+1} = \lim_{x \to -1} (x-1) = -1-1 = -2\). (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -988,7 +988,7 @@
                     <label><input type="radio" name="q67" value="3"> <span>D. 6</span></label>
                 </div>
                 <div class="explanation" id="exp67">
-                    <p><b>Explanation:</b> We find the limit as \(x \to 3\). Factoring the numerator gives \(\\lim_{x \to 3} \frac{(x-3)(x+2)}{x-3} = \\lim_{x \to 3} (x+2) = 5\). To make the function continuous, we define \(f(3)\) to be equal to this limit. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> We find the limit as \(x \to 3\). Factoring the numerator gives \(\lim_{x \to 3} \frac{(x-3)(x+2)}{x-3} = \lim_{x \to 3} (x+2) = 5\). To make the function continuous, we define \(f(3)\) to be equal to this limit. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -1001,12 +1001,12 @@
                     <label><input type="radio" name="q68" value="3"> <span>D. \(2e^x\)</span></label>
                 </div>
                 <div class="explanation" id="exp68">
-                    <p><b>Explanation:</b> We evaluate \(\\lim_{h \to 0} \frac{e^{2(x+h)} - e^{2x}}{h} = \\lim_{h \to 0} \frac{e^{2x}e^{2h} - e^{2x}}{h} = e^{2x} \\lim_{h \to 0} \frac{e^{2h}-1}{h}\). Let \(u=2h\). The limit becomes \(e^{2x} \\lim_{u \to 0} \frac{e^u-1}{u/2} = 2e^{2x} \\lim_{u \to 0} \frac{e^u-1}{u} = 2e^{2x}(1) = 2e^{2x}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> We evaluate \(\lim_{h \to 0} \frac{e^{2(x+h)} - e^{2x}}{h} = \lim_{h \to 0} \frac{e^{2x}e^{2h} - e^{2x}}{h} = e^{2x} \lim_{h \to 0} \frac{e^{2h}-1}{h}\). Let \(u=2h\). The limit becomes \(e^{2x} \lim_{u \to 0} \frac{e^u-1}{u/2} = 2e^{2x} \lim_{u \to 0} \frac{e^u-1}{u} = 2e^{2x}(1) = 2e^{2x}\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q69">
-                <p><b>Question 70:</b> Evaluate \(\\lim_{x \to 0} (\frac{1}{x^2})^{x}\).</p>
+                <p><b>Question 70:</b> Evaluate \(\lim_{x \to 0} (\frac{1}{x^2})^{x}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q69" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q69" value="1"> <span>B. 1</span></label>
@@ -1014,7 +1014,7 @@
                     <label><input type="radio" name="q69" value="3"> <span>D. e</span></label>
                 </div>
                 <div class="explanation" id="exp69">
-                    <p><b>Explanation:</b> This is an \(\infty^0\) indeterminate form. Let \(y = (1/x^2)^x\). Then \(\\ln(y) = x \\ln(1/x^2) = -2x \\ln(x)\). We know \(\\lim_{x \to 0} x \\ln(x) = 0\), so \(\\lim_{x \to 0} \\ln(y) = 0\). Therefore, \(\\lim_{x \to 0} y = e^0 = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty^0\) indeterminate form. Let \(y = (1/x^2)^x\). Then \(\ln(y) = x \ln(1/x^2) = -2x \ln(x)\). We know \(\lim_{x \to 0} x \ln(x) = 0\), so \(\lim_{x \to 0} \ln(y) = 0\). Therefore, \(\lim_{x \to 0} y = e^0 = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1032,7 +1032,7 @@
             </div>
 
             <div class="question-block" id="q71">
-                <p><b>Question 72:</b> If \(\\lim_{x \to c} f(x) = L\) and \(L \neq 0\), what is \(\\lim_{x \to c} \frac{1}{f(x)}\)?</p>
+                <p><b>Question 72:</b> If \(\lim_{x \to c} f(x) = L\) and \(L \neq 0\), what is \(\lim_{x \to c} \frac{1}{f(x)}\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q71" value="0"> <span>A. \(1/L\)</span></label>
                     <label><input type="radio" name="q71" value="1"> <span>B. \(L\)</span></label>
@@ -1071,7 +1071,7 @@
             </div>
 
             <div class="question-block" id="q74">
-                <p><b>Question 75:</b> Evaluate \(\\lim_{x \to \pi/2} (\\sec x - \\tan x)\).</p>
+                <p><b>Question 75:</b> Evaluate \(\lim_{x \to \pi/2} (\sec x - \tan x)\).</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q74" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q74" value="1"> <span>B. 1</span></label>
@@ -1079,7 +1079,7 @@
                     <label><input type="radio" name="q74" value="3"> <span>D. \(\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp74">
-                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Rewrite as \(\\lim_{x \to \pi/2} (\frac{1}{\\cos x} - \frac{\\sin x}{\\cos x}) = \\lim_{x \to \pi/2} \frac{1 - \\sin x}{\\cos x}\). This is a 0/0 form. Applying L'Hôpital's rule gives \(\\lim_{x \to \pi/2} \frac{-\\cos x}{-\\sin x} = \frac{0}{1} = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty - \infty\) form. Rewrite as \(\lim_{x \to \pi/2} (\frac{1}{\cos x} - \frac{\sin x}{\cos x}) = \lim_{x \to \pi/2} \frac{1 - \sin x}{\cos x}\). This is a 0/0 form. Applying L'Hôpital's rule gives \(\lim_{x \to \pi/2} \frac{-\cos x}{-\sin x} = \frac{0}{1} = 0\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1097,7 +1097,7 @@
             </div>
 
             <div class="question-block" id="q76">
-                <p><b>Question 77:</b> What is \(\\lim_{x \to -2} \frac{x^3+8}{x+2}\)?</p>
+                <p><b>Question 77:</b> What is \(\lim_{x \to -2} \frac{x^3+8}{x+2}\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q76" value="0"> <span>A. 4</span></label>
                     <label><input type="radio" name="q76" value="1"> <span>B. 8</span></label>
@@ -1105,7 +1105,7 @@
                     <label><input type="radio" name="q76" value="3"> <span>D. -4</span></label>
                 </div>
                 <div class="explanation" id="exp76">
-                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\\lim_{x \to -2} \frac{3x^2}{1} = 3(-2)^2 = 12\). Alternatively, factoring the sum of cubes in the numerator gives \(\\frac{(x+2)(x^2-2x+4)}{x+2} = x^2-2x+4\), which approaches 12 as \(x \to -2\). (Source: Wrede, 'Advanced Calculus', Chapter 3 & 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule, we get \(\lim_{x \to -2} \frac{3x^2}{1} = 3(-2)^2 = 12\). Alternatively, factoring the sum of cubes in the numerator gives \(\frac{(x+2)(x^2-2x+4)}{x+2} = x^2-2x+4\), which approaches 12 as \(x \to -2\). (Source: Wrede, 'Advanced Calculus', Chapter 3 & 4).</p>
                 </div>
             </div>
 
@@ -1129,12 +1129,12 @@
                     <label><input type="radio" name="q78" value="3"> <span>D. \(-\cos(x)\)</span></label>
                 </div>
                 <div class="explanation" id="exp78">
-                    <p><b>Explanation:</b> Using the definition \(\\lim_{h \to 0} \frac{\\cos(x+h) - \\cos(x)}{h} = \\lim_{h \to 0} \frac{\\cos x \\cos h - \\sin x \\sin h - \\cos x}{h} = \\lim_{h \to 0} (\\cos x \frac{\\cos h - 1}{h} - \\sin x \frac{\\sin h}{h})\). This evaluates to \(\cos(x)(0) - \sin(x)(1) = -\sin(x)\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> Using the definition \(\lim_{h \to 0} \frac{\cos(x+h) - \cos(x)}{h} = \lim_{h \to 0} \frac{\cos x \cos h - \sin x \sin h - \cos x}{h} = \lim_{h \to 0} (\cos x \frac{\cos h - 1}{h} - \sin x \frac{\sin h}{h})\). This evaluates to \(\cos(x)(0) - \sin(x)(1) = -\sin(x)\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q79">
-                <p><b>Question 80:</b> Evaluate \(\\lim_{x \to 0^+} (\\sin x)^x\).</p>
+                <p><b>Question 80:</b> Evaluate \(\lim_{x \to 0^+} (\sin x)^x\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q79" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q79" value="1"> <span>B. 1</span></label>
@@ -1142,7 +1142,7 @@
                     <label><input type="radio" name="q79" value="3"> <span>D. Does not exist</span></label>
                 </div>
                 <div class="explanation" id="exp79">
-                    <p><b>Explanation:</b> This is a \(0^0\) indeterminate form. Let \(y = (\\sin x)^x\), so \(\\ln y = x \\ln(\\sin x)\). This is a \(0 \cdot (-\\infty)\) form. Rewrite as \(\\frac{\\ln(\\sin x)}{1/x}\). Applying L'Hôpital's Rule: \(\\lim_{x \to 0^+} \frac{\\frac{\\cos x}{\\sin x}}{-1/x^2} = \\lim_{x \to 0^+} -x^2 \\cot x = \\lim_{x \to 0^+} -x \frac{x}{\\tan x} = (0)(1) = 0\). So, \(\\lim_{x \to 0^+} y = e^0 = 1\). (Source: Ostaszewski, Section 18.8).</p>
+                    <p><b>Explanation:</b> This is a \(0^0\) indeterminate form. Let \(y = (\sin x)^x\), so \(\ln y = x \ln(\sin x)\). This is a \(0 \cdot (-\infty)\) form. Rewrite as \(\frac{\ln(\sin x)}{1/x}\). Applying L'Hôpital's Rule: \(\lim_{x \to 0^+} \frac{\frac{\cos x}{\sin x}}{-1/x^2} = \lim_{x \to 0^+} -x^2 \cot x = \lim_{x \to 0^+} -x \frac{x}{\tan x} = (0)(1) = 0\). So, \(\lim_{x \to 0^+} y = e^0 = 1\). (Source: Ostaszewski, Section 18.8).</p>
                 </div>
             </div>
 
@@ -1160,12 +1160,12 @@
             </div>
 
             <div class="question-block" id="q81">
-                <p><b>Question 82:</b> If \(\\lim_{x \to a} f(x) = 0\) and \(\\lim_{x \to a} g(x) = 0\), L'Hôpital's rule states that \(\\lim_{x \to a} \frac{f(x)}{g(x)}\) is equal to:</p>
+                <p><b>Question 82:</b> If \(\lim_{x \to a} f(x) = 0\) and \(\lim_{x \to a} g(x) = 0\), L'Hôpital's rule states that \(\lim_{x \to a} \frac{f(x)}{g(x)}\) is equal to:</p>
                 <div class="answers">
-                    <label data-is-correct="true"><input type="radio" name="q81" value="0"> <span>A. \(\\lim_{x \to a} \frac{f'(x)}{g'(x)}\)</span></label>
-                    <label><input type="radio" name="q81" value="1"> <span>B. \(\\frac{f'(a)}{g'(a)}\)</span></label>
-                    <label><input type="radio" name="q81" value="2"> <span>C. \(\\lim_{x \to a} (f(x)-g(x))\)</span></label>
-                    <label><input type="radio" name="q81" value="3"> <span>D. \(\\lim_{x \to a} (f'(x)g(x) - f(x)g'(x))\)</span></label>
+                    <label data-is-correct="true"><input type="radio" name="q81" value="0"> <span>A. \(\lim_{x \to a} \frac{f'(x)}{g'(x)}\)</span></label>
+                    <label><input type="radio" name="q81" value="1"> <span>B. \(\frac{f'(a)}{g'(a)}\)</span></label>
+                    <label><input type="radio" name="q81" value="2"> <span>C. \(\lim_{x \to a} (f(x)-g(x))\)</span></label>
+                    <label><input type="radio" name="q81" value="3"> <span>D. \(\lim_{x \to a} (f'(x)g(x) - f(x)g'(x))\)</span></label>
                 </div>
                 <div class="explanation" id="exp81">
                     <p><b>Explanation:</b> L'Hôpital's rule allows us to evaluate the limit of a quotient of functions by taking the limit of the quotient of their derivatives, provided the limit exists and the initial form is indeterminate (0/0 or \(\infty/\infty\)). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
@@ -1181,7 +1181,7 @@
                     <label data-is-correct="true"><input type="radio" name="q82" value="3"> <span>D. It has an infinite discontinuity.</span></label>
                 </div>
                 <div class="explanation" id="exp82">
-                    <p><b>Explanation:</b> The function is not defined at \(x=0\), and the limits from the left (\(-\\infty\)) and right (\(+\\infty\)) approach infinity. This is the definition of an infinite discontinuity. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
+                    <p><b>Explanation:</b> The function is not defined at \(x=0\), and the limits from the left (\(-\infty\)) and right (\(+\infty\)) approach infinity. This is the definition of an infinite discontinuity. (Source: Wrede, 'Advanced Calculus', Chapter 3).</p>
                 </div>
             </div>
 
@@ -1199,7 +1199,7 @@
             </div>
 
             <div class="question-block" id="q84">
-                <p><b>Question 85:</b> Evaluate \(\\lim_{x \to 0} \frac{\\sin(5x)}{x}\).</p>
+                <p><b>Question 85:</b> Evaluate \(\lim_{x \to 0} \frac{\sin(5x)}{x}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q84" value="0"> <span>A. 1</span></label>
                     <label data-is-correct="true"><input type="radio" name="q84" value="1"> <span>B. 5</span></label>
@@ -1207,7 +1207,7 @@
                     <label><input type="radio" name="q84" value="3"> <span>D. 0</span></label>
                 </div>
                 <div class="explanation" id="exp84">
-                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule: \(\\lim_{x \to 0} \frac{5\\cos(5x)}{1} = 5\\cos(0) = 5\). Alternatively, rewrite as \(5 \\cdot \frac{\\sin(5x)}{5x}\) and use the standard limit \(\\lim_{u \to 0} \frac{\\sin u}{u} = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Using L'Hôpital's rule: \(\lim_{x \to 0} \frac{5\cos(5x)}{1} = 5\cos(0) = 5\). Alternatively, rewrite as \(5 \cdot \frac{\sin(5x)}{5x}\) and use the standard limit \(\lim_{u \to 0} \frac{\sin u}{u} = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1225,7 +1225,7 @@
             </div>
 
             <div class="question-block" id="q86">
-                <p><b>Question 87:</b> What is \(\\lim_{x \to \infty} e^{-x}\)?</p>
+                <p><b>Question 87:</b> What is \(\lim_{x \to \infty} e^{-x}\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q86" value="0"> <span>A. 0</span></label>
                     <label><input type="radio" name="q86" value="1"> <span>B. 1</span></label>
@@ -1241,9 +1241,9 @@
                 <p><b>Question 88:</b> If \(f(x)\) is continuous at \(x=c\), which of the following is NOT necessarily true?</p>
                 <div class="answers">
                     <label><input type="radio" name="q87" value="0"> <span>A. \(f(c)\) is defined.</span></label>
-                    <label><input type="radio" name="q87" value="1"> <span>B. \(\\lim_{x \to c} f(x)\) exists.</span></label>
+                    <label><input type="radio" name="q87" value="1"> <span>B. \(\lim_{x \to c} f(x)\) exists.</span></label>
                     <label data-is-correct="true"><input type="radio" name="q87" value="2"> <span>C. \(f(x)\) is differentiable at \(x=c\).</span></label>
-                    <label><input type="radio" name="q87" value="3"> <span>D. \(\\lim_{x \to c} f(x) = f(c)\).</span></label>
+                    <label><input type="radio" name="q87" value="3"> <span>D. \(\lim_{x \to c} f(x) = f(c)\).</span></label>
                 </div>
                 <div class="explanation" id="exp87">
                     <p><b>Explanation:</b> Continuity is a necessary condition for differentiability, but it does not guarantee it. A function can be continuous at a point without being differentiable there. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
@@ -1264,7 +1264,7 @@
             </div>
 
             <div class="question-block" id="q89">
-                <p><b>Question 90:</b> Evaluate \(\\lim_{x \to 0} \frac{\\arcsin(x)}{x}\).</p>
+                <p><b>Question 90:</b> Evaluate \(\lim_{x \to 0} \frac{\arcsin(x)}{x}\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q89" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q89" value="1"> <span>B. 1</span></label>
@@ -1272,7 +1272,7 @@
                     <label><input type="radio" name="q89" value="3"> <span>D. \(\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp89">
-                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Applying L'Hôpital's rule: \(\\lim_{x \to 0} \frac{1/\\sqrt{1-x^2}}{1} = \frac{1/\\sqrt{1-0}} = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 indeterminate form. Applying L'Hôpital's rule: \(\lim_{x \to 0} \frac{1/\sqrt{1-x^2}}{1} = \frac{1/\sqrt{1-0}} = 1\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1290,7 +1290,7 @@
             </div>
 
             <div class="question-block" id="q91">
-                <p><b>Question 92:</b> What is \(\\lim_{x \to 1} \frac{x^n - 1}{x - 1}\) for a positive integer \(n\)?</p>
+                <p><b>Question 92:</b> What is \(\lim_{x \to 1} \frac{x^n - 1}{x - 1}\) for a positive integer \(n\)?</p>
                 <div class="answers">
                     <label><input type="radio" name="q91" value="0"> <span>A. 1</span></label>
                     <label data-is-correct="true"><input type="radio" name="q91" value="1"> <span>B. n</span></label>
@@ -1298,7 +1298,7 @@
                     <label><input type="radio" name="q91" value="3"> <span>D. \(\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp91">
-                    <p><b>Explanation:</b> This is the definition of the derivative of \(f(x) = x^n\) at \(x=1\). The derivative is \(f'(x) = nx^{n-1}\), so \(f'(1) = n(1)^{n-1} = n\). Alternatively, L'Hôpital's rule gives \(\\lim_{x \to 1} \frac{nx^{n-1}}{1} = n\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is the definition of the derivative of \(f(x) = x^n\) at \(x=1\). The derivative is \(f'(x) = nx^{n-1}\), so \(f'(1) = n(1)^{n-1} = n\). Alternatively, L'Hôpital's rule gives \(\lim_{x \to 1} \frac{nx^{n-1}}{1} = n\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1324,12 +1324,12 @@
                     <label><input type="radio" name="q93" value="3"> <span>D. \(f(x+c)\)</span></label>
                 </div>
                 <div class="explanation" id="exp93">
-                    <p><b>Explanation:</b> This is an application of the chain rule. Let \(u = x+c\). Then \(g(x) = f(u)\). The derivative is \(\\frac{dg}{dx} = \frac{df}{du} \\cdot \frac{du}{dx} = f'(u) \\cdot 1 = f'(x+c)\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an application of the chain rule. Let \(u = x+c\). Then \(g(x) = f(u)\). The derivative is \(\frac{dg}{dx} = \frac{df}{du} \cdot \frac{du}{dx} = f'(u) \cdot 1 = f'(x+c)\). (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
             <div class="question-block" id="q94">
-                <p><b>Question 95:</b> Evaluate \(\\lim_{x \to \infty} x(e^{1/x} - 1)\).</p>
+                <p><b>Question 95:</b> Evaluate \(\lim_{x \to \infty} x(e^{1/x} - 1)\).</p>
                 <div class="answers">
                     <label><input type="radio" name="q94" value="0"> <span>A. 0</span></label>
                     <label data-is-correct="true"><input type="radio" name="q94" value="1"> <span>B. 1</span></label>
@@ -1337,7 +1337,7 @@
                     <label><input type="radio" name="q94" value="3"> <span>D. \(\infty\)</span></label>
                 </div>
                 <div class="explanation" id="exp94">
-                    <p><b>Explanation:</b> This is an \(\infty \\cdot 0\) indeterminate form. Let \(u=1/x\). As \(x \to \infty\), \(u \to 0\). The limit becomes \(\\lim_{u \to 0} \frac{e^u - 1}{u}\), which is the definition of the derivative of \(e^u\) at \(u=0\), which is 1. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is an \(\infty \cdot 0\) indeterminate form. Let \(u=1/x\). As \(x \to \infty\), \(u \to 0\). The limit becomes \(\lim_{u \to 0} \frac{e^u - 1}{u}\), which is the definition of the derivative of \(e^u\) at \(u=0\), which is 1. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1355,7 +1355,7 @@
             </div>
 
             <div class="question-block" id="q96">
-                <p><b>Question 97:</b> What is \(\\lim_{x \to 4} \frac{\\sqrt{x}-2}{x-4}\)?</p>
+                <p><b>Question 97:</b> What is \(\lim_{x \to 4} \frac{\sqrt{x}-2}{x-4}\)?</p>
                 <div class="answers">
                     <label data-is-correct="true"><input type="radio" name="q96" value="0"> <span>A. 1/4</span></label>
                     <label><input type="radio" name="q96" value="1"> <span>B. 1/2</span></label>
@@ -1363,7 +1363,7 @@
                     <label><input type="radio" name="q96" value="3"> <span>D. Does not exist</span></label>
                 </div>
                 <div class="explanation" id="exp96">
-                    <p><b>Explanation:</b> This is a 0/0 form. Using L'Hôpital's rule: \(\\lim_{x \to 4} \frac{1/(2\\sqrt{x})}{1} = \frac{1/(2\\sqrt{4})}{1} = \frac{1}{4}\). Alternatively, multiply by the conjugate of the numerator. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
+                    <p><b>Explanation:</b> This is a 0/0 form. Using L'Hôpital's rule: \(\lim_{x \to 4} \frac{1/(2\sqrt{x})}{1} = \frac{1/(2\sqrt{4})}{1} = \frac{1}{4}\). Alternatively, multiply by the conjugate of the numerator. (Source: Wrede, 'Advanced Calculus', Chapter 4).</p>
                 </div>
             </div>
 
@@ -1397,9 +1397,9 @@
                 <p><b>Question 100:</b> Use Taylor series to find the limit $lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$.</p>
                 <div class="card-back">
                     <div class="answer-content">
-                        <p>The Taylor series for $e^x$ is $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \\dots$.</p>
-                        <p>$$ \lim_{x \to 0} \frac{(1 + x + \frac{x^2}{2!} + \\dots) - 1 - x}{x^2} = \lim_{x \to 0} \frac{\\frac{x^2}{2} + \frac{x^3}{6} + \\dots}{x^2} $$</p>
-                        <p>$$ = \lim_{x \to 0} (\frac{1}{2} + \frac{x}{6} + \\dots) = \frac{1}{2} $$</p>
+                        <p>The Taylor series for $e^x$ is $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots$.</p>
+                        <p>$$ \lim_{x \to 0} \frac{(1 + x + \frac{x^2}{2!} + \dots) - 1 - x}{x^2} = \lim_{x \to 0} \frac{\frac{x^2}{2} + \frac{x^3}{6} + \dots}{x^2} $$</p>
+                        <p>$$ = \lim_{x \to 0} (\frac{1}{2} + \frac{x}{6} + \dots) = \frac{1}{2} $$</p>
                         <p class="source">Source: Wrede, Chapter 11</p>
                     </div>
                 </div>
