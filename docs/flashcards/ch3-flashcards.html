@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT2176 Further Calculus - Improper Integrals Flashcards</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .slideshow-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+  }
+  .flashcard {
+    display: none;
+    min-width: 800px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+  }
+  .card {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .back {
+    transform: rotateY(180deg);
+    text-align: left;
+    align-items: flex-start;
+  }
+  .question, .answer {
+    font-size: 1.2em;
+  }
+  .source {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  .flip-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .next {
+    right: -50px;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: -50px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.2);
+  }
+  .progress-bar {
+      width: 80%;
+      max-width: 900px;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+  }
+  .progress {
+      width: 1%;
+      height: 100%;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      transition: width 0.3s ease-in-out;
+  }
+</style>
+</head>
+<body>
+
+<h1>MT2176 Further Calculus: Improper Integrals</h1>
+
+<div class="progress-bar">
+  <div class="progress" id="progressBar"></div>
+</div>
+<div id="progressText">Card 1 of 100</div>
+
+
+<div class="slideshow-container">
+  
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">What are the two main kinds of improper integrals?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          There are two main kinds of improper integrals:
+          <br><br>
+          <b>Type 1 (First Kind):</b> These have an infinite interval of integration. For example, \( \int_{a}^{\infty} f(x) \,dx \) or \( \int_{-\infty}^{b} f(x) \,dx \).
+          <br><br>
+          <b>Type 2 (Second Kind):</b> These have an integrand with a finite number of infinite discontinuities within the interval of integration. For example, \( \int_{a}^{b} f(x) \,dx \) where \(f(x)\) has an infinite discontinuity at \(x=a\), \(x=b\), or some \(c \in (a,b)\).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.1.1; Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">How is a Type 1 improper integral \( \int_{a}^{\infty} f(x) \,dx \) defined?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The improper integral \( \int_{a}^{\infty} f(x) \,dx \) is defined as the limit of a proper integral:
+          \[ \int_{a}^{\infty} f(x) \,dx = \lim_{t \to \infty} \int_{a}^{t} f(x) \,dx \]
+          If the limit exists and is finite, the integral is said to be <b>convergent</b>. Otherwise, it is <b>divergent</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.1.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">How is a Type 2 improper integral \( \int_{a}^{b} f(x) \,dx \) with a discontinuity at \(x=a\) defined?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          If \(f(x)\) is continuous on \((a, b]\) and has an infinite discontinuity at \(x=a\), the improper integral is defined as:
+          \[ \int_{a}^{b} f(x) \,dx = \lim_{t \to a^+} \int_{t}^{b} f(x) \,dx \]
+          If the limit exists and is finite, the integral is <b>convergent</b>. Otherwise, it is <b>divergent</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.1.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">What is an improper integral of the third kind?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          An improper integral of the third kind is one that involves a combination of Type 1 and Type 2 characteristics. For example, an integral over an infinite interval where the integrand also has an infinite discontinuity.
+          <br><br>
+          Example: \( \int_{0}^{\infty} \frac{e^{-x}}{\sqrt{x}} \,dx \). This has an infinite interval and a discontinuity at \(x=0\).
+          <br><br>
+          To evaluate these, we split the integral into parts, for example: \( \int_{0}^{1} \frac{e^{-x}}{\sqrt{x}} \,dx + \int_{1}^{\infty} \frac{e^{-x}}{\sqrt{x}} \,dx \). The original integral converges only if both parts converge.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.1.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Determine if \( \int_{1}^{\infty} \frac{1}{x^p} \,dx \) converges or diverges based on the value of \(p\). This is known as the p-integral test.</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral \( \int_{1}^{\infty} \frac{1}{x^p} \,dx \) is a fundamental test case.
+          <br><br>
+          If \(p > 1\), the integral <b>converges</b>.
+          <br>
+          If \(p \le 1\), the integral <b>diverges</b>.
+          <br><br>
+          <b>Proof:</b>
+          If \(p \neq 1\), \( \int_{1}^{t} x^{-p} \,dx = [\frac{x^{-p+1}}{-p+1}]_{1}^{t} = \frac{1}{1-p}(t^{1-p} - 1) \).
+          As \(t \to \infty\), \(t^{1-p} \to 0\) if \(1-p < 0\) (i.e., \(p>1\)), and the limit is \(\frac{1}{p-1}\).
+          If \(p < 1\), \(1-p > 0\), so \(t^{1-p} \to \infty\) and the integral diverges.
+          If \(p=1\), \( \int_{1}^{t} \frac{1}{x} \,dx = [\ln|x|]_{1}^{t} = \ln t \), which diverges as \(t \to \infty\).
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">State the Direct Comparison Test for improper integrals of the first kind.</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(f(x)\) and \(g(x)\) be continuous functions such that \(0 \le f(x) \le g(x)\) for all \(x \ge a\).
+          <br><br>
+          1. If \( \int_{a}^{\infty} g(x) \,dx \) <b>converges</b>, then \( \int_{a}^{\infty} f(x) \,dx \) also <b>converges</b>.
+          <br><br>
+          2. If \( \int_{a}^{\infty} f(x) \,dx \) <b>diverges</b>, then \( \int_{a}^{\infty} g(x) \,dx \) also <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">State the Limit Comparison Test for improper integrals of the first kind.</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(f(x)\) and \(g(x)\) be positive continuous functions for \(x \ge a\). Suppose that
+          \[ L = \lim_{x \to \infty} \frac{f(x)}{g(x)} \]
+          If \(L\) is finite and \(L > 0\), then \( \int_{a}^{\infty} f(x) \,dx \) and \( \int_{a}^{\infty} g(x) \,dx \) either both converge or both diverge.
+          <br><br>
+          If \(L=0\) and \( \int_{a}^{\infty} g(x) \,dx \) converges, then \( \int_{a}^{\infty} f(x) \,dx \) converges.
+          <br><br>
+          If \(L=\infty\) and \( \int_{a}^{\infty} g(x) \,dx \) diverges, then \( \int_{a}^{\infty} f(x) \,dx \) diverges.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{1}{x^2 + 1} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          We can use the Direct Comparison Test.
+          For \(x \ge 1\), we have \(x^2 + 1 > x^2\), so \(0 < \frac{1}{x^2 + 1} < \frac{1}{x^2}\).
+          <br><br>
+          We know that \( \int_{1}^{\infty} \frac{1}{x^2} \,dx \) is a p-integral with \(p=2 > 1\), so it converges.
+          <br><br>
+          By the Direct Comparison Test, since \( \int_{1}^{\infty} \frac{1}{x^2} \,dx \) converges, the integral \( \int_{1}^{\infty} \frac{1}{x^2 + 1} \,dx \) also <b>converges</b>.
+          <br><br>
+          Alternatively, we can evaluate it directly:
+          \[ \lim_{t \to \infty} \int_{1}^{t} \frac{1}{x^2+1} \,dx = \lim_{t \to \infty} [\arctan(x)]_{1}^{t} = \lim_{t \to \infty} (\arctan(t) - \arctan(1)) = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4} \]
+          Since the limit is finite, the integral converges.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{\ln x}{x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          For \(x > e\), \(\ln x > 1\), so \(\frac{\ln x}{x} > \frac{1}{x}\).
+          <br><br>
+          We know that \( \int_{1}^{\infty} \frac{1}{x} \,dx \) diverges (p-integral with \(p=1\)).
+          <br><br>
+          By the Direct Comparison Test, since \( \int_{e}^{\infty} \frac{1}{x} \,dx \) diverges, \( \int_{e}^{\infty} \frac{\ln x}{x} \,dx \) also diverges. Therefore, \( \int_{1}^{\infty} \frac{\ln x}{x} \,dx \) <b>diverges</b>.
+          <br><br>
+          Alternatively, we can evaluate it directly using substitution \(u = \ln x\), \(du = \frac{1}{x}dx\).
+          \[ \int_{1}^{\infty} \frac{\ln x}{x} \,dx = \int_{0}^{\infty} u \,du = [\frac{u^2}{2}]_{0}^{\infty} \]
+          This limit is infinite, so the integral diverges.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">What is absolute convergence of an improper integral?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          An improper integral \( \int_{a}^{\infty} f(x) \,dx \) is said to be <b>absolutely convergent</b> if the integral of its absolute value, \( \int_{a}^{\infty} |f(x)| \,dx \), converges.
+          <br><br>
+          An important theorem states that if an integral is absolutely convergent, then it is convergent.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <!-- I will generate 84 more flashcards following this pattern -->
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">What is conditional convergence of an improper integral?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          An improper integral \( \int_{a}^{\infty} f(x) \,dx \) is said to be <b>conditionally convergent</b> if it converges, but the integral of its absolute value, \( \int_{a}^{\infty} |f(x)| \,dx \), diverges.
+          <br><br>
+          A classic example is \( \int_{0}^{\infty} \frac{\sin x}{x} \,dx \).
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{1}{\sqrt{x}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 improper integral with a discontinuity at \(x=0\).
+          \[ \int_{0}^{1} \frac{1}{\sqrt{x}} \,dx = \lim_{t \to 0^+} \int_{t}^{1} x^{-1/2} \,dx = \lim_{t \to 0^+} [2x^{1/2}]_{t}^{1} = \lim_{t \to 0^+} (2 - 2\sqrt{t}) = 2 \]
+          Since the limit is finite, the integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.1.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{1}{x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 improper integral with a discontinuity at \(x=0\).
+          \[ \int_{0}^{1} \frac{1}{x} \,dx = \lim_{t \to 0^+} \int_{t}^{1} \frac{1}{x} \,dx = \lim_{t \to 0^+} [\ln|x|]_{t}^{1} = \lim_{t \to 0^+} (\ln(1) - \ln(t)) = \lim_{t \to 0^+} (-\ln(t)) = \infty \]
+          Since the limit is infinite, the integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} e^{-x^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is the Gaussian integral. We can split it into two parts: \( \int_{0}^{1} e^{-x^2} \,dx + \int_{1}^{\infty} e^{-x^2} \,dx \).
+          <br><br>
+          The first part is a proper integral and is finite.
+          <br><br>
+          For the second part, \( \int_{1}^{\infty} e^{-x^2} \,dx \), we can use the comparison test. For \(x \ge 1\), \(x^2 \ge x\), so \(-x^2 \le -x\), and \(e^{-x^2} \le e^{-x}\).
+          <br><br>
+          We know \( \int_{1}^{\infty} e^{-x} \,dx = [ -e^{-x} ]_{1}^{\infty} = 0 - (-e^{-1}) = 1/e \), which converges.
+          <br><br>
+          By the Direct Comparison Test, \( \int_{1}^{\infty} e^{-x^2} \,dx \) converges. Since both parts converge, the original integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">What is the Cauchy Principal Value?</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          For an integral \( \int_{-\infty}^{\infty} f(x) \,dx \), the Cauchy Principal Value is defined as:
+          \[ P.V. \int_{-\infty}^{\infty} f(x) \,dx = \lim_{R \to \infty} \int_{-R}^{R} f(x) \,dx \]
+          This is a weaker form of convergence. If the improper integral converges in the standard sense, its value is the same as the Cauchy Principal Value. However, the Cauchy Principal Value may exist even when the standard integral diverges. For example, for \(f(x)=x\).
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{2}^{\infty} \frac{1}{x \ln x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          We use the integral test. Let \(u = \ln x\), so \(du = \frac{1}{x} dx\).
+          \[ \int_{\ln 2}^{\infty} \frac{1}{u} \,du \]
+          This is a p-integral with \(p=1\), which diverges. Therefore, the original integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x}{e^x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          We can use the Limit Comparison Test with \(g(x) = e^{-x/2}\).
+          \[ \lim_{x \to \infty} \frac{x/e^x}{e^{-x/2}} = \lim_{x \to \infty} \frac{x}{e^{x/2}} = 0 \]
+          (using L'Hopital's Rule). Since \(\int_{0}^{\infty} e^{-x/2} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{x+1}{\sqrt{x^4+1}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = \frac{x}{\sqrt{x^4}} = \frac{1}{x}\).
+          \[ \lim_{x \to \infty} \frac{(x+1)/\sqrt{x^4+1}}{1/x} = \lim_{x \to \infty} \frac{x(x+1)}{\sqrt{x^4+1}} = 1 \]
+          Since \(\int_{1}^{\infty} \frac{1}{x} dx\) diverges, the original integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Evaluate \( \int_{-\infty}^{0} xe^x \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Using integration by parts (\(u=x, dv=e^x dx\)), \(\int xe^x dx = xe^x - e^x\).
+          \[ \lim_{t \to -\infty} [xe^x - e^x]_{t}^{0} = (0 - 1) - \lim_{t \to -\infty} (te^t - e^t) = -1 - (0 - 0) = -1 \]
+          The integral <b>converges</b> to -1.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\pi/2} \tan x \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 integral with a discontinuity at \(x=\pi/2\).
+          \[ \lim_{t \to (\pi/2)^-} \int_{0}^{t} \tan x \,dx = \lim_{t \to (\pi/2)^-} [-\ln|\cos x|]_{0}^{t} = \lim_{t \to (\pi/2)^-} (-\ln|\cos t| + \ln|\cos 0|) = \infty \]
+          The integral <b>diverges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{dx}{\sqrt{1-x^2}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 integral with a discontinuity at \(x=1\).
+          \[ \lim_{t \to 1^-} \int_{0}^{t} \frac{dx}{\sqrt{1-x^2}} = \lim_{t \to 1^-} [\arcsin x]_{0}^{t} = \lim_{t \to 1^-} (\arcsin t - \arcsin 0) = \frac{\pi}{2} \]
+          The integral <b>converges</b> to \(\pi/2\).
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{\cos x}{x^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          We test for absolute convergence.
+          \[ \int_{1}^{\infty} |\frac{\cos x}{x^2}| \,dx = \int_{1}^{\infty} \frac{|\cos x|}{x^2} \,dx \]
+          Since \(|\cos x| \le 1\), we have \(\frac{|\cos x|}{x^2} \le \frac{1}{x^2}\).
+          Since \(\int_{1}^{\infty} \frac{1}{x^2} dx\) converges, the integral of the absolute value converges by the Direct Comparison Test.
+          Therefore, the original integral is <b>absolutely convergent</b> (and thus convergent).
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{e^x + 1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          For \(x > 0\), \(e^x + 1 > e^x\), so \(\frac{1}{e^x+1} < \frac{1}{e^x} = e^{-x}\).
+          We know \(\int_{0}^{\infty} e^{-x} dx\) converges to 1.
+          By the Direct Comparison Test, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{\ln x}{x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 integral with a discontinuity at \(x=0\).
+          Let \(u = \ln x\), \(du = \frac{1}{x} dx\).
+          \[ \int_{-\infty}^{0} u \,du = [\frac{u^2}{2}]_{-\infty}^{0} \]
+          This limit is infinite, so the integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{dx}{\sqrt{x} + 1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = \frac{1}{\sqrt{x}}\).
+          \[ \lim_{x \to \infty} \frac{1/(\sqrt{x}+1)}{1/\sqrt{x}} = \lim_{x \to \infty} \frac{\sqrt{x}}{\sqrt{x}+1} = 1 \]
+          Since \(\int_{1}^{\infty} \frac{1}{\sqrt{x}} dx\) diverges (p-integral with \(p=1/2\)), the original integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{\arctan x}{x^2+1} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(u = \arctan x\), \(du = \frac{1}{x^2+1} dx\).
+          \[ \int_{0}^{\pi/2} u \,du = [\frac{u^2}{2}]_{0}^{\pi/2} = \frac{(\pi/2)^2}{2} = \frac{\pi^2}{8} \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{dx}{x^p} \) for \(p>0\).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 p-integral test.
+          If \(p<1\), the integral <b>converges</b>.
+          If \(p \ge 1\), the integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{3}^{\infty} \frac{dx}{x^2-4} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = \frac{1}{x^2}\).
+          \[ \lim_{x \to \infty} \frac{1/(x^2-4)}{1/x^2} = \lim_{x \to \infty} \frac{x^2}{x^2-4} = 1 \]
+          Since \(\int_{3}^{\infty} \frac{1}{x^2} dx\) converges (p-integral with \(p=2\)), the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} x^2 e^{-x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = e^{-x/2}\).
+          \[ \lim_{x \to \infty} \frac{x^2 e^{-x}}{e^{-x/2}} = \lim_{x \to \infty} \frac{x^2}{e^{x/2}} = 0 \]
+          (using L'Hopital's Rule twice). Since \(\int_{0}^{\infty} e^{-x/2} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{e^x}{1+e^{2x}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(u = e^x\), \(du = e^x dx\).
+          \[ \int_{e}^{\infty} \frac{du}{1+u^2} = [\arctan u]_{e}^{\infty} = \frac{\pi}{2} - \arctan(e) \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{1}{\sqrt[3]{x^4+1}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = \frac{1}{x^{4/3}}\).
+          \[ \lim_{x \to \infty} \frac{1/\sqrt[3]{x^4+1}}{1/x^{4/3}} = \lim_{x \to \infty} \frac{x^{4/3}}{(x^4+1)^{1/3}} = 1 \]
+          Since \(\int_{1}^{\infty} \frac{1}{x^{4/3}} dx\) converges (p-integral with \(p=4/3>1\)), the original integral <b>converges</b>. (The integral from 0 to 1 is proper).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{x^2-1}{x^3+1} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = \frac{1}{x}\).
+          \[ \lim_{x \to \infty} \frac{(x^2-1)/(x^3+1)}{1/x} = \lim_{x \to \infty} \frac{x(x^2-1)}{x^3+1} = 1 \]
+          Since \(\int_{1}^{\infty} \frac{1}{x} dx\) diverges, the original integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{e^x}{\sqrt{x}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 integral. For \(x \in (0, 1]\), \(e^x \le e\).
+          So, \(\frac{e^x}{\sqrt{x}} \le \frac{e}{\sqrt{x}}\).
+          Since \(\int_{0}^{1} \frac{e}{\sqrt{x}} dx = e \int_{0}^{1} \frac{1}{\sqrt{x}} dx\) converges (p-integral with \(p=1/2<1\)), the original integral <b>converges</b> by the Direct Comparison Test.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{1}{x \sqrt{x^2-1}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is an improper integral of both Type 1 and Type 2 (at x=1).
+          Split into \(\int_{1}^{2} + \int_{2}^{\infty}\).
+          For \(\int_{2}^{\infty}\), compare with \(1/x^2\). Converges.
+          For \(\int_{1}^{2}\), let \(x = \sec \theta\). The integral becomes \(\int_{0}^{\pi/3} d\theta = \pi/3\). Converges.
+          Since both parts converge, the original integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{e^{-\sqrt{x}}}{\sqrt{x}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(u = \sqrt{x}\), \(du = \frac{1}{2\sqrt{x}} dx\).
+          \[ \int_{0}^{\infty} 2e^{-u} \,du = [-2e^{-u}]_{0}^{\infty} = 0 - (-2) = 2 \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x}{x^3+1} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use the Limit Comparison Test with \(g(x) = \frac{1}{x^2}\).
+          \[ \lim_{x \to \infty} \frac{x/(x^3+1)}{1/x^2} = \lim_{x \to \infty} \frac{x^3}{x^3+1} = 1 \]
+          Since \(\int_{1}^{\infty} \frac{1}{x^2} dx\) converges, the original integral <b>converges</b>. (The integral from 0 to 1 is proper).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{1-e^{-x}}{x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          As \(x \to 0\), \(\frac{1-e^{-x}}{x} \to 1\) (by L'Hopital's Rule). So the first part is proper.
+          For \(x \ge 1\), \(1-e^{-x} > 1/2\). So \(\frac{1-e^{-x}}{x} > \frac{1}{2x}\).
+          Since \(\int_{1}^{\infty} \frac{1}{2x} dx\) diverges, the original integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{\ln(x^2)}{x^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          \( \int_{1}^{\infty} \frac{2\ln x}{x^2} \,dx \). Use Limit Comparison with \(1/x^{3/2}\).
+          \[ \lim_{x \to \infty} \frac{2\ln x / x^2}{1/x^{3/2}} = \lim_{x \to \infty} \frac{2\ln x}{\sqrt{x}} = 0 \]
+          Since \(\int_{1}^{\infty} 1/x^{3/2} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} x \ln x \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Type 2 integral. Use integration by parts.
+          \[ \lim_{t \to 0^+} [\frac{x^2}{2} \ln x - \frac{x^2}{4}]_{t}^{1} = (0 - 1/4) - \lim_{t \to 0^+} (\frac{t^2}{2} \ln t - \frac{t^2}{4}) = -1/4 - 0 = -1/4 \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2 + \sqrt{x}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), compare with \(1/\sqrt{x}\). Converges.
+          For \(\int_{1}^{\infty}\), compare with \(1/x^2\). Converges.
+          Since both parts converge, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \sin(1/x) \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Use Limit Comparison with \(g(x) = 1/x\).
+          \[ \lim_{x \to \infty} \frac{\sin(1/x)}{1/x} = 1 \]
+          (Let \(u=1/x\)). Since \(\int_{1}^{\infty} 1/x dx\) diverges, the original integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{(x+1)\sqrt{x}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(u = \sqrt{x}\), \(x=u^2\), \(dx = 2u du\).
+          \[ \int_{0}^{\infty} \frac{2u du}{(u^2+1)u} = \int_{0}^{\infty} \frac{2 du}{u^2+1} = [2 \arctan u]_{0}^{\infty} = 2(\pi/2) = \pi \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{\sin x}{\sqrt{x}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This is a Dirichlet-type integral. It is known to be <b>conditionally convergent</b>. The convergence can be shown using integration by parts.
+          <div class="source">Source: Ostaszewski, Section 18.9.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{x^p}{1+x^q} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integrand behaves like \(x^{p-q}\) for large \(x\).
+          The integral converges if \(q-p > 1\).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{dx}{e^{\sqrt{x}}-1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          As \(x \to 0\), \(e^{\sqrt{x}} - 1 \approx \sqrt{x}\).
+          Use Limit Comparison with \(g(x) = 1/\sqrt{x}\).
+          \[ \lim_{x \to 0^+} \frac{1/(e^{\sqrt{x}}-1)}{1/\sqrt{x}} = 1 \]
+          Since \(\int_{0}^{1} 1/\sqrt{x} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{dx}{x(1+(\ln x)^2)} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(u = \ln x\), \(du = dx/x\).
+          \[ \int_{0}^{\infty} \frac{du}{1+u^2} = [\arctan u]_{0}^{\infty} = \pi/2 \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} e^{-x} \cos x \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Test for absolute convergence. \(|e^{-x} \cos x| \le e^{-x}\).
+          Since \(\int_{0}^{\infty} e^{-x} dx\) converges, the original integral is <b>absolutely convergent</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{1} \frac{dx}{\sqrt{x(1-x)}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Discontinuities at \(x=0\) and \(x=1\).
+          Let \(x = \sin^2 \theta\), \(dx = 2 \sin \theta \cos \theta d\theta\).
+          \[ \int_{0}^{\pi/2} \frac{2 \sin \theta \cos \theta d\theta}{\sqrt{\sin^2 \theta \cos^2 \theta}} = \int_{0}^{\pi/2} 2 d\theta = \pi \]
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{1}^{\infty} \frac{dx}{x^x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          For \(x \ge 2\), \(x^x \ge x^2\). So \(1/x^x \le 1/x^2\).
+          Since \(\int_{1}^{\infty} 1/x^2 dx\) converges, the original integral <b>converges</b> by Direct Comparison.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x^3}{e^x-1} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          As \(x \to 0\), integrand is like \(x^2\). Proper.
+          As \(x \to \infty\), compare with \(x^3 e^{-x}\). Converges.
+          The integral <b>converges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{\ln(1+x)}{x^{3/2}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), \(\ln(1+x) \approx x\), so integrand is like \(1/\sqrt{x}\). Converges.
+          For \(\int_{1}^{\infty}\), compare with \(\ln x / x^{3/2}\). Converges.
+          The integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{1+x^4} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^4\) for \(x \ge 1\).
+          Since \(\int_{1}^{\infty} 1/x^4 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{\sqrt{x^3+1}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^{3/2}\) for \(x \ge 1\).
+          Since \(\int_{1}^{\infty} 1/x^{3/2} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x}{1+x^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x\).
+          Since \(\int_{1}^{\infty} 1/x dx\) diverges, the original integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x^2}{1+x^4} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^2\).
+          Since \(\int_{1}^{\infty} 1/x^2 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{e^x - 1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), compare with \(1/x\). Diverges.
+          The integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{e^x - \cos x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), compare with \(1/x\). Diverges.
+          The integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^4+x^2+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^4\).
+          Since \(\int_{1}^{\infty} 1/x^4 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x}{\sqrt{x^5+1}} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(x/x^{5/2} = 1/x^{3/2}\).
+          Since \(\int_{1}^{\infty} 1/x^{3/2} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x \ln x}{(1+x^2)^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), integrand is bounded. Proper.
+          For \(\int_{1}^{\infty}\), compare with \(\ln x / x^3\). Converges.
+          The integral <b>converges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{1-e^{-x^2}}{x^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          As \(x \to 0\), integrand is like \(1\). Proper.
+          For \(\int_{1}^{\infty}\), compare with \(1/x^2\). Converges.
+          The integral <b>converges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.7.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^{1/3}(1+x^{1/2})} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), compare with \(1/x^{1/3}\). Converges.
+          For \(\int_{1}^{\infty}\), compare with \(1/x^{5/6}\). Diverges.
+          The integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{1+x \sin^2 x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This integral <b>diverges</b>. The integrand has spikes that prevent convergence. This is a more advanced example.
+          <div class="source">Source: Counterexamples in Analysis, Gelbaum & Olmsted.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{\sin(x^2)}{x} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Let \(u=x^2\). The integral becomes \(\frac{1}{2} \int_{0}^{\infty} \frac{\sin u}{u} du\).
+          This is the Dirichlet integral, which is known to be <b>conditionally convergent</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^p + x^q} \) for \(p>q>0\).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), compare with \(1/x^q\). Converges if \(q<1\).
+          For \(\int_{1}^{\infty}\), compare with \(1/x^p\). Converges if \(p>1\).
+          Converges if \(q<1\) and \(p>1\).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{1+e^x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(e^{-x}\).
+          Since \(\int_{0}^{\infty} e^{-x} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x+e^x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(e^{-x}\).
+          Since \(\int_{0}^{\infty} e^{-x} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2-x+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The denominator has no real roots. Compare with \(1/x^2\).
+          Since \(\int_{1}^{\infty} 1/x^2 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{\cosh x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          \(\cosh x = (e^x+e^{-x})/2\). For large \(x\), \(\cosh x \approx e^x/2\).
+          Compare with \(2e^{-x}\). Converges.
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^4+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^4\).
+          Since \(\int_{1}^{\infty} 1/x^4 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x^2 dx}{x^4+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(x^2/x^4 = 1/x^2\).
+          Since \(\int_{1}^{\infty} 1/x^2 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x^3 dx}{x^5+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(x^3/x^5 = 1/x^2\).
+          Since \(\int_{1}^{\infty} 1/x^2 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2+x+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^2\).
+          Since \(\int_{1}^{\infty} 1/x^2 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^3+x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Split into \(\int_{0}^{1} + \int_{1}^{\infty}\).
+          For \(\int_{0}^{1}\), compare with \(1/x\). Diverges.
+          The integral <b>diverges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^p+1} \) for \(p>0\).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Converges if \(p>1\).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{x^p dx}{x^q+1} \) for \(q>p>0\).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Converges if \(q-p > 1\).
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{e^{x^2}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(e^{-x}\).
+          Since \(\int_{0}^{\infty} e^{-x} dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{\sqrt{e^x}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          \( \int_{0}^{\infty} e^{-x/2} dx \). Converges.
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2+\sin^2 x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          This integral <b>diverges</b>. The integrand has spikes that prevent convergence.
+          <div class="source">Source: Counterexamples in Analysis, Gelbaum & Olmsted.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^3+x^2+x+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^3\).
+          Since \(\int_{1}^{\infty} 1/x^3 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^4+x^3+x^2+x+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^4\).
+          Since \(\int_{1}^{\infty} 1/x^4 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2-4} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Discontinuity at \(x=2\).
+          The integral <b>diverges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2-1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Discontinuity at \(x=1\).
+          The integral <b>diverges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          \( [\arctan x]_{0}^{\infty} = \pi/2 \).
+          The integral <b>converges</b>.
+          <div class="source">Source: Wrede & Spiegel, Chapter 12.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^3+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^3\).
+          Since \(\int_{1}^{\infty} 1/x^3 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.2.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^4+x^2+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^4\).
+          Since \(\int_{1}^{\infty} 1/x^4 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^5+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^5\).
+          Since \(\int_{1}^{\infty} 1/x^5 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^6+1} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          Compare with \(1/x^6\).
+          Since \(\int_{1}^{\infty} 1/x^6 dx\) converges, the original integral <b>converges</b>.
+          <div class="source">Source: MT2176 Subject Guide, Section 4.2.1.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^p} \) for \(p>0\).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b> for all \(p>0\).
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{\sqrt{x}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^2} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^3} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^4} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^5} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^6} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^7} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^8} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^9} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{dx}{x^{10}} \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          The integral <b>diverges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.6.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+  <div class="flashcard">
+    <div class="card">
+      <div class="front">
+        <div class="question">Test the convergence of \( \int_{0}^{\infty} \frac{\sin^2 x}{x^2} \,dx \).</div>
+      </div>
+      <div class="back">
+        <div class="answer">
+          We split the integral: \( \int_{0}^{1} \frac{\sin^2 x}{x^2} \,dx + \int_{1}^{\infty} \frac{\sin^2 x}{x^2} \,dx \).
+          <br><br>
+          For the first part, as \(x \to 0\), \(\frac{\sin x}{x} \to 1\), so \(\frac{\sin^2 x}{x^2} \to 1\). The integrand is bounded, so \( \int_{0}^{1} \frac{\sin^2 x}{x^2} \,dx \) is a proper integral and converges.
+          <br><br>
+          For the second part, \( \int_{1}^{\infty} \frac{\sin^2 x}{x^2} \,dx \). We know \(0 \le \sin^2 x \le 1\), so \(0 \le \frac{\sin^2 x}{x^2} \le \frac{1}{x^2}\).
+          Since \( \int_{1}^{\infty} \frac{1}{x^2} \,dx \) converges (p-integral with \(p=2\)), by the Direct Comparison Test, \( \int_{1}^{\infty} \frac{\sin^2 x}{x^2} \,dx \) converges.
+          <br><br>
+          Since both parts converge, the original integral <b>converges</b>.
+          <div class="source">Source: Ostaszewski, Section 18.9.</div>
+        </div>
+      </div>
+    </div>
+    <button class="flip-btn">Flip</button>
+  </div>
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("flashcard");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+    
+    // Update progress bar
+    let progressBar = document.getElementById("progressBar");
+    let progressText = document.getElementById("progressText");
+    let progress = (slideIndex / slides.length) * 100;
+    progressBar.style.width = progress + "%";
+    progressText.innerHTML = "Card " + slideIndex + " of " + slides.length;
+  }
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+
+  document.querySelectorAll('.flip-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      button.previousElementSibling.classList.toggle('flipped');
+    });
+  });
+</script>
+
+</body>
+</html>

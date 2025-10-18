@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MT2176 Further Calculus - Improper Integrals Quiz</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question-container {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9f7ef;
+            border-left: 4px solid #4caf50;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #4caf50;
+        }
+        .incorrect {
+            color: #f44336;
+        }
+        #controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1>MT2176 Further Calculus: Improper Integrals Quiz</h1>
+    <p>Based on the subject guide and recommended texts for MT2176.</p>
+
+    <div class="question-container">
+      <p class="question">1. Which of the following best describes the integral \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="A"> A) A proper integral.</label><br>
+        <label><input type="radio" name="q1" value="B"> B) An improper integral of the first kind.</label><br>
+        <label><input type="radio" name="q1" value="C"> C) An improper integral of the second kind.</label><br>
+        <label><input type="radio" name="q1" value="D"> D) A divergent integral.</label><br>
+      </div>
+      <div class="result" id="result1"></div>
+      <div class="explanation" id="explanation1" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> This is an improper integral of the first kind because the interval of integration, \( [1, \infty) \), is unbounded. The integrand is continuous on this interval. (Source: Wrede, Chapter 12; Ostaszewski, Section 4.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. Determine if the integral \( \int_{1}^{\infty} \frac{1}{x} \, dx \) converges or diverges.</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="A"> A) Converges to 1.</label><br>
+        <label><input type="radio" name="q2" value="B"> B) Converges to 0.</label><br>
+        <label><input type="radio" name="q2" value="C"> C) Diverges.</label><br>
+        <label><input type="radio" name="q2" value="D"> D) Converges to -1.</label><br>
+      </div>
+      <div class="result" id="result2"></div>
+      <div class="explanation" id="explanation2" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> This is a p-integral, \( \int_{1}^{\infty} \frac{1}{x^p} \, dx \), with p = 1. According to the p-integral test, the integral diverges if p \le 1. (Source: Wrede, Chapter 12, Special Improper Integrals of the First Kind; Binmore, Section 10.11, Example 17)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Which of the following best describes the integral \( \int_{0}^{1} \frac{1}{\sqrt{x}} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="A"> A) A proper integral.</label><br>
+        <label><input type="radio" name="q3" value="B"> B) An improper integral of the first kind.</label><br>
+        <label><input type="radio" name="q3" value="C"> C) An improper integral of the second kind.</label><br>
+        <label><input type="radio" name="q3" value="D"> D) A divergent integral.</label><br>
+      </div>
+      <div class="result" id="result3"></div>
+      <div class="explanation" id="explanation3" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> This is an improper integral of the second kind because the integrand \( f(x) = \frac{1}{\sqrt{x}} \) is unbounded at the lower limit of integration, x = 0. (Source: Wrede, Chapter 12; Ostaszewski, Section 4.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">4. Determine if the integral \( \int_{0}^{1} \frac{1}{x^2} \, dx \) converges or diverges.</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="A"> A) Converges to 1.</label><br>
+        <label><input type="radio" name="q4" value="B"> B) Converges to 2.</label><br>
+        <label><input type="radio" name="q4" value="C"> C) Diverges.</label><br>
+        <label><input type="radio" name="q4" value="D"> D) Converges to -1.</label><br>
+      </div>
+      <div class="result" id="result4"></div>
+      <div class="explanation" id="explanation4" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> This is a p-integral of the second kind, \( \int_{0}^{1} \frac{1}{x^p} \, dx \), with p = 2. This type of integral diverges if p \ge 1. (Source: Wrede, Chapter 12, Special Improper Integrals of the Second Kind)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">5. The integral \( \int_{0}^{\infty} e^{-x} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="A"> A) Convergent.</label><br>
+        <label><input type="radio" name="q5" value="B"> B) Divergent.</label><br>
+        <label><input type="radio" name="q5" value="C"> C) An improper integral of the second kind.</label><br>
+        <label><input type="radio" name="q5" value="D"> D) A proper integral.</label><br>
+      </div>
+      <div class="result" id="result5"></div>
+      <div class="explanation" id="explanation5" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is an exponential integral. We can evaluate it directly: \( \lim_{b \to \infty} \int_{0}^{b} e^{-x} \, dx = \lim_{b \to \infty} [-e^{-x}]_{0}^{b} = \lim_{b \to \infty} (-e^{-b} + 1) = 1 \). Since the limit is finite, the integral converges. (Source: Ostaszewski, Section 4.1.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">6. Using the comparison test, what can be said about \( \int_{1}^{\infty} \frac{\sin^2 x}{x^2} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="A"> A) It diverges because \( \frac{\sin^2 x}{x^2} > \frac{1}{x^2} \).</label><br>
+        <label><input type="radio" name="q6" value="B"> B) It converges because \( 0 \le \frac{\sin^2 x}{x^2} \le \frac{1}{x^2} \) and \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \) converges.</label><br>
+        <label><input type="radio" name="q6" value="C"> C) It diverges because \( \frac{\sin^2 x}{x^2} > \frac{1}{x} \).</label><br>
+        <label><input type="radio" name="q6" value="D"> D) The comparison test is not applicable.</label><br>
+      </div>
+      <div class="result" id="result6"></div>
+      <div class="explanation" id="explanation6" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> We know that \( 0 \le \sin^2 x \le 1 \) for all x. Therefore, \( 0 \le \frac{\sin^2 x}{x^2} \le \frac{1}{x^2} \). Since \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \) is a convergent p-integral (p=2 > 1), the Direct Comparison Test implies that \( \int_{1}^{\infty} \frac{\sin^2 x}{x^2} \, dx \) also converges. (Source: Ostaszewski, Section 4.2.1; Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">7. The integral \( \int_{-\infty}^{\infty} x e^{-x^2} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="A"> A) Convergent to 0.</label><br>
+        <label><input type="radio" name="q7" value="B"> B) Divergent.</label><br>
+        <label><input type="radio" name="q7" value="C"> C) Convergent to 1.</label><br>
+        <label><input type="radio" name="q7" value="D"> D) An improper integral of the second kind.</label><br>
+      </div>
+      <div class="result" id="result7"></div>
+      <div class="explanation" id="explanation7" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is an improper integral of the first kind over \( (-\infty, \infty) \). We must check the convergence of \( \int_{-\infty}^{0} x e^{-x^2} \, dx \) and \( \int_{0}^{\infty} x e^{-x^2} \, dx \) separately. The integrand \( f(x) = x e^{-x^2} \) is an odd function, so \( \int_{-a}^{a} f(x) \, dx = 0 \) for any a. The integral converges to 0. (Source: Wrede, Chapter 12, Example page 267)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">8. What is the correct classification for the integral \( \int_{0}^{\infty} \frac{1}{x-1} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="A"> A) Improper integral of the first kind.</label><br>
+        <label><input type="radio" name="q8" value="B"> B) Improper integral of the second kind.</label><br>
+        <label><input type="radio" name="q8" value="C"> C) Improper integral of the third kind (mixed type).</label><br>
+        <label><input type="radio" name="q8" value="D"> D) A proper integral.</label><br>
+      </div>
+      <div class="result" id="result8"></div>
+      <div class="explanation" id="explanation8" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> This integral is of the third kind. It has an infinite interval of integration \( [0, \infty) \) (first kind) and the integrand has a singularity at x=1, which is within the interval (second kind). (Source: Wrede, Chapter 12, Definitions)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">9. Using the Limit Comparison Test, what can you conclude about \( \int_{1}^{\infty} \frac{x^2+1}{x^4+x} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="A"> A) Converges by comparing with \( g(x) = 1/x \).</label><br>
+        <label><input type="radio" name="q9" value="B"> B) Diverges by comparing with \( g(x) = 1/x \).</label><br>
+        <label><input type="radio" name="q9" value="C"> C) Converges by comparing with \( g(x) = 1/x^2 \).</label><br>
+        <label><input type="radio" name="q9" value="D"> D) Diverges by comparing with \( g(x) = 1/x^2 \).</label><br>
+      </div>
+      <div class="result" id="result9"></div>
+      <div class="explanation" id="explanation9" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> Let \( f(x) = \frac{x^2+1}{x^4+x} \). For large x, the dominant term in the numerator is \( x^2 \) and in the denominator is \( x^4 \). So we choose \( g(x) = \frac{x^2}{x^4} = \frac{1}{x^2} \). Now we compute the limit of the ratio: \( \lim_{x \to \infty} \frac{f(x)}{g(x)} = \lim_{x \to \infty} \frac{(x^2+1)/(x^4+x)}{1/x^2} = \lim_{x \to \infty} \frac{x^4+x^2}{x^4+x} = 1 \). Since the limit is a finite positive number and \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \) converges (p-integral with p=2), the given integral also converges. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">10. The integral \( \int_{0}^{\pi/2} \tan(x) \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="A"> A) A proper integral that converges.</label><br>
+        <label><input type="radio" name="q10" value="B"> B) An improper integral that converges.</label><br>
+        <label><input type="radio" name="q10" value="C"> C) An improper integral that diverges.</label><br>
+        <label><input type="radio" name="q10" value="D"> D) A proper integral that diverges.</label><br>
+      </div>
+      <div class="result" id="result10"></div>
+      <div class="explanation" id="explanation10" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> The function \( \tan(x) \) is unbounded as \( x \to (\pi/2)^{-} \). This makes the integral an improper integral of the second kind. We can evaluate it as \( \lim_{b \to (\pi/2)^{-}} \int_{0}^{b} \tan(x) \, dx = \lim_{b \to (\pi/2)^{-}} [-\ln|\cos(x)|]_{0}^{b} = \lim_{b \to (\pi/2)^{-}} (-\ln|\cos(b)| + \ln|\cos(0)|) \). As \( b \to (\pi/2)^{-} \), \( \cos(b) \to 0^{+} \), so \( \ln|\cos(b)| \to -\infty \). Therefore, the integral diverges. (Source: Ostaszewski, Section 4.1)</p>
+      </div>
+    </div>
+
+    <!-- Questions 11-50 will follow the same structure -->
+    <div class="question-container">
+      <p class="question">11. Identify the type of improper integral: \( \int_{-1}^{1} \frac{1}{x} \, dx \)</p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="A"> A) First kind</label><br>
+        <label><input type="radio" name="q11" value="B"> B) Second kind</label><br>
+        <label><input type="radio" name="q11" value="C"> C) Third kind</label><br>
+        <label><input type="radio" name="q11" value="D"> D) Proper integral</label><br>
+      </div>
+      <div class="result" id="result11"></div>
+      <div class="explanation" id="explanation11" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> The integrand \(f(x) = 1/x\) has a singularity at x=0, which is within the interval of integration [-1, 1]. This makes it an improper integral of the second kind. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">12. Does \( \int_{1}^{\infty} \frac{1}{\sqrt{x}} \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q12" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result12"></div>
+      <div class="explanation" id="explanation12" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> This is a p-integral of the first kind with p = 1/2. Since p \le 1, the integral diverges. (Source: Binmore, Section 10.11, Example 17)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">13. The integral \( \int_{0}^{1} \ln(x) \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q13" value="A"> A) A proper integral.</label><br>
+        <label><input type="radio" name="q13" value="B"> B) An improper integral of the second kind that converges.</label><br>
+        <label><input type="radio" name="q13" value="C"> C) An improper integral of the second kind that diverges.</label><br>
+        <label><input type="radio" name="q13" value="D"> D) An improper integral of the first kind.</label><br>
+      </div>
+      <div class="result" id="result13"></div>
+      <div class="explanation" id="explanation13" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> The integrand \( \ln(x) \) is unbounded as \( x \to 0^{+} \). We can evaluate it using integration by parts: \( \int \ln(x) \, dx = x\ln(x) - x \). Then \( \lim_{a \to 0^{+}} [x\ln(x) - x]_{a}^{1} = (-1) - \lim_{a \to 0^{+}} (a\ln(a) - a) = -1 \). Since the limit is finite, it converges. (Source: Ostaszewski, Section 4.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">14. Test the convergence of \( \int_{2}^{\infty} \frac{1}{x \ln x} \, dx \).</p>
+      <div class="options">
+        <label><input type="radio" name="q14" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q14" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result14"></div>
+      <div class="explanation" id="explanation14" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> We can use the integral test. Let \( u = \ln x \), so \( du = (1/x) dx \). The integral becomes \( \int_{\ln 2}^{\infty} \frac{1}{u} \, du \), which is a divergent p-integral (p=1). (Source: Wrede, Chapter 12, Problem 12.42)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">15. What kind of integral is \( \int_{-\infty}^{\infty} \frac{1}{1+x^2} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q15" value="A"> A) First kind</label><br>
+        <label><input type="radio" name="q15" value="B"> B) Second kind</label><br>
+        <label><input type="radio" name="q15" value="C"> C) Third kind</label><br>
+        <label><input type="radio" name="q15" value="D"> D) Proper</label><br>
+      </div>
+      <div class="result" id="result15"></div>
+      <div class="explanation" id="explanation15" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> The interval of integration is \( (-\infty, \infty) \), which is unbounded in both directions. The integrand is continuous everywhere. This is a classic example of an improper integral of the first kind. (Source: Binmore, Section 10.11, Example 19)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">16. For what values of k does \( \int_{1}^{\infty} x^k \, dx \) converge?</p>
+      <div class="options">
+        <label><input type="radio" name="q16" value="A"> A) k < -1</label><br>
+        <label><input type="radio" name="q16" value="B"> B) k > -1</label><br>
+        <label><input type="radio" name="q16" value="C"> C) k < 1</label><br>
+        <label><input type="radio" name="q16" value="D"> D) k > 1</label><br>
+      </div>
+      <div class="result" id="result16"></div>
+      <div class="explanation" id="explanation16" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is a p-integral of the form \( \int_{1}^{\infty} \frac{1}{x^p} \, dx \) where p = -k. The integral converges if p > 1, which means -k > 1, or k < -1. (Source: Binmore, Section 10.11)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">17. Test the convergence of \( \int_{0}^{1} \frac{1}{x^3} \, dx \).</p>
+      <div class="options">
+        <label><input type="radio" name="q17" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q17" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result17"></div>
+      <div class="explanation" id="explanation17" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> This is a p-integral of the second kind with p = 3. Since p \ge 1, the integral diverges. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">18. Evaluate \( \int_{0}^{\infty} \frac{1}{1+x^2} \, dx \).</p>
+      <div class="options">
+        <label><input type="radio" name="q18" value="A"> A) \( \pi \)</label><br>
+        <label><input type="radio" name="q18" value="B"> B) \( \pi/2 \)</label><br>
+        <label><input type="radio" name="q18" value="C"> C) \( \pi/4 \)</label><br>
+        <label><input type="radio" name="q18" value="D"> D) Diverges</label><br>
+      </div>
+      <div class="result" id="result18"></div>
+      <div class="explanation" id="explanation18" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> \( \int \frac{1}{1+x^2} \, dx = \arctan(x) \). So, \( \lim_{b \to \infty} [\arctan(x)]_{0}^{b} = \lim_{b \to \infty} (\arctan(b) - \arctan(0)) = \pi/2 - 0 = \pi/2 \). (Source: Binmore, Section 10.11, Example 19)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">19. Does \( \int_{1}^{\infty} \frac{1}{x^2+x} \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q19" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q19" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result19"></div>
+      <div class="explanation" id="explanation19" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Use the comparison test. For x > 1, \( x^2+x > x^2 \), so \( \frac{1}{x^2+x} < \frac{1}{x^2} \). Since \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \) converges (p=2), the given integral also converges. (Source: Ostaszewski, Section 4.2.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">20. What is the value of \( \int_{0}^{1} \frac{1}{\sqrt[3]{x}} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q20" value="A"> A) 3/2</label><br>
+        <label><input type="radio" name="q20" value="B"> B) 2/3</label><br>
+        <label><input type="radio" name="q20" value="C"> C) 1</label><br>
+        <label><input type="radio" name="q20" value="D"> D) Diverges</label><br>
+      </div>
+      <div class="result" id="result20"></div>
+      <div class="explanation" id="explanation20" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is a p-integral of the second kind with p = 1/3. Since p < 1, it converges. \( \int x^{-1/3} \, dx = \frac{3}{2}x^{2/3} \). So, \( \lim_{a \to 0^{+}} [\frac{3}{2}x^{2/3}]_{a}^{1} = \frac{3}{2} - 0 = \frac{3}{2} \). (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">21. The integral \( \int_{0}^{\infty} \frac{dx}{e^x+1} \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q21" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q21" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result21"></div>
+      <div class="explanation" id="explanation21" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> For x > 0, \( e^x+1 > e^x \), so \( \frac{1}{e^x+1} < \frac{1}{e^x} = e^{-x} \). Since \( \int_{0}^{\infty} e^{-x} \, dx \) converges, by the comparison test, \( \int_{0}^{\infty} \frac{dx}{e^x+1} \) also converges. (Source: Ostaszewski, Section 4.2.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">22. Which test is most appropriate to determine the convergence of \( \int_{1}^{\infty} \frac{x}{x^3+1} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q22" value="A"> A) Integral Test</label><br>
+        <label><input type="radio" name="q22" value="B"> B) Limit Comparison Test with \( g(x)=1/x^2 \)</label><br>
+        <label><input type="radio" name="q22" value="C"> C) Direct Comparison Test with \( g(x)=1/x \)</label><br>
+        <label><input type="radio" name="q22" value="D"> D) The integral diverges</label><br>
+      </div>
+      <div class="result" id="result22"></div>
+      <div class="explanation" id="explanation22" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> The integrand behaves like \( x/x^3 = 1/x^2 \) for large x. The Limit Comparison Test with \( g(x)=1/x^2 \) will yield a finite positive limit, showing convergence. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">23. The integral \( \int_{0}^{2} \frac{1}{(x-1)^2} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q23" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q23" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result23"></div>
+      <div class="explanation" id="explanation23" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> This is an improper integral of the second kind with a singularity at x=1. We must split it into \( \int_{0}^{1} \frac{1}{(x-1)^2} \, dx + \int_{1}^{2} \frac{1}{(x-1)^2} \, dx \). Both are p-integrals with p=2, which diverge. Since at least one part diverges, the whole integral diverges. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">24. Does \( \int_{e}^{\infty} \frac{1}{x (\ln x)^2} \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q24" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q24" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result24"></div>
+      <div class="explanation" id="explanation24" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Use the substitution \( u = \ln x \), \( du = 1/x \, dx \). The integral becomes \( \int_{1}^{\infty} \frac{1}{u^2} \, du \), which is a convergent p-integral (p=2). (Source: Wrede, Chapter 12, Problem 12.42)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">25. The integral \( \int_{0}^{\infty} x^2 e^{-x} \, dx \) (the Gamma function \(\Gamma(3)\)) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q25" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q25" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result25"></div>
+      <div class="explanation" id="explanation25" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is a standard convergent integral related to the Gamma function. For large x, the exponential decay of \(e^{-x}\) dominates the polynomial growth of \(x^2\), ensuring convergence. Its value is 2! = 2. (Source: Ostaszewski, Section 4.3)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">26. What is the type of the integral \( \int_{1}^{\infty} \frac{1}{x^2-1} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q26" value="A"> A) First kind</label><br>
+        <label><input type="radio" name="q26" value="B"> B) Second kind</label><br>
+        <label><input type="radio" name="q26" value="C"> C) Third kind</label><br>
+        <label><input type="radio" name="q26" value="D"> D) Proper</label><br>
+      </div>
+      <div class="result" id="result26"></div>
+      <div class="explanation" id="explanation26" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> The interval is infinite (first kind) and the integrand has a singularity at x=1, which is at the boundary of the interval (second kind). This makes it a mixed or third kind integral. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">27. Test the convergence of \( \int_{1}^{\infty} \frac{\arctan(x)}{x^2} \, dx \).</p>
+      <div class="options">
+        <label><input type="radio" name="q27" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q27" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result27"></div>
+      <div class="explanation" id="explanation27" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> We know that \( 0 < \arctan(x) < \pi/2 \) for x > 0. So, \( \frac{\arctan(x)}{x^2} < \frac{\pi/2}{x^2} \). Since \( \int_{1}^{\infty} \frac{\pi/2}{x^2} \, dx \) converges (p=2), the given integral converges by the comparison test. (Source: Ostaszewski, Section 4.2.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">28. The integral \( \int_{0}^{1} \frac{dx}{\sqrt{1-x^2}} \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q28" value="A"> A) Convergent to \(\pi/2\)</label><br>
+        <label><input type="radio" name="q28" value="B"> B) Convergent to \(\pi\)</label><br>
+        <label><input type="radio" name="q28" value="C"> C) Divergent</label><br>
+        <label><input type="radio" name="q28" value="D"> D) A proper integral</label><br>
+      </div>
+      <div class="result" id="result28"></div>
+      <div class="explanation" id="explanation28" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> The integrand is unbounded at x=1. The antiderivative is \(\arcsin(x)\). So, \( \lim_{b \to 1^{-}} [\arcsin(x)]_{0}^{b} = \lim_{b \to 1^{-}} (\arcsin(b) - \arcsin(0)) = \pi/2 - 0 = \pi/2 \). (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">29. Does \( \int_{0}^{\infty} \frac{x}{e^x} \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q29" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q29" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result29"></div>
+      <div class="explanation" id="explanation29" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is \( \int_{0}^{\infty} x e^{-x} \, dx \), which is the Gamma function \(\Gamma(2)\). It is a known convergent integral. Its value is 1! = 1. (Source: Ostaszewski, Section 4.3)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">30. Using the Limit Comparison Test, what can you conclude about \( \int_{2}^{\infty} \frac{1}{\sqrt{x^2-1}} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q30" value="A"> A) Converges by comparing with \(1/x^2\)</label><br>
+        <label><input type="radio" name="q30" value="B"> B) Diverges by comparing with \(1/x\)</label><br>
+        <label><input type="radio" name="q30" value="C"> C) Converges by comparing with \(1/x\)</label><br>
+        <label><input type="radio" name="q30" value="D"> D) Diverges by comparing with \(1/x^2\)</label><br>
+      </div>
+      <div class="result" id="result30"></div>
+      <div class="explanation" id="explanation30" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> For large x, \( \sqrt{x^2-1} \approx \sqrt{x^2} = x \). So we compare with \(g(x) = 1/x\). \( \lim_{x \to \infty} \frac{1/\sqrt{x^2-1}}{1/x} = \lim_{x \to \infty} \frac{x}{\sqrt{x^2-1}} = 1 \). Since \( \int_{2}^{\infty} \frac{1}{x} \, dx \) diverges, the given integral also diverges. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">31. The integral \( \int_{1}^{\infty} \sin(1/x) \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q31" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q31" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result31"></div>
+      <div class="explanation" id="explanation31" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> Use the Limit Comparison Test. For large x, 1/x is small, and \(\sin(u) \approx u\) for small u. So we compare with \(g(x) = 1/x\). \( \lim_{x \to \infty} \frac{\sin(1/x)}{1/x} = 1 \). Since \( \int_{1}^{\infty} \frac{1}{x} \, dx \) diverges, the given integral also diverges. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">32. What is the value of the Cauchy Principal Value of \( \int_{-1}^{1} \frac{1}{x} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q32" value="A"> A) 0</label><br>
+        <label><input type="radio" name="q32" value="B"> B) 1</label><br>
+        <label><input type="radio" name="q32" value="C"> C) \(\ln(1)\)</label><br>
+        <label><input type="radio" name="q32" value="D"> D) Does not exist</label><br>
+      </div>
+      <div class="result" id="result32"></div>
+      <div class="explanation" id="explanation32" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> The Cauchy Principal Value is defined as \( \lim_{\epsilon \to 0^{+}} (\int_{-1}^{-\epsilon} \frac{1}{x} \, dx + \int_{\epsilon}^{1} \frac{1}{x} \, dx) \). This becomes \( \lim_{\epsilon \to 0^{+}} ([\ln|x|]_{-1}^{-\epsilon} + [\ln|x|]_{\epsilon}^{1}) = \lim_{\epsilon \to 0^{+}} ((\ln\epsilon - \ln 1) + (\ln 1 - \ln\epsilon)) = 0 \). Note that the integral itself is divergent. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">33. The integral \( \int_{0}^{\infty} \frac{\cos x}{\sqrt{x}} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q33" value="A"> A) Absolutely convergent</label><br>
+        <label><input type="radio" name="q33" value="B"> B) Conditionally convergent</label><br>
+        <label><input type="radio" name="q33" value="C"> C) Divergent</label><br>
+      </div>
+      <div class="result" id="result33"></div>
+      <div class="explanation" id="explanation33" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> The integral converges by a test similar to Dirichlet's test (related to integration by parts). However, the integral of the absolute value, \( \int_{0}^{\infty} \frac{|\cos x|}{\sqrt{x}} \, dx \), diverges by comparison with \( \int \frac{\cos^2 x}{\sqrt{x}} \, dx \). Since the integral converges but not absolutely, it is conditionally convergent. (Source: Advanced topic, related to Ostaszewski, Section 4.2.3)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">34. For what values of p does \( \int_{0}^{1} \frac{1}{x^p} \, dx \) converge?</p>
+      <div class="options">
+        <label><input type="radio" name="q34" value="A"> A) p > 1</label><br>
+        <label><input type="radio" name="q34" value="B"> B) p \ge 1</label><br>
+        <label><input type="radio" name="q34" value="C"> C) p < 1</label><br>
+        <label><input type="radio" name="q34" value="D"> D) p \le 1</label><br>
+      </div>
+      <div class="result" id="result34"></div>
+      <div class="explanation" id="explanation34" style="display:none;">
+        <p><b>Correct Answer:</b> C</p>
+        <p><b>Explanation:</b> This is the standard p-integral test for improper integrals of the second kind. The integral converges if and only if p < 1. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">35. Test the convergence of \( \int_{0}^{\infty} \frac{dx}{\sqrt{x}(1+x)} \).</p>
+      <div class="options">
+        <label><input type="radio" name="q35" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q35" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result35"></div>
+      <div class="explanation" id="explanation35" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is a third kind integral. We split it at x=1. For \( \int_{0}^{1} \), the integrand is like \(1/\sqrt{x}\) (p=1/2 < 1, converges). For \( \int_{1}^{\infty} \), the integrand is like \(1/x^{3/2}\) (p=3/2 > 1, converges). Since both parts converge, the whole integral converges. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">36. The integral \( \int_{1}^{\infty} \frac{\ln x}{x} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q36" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q36" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result36"></div>
+      <div class="explanation" id="explanation36" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> For x > e, \(\ln x > 1\), so \( \frac{\ln x}{x} > \frac{1}{x} \). Since \( \int_{1}^{\infty} \frac{1}{x} \, dx \) diverges, by the comparison test, the given integral also diverges. (Source: Ostaszewski, Section 4.2.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">37. Evaluate \( \int_{1}^{\infty} \frac{1}{x(x+1)} \, dx \).</p>
+      <div class="options">
+        <label><input type="radio" name="q37" value="A"> A) \(\ln(2)\)</label><br>
+        <label><input type="radio" name="q37" value="B"> B) 1</label><br>
+        <label><input type="radio" name="q37" value="C"> C) \(\ln(3/2)\)</label><br>
+        <label><input type="radio" name="q37" value="D"> D) Diverges</label><br>
+      </div>
+      <div class="result" id="result37"></div>
+      <div class="explanation" id="explanation37" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Use partial fractions: \( \frac{1}{x(x+1)} = \frac{1}{x} - \frac{1}{x+1} \). The integral is \( \lim_{b \to \infty} [\ln|x| - \ln|x+1|]_{1}^{b} = \lim_{b \to \infty} [\ln(\frac{x}{x+1})]_{1}^{b} = \lim_{b \to \infty} (\ln(\frac{b}{b+1}) - \ln(\frac{1}{2})) = \ln(1) - (-\ln 2) = \ln 2 \). (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">38. The integral \( \int_{0}^{\pi} \frac{\sin x}{x} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q38" value="A"> A) A proper integral</label><br>
+        <label><input type="radio" name="q38" value="B"> B) An improper integral of the second kind</label><br>
+        <label><input type="radio" name="q38" value="C"> C) An improper integral of the first kind</label><br>
+        <label><input type="radio" name="q38" value="D"> D) Divergent</label><br>
+      </div>
+      <div class="result" id="result38"></div>
+      <div class="explanation" id="explanation38" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Although the integrand looks like it has a singularity at x=0, it does not. \( \lim_{x \to 0} \frac{\sin x}{x} = 1 \). The integrand is continuous on \([0, \pi]\) if we define its value to be 1 at x=0. Therefore, it is a proper integral. (Source: Ostaszewski, Section 4.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">39. Does \( \int_{0}^{\infty} \frac{1}{x^p+x^q} \, dx \) converge if p>1 and q<1?</p>
+      <div class="options">
+        <label><input type="radio" name="q39" value="A"> A) Yes</label><br>
+        <label><input type="radio" name="q39" value="B"> B) No</label><br>
+      </div>
+      <div class="result" id="result39"></div>
+      <div class="explanation" id="explanation39" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Split at x=1. Near 0, the term \(x^q\) dominates (since q<1), so the integrand is like \(1/x^q\). The integral converges since q<1. Near \(\infty\), the term \(x^p\) dominates (since p>1), so the integrand is like \(1/x^p\). The integral converges since p>1. Both parts converge, so the whole integral converges. (Source: Combination of p-integral rules)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">40. The integral \( \int_{0}^{1} x \ln x \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q40" value="A"> A) Convergent to -1/4</label><br>
+        <label><input type="radio" name="q40" value="B"> B) Convergent to 1/4</label><br>
+        <label><input type="radio" name="q40" value="C"> C) Divergent</label><br>
+        <label><input type="radio" name="q40" value="D"> D) A proper integral</label><br>
+      </div>
+      <div class="result" id="result40"></div>
+      <div class="explanation" id="explanation40" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Improper due to \(\ln x\) at x=0. Use integration by parts: \( \int x \ln x \, dx = \frac{x^2}{2}\ln x - \int \frac{x^2}{2} \frac{1}{x} \, dx = \frac{x^2}{2}\ln x - \frac{x^2}{4} \). Evaluating \( [\frac{x^2}{2}\ln x - \frac{x^2}{4}]_{a}^{1} \) as \(a \to 0^{+}\) gives \((0 - 1/4) - (0 - 0) = -1/4\). (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">41. Test the convergence of \( \int_{1}^{\infty} \frac{x!}{(x+2)!} \, dx \).</p>
+      <div class="options">
+        <label><input type="radio" name="q41" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q41" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result41"></div>
+      <div class="explanation" id="explanation41" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> Simplify the integrand: \( \frac{x!}{(x+2)!} = \frac{x!}{(x+2)(x+1)x!} = \frac{1}{(x+2)(x+1)} \). This behaves like \(1/x^2\) for large x. Since \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \) converges, the given integral converges by Limit Comparison Test. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">42. The integral \( \int_{0}^{\infty} \sin(x^2) \, dx \) (Fresnel integral) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q42" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q42" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result42"></div>
+      <div class="explanation" id="explanation42" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is a famous result. The integral is conditionally convergent. The oscillations of \(\sin(x^2)\) become more rapid as x increases, causing areas of positive and negative contribution to increasingly cancel out. Proving this requires advanced techniques beyond standard comparison tests. (Source: Advanced Calculus topic, mentioned in Wrede)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">43. Does \( \int_{0}^{1} \frac{e^x}{x} \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q43" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q43" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result43"></div>
+      <div class="explanation" id="explanation43" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> On the interval [0, 1], \(e^x \ge e^0 = 1\). Therefore, \( \frac{e^x}{x} \ge \frac{1}{x} \). Since \( \int_{0}^{1} \frac{1}{x} \, dx \) diverges (p=1), the given integral diverges by the comparison test. (Source: Ostaszewski, Section 4.2.1)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">44. The integral \( \int_{1}^{\infty} \frac{1}{x} - \frac{1}{x+1} \, dx \) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q44" value="A"> A) Convergent</label><br>
+        <label><input type="radio"name="q44" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result44"></div>
+      <div class="explanation" id="explanation44" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is the same integral as in question 37, just written differently. The integral of \( \frac{1}{x(x+1)} \) converges to \(\ln(2)\). (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">45. What is the correct way to begin evaluating \( \int_{-1}^{\infty} \frac{1}{x^2} \, dx \)?</p>
+      <div class="options">
+        <label><input type="radio" name="q45" value="A"> A) \( \lim_{b \to \infty} [-\frac{1}{x}]_{-1}^{b} \)</label><br>
+        <label><input type="radio" name="q45" value="B"> B) Split into \( \int_{-1}^{0} \frac{1}{x^2} dx + \int_{0}^{\infty} \frac{1}{x^2} dx \)</label><br>
+        <label><input type="radio" name="q45" value="C"> C) It's a proper integral</label><br>
+      </div>
+      <div class="result" id="result45"></div>
+      <div class="explanation" id="explanation45" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> This is a third kind integral. It has an infinite limit AND a singularity at x=0 within the interval. It must be split into two improper integrals at the point of singularity. (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">46. Test the convergence of \( \int_{0}^{1} \frac{dx}{e^x - 1} \).</p>
+      <div class="options">
+        <label><input type="radio" name="q46" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q46" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result46"></div>
+      <div class="explanation" id="explanation46" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> Use Limit Comparison Test. As \(x \to 0\), \(e^x \approx 1+x\), so \(e^x-1 \approx x\). We compare with \(g(x)=1/x\). \( \lim_{x \to 0} \frac{1/(e^x-1)}{1/x} = \lim_{x \to 0} \frac{x}{e^x-1} = 1 \). Since \( \int_{0}^{1} \frac{1}{x} \, dx \) diverges, the given integral diverges. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">47. The integral \( \int_{1}^{\infty} \frac{1}{x^2} \, dx \) converges to...</p>
+      <div class="options">
+        <label><input type="radio" name="q47" value="A"> A) 1</label><br>
+        <label><input type="radio" name="q47" value="B"> B) 2</label><br>
+        <label><input type="radio" name="q47" value="C"> C) 1/2</label><br>
+        <label><input type="radio" name="q47" value="D"> D) 0</label><br>
+      </div>
+      <div class="result" id="result47"></div>
+      <div class="explanation" id="explanation47" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> \( \int \frac{1}{x^2} \, dx = -\frac{1}{x} \). So, \( \lim_{b \to \infty} [-\frac{1}{x}]_{1}^{b} = \lim_{b \to \infty} (-\frac{1}{b} - (-\frac{1}{1})) = 0 + 1 = 1 \). (Source: Binmore, Section 10.11)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">48. Does \( \int_{0}^{1} \frac{\tan x}{x^2} \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q48" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q48" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result48"></div>
+      <div class="explanation" id="explanation48" style="display:none;">
+        <p><b>Correct Answer:</b> B</p>
+        <p><b>Explanation:</b> Use Limit Comparison Test. As \(x \to 0\), \(\tan x \approx x\). So the integrand behaves like \(x/x^2 = 1/x\). Since \( \int_{0}^{1} \frac{1}{x} \, dx \) diverges, the given integral diverges. (Source: Ostaszewski, Section 4.2.2)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">49. The integral \( \int_{0}^{\infty} e^{-x^2} \, dx \) (Gaussian integral) is...</p>
+      <div class="options">
+        <label><input type="radio" name="q49" value="A"> A) Convergent</label><br>
+        <label><input type="radio" name="q49" value="B"> B) Divergent</label><br>
+      </div>
+      <div class="result" id="result49"></div>
+      <div class="explanation" id="explanation49" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is a famous convergent integral. We can split it into \( \int_{0}^{1} e^{-x^2} dx \) (a proper integral) and \( \int_{1}^{\infty} e^{-x^2} dx \). For \(x \ge 1\), \(x^2 \ge x\), so \(e^{-x^2} \le e^{-x}\). Since \( \int_{1}^{\infty} e^{-x} dx \) converges, the second part converges by comparison. The value of the original integral is \(\sqrt{\pi}/2\). (Source: Wrede, Chapter 12)</p>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <p class="question">50. Does the integral \( \int_{0}^{\infty} e^{-x} \sin(x) \, dx \) converge or diverge?</p>
+      <div class="options">
+        <label><input type="radio" name="q50" value="A"> A) Converges</label><br>
+        <label><input type="radio" name="q50" value="B"> B) Diverges</label><br>
+      </div>
+      <div class="result" id="result50"></div>
+      <div class="explanation" id="explanation50" style="display:none;">
+        <p><b>Correct Answer:</b> A</p>
+        <p><b>Explanation:</b> This is an integral with a variable sign integrand. We can test for absolute convergence. We have \( |e^{-x} \sin(x)| \le e^{-x} \). Since \( \int_{0}^{\infty} e^{-x} \, dx \) converges (to 1), by the Direct Comparison Test, the integral \( \int_{0}^{\infty} |e^{-x} \sin(x)| \, dx \) also converges. An absolutely convergent integral is always convergent. (Source: Ostaszewski, Section 4.2.3)</p>
+      </div>
+    </div>
+
+
+    <div id="controls">
+        <button id="clear-answers">Clear My Answers</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const questions = document.querySelectorAll('.question-container');
+        const correctAnswers = {
+            q1: 'B', q2: 'C', q3: 'C', q4: 'C', q5: 'A', q6: 'B', q7: 'A', q8: 'C', q9: 'C', q10: 'C',
+            q11: 'B', q12: 'B', q13: 'B', q14: 'B', q15: 'A', q16: 'A', q17: 'B', q18: 'B', q19: 'A', q20: 'A',
+            q21: 'A', q22: 'B', q23: 'B', q24: 'A', q25: 'A', q26: 'C', q27: 'A', q28: 'A', q29: 'A', q30: 'B',
+            q31: 'B', q32: 'A', q33: 'B', q34: 'C', q35: 'A', q36: 'B', q37: 'A', q38: 'A', q39: 'A', q40: 'A',
+            q41: 'A', q42: 'A', q43: 'B', q44: 'A', q45: 'B', q46: 'B', q47: 'A', q48: 'B', q49: 'A', q50: 'A'
+        };
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function saveAnswers() {
+            const answers = {};
+            questions.forEach((_, index) => {
+                const qNum = index + 1;
+                const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+                if (selected) {
+                    answers[`q${qNum}`] = selected.value;
+                }
+            });
+            setCookie('quizAnswers', JSON.stringify(answers), 7);
+        }
+
+        function loadAnswers() {
+            const savedAnswers = getCookie('quizAnswers');
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const qName in answers) {
+                    const selectedValue = answers[qName];
+                    const radio = document.querySelector(`input[name="${qName}"][value="${selectedValue}"]`);
+                    if (radio) {
+                        radio.checked = true;
+                        checkAnswer(qName.substring(1));
+                    }
+                }
+            }
+        }
+
+        function checkAnswer(qNum) {
+            const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+            if (!selected) return;
+
+            const resultDiv = document.getElementById(`result${qNum}`);
+            const explanationDiv = document.getElementById(`explanation${qNum}`);
+            const isCorrect = selected.value === correctAnswers[`q${qNum}`];
+
+            if (isCorrect) {
+                resultDiv.textContent = 'Correct!';
+                resultDiv.className = 'result correct';
+            } else {
+                resultDiv.textContent = 'Incorrect.';
+                resultDiv.className = 'result incorrect';
+            }
+            explanationDiv.style.display = 'block';
+        }
+
+        questions.forEach((_, index) => {
+            const qNum = index + 1;
+            const options = document.querySelectorAll(`input[name="q${qNum}"]`);
+            options.forEach(option => {
+                option.addEventListener('change', () => {
+                    checkAnswer(qNum);
+                    saveAnswers();
+                });
+            });
+        });
+
+        document.getElementById('clear-answers').addEventListener('click', () => {
+            setCookie('quizAnswers', '', -1);
+            location.reload();
+        });
+
+        loadAnswers();
+    });
+</script>
+
+</body>
+</html>
