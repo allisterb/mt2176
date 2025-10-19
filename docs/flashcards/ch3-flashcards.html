@@ -88,6 +88,12 @@
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
+  button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 0 10px;
+  }
   .next {
     right: -50px;
     border-radius: 3px 0 0 3px;
@@ -1834,6 +1840,9 @@
     </div>
     
   </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
 <div class="progress-bar">
@@ -1842,7 +1851,7 @@
 <div id="progressText">Card 1 of 100</div>
 <div class="navigation">
   <button onclick="plusSlides(-1)">Previous</button>
-  <button onclick="flipCurrentCard()">Flip</button>
+  <button class="flip-btn">Flip</button>
   <button onclick="plusSlides(1)">Next</button>
 </div>
 
@@ -1871,6 +1880,12 @@
     progressBar.style.width = progress + "%";
     progressText.innerHTML = "Card " + slideIndex + " of " + slides.length;
   }
+  
+  function flipCurrentCard()
+  {
+    let slides = document.getElementsByClassName("flashcard");
+    slides[slideIndex-1].classList.toggle('flipped');
+  }
 
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
@@ -1884,6 +1899,8 @@
       button.previousElementSibling.classList.toggle('flipped');
     });
   });
+  
+  document.querySelector('.flip-button').addEventListener('click', flipCurrentCard);
 </script>
 
 </body>
