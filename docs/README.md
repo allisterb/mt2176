@@ -26,3 +26,7 @@ This document provides links to the study materials for the MT2176 Further Calcu
 * [Chapter 3: Improper Integrals - Multiple Choice Quiz 1](./quizzes/ch3-quiz-mc-1.html)
 
 * [Chapter 3: Improper Integrals - Multiple Choice Quiz 2](./quizzes/ch3-quiz-mc-2.html)
+
+* [Chapter 4: Double Integrals - Multiple Choice Quiz 1](./quizzes/ch4-quiz-mc-1.html)
+
+* [Chapter 4: Double Integrals - Multiple Choice Quiz 2](./quizzes/ch4-quiz-mc-2.html)
