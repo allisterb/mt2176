@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT2176 Further Calculus - Double Integrals Flashcards</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\(','\\)']],
+                displayMath: [['\\[','\\]']],
+                processEscapes: true
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            color: #333;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+   
+        }
+        .card-container {
+            perspective: 1000px;
+            min-width: 800px;
+            min-height: 550px;
+            margin: 20px 0;
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            width: 100%;
+            
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; /* For Safari */
+
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-face.front {
+		
+            /* z-index removed */
+        }
+        .card-face.back {
+            transform: rotateY(180deg);
+            text-align: left;
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+        .card-content {
+            font-size: 1.2em;
+        }
+        .card-content.question {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 10px;
+        }
+        .nav-btn, .flip-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .nav-btn:hover, .flip-btn:hover {
+            background-color: #0056b3;
+        }
+        .card-counter {
+            margin-top: 15px;
+            font-size: 1em;
+            color: #666;
+        }
+        .source {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MT2176 Further Calculus: Double Integrals</h1>
+
+    <div class="slideshow-container">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        State Fubini's Theorem for a double integral over a rectangular region.
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            Fubini's Theorem states that if \(f(x, y)\) is a continuous function on a rectangular region \(R = [a, b] \times [c, d]\), then the double integral of \(f\) over \(R\) can be computed as an iterated integral. The order of integration does not matter.
+                        </p>
+                        <p>
+                            Mathematically, this is expressed as:
+                            \[ 
+                            \iint_R f(x, y) \, dA = \int_c^d \left[ \int_a^b f(x, y) \, dx \right] \, dy = \int_a^b \left[ \int_c^d f(x, y) \, dy \right] \, dx 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.1.4; Ostaszewski, Chapter 19; Binmore & Davies, Chapter 11.1.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        How do you calculate the volume under a surface \(z = f(x, y)\) over a rectangular base \(R = [a, b] \times [c, d]\)?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            If \(f(x, y) \ge 0\) on the rectangular region \(R\), the volume \(V\) under the surface \(z = f(x, y)\) and above the xy-plane is given by the double integral of \(f(x, y)\) over \(R\).
+                        </p>
+                        <p>
+                            This integral is evaluated using an iterated integral as stated by Fubini's Theorem:
+                            \[ V = \iint_R f(x, y) \, dA = \int_c^d \int_a^b f(x, y) \, dx \, dy 
+                            \]
+                            You first integrate with respect to \(x\) (treating \(y\) as a constant), and then integrate the resulting expression with respect to \(y\).
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.1.1; Binmore & Davies, Chapter 11.1.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Find the volume under the surface \(z = x^2y\) over the rectangle \(R = [0, 2] \times [1, 3]\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The volume is given by the double integral \( \iint_R x^2y \, dA \). We can evaluate this as an iterated integral.
+                        </p>
+                        <p>
+                            \[ V = \int_1^3 \int_0^2 x^2y \, dx \, dy 
+                            \]
+                            First, integrate with respect to \(x\):
+                            \[ \int_0^2 x^2y \, dx = y \left[ \frac{x^3}{3} \right]_0^2 = y \left( \frac{8}{3} - 0 \right) = \frac{8y}{3} 
+                            \]
+                            Now, integrate the result with respect to \(y\):
+                            \[ V = \int_1^3 \frac{8y}{3} \, dy = \frac{8}{3} \left[ \frac{y^2}{2} \right]_1^3 = \frac{4}{3} [y^2]_1^3 = \frac{4}{3} (9 - 1) = \frac{32}{3} 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from MT2176 SG, Section 5.1.1.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What is a Type I region (or vertically simple region) for double integration?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            A Type I region \(D\) is a region in the xy-plane that is bounded by two continuous functions of \(x\). It is described by the inequalities:
+                            \[ a \le x \le b 
+                            \]
+                            \[ g_1(x) \le y \le g_2(x) 
+                            \]
+                            where \(g_1(x)\) and \(g_2(x)\) are continuous on \([a, b]\).
+                        </p>
+                        <p>
+                            For a Type I region, the double integral is set up as:
+                            \[ \iint_D f(x, y) \, dA = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x, y) \, dy \, dx 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.1.5; Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What is a Type II region (or horizontally simple region) for double integration?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            A Type II region \(D\) is a region in the xy-plane that is bounded by two continuous functions of \(y\). It is described by the inequalities:
+                            \[ c \le y \le d 
+                            \]
+                            \[ h_1(y) \le x \le h_2(y) 
+                            \]
+                            where \(h_1(y)\) and \(h_2(y)\) are continuous on \([c, d]\).
+                        </p>
+                        <p>
+                            For a Type II region, the double integral is set up as:
+                            \[ \iint_D f(x, y) \, dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x, y) \, dx \, dy 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.1.5; Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Set up an iterated integral to find the volume under \(z = x+y\) over the region \(D\) bounded by \(y=\sqrt{x}\), \(y=0\), and \(x=4\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The region \(D\) can be described as a Type I region:
+                            \[ 0 \le x \le 4 
+                            \]
+                            \[ 0 \le y \le \sqrt{x} 
+                            \]
+                        </p>
+                        <p>
+                            The volume \(V\) is given by the iterated integral:
+                            \[ V = \int_0^4 \int_0^{\sqrt{x}} (x+y) \, dy \, dx 
+                            \]
+                            To evaluate:
+                            \[ \int_0^{\sqrt{x}} (x+y) \, dy = \left[ xy + \frac{y^2}{2} \right]_0^{\sqrt{x}} = x\sqrt{x} + \frac{x}{2} = x^{3/2} + \frac{x}{2} 
+                            \]
+                            \[ V = \int_0^4 \left( x^{3/2} + \frac{x}{2} \right) \, dx = \left[ \frac{2}{5}x^{5/2} + \frac{x^2}{4} \right]_0^4 = \left( \frac{2}{5}(32) + \frac{16}{4} \right) - 0 = \frac{64}{5} + 4 = \frac{84}{5} 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from MT2176 SG, Section 5.1.5.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Explain the general procedure for changing the order of integration in an iterated integral.
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>To change the order of integration:</p>
+                        <ol>
+                            <li><strong>Sketch the region of integration:</strong> From the limits of the given iterated integral, determine the inequalities that define the region \(D\). Sketch this region in the xy-plane.</li>
+                            <li><strong>Re-describe the region:</strong> Describe the region \(D\) with the order of the variables reversed. If the original integral was Type I (\(dy \, dx\)), describe \(D\) as a Type II region (or a union of Type II regions), and vice-versa. This means finding the new bounding functions.</li>
+                            <li><strong>Write the new integral:</strong> Set up the new iterated integral with the new limits of integration based on the re-described region.</li>
+                        </ol>
+                        <p>This is often useful when the original integral is difficult or impossible to evaluate in the given order.</p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.1.5; Ostaszewski, Chapter 19.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Evaluate the integral \( \int_0^1 \int_x^1 \sin(y^2) \, dy \, dx \) by changing the order of integration.
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The integral \(\int \sin(y^2) \, dy\) cannot be expressed in terms of elementary functions. We must change the order of integration.</p>
+                        <p>1. <strong>Sketch the region:</strong> The region \(D\) is defined by \(x \le y \le 1\) and \(0 \le x \le 1\). This is a triangle with vertices (0,0), (1,1), and (0,1).</p>
+                        <p>2. <strong>Re-describe the region:</strong> As a Type II region, the bounds are \(0 \le y \le 1\) and \(0 \le x \le y\).</p>
+                        <p>3. <strong>Write the new integral:</strong>
+                            \[ \int_0^1 \int_0^y \sin(y^2) \, dx \, dy 
+                            \]
+                            Evaluate the inner integral:
+                            \[ \int_0^y \sin(y^2) \, dx = \sin(y^2) [x]_0^y = y \sin(y^2) 
+                            \]
+                            Evaluate the outer integral (using u-substitution with \(u=y^2, du=2y\,dy\)):
+                            \[ \int_0^1 y \sin(y^2) \, dy = \frac{1}{2} \int_0^1 \sin(u) \, du = \frac{1}{2} [-\cos(u)]_0^1 = \frac{1}{2} (-\cos(1) - (-\cos(0))) = \frac{1}{2}(1 - \cos(1)) 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Wrede & Spiegel, Chapter 9; Binmore & Davies, Chapter 11.2.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What is the Jacobian of a transformation, and what is its role in changing variables in a double integral?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            For a transformation from \((u, v)\) to \((x, y)\) given by \(x = g(u, v)\) and \(y = h(u, v)\), the Jacobian determinant (or simply Jacobian) is:
+                            \[ J(u, v) = \frac{\partial(x, y)}{\partial(u, v)} = \det \begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{pmatrix} = \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} 
+                            \]
+                        </p>
+                        <p>
+                            The Jacobian represents the scaling factor for the area element. When changing variables in a double integral from \((x, y)\) to \((u, v)\), the differential area element \(dA = dx \, dy\) is replaced by \(|J(u, v)| \, du \, dv\).
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.2; Ostaszewski, Chapter 19.5.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        State the change of variables formula for a double integral.
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            Suppose we have a transformation \(T\) from the uv-plane to the xy-plane given by \(x = g(u, v), y = h(u, v)\) that maps a region \(S\) in the uv-plane to a region \(R\) in the xy-plane.
+                        </p>
+                        <p>
+                            If \(f\) is continuous on \(R\) and the Jacobian \(J(u, v) = \frac{\partial(x, y)}{\partial(u, v)}\) is non-zero and continuous on \(S\), then:
+                            \[ \iint_R f(x, y) \, dx \, dy = \iint_S f(g(u, v), h(u, v)) \left| \frac{\partial(x, y)}{\partial(u, v)} \right| \, du \, dv 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.2; Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Calculate the Jacobian \(\frac{\partial(x, y)}{\partial(r, \theta)}\) for the transformation to polar coordinates: \(x = r \cos \theta\), \(y = r \sin \theta\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The Jacobian is the determinant of the matrix of partial derivatives:
+                            \[ J(r, \theta) = \frac{\partial(x, y)}{\partial(r, \theta)} = \det \begin{pmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} \end{pmatrix} 
+                            \]
+                        </p>
+                        <p>
+                            The partial derivatives are:
+                            <ul>
+                                <li>\(\frac{\partial x}{\partial r} = \cos \theta\)</li>
+                                <li>\(\frac{\partial x}{\partial \theta} = -r \sin \theta\)</li>
+                                <li>\(\frac{\partial y}{\partial r} = \sin \theta\)</li>
+                                <li>\(\frac{\partial y}{\partial \theta} = r \cos \theta\)</li>
+                            </ul>
+                            So the Jacobian is:
+                            \[ J(r, \theta) = \det \begin{pmatrix} \cos \theta & -r \sin \theta \\ \sin \theta & r \cos \theta \end{pmatrix} = (\cos \theta)(r \cos \theta) - (-r \sin \theta)(\sin \theta) 
+                            \]
+                            \[ = r \cos^2 \theta + r \sin^2 \theta = r(\cos^2 \theta + \sin^2 \theta) = r 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Use polar coordinates to evaluate \( \iint_D e^{-x^2 - y^2} \, dA \), where \(D\) is the region bounded by the semicircle \(y = \sqrt{1-x^2}\) and the x-axis.
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The region \(D\) is a semicircle of radius 1 in the upper half-plane. In polar coordinates, this region is described by:
+                            \[ 0 \le r \le 1 
+                            \]
+                            \[ 0 \le \theta \le \pi 
+                            \]
+                        </p>
+                        <p>
+                            The integrand becomes \(e^{-r^2}\) and the area element is \(dA = r \, dr \, d\theta\). The integral is:
+                            \[ \int_0^\pi \int_0^1 e^{-r^2} r \, dr \, d\theta 
+                            \]
+                            Evaluate the inner integral using u-substitution (\(u = -r^2, du = -2r \, dr\)):
+                            \[ \int_0^1 e^{-r^2} r \, dr = -\frac{1}{2} \int_0^{-1} e^u \, du = -\frac{1}{2} [e^u]_0^{-1} = -\frac{1}{2} (e^{-1} - 1) = \frac{1}{2}(1 - e^{-1}) 
+                            \]
+                            Evaluate the outer integral:
+                            \[ \int_0^\pi \frac{1}{2}(1 - e^{-1}) \, d\theta = \frac{1}{2}(1 - e^{-1}) [\theta]_0^\pi = \frac{\pi}{2}(1 - e^{-1}) 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from MT2176 SG, Section 5.2.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What is the relationship between the Jacobian of a transformation and the Jacobian of its inverse transformation?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The Jacobian of the inverse transformation is the reciprocal of the Jacobian of the original transformation.
+                        </p>
+                        <p>
+                            If we have a transformation from \((u, v)\) to \((x, y)\), and its inverse from \((x, y)\) to \((u, v)\), then:
+                            \[ \frac{\partial(x, y)}{\partial(u, v)} = \frac{1}{\frac{\partial(u, v)}{\partial(x, y)}} 
+                            \]
+                            Or, in another notation:
+                            \[ J_{(u,v) \to (x,y)} = (J_{(x,y) \to (u,v)})^{-1} 
+                            \]
+                            This is provided that both Jacobians are non-zero.
+                        </p>
+                        <p class="source">
+                            Source: Ostaszewski, Chapter 19.5.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Evaluate \( \iint_R (x-y)^2 \sin^2(x+y) \, dA \) where \(R\) is the parallelogram with vertices \((\pi, 0), (2\pi, \pi), (\pi, 2\pi), (0, \pi)\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Use the transformation \(u = x+y, v = x-y\). The inverse transformation is \(x = \frac{1}{2}(u+v), y = \frac{1}{2}(u-v)\).</p>
+                        <p>The Jacobian of this inverse transformation is:
+                        \[ \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{pmatrix} 1/2 & 1/2 \\ 1/2 & -1/2 \end{pmatrix} = -\frac{1}{4} - \frac{1}{4} = -\frac{1}{2} 
+                        \]
+                        The region \(R\) in the xy-plane is transformed to the region \(S\) in the uv-plane bounded by \(u=\pi, u=3\pi, v=-\pi, v=\pi\).</p>
+                        <p>The integral becomes:
+                        \[ \iint_S v^2 \sin^2(u) \left|-\frac{1}{2}\right| \, du \, dv = \frac{1}{2} \int_{-\pi}^{\pi} \int_{\pi}^{3\pi} v^2 \sin^2(u) \, du \, dv 
+                        \]
+                        \[ = \frac{1}{2} \left( \int_{-\pi}^{\pi} v^2 \, dv \right) \left( \int_{\pi}^{3\pi} \sin^2(u) \, du \right) 
+                        \]
+                        \[ = \frac{1}{2} \left[ \frac{v^3}{3} \right]_{-\pi}^{\pi} \left[ \frac{u}{2} - \frac{\sin(2u)}{4} \right]_{\pi}^{3\pi} = \frac{1}{2} \left( \frac{2\pi^3}{3} \right) (\pi) = \frac{\pi^4}{3} 
+                        \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        When evaluating a double integral over a region \(D\), when is it advantageous to use polar coordinates?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Using polar coordinates is advantageous in two main situations:</p>
+                        <ol>
+                            <li>
+                                <strong>The region of integration \(D\) is a polar rectangle or a sector of a circle.</strong> Regions like circles, annuli (rings), or sectors are much simpler to describe with polar coordinates (e.g., \(r_1 \le r \le r_2, \theta_1 \le \theta \le \theta_2\)) than with rectangular coordinates.
+                            </li>
+                            <li>
+                                <strong>The integrand \(f(x, y)\) simplifies when converted to polar coordinates.</strong> This is especially true for functions containing the expression \(x^2 + y^2\), which becomes \(r^2\). For example, \(e^{-(x^2+y^2)}\) becomes \(e^{-r^2}\), and \(\sqrt{x^2+y^2}\) becomes \(r\).
+                            </li>
+                        </ol>
+                        <p>In these cases, the resulting iterated integral in polar coordinates is often much easier to evaluate.</p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.2; Binmore & Davies, Chapter 11.4.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        If \(f(x, y) = g(x)h(y)\), how does that simplify the double integral over a rectangle \(R = [a, b] \times [c, d]\)?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            If the integrand is a product of a function of \(x\) only and a function of \(y\) only, the double integral over a rectangle can be separated into a product of two single integrals.
+                        </p>
+                        <p>
+                            \[ \iint_R g(x)h(y) \, dA = \left( \int_a^b g(x) \, dx \right) \left( \int_c^d h(y) \, dy \right) \]
+                        </p>
+                        <p>
+                            This is a special case of Fubini's Theorem and can significantly simplify calculations.
+                        </p>
+                        <p class="source">
+                            Source: Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Evaluate \( \iint_R x \cos(y) \, dA \) over \(R = [0, 1] \times [0, \pi/2]\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            Since the integrand is a product of a function of \(x\) and a function of \(y\), we can separate the integrals.
+                        </p>
+                        <p>
+                            \[ \iint_R x \cos(y) \, dA = \left( \int_0^1 x \, dx \right) \left( \int_0^{\pi/2} \cos(y) \, dy \right) \]
+                        </p>
+                        <p>
+                            \[ = \left[ \frac{x^2}{2} \right]_0^1 \left[ \sin(y) \right]_0^{\pi/2} \]
+                            \[ = \left( \frac{1}{2} - 0 \right) \left( \sin(\pi/2) - \sin(0) \right) \]
+                            \[ = \left( \frac{1}{2} \right) (1 - 0) = \frac{1}{2} \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        How do you find the volume of the solid enclosed between two surfaces, \(z = f_2(x, y)\) and \(z = f_1(x, y)\), over a region D?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            If \(f_2(x, y) \ge f_1(x, y)\) for all \((x, y)\) in the region D, the volume \(V\) of the solid between the two surfaces is given by the double integral of their difference.
+                        </p>
+                        <p>
+                            \[ V = \iint_D [f_2(x, y) - f_1(x, y)] \, dA \]
+                        </p>
+                        <p>
+                            This formula calculates the volume of the "upper" surface and subtracts the volume of the "lower" surface to find the volume of the region between them.
+                        </p>
+                        <p class="source">
+                            Source: Binmore & Davies, Chapter 11.1.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Find the volume of the solid bounded by the paraboloids \(z = x^2 + y^2\) and \(z = 4 - x^2 - y^2\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            First, find the intersection of the two surfaces: \(x^2 + y^2 = 4 - x^2 - y^2 \Rightarrow 2(x^2 + y^2) = 4 \Rightarrow x^2 + y^2 = 2\). This is a circle of radius \(\sqrt{2}\). This circle is our region of integration D.
+                        </p>
+                        <p>
+                            The upper surface is \(f_2 = 4 - x^2 - y^2\) and the lower is \(f_1 = x^2 + y^2\). The volume is \(V = \iint_D (4 - 2x^2 - 2y^2) \, dA\).
+                        </p>
+                        <p>
+                            Convert to polar coordinates. The region D is \(0 \le r \le \sqrt{2}, 0 \le \theta \le 2\pi\). The integrand is \(4 - 2r^2\).
+                            \[ V = \int_0^{2\pi} \int_0^{\sqrt{2}} (4 - 2r^2) r \, dr \, d\theta \]
+                            \[ \int_0^{\sqrt{2}} (4r - 2r^3) \, dr = [2r^2 - \frac{r^4}{2}]_0^{\sqrt{2}} = (2(2) - \frac{4}{2}) = 4 - 2 = 2 \]
+                            \[ V = \int_0^{2\pi} 2 \, d\theta = 2[\theta]_0^{2\pi} = 4\pi \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from MT2176 SG, Section 5.2.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Change the order of integration for \( \int_0^2 \int_{x^2}^4 f(x, y) \, dy \, dx \).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            1. <strong>Sketch the region:</strong> The region D is bounded by \(y = x^2\), \(y = 4\), and \(x = 0\) (since x starts at 0). This is a region in the first quadrant.
+                        </p>
+                        <p>
+                            2. <strong>Re-describe the region:</strong> To change the order, we need to express the bounds of \(x\) in terms of \(y\). From \(y = x^2\), we get \(x = \sqrt{y}\). The region is bounded by \(x=0\) on the left and \(x=\sqrt{y}\) on the right. The y-values range from 0 to 4.
+                            So, the Type II description is \(0 \le y \le 4\) and \(0 \le x \le \sqrt{y}\).
+                        </p>
+                        <p>
+                            3. <strong>Write the new integral:</strong>
+                            \[ \int_0^4 \int_0^{\sqrt{y}} f(x, y) \, dx \, dy \]
+                        </p>
+                        <p class="source">
+                            Source: Ostaszewski, Chapter 19.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What is the average value of a function \(f(x, y)\) over a region D?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The average value of a function \(f(x, y)\) over a region D is the double integral of the function over D divided by the area of D.
+                        </p>
+                        <p>
+                            \[ f_{avg} = \frac{1}{\text{Area}(D)} \iint_D f(x, y) \, dA \]
+                        </p>
+                        <p>
+                            The area of D can also be calculated by a double integral: \(\text{Area}(D) = \iint_D 1 \, dA\).
+                        </p>
+                        <p class="source">
+                            Source: Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Find the average value of \(f(x, y) = xy\) over the rectangle \(R = [0, 2] \times [0, 3]\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            1. <strong>Calculate the area of R:</strong> Area(R) = base \(\times\) height = 2 \(\times\) 3 = 6.
+                        </p>
+                        <p>
+                            2. <strong>Calculate the double integral:</strong>
+                            \[ \iint_R xy \, dA = \int_0^3 \int_0^2 xy \, dx \, dy \]
+                            \[ \int_0^2 xy \, dx = y [\frac{x^2}{2}]_0^2 = y(\frac{4}{2}) = 2y \]
+                            \[ \int_0^3 2y \, dy = [y^2]_0^3 = 9 \]
+                        </p>
+                        <p>
+                            3. <strong>Calculate the average value:</strong>
+                            \[ f_{avg} = \frac{1}{\text{Area}(R)} \iint_R f(x, y) \, dA = \frac{1}{6} (9) = \frac{3}{2} \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Evaluate \( \iint_D (x^2 + y^2) \, dA \) where D is the region in the first quadrant between the circles \(x^2+y^2=1\) and \(x^2+y^2=4\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The region is an annulus sector, which is ideal for polar coordinates.
+                        </p>
+                        <p>
+                            1. <strong>Describe the region in polar coordinates:</strong> The region D is given by \(1 \le r \le 2\) and \(0 \le \theta \le \pi/2\).
+                        </p>
+                        <p>
+                            2. <strong>Convert the integral:</strong> The integrand \(x^2 + y^2\) becomes \(r^2\). The area element is \(dA = r \, dr \, d\theta\).
+                            \[ \int_0^{\pi/2} \int_1^2 (r^2) r \, dr \, d\theta = \int_0^{\pi/2} \int_1^2 r^3 \, dr \, d\theta \]
+                            \[ \int_1^2 r^3 \, dr = [\frac{r^4}{4}]_1^2 = \frac{16}{4} - \frac{1}{4} = \frac{15}{4} \]
+                            \[ \int_0^{\pi/2} \frac{15}{4} \, d\theta = \frac{15}{4} [\theta]_0^{\pi/2} = \frac{15\pi}{8} \]
+                        </p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.2.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Use a double integral to find the area of the region enclosed by the cardioid \(r = 1 + \cos\theta\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The area of a region D is given by \(\iint_D 1 \, dA\). We use polar coordinates.
+                        </p>
+                        <p>
+                            1. <strong>Describe the region:</strong> The cardioid is traced once as \(\theta\) goes from 0 to \(2\pi\). For any given \(\theta\), \(r\) goes from 0 to \(1 + \cos\theta\). So, \(0 \le \theta \le 2\pi\) and \(0 \le r \le 1 + \cos\theta\).
+                        </p>
+                        <p>
+                            2. <strong>Set up the integral:</strong>
+                            \[ A = \int_0^{2\pi} \int_0^{1+\cos\theta} r \, dr \, d\theta \]
+                            \[ \int_0^{1+\cos\theta} r \, dr = [\frac{r^2}{2}]_0^{1+\cos\theta} = \frac{1}{2}(1 + \cos\theta)^2 = \frac{1}{2}(1 + 2\cos\theta + \cos^2\theta) \]
+                            \[ A = \frac{1}{2} \int_0^{2\pi} (1 + 2\cos\theta + \frac{1+\cos(2\theta)}{2}) \, d\theta \]
+                            \[ = \frac{1}{2} [\theta + 2\sin\theta + \frac{\theta}{2} + \frac{\sin(2\theta)}{4}]_0^{2\pi} = \frac{1}{2} [\frac{3\theta}{2}]_0^{2\pi} = \frac{1}{2} (3\pi) = \frac{3\pi}{2} \]
+                        </p>
+                        <p class="source">
+                            Source: Binmore & Davies, Chapter 11.4.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Sketch the region and change the order of integration for \( \int_0^1 \int_{e^y}^e f(x,y) \, dx \, dy \).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            1. <strong>Sketch the region:</strong> The region D is bounded by \(x = e^y\), \(x = e\), \(y = 0\), and \(y = 1\). This is a region in the first quadrant. The curve \(x = e^y\) is the same as \(y = \ln x\).
+                        </p>
+                        <p>
+                            2. <strong>Re-describe the region:</strong> To change the order, we need vertical slices (constant \(x\)). The \(x\) values range from \(x=e^0=1\) to \(x=e\). For a given \(x\), \(y\) goes from the x-axis (\(y=0\)) up to the curve \(y = \ln x\).
+                            So, the Type I description is \(1 \le x \le e\) and \(0 \le y \le \ln x\).
+                        </p>
+                        <p>
+                            3. <strong>Write the new integral:</strong>
+                            \[ \int_1^e \int_0^{\ln x} f(x, y) \, dy \, dx \]
+                        </p>
+                        <p class="source">
+                            Source: Ostaszewski, Chapter 19.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What are the formulas for the center of mass \((\bar{x}, \bar{y})\) of a lamina with variable density \(\rho(x, y)\) over a region D?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The total mass \(m\) of the lamina is \(m = \iint_D \rho(x, y) \, dA\).</p>
+                        <p>The coordinates of the center of mass are given by:</p>
+                        <p>\[ \bar{x} = \frac{1}{m} \iint_D x \rho(x, y) \, dA \]
+                           \[ \bar{y} = \frac{1}{m} \iint_D y \rho(x, y) \, dA \]
+                        </p>
+                        <p>The integrals in the numerators are the moments about the y-axis (\(M_y\)) and x-axis (\(M_x\)), respectively.</p>
+                        <p class="source">Source: Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Find the center of mass of a lamina with constant density \(\rho(x, y) = \rho_0\) occupying the region D bounded by \(y=\sqrt{x}\), \(y=0\), and \(x=1\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Region D: \(0 \le x \le 1, 0 \le y \le \sqrt{x}\).</p>
+                        <p>Mass: \(m = \int_0^1\int_0^{\sqrt{x}} \rho_0 \, dy \, dx = \rho_0 \int_0^1 \sqrt{x} \, dx = \rho_0 [\frac{2}{3}x^{3/2}]_0^1 = \frac{2\rho_0}{3}\).</p>
+                        <p>Moment about y-axis: \(M_y = \int_0^1\int_0^{\sqrt{x}} x \rho_0 \, dy \, dx = \rho_0 \int_0^1 x^{3/2} \, dx = \frac{2\rho_0}{5}\).</p>
+                        <p>Moment about x-axis: \(M_x = \int_0^1\int_0^{\sqrt{x}} y \rho_0 \, dy \, dx = \rho_0 \int_0^1 [\frac{y^2}{2}]_0^{\sqrt{x}} dx = \frac{\rho_0}{2} \int_0^1 x \, dx = \frac{\rho_0}{4}\).</p>
+                        <p>Center of mass: \(\bar{x} = M_y/m = (\frac{2\rho_0}{5}) / (\frac{2\rho_0}{3}) = \frac{3}{5}\). \(\bar{y} = M_x/m = (\frac{\rho_0}{4}) / (\frac{2\rho_0}{3}) = \frac{3}{8}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What are the moments of inertia \(I_x, I_y, I_0\) for a lamina with density \(\rho(x,y)\) over a region D?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The moments of inertia measure the lamina's resistance to rotation around an axis.</p>
+                        <p>About the x-axis: \[ I_x = \iint_D y^2 \rho(x, y) \, dA \]
+                        </p>
+                        <p>About the y-axis: \[ I_y = \iint_D x^2 \rho(x, y) \, dA \]
+                        </p>
+                        <p>About the origin (Polar Moment of Inertia): \[ I_0 = \iint_D (x^2 + y^2) \rho(x, y) \, dA = I_x + I_y \]
+                        </p>
+                        <p class="source">Source: Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">State the linearity property of double integrals.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>If \(f\) and \(g\) are integrable functions over a region D and \(c\) is a constant, then:</p>
+                        <p>1. \( \iint_D [f(x, y) + g(x, y)] \, dA = \iint_D f(x, y) \, dA + \iint_D g(x, y) \, dA \)</p>
+                        <p>2. \( \iint_D c f(x, y) \, dA = c \iint_D f(x, y) \, dA \)</p>
+                        <p>This allows us to break down complex integrals into simpler parts.</p>
+                        <p class="source">Source: Binmore & Davies, Chapter 11.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">State the domain additivity property of double integrals.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>If the region of integration D can be split into two non-overlapping subregions \(D_1\) and \(D_2\) (i.e., \(D = D_1 \cup D_2\) and \(D_1 \cap D_2\) is empty or a curve), then the integral over D is the sum of the integrals over the subregions.</p>
+                        <p>\[ \iint_D f(x, y) \, dA = \iint_{D_1} f(x, y) \, dA + \iint_{D_2} f(x, y) \, dA \]
+                        </p>
+                        <p>This is useful for integrating over complex domains that can be divided into simpler Type I or Type II regions.</p>
+                        <p class="source">Source: Binmore & Davies, Chapter 11.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\iint_D |x-y| \, dA\) where \(D = [0,1] \times [0,1]\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>We must split the domain. The expression \(|x-y|\) changes at \(x=y\).</p>
+                        <p>Let \(D_1\) be the region where \(y \le x\). Here, \(|x-y| = x-y\). \(D_1\) is \(0 \le x \le 1, 0 \le y \le x\).</p>
+                        <p>Let \(D_2\) be the region where \(y > x\). Here, \(|x-y| = y-x\). \(D_2\) is \(0 \le y \le 1, 0 \le x \le y\).</p>
+                        <p>\(\iint_{D_1} (x-y) dA = \int_0^1\int_0^x (x-y) dy dx = \int_0^1 [xy - y^2/2]_0^x dx = \int_0^1 x^2/2 dx = 1/6\).</p>
+                        <p>\(\iint_{D_2} (y-x) dA = \int_0^1\int_0^y (y-x) dx dy = \int_0^1 [yx - x^2/2]_0^y dy = \int_0^1 y^2/2 dy = 1/6\).</p>
+                        <p>The total integral is \(1/6 + 1/6 = 1/3\).</p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">State the comparison (monotonicity) property of double integrals.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>If \(f(x, y) \ge g(x, y)\) for all \((x, y)\) in a region D, then:
+                        \[ \iint_D f(x, y) \, dA \ge \iint_D g(x, y) \, dA \]
+                        </p>
+                        <p>A useful special case: If \(m \le f(x, y) \le M\) for all \((x, y)\) in D, then:
+                        \[ m \cdot \text{Area}(D) \le \iint_D f(x, y) \, dA \le M \cdot \text{Area}(D) \]
+                        This can be used to estimate the value of an integral.</p>
+                        <p class="source">Source: Binmore & Davies, Chapter 11.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What is the formula for finding the surface area of a surface \(z = f(x, y)\) over a region D?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The surface area \(A(S)\) of the part of the surface \(z = f(x, y)\) that lies above the region D in the xy-plane is given by the double integral:</p>
+                        <p>\[ A(S) = \iint_D \sqrt{1 + \left(\frac{\partial f}{\partial x}\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2} \, dA \]
+                        </p>
+                        <p>This formula assumes that \(f\) has continuous partial derivatives over D.</p>
+                        <p class="source">Source: Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the surface area of the part of the plane \(z = 2 - x - y\) that lies in the first octant.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The plane intersects the xy-plane (z=0) at \(x+y=1\). The region D is the triangle in the xy-plane bounded by \(x=0, y=0, x+y=1\).</p>
+                        <p>We have \(f(x, y) = 2 - x - y\). The partial derivatives are \(\frac{\partial f}{\partial x} = -1\) and \(\frac{\partial f}{\partial y} = -1\).</p>
+                        <p>The integrand for surface area is \(\sqrt{1 + (-1)^2 + (-1)^2} = \sqrt{3}\).</p>
+                        <p>\[ A(S) = \iint_D \sqrt{3} \, dA = \sqrt{3} \cdot \text{Area}(D) \]
+                        </p>
+                        <p>The region D is a triangle with base 1 and height 1, so its area is 1/2. Therefore, the surface area is \(\frac{\sqrt{3}}{2}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\int_0^\infty \int_0^\infty e^{-(x^2+y^2)} dx dy\). (The Gaussian Integral)</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>This is an improper integral over the first quadrant. We convert to polar coordinates.</p>
+                        <p>The region is \(0 \le r < \infty\) and \(0 \le \theta \le \pi/2\).</p>
+                        <p>\[ I = \int_0^{\pi/2} \int_0^\infty e^{-r^2} r \, dr \, d\theta \]
+                        </p>
+                        <p>The inner integral: \(\int_0^\infty e^{-r^2} r dr = [-\frac{1}{2}e^{-r^2}]_0^\infty = \lim_{b \to \infty} -\frac{1}{2}(e^{-b^2} - e^0) = -\frac{1}{2}(0 - 1) = \frac{1}{2}\).</p>
+                        <p>The outer integral: \(I = \int_0^{\pi/2} \frac{1}{2} d\theta = \frac{1}{2}[\theta]_0^{\pi/2} = \frac{\pi}{4}\).</p>
+                        <p>Note: This result can be used to show that \(\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}\).</p>
+                        <p class="source">Source: Binmore & Davies, Chapter 11.4.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Change the order of integration: \(\int_{-1}^1 \int_0^{\sqrt{1-y^2}} f(x,y) \, dx \, dy\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>1. <strong>Sketch the region:</strong> The region D is defined by \(0 \le x \le \sqrt{1-y^2}\) and \(-1 \le y \le 1\). The equation \(x = \sqrt{1-y^2}\) is the right half of the unit circle \(x^2+y^2=1\). So the region is the right semi-disk of radius 1.</p>
+                        <p>2. <strong>Re-describe the region:</strong> For a Type I integral, we need vertical slices. \(x\) ranges from 0 to 1. For a given \(x\), \(y\) is bounded by the circle, so \(-\sqrt{1-x^2} \le y \le \sqrt{1-x^2}\).</p>
+                        <p>3. <strong>Write the new integral:</strong>
+                        \[ \int_0^1 \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} f(x, y) \, dy \, dx \]
+                        </p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the wedge cut from the cylinder \(x^2+y^2=1\) by the planes \(z=0\) and \(z=y\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The volume is \(\iint_D y \, dA\) where D is the unit disk \(x^2+y^2 \le 1\). We only need to integrate over the top half where \(y>0\), as the volume is symmetric and cancels out below.</p>
+                        <p>Let's use polar coordinates. The region is \(0 \le r \le 1, 0 \le \theta \le \pi\). The integrand is \(y = r\sin\theta\).</p>
+                        <p>\[ V = \int_0^\pi \int_0^1 (r\sin\theta) r \, dr \, d\theta = \int_0^\pi \int_0^1 r^2\sin\theta \, dr \, d\theta \]
+                        </p>
+                        <p>\[ = \left( \int_0^1 r^2 dr \right) \left( \int_0^\pi \sin\theta d\theta \right) = [\frac{r^3}{3}]_0^1 [-\cos\theta]_0^\pi \]
+                        \[ = (\frac{1}{3})(-\cos\pi - (-\cos 0)) = (\frac{1}{3})(1 - (-1)) = \frac{2}{3} \]
+                        </p>
+                        <p class="source">Source: Based on methods from MT2176 SG, Section 5.2.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\iint_R \frac{1}{1+x^2+y^2} dA\) where R is the sector in the first quadrant bounded by \(y=0, y=x\) and \(x^2+y^2=4\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region is ideal for polar coordinates.</p>
+                        <p>1. <strong>Describe the region:</strong> The circle is \(r=2\). The line \(y=0\) is \(\theta=0\). The line \(y=x\) is \(\theta=\pi/4\). So the region is \(0 \le r \le 2, 0 \le \theta \le \pi/4\).</p>
+                        <p>2. <strong>Convert the integral:</strong>
+                        \[ \int_0^{\pi/4} \int_0^2 \frac{1}{1+r^2} r \, dr \, d\theta \]
+                        </p>
+                        <p>Inner integral (use u-sub \(u=1+r^2\)): \(\frac{1}{2}\int_1^5 \frac{1}{u} du = \frac{1}{2}[\ln|u|]_1^5 = \frac{1}{2}\ln 5\).</p>
+                        <p>Outer integral: \(\int_0^{\pi/4} \frac{1}{2}\ln 5 \, d\theta = \frac{1}{2}\ln 5 [\theta]_0^{\pi/4} = \frac{\pi}{8}\ln 5\).</p>
+                        <p class="source">Source: Based on methods from MT2176 SG, Section 5.2.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Use the transformation \(u=xy, v=y/x\) to evaluate \(\iint_R y^2 dA\) where R is the region in the first quadrant bounded by \(xy=1, xy=2, y=x, y=2x\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>1. <strong>New Region:</strong> The bounds become \(1 \le u \le 2\) and \(1 \le v \le 2\).</p>
+                        <p>2. <strong>Jacobian:</strong> First find \(x,y\) in terms of \(u,v\). \(x=\sqrt{u/v}, y=\sqrt{uv}\). The Jacobian is \(\frac{\partial(x,y)}{\partial(u,v)} = \det \begin{pmatrix} \frac{1}{2\sqrt{uv}} & -\frac{\sqrt{u}}{2v^{3/2}} \\ \frac{\sqrt{v}}{2\sqrt{u}} & \frac{\sqrt{u}}{2\sqrt{v}} \end{pmatrix} = \frac{1}{4v} + \frac{1}{4v} = \frac{1}{2v}\).</p>
+                        <p>3. <strong>Convert Integral:</strong> The integrand \(y^2 = uv\). The integral is:
+                        \[ \int_1^2 \int_1^2 (uv) |\frac{1}{2v}| \, du \, dv = \frac{1}{2} \int_1^2 \int_1^2 u \, du \, dv \]
+                        \[ = \frac{1}{2} \left( \int_1^2 1 dv \right) \left( \int_1^2 u du \right) = \frac{1}{2} [v]_1^2 [\frac{u^2}{2}]_1^2 = \frac{1}{2}(1)(\frac{4-1}{2}) = \frac{3}{4} \]
+                        </p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">When is Fubini's Theorem not applicable?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Fubini's Theorem, which allows switching the order of integration, is guaranteed to work for continuous functions over closed, bounded (compact) rectangular regions.</p>
+                        <p>It can fail if the function is not integrable, for example, if it has certain types of discontinuities. For improper integrals (over unbounded regions or with unbounded integrands), the theorem holds only if the integral of the absolute value of the function converges:</p>
+                        <p>\[ \iint_D |f(x,y)| \, dA < \infty \]
+                        </p>
+                        <p>If this condition (absolute convergence) is not met, the two iterated integrals may yield different results or not exist.</p>
+                        <p class="source">Source: Ostaszewski, Chapter 19. (Advanced concept)</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the tetrahedron bounded by the plane \(x/a + y/b + z/c = 1\) and the coordinate planes in the first octant.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The volume is \(\iint_D z \, dA\) where \(z = c(1 - x/a - y/b)\) and D is the triangular region in the xy-plane bounded by \(x=0, y=0\) and \(x/a + y/b = 1\).</p>
+                        <p>The region D is \(0 \le x \le a, 0 \le y \le b(1-x/a)\).</p>
+                        <p>\(V = \int_0^a \int_0^{b(1-x/a)} c(1 - x/a - y/b) \, dy \, dx\)</p>
+                        <p>Inner integral: \(c[y - xy/a - y^2/(2b)]_0^{b(1-x/a)} = c\frac{b}{2}(1-x/a)^2\).</p>
+                        <p>Outer integral: \(\frac{bc}{2} \int_0^a (1-x/a)^2 dx\). Let \(u=1-x/a, du=-dx/a\).
+                        \(\frac{bc}{2} \int_1^0 u^2 (-a du) = \frac{abc}{2} \int_0^1 u^2 du = \frac{abc}{2} [\frac{u^3}{3}]_0^1 = \frac{abc}{6}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What does a Jacobian of 0 imply about a transformation?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>If the Jacobian \(J(u,v)\) is zero at a point or in a region, it means the transformation is singular there. Geometrically, it collapses an area in the uv-plane into a lower-dimensional object (a line or a point) in the xy-plane.</p>
+                        <p>For example, the transformation \(x = u^2, y = v\) has Jacobian \(J = 2u\). At \(u=0\), the Jacobian is 0. This corresponds to the entire v-axis in the uv-plane being mapped to the single point (0,v) on the y-axis in the xy-plane.</p>
+                        <p>The change of variables formula cannot be directly applied where the Jacobian is zero.</p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\int_0^1 \int_{\sqrt{y}}^1 \sqrt{x^3+1} \, dx \, dy\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The integral \(\int \sqrt{x^3+1} dx\) is not elementary. We must change the order of integration.</p>
+                        <p>1. <strong>Sketch Region:</strong> The region D is bounded by \(x=\sqrt{y}\) (or \(y=x^2\)), \(x=1\), and \(y=0\). It's a shape in the first quadrant under the parabola \(y=x^2\) for \(0 \le x \le 1\).</p>
+                        <p>2. <strong>Re-describe:</strong> As a Type I region, the bounds are \(0 \le x \le 1\) and \(0 \le y \le x^2\).</p>
+                        <p>3. <strong>New Integral:</strong>
+                        \[ \int_0^1 \int_0^{x^2} \sqrt{x^3+1} \, dy \, dx \]
+                        Inner integral: \(\int_0^{x^2} \sqrt{x^3+1} dy = \sqrt{x^3+1} [y]_0^{x^2} = x^2\sqrt{x^3+1}\).
+                        Outer integral (use u-sub \(u=x^3+1, du=3x^2dx\)): \(\frac{1}{3}\int_1^2 \sqrt{u} du = \frac{1}{3}[\frac{2}{3}u^{3/2}]_1^2 = \frac{2}{9}(2\sqrt{2}-1)\).</p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the moment of inertia about the y-axis, \(I_y\), of the region bounded by \(y=4-x^2\) and \(y=0\), assuming constant density \(\rho_0\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is bounded by the parabola and the x-axis, from \(x=-2\) to \(x=2\).</p>
+                        <p>The formula is \(I_y = \iint_D x^2 \rho_0 \, dA\).</p>
+                        <p>The region is \(-2 \le x \le 2, 0 \le y \le 4-x^2\).</p>
+                        <p>\(I_y = \rho_0 \int_{-2}^2 \int_0^{4-x^2} x^2 \, dy \, dx = \rho_0 \int_{-2}^2 x^2[y]_0^{4-x^2} dx\)</p>
+                        <p>\(= \rho_0 \int_{-2}^2 x^2(4-x^2) dx = \rho_0 \int_{-2}^2 (4x^2-x^4) dx\)</p>
+                        <p>\(= \rho_0 [\frac{4x^3}{3} - \frac{x^5}{5}]_{-2}^2 = 2\rho_0 (\frac{32}{3} - \frac{32}{5}) = 64\rho_0 (\frac{1}{3}-\frac{1}{5}) = \frac{128\rho_0}{15}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the solid under the surface \(z=xy\) and above the triangle with vertices (0,0), (1,0), and (0,2).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is a triangle bounded by \(x=0, y=0\) and the line connecting (1,0) and (0,2), which is \(y = -2x+2\) or \(x = 1-y/2\).</p>
+                        <p>Let's set it up as a Type I integral: \(0 \le x \le 1, 0 \le y \le -2x+2\).</p>
+                        <p>\(V = \int_0^1 \int_0^{-2x+2} xy \, dy \, dx\)</p>
+                        <p>Inner integral: \(\int_0^{-2x+2} xy dy = x[\frac{y^2}{2}]_0^{-2x+2} = \frac{x}{2}(-2x+2)^2 = 2x(1-x)^2 = 2x(1-2x+x^2) = 2x-4x^2+2x^3\).</p>
+                        <p>Outer integral: \(\int_0^1 (2x-4x^2+2x^3) dx = [x^2 - \frac{4x^3}{3} + \frac{x^4}{2}]_0^1 = 1 - \frac{4}{3} + \frac{1}{2} = \frac{6-8+3}{6} = \frac{1}{6}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What is the geometric meaning of \(\iint_D 1 \, dA\)?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The double integral \(\iint_D 1 \, dA\) calculates the area of the region D in the xy-plane.</p>
+                        <p>This can be interpreted as finding the volume of a solid with a constant height of 1 over the region D. The volume of such a solid is \(\text{Area}(D) \times 1\), which is numerically equal to the area of D.</p>
+                        <p class="source">Source: MT2176 SG, Section 5.1.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">If you use the transformation \(x=u+v, y=v-u\) to evaluate an integral over a region R, what is the area element \(dx dy\) in terms of \(du dv\)?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>We need to find the absolute value of the Jacobian of the transformation.</p>
+                        <p>\(x = u+v, y = -u+v\)</p>
+                        <p>The Jacobian determinant is:
+                        \[ J(u, v) = \frac{\partial(x, y)}{\partial(u, v)} = \det \begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{pmatrix} = \det \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix} \]
+                        \[ = (1)(1) - (1)(-1) = 1 + 1 = 2 \]
+                        </p>
+                        <p>The area element is \(dA = |J(u,v)| \, du \, dv = 2 \, du \, dv\).</p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\iint_D e^{(x-y)/(x+y)} dA\) where D is the triangle with vertices (0,0), (1,0), (0,1).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>This suggests a change of variables. Let \(u = x-y\) and \(v = x+y\). Then \(x=\frac{u+v}{2}, y=\frac{v-u}{2}\).</p>
+                        <p>The Jacobian is \(\frac{\partial(x,y)}{\partial(u,v)} = -1/2\).</p>
+                        <p>The region D is bounded by \(x=0, y=0, x+y=1\). In the new coordinates, this is \(u+v=0, v-u=0, v=1\), which simplifies to \(v=-u, v=u, v=1\). This is a triangle in the uv-plane with vertices (0,0), (1,1), (-1,1).</p>
+                        <p>The integral becomes \(\int_0^1 \int_{-v}^{v} e^{u/v} |-\frac{1}{2}| \, du \, dv = \frac{1}{2} \int_0^1 [v e^{u/v}]_{-v}^v dv \]
+                        \[ = \frac{1}{2} \int_0^1 v(e^1 - e^{-1}) dv = \frac{e-e^{-1}}{2} [\frac{v^2}{2}]_0^1 = \frac{e-e^{-1}}{4} = \frac{\sinh(1)}{2} \]
+                        </p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the solid in the first octant bounded by the cylinder \(x^2+z^2=4\) and the plane \(y=3\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The solid is a quarter-cylinder lying on its side. The base is in the xy-plane, and the height is given by \(z = \sqrt{4-x^2}\).</p>
+                        <p>The region of integration D in the xy-plane is a rectangle defined by \(0 \le x \le 2\) (from the cylinder radius) and \(0 \le y \le 3\) (from the plane).</p>
+                        <p>The volume is \(V = \iint_D \sqrt{4-x^2} \, dA\).</p>
+                        <p>\[ V = \int_0^3 \int_0^2 \sqrt{4-x^2} \, dx \, dy \]
+                        </p>
+                        <p>The inner integral \(\int_0^2 \sqrt{4-x^2} dx\) represents the area of a quarter-circle of radius 2, which is \(\frac{1}{4}\pi(2^2) = \pi\).</p>
+                        <p>The outer integral is \(V = \int_0^3 \pi \, dy = \pi[y]_0^3 = 3\pi\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">If you integrate a constant function \(f(x,y)=c\) over a region D, what is the result?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The integral of a constant over a region is the constant multiplied by the area of the region.</p>
+                        <p>\[ \iint_D c \, dA = c \iint_D 1 \, dA = c \cdot \text{Area}(D) \]
+                        </p>
+                        <p>Geometrically, this is the volume of a flat-topped solid with base D and constant height c.</p>
+                        <p class="source">Source: MT2176 SG, Section 5.1.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Sketch the region for \(\int_1^2 \int_{2-x}^{\sqrt{2x-x^2}} f(x,y) dy dx\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>1. <strong>Bounds:</strong> \(1 \le x \le 2\), and \(2-x \le y \le \sqrt{2x-x^2}\).</p>
+                        <p>2. <strong>Curves:</strong></p>
+                        <ul>
+                            <li>The lower bound is the line \(y = 2-x\) (or \(x+y=2\)).</li>
+                            <li>The upper bound is \(y = \sqrt{2x-x^2}\). Squaring gives \(y^2 = 2x-x^2 \Rightarrow (x-1)^2 + y^2 = 1\). This is a circle of radius 1 centered at (1,0). Since \(y\) is the positive root, it's the upper semi-circle.</li>
+                        </ul>
+                        <p>3. <strong>Sketch:</strong> The region is bounded below by the straight line from (1,1) to (2,0) and bounded above by the upper semi-circle from (1,1) to (2,0). It's a segment of the circle.</p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Does the value of a double integral change if you change the value of the integrand at a single point?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>No. A double integral represents a volume. Changing the height of the surface at a single, infinitesimally small point does not change the overall volume.</p>
+                        <p>More formally, the integral is defined by a limit of Riemann sums. The contribution of any single point to the sum becomes zero in the limit as the size of the subrectangles goes to zero.</p>
+                        <p>The same is true if you change the function's value along a finite number of smooth curves, as these also have zero area.</p>
+                        <p class="source">Source: Binmore & Davies, Chapter 11.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of a sphere of radius \(R\) using a double integral.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>We can find the volume of the upper hemisphere \(z = \sqrt{R^2-x^2-y^2}\) and multiply by 2. The region of integration D is the disk \(x^2+y^2 \le R^2\).</p>
+                        <p>\(V_{hemi} = \iint_D \sqrt{R^2-x^2-y^2} \, dA\).</p>
+                        <p>Convert to polar coordinates: \(0 \le r \le R, 0 \le \theta \le 2\pi\). Integrand is \(\sqrt{R^2-r^2}\).</p>
+                        <p>\(V_{hemi} = \int_0^{2\pi} \int_0^R \sqrt{R^2-r^2} r \, dr \, d\theta\).</p>
+                        <p>Inner integral (u-sub \(u=R^2-r^2\)): \(-\frac{1}{2}\int_{R^2}^0 \sqrt{u} du = \frac{1}{2}\int_0^{R^2} u^{1/2} du = \frac{1}{2}[\frac{2}{3}u^{3/2}]_0^{R^2} = \frac{1}{3}R^3\).</p>
+                        <p>Outer integral: \(\int_0^{2\pi} \frac{R^3}{3} d\theta = \frac{2\pi R^3}{3}\). Total volume is \(2 \times V_{hemi} = \frac{4}{3}\pi R^3\).</p>
+                        <p class="source">Source: Based on methods from MT2176 SG, Section 5.2.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">True or False: If \(\iint_D f(x,y) dA = 0\), then \(f(x,y)=0\) for all points in D.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>False.</p>
+                        <p>The integral being zero means the net volume is zero. This can happen if the function takes on both positive and negative values that cancel each other out.</p>
+                        <p>For example, let \(f(x,y) = x\) and D be the disk \(x^2+y^2 \le 1\). The function is positive for \(x>0\) and negative for \(x<0\). Due to the symmetry of the function and the domain, the positive and negative volumes cancel exactly, and the integral is 0, but the function itself is not zero everywhere in D.</p>
+                        <p>However, if \(f(x,y) \ge 0\) everywhere in D, then \(\iint_D f(x,y) dA = 0\) does imply \(f(x,y)=0\) (at all points of continuity).</p>
+                        <p class="source">Source: Conceptual question based on integral properties.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the center of mass of a uniform semi-circular lamina of radius R.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Let the lamina be the top half of the disk \(x^2+y^2 \le R^2\), with constant density \(\rho_0\). By symmetry, the x-coordinate of the center of mass is \(\bar{x} = 0\).</p>
+                        <p>Area = \(\frac{1}{2}\pi R^2\), so Mass \(m = \frac{1}{2}\pi R^2 \rho_0\).</p>
+                        <p>We need \(\bar{y} = \frac{M_x}{m}\). \(M_x = \iint_D y \rho_0 dA\). In polar coordinates, this is:
+                        \[ M_x = \rho_0 \int_0^\pi \int_0^R (r\sin\theta) r \, dr \, d\theta = \rho_0 (\int_0^R r^2 dr)(\int_0^\pi \sin\theta d\theta) \]
+                        \[ = \rho_0 [\frac{r^3}{3}]_0^R [-\cos\theta]_0^\pi = \rho_0 (\frac{R^3}{3})(2) = \frac{2\rho_0R^3}{3} \]
+                        </p>
+                        <p>\(\bar{y} = \frac{2\rho_0R^3/3}{\pi R^2 \rho_0 / 2} = \frac{4R}{3\pi}\). So the center of mass is \((0, \frac{4R}{3\pi})\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the surface area of the part of the sphere \(x^2+y^2+z^2=R^2\) that lies inside the cylinder \(x^2+y^2=a^2\) (where \(a < R\)).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Consider the upper hemisphere \(z = f(x,y) = \sqrt{R^2-x^2-y^2}\) and multiply the result by 2. The region D is the disk \(x^2+y^2 \le a^2\).</p>
+                        <p>\(\frac{\partial f}{\partial x} = \frac{-x}{\sqrt{R^2-x^2-y^2}}\), \(\frac{\partial f}{\partial y} = \frac{-y}{\sqrt{R^2-x^2-y^2}}\).</p>
+                        <p>\(\sqrt{1+f_x^2+f_y^2} = \sqrt{1 + \frac{x^2+y^2}{R^2-x^2-y^2}} = \sqrt{\frac{R^2}{R^2-x^2-y^2}} = \frac{R}{\sqrt{R^2-x^2-y^2}}\).</p>
+                        <p>Area = \(\iint_D \frac{R}{\sqrt{R^2-x^2-y^2}} dA\). In polar coords: \(\int_0^{2\pi}\int_0^a \frac{R}{\sqrt{R^2-r^2}} r dr d\theta\).</p>
+                        <p>Inner integral: \(R[-\sqrt{R^2-r^2}]_0^a = R(R-\sqrt{R^2-a^2})\). Outer: \(2\pi R(R-\sqrt{R^2-a^2})\). Total area (both hemispheres) is \(4\pi R(R-\sqrt{R^2-a^2})\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\iint_D \cos(x^2+y^2) dA\) where D is the disk \(x^2+y^2 \le \pi/2\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Convert to polar coordinates. The region D is \(0 \le r \le \sqrt{\pi/2}\) and \(0 \le \theta \le 2\pi\).</p>
+                        <p>The integral becomes:
+                        \[ \int_0^{2\pi} \int_0^{\sqrt{\pi/2}} \cos(r^2) r \, dr \, d\theta \]
+                        </p>
+                        <p>Inner integral (u-sub \(u=r^2\)): \(\frac{1}{2}\int_0^{\pi/2} \cos(u) du = \frac{1}{2}[\sin u]_0^{\pi/2} = \frac{1}{2}(1) = \frac{1}{2}\).</p>
+                        <p>Outer integral: \(\int_0^{2\pi} \frac{1}{2} d\theta = \frac{1}{2}[\theta]_0^{2\pi} = \pi\).</p>
+                        <p class="source">Source: Based on methods from MT2176 SG, Section 5.2.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Change the order of integration for \(\int_0^1 \int_{y^2}^y f(x,y) dx dy\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>1. <strong>Sketch Region:</strong> The region D is bounded on the left by \(x=y^2\) (a parabola opening right) and on the right by \(x=y\) (a straight line). The region is enclosed between these two curves from their intersection at (0,0) to (1,1).</p>
+                        <p>2. <strong>Re-describe:</strong> For a Type I integral (vertical slices), \(x\) goes from 0 to 1. For a given \(x\), the lower bound for \(y\) is the line \(y=x\) and the upper bound is the parabola \(y=\sqrt{x}\).</p>
+                        <p>3. <strong>New Integral:</strong>
+                        \[ \int_0^1 \int_x^{\sqrt{x}} f(x, y) \, dy \, dx \]
+                        </p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Use the transformation \(x=u/v, y=v\) to evaluate \(\iint_R y \sin(xy) dA\) where R is the region bounded by \(xy=1, xy=4, y=1, y=4\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>1. <strong>New Region:</strong> \(y=v \Rightarrow 1 \le v \le 4\). \(xy=u \Rightarrow 1 \le u \le 4\). The new region is a square \([1,4] \times [1,4]\).</p>
+                        <p>2. <strong>Jacobian:</strong> \(\frac{\partial(x,y)}{\partial(u,v)} = \det \begin{pmatrix} 1/v & -u/v^2 \\ 0 & 1 \end{pmatrix} = 1/v\).</p>
+                        <p>3. <strong>Convert Integral:</strong> The integrand is \(v \sin(u)\). The integral is:
+                        \[ \int_1^4 \int_1^4 v \sin(u) |\frac{1}{v}| \, du \, dv = \int_1^4 \int_1^4 \sin(u) \, du \, dv \]
+                        \[ = (\int_1^4 1 dv) (\int_1^4 \sin(u) du) = [v]_1^4 [-\cos(u)]_1^4 \]
+                        \[ = (3)(-\cos(4) - (-\cos(1))) = 3(\cos(1)-\cos(4)) \]
+                        </p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the solid bounded by the cylinder \(y^2+z^2=4\), the planes \(x=2y\), \(x=0\), and \(z=0\) in the first octant.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The solid's height is given by \(x=2y\). The base D is in the yz-plane. We should integrate with respect to \(x\) first, over the region D in the yz-plane.</p>
+                        <p>The region D is the quarter disk in the first quadrant of the yz-plane, \(y^2+z^2 \le 4\). So \(0 \le y \le 2, 0 \le z \le \sqrt{4-y^2}\).</p>
+                        <p>\(V = \iint_D (2y) \, dA_{yz} = \int_0^2 \int_0^{\sqrt{4-y^2}} 2y \, dz \, dy\)</p>
+                        <p>Inner integral: \(2y[z]_0^{\sqrt{4-y^2}} = 2y\sqrt{4-y^2}\).</p>
+                        <p>Outer integral (u-sub \(u=4-y^2, du=-2y dy\)): \(-\int_4^0 \sqrt{u} du = \int_0^4 u^{1/2} du = [\frac{2}{3}u^{3/2}]_0^4 = \frac{2}{3}(8) = \frac{16}{3}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">If R is the rectangle \([a,b] \times [c,d]\), what is \(\iint_R dA\)?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>This integral represents the area of the region R.</p>
+                        <p>\[ \iint_R dA = \int_c^d \int_a^b dx \, dy \]
+                        </p>
+                        <p>Inner integral: \(\int_a^b dx = b-a\).</p>
+                        <p>Outer integral: \(\int_c^d (b-a) dy = (b-a)[y]_c^d = (b-a)(d-c)\).</p>
+                        <p>This is the familiar formula for the area of a rectangle: width times height.</p>
+                        <p class="source">Source: MT2176 SG, Section 5.1.1.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the moment of inertia \(I_x\) of a uniform triangular lamina with vertices (0,0), (a,0), and (0,b), with constant density \(\rho_0\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is bounded by \(x=0, y=0\) and \(y = b(1-x/a)\).</p>
+                        <p>\(I_x = \iint_D y^2 \rho_0 dA = \rho_0 \int_0^a \int_0^{b(1-x/a)} y^2 dy dx\).</p>
+                        <p>Inner integral: \([\frac{y^3}{3}]_0^{b(1-x/a)} = \frac{b^3}{3}(1-x/a)^3\).</p>
+                        <p>Outer integral: \(\frac{\rho_0 b^3}{3} \int_0^a (1-x/a)^3 dx\). Let \(u=1-x/a, du=-dx/a\).
+                        \(\frac{\rho_0 b^3}{3} \int_1^0 u^3 (-a du) = \frac{a \rho_0 b^3}{3} \int_0^1 u^3 du = \frac{a \rho_0 b^3}{3} [\frac{u^4}{4}]_0^1 = \frac{a \rho_0 b^3}{12}\).</p>
+                        <p>Since Mass \(m = \frac{ab\rho_0}{2}\), we have \(I_x = m \frac{b^2}{6}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\iint_D \frac{1}{(x^2+y^2)^2} dA\) where D is the region outside the unit circle, \(x^2+y^2 \ge 1\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>This is an improper integral over an unbounded domain. We use polar coordinates.</p>
+                        <p>The region is \(1 \le r < \infty\) and \(0 \le \theta \le 2\pi\).</p>
+                        <p>The integral is \(\int_0^{2\pi} \int_1^\infty \frac{1}{(r^2)^2} r \, dr \, d\theta = \int_0^{2\pi} \int_1^\infty r^{-3} \, dr \, d\theta\).</p>
+                        <p>Inner integral: \(\lim_{b \to \infty} \int_1^b r^{-3} dr = \lim_{b \to \infty} [\frac{r^{-2}}{-2}]_1^b = \lim_{b \to \infty} -\frac{1}{2}(\frac{1}{b^2} - 1) = \frac{1}{2}\).</p>
+                        <p>Outer integral: \(\int_0^{2\pi} \frac{1}{2} d\theta = \pi\).</p>
+                        <p>The integral converges to \(\pi\).</p>
+                        <p class="source">Source: Based on methods from Binmore & Davies, Chapter 11.4.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">If you use an affine transformation \(x=au+bv+c, y=du+ev+f\), what is the Jacobian \(\frac{\partial(x,y)}{\partial(u,v)}\)?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The Jacobian depends only on the partial derivatives of \(x\) and \(y\) with respect to \(u\) and \(v\). The constant terms \(c\) and \(f\) are irrelevant as their derivatives are zero.</p>
+                        <p>The transformation is essentially linear for the purpose of the Jacobian calculation.</p>
+                        <p>\(\frac{\partial x}{\partial u}=a, \frac{\partial x}{\partial v}=b, \frac{\partial y}{\partial u}=d, \frac{\partial y}{\partial v}=e\).</p>
+                        <p>\[ J = \det \begin{pmatrix} a & b \\ d & e \end{pmatrix} = ae - bd \]
+                        </p>
+                        <p>The Jacobian of an affine transformation is a constant, just like for a linear transformation.</p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the average value of \(f(x,y) = \sin(x+y)\) over the square \([0, \pi] \times [0, \pi]\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Area = \(\pi^2\). We need to compute \(\frac{1}{\pi^2}\int_0^\pi \int_0^\pi \sin(x+y) dx dy\).</p>
+                        <p>Inner integral: \(\int_0^\pi \sin(x+y) dx = [-\cos(x+y)]_0^\pi = -\cos(\pi+y) - (-\cos y) = \cos y + \cos y = 2\cos y\).</p>
+                        <p>Outer integral: \(\int_0^\pi 2\cos y dy = [2\sin y]_0^\pi = 2(0-0) = 0\).</p>
+                        <p>The average value is \(0/\pi^2 = 0\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\iint_D (x+y) dA\) where D is the parallelogram with vertices (0,0), (2,1), (1,2), (3,3).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The sides of the parallelogram are given by the vectors \((2,1)\) and \((1,2)\). This suggests a linear transformation. Let \(x=2u+v, y=u+2v\).</p>
+                        <p>The region in the uv-plane is the unit square \(0 \le u \le 1, 0 \le v \le 1\).</p>
+                        <p>Jacobian: \(J = \det \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} = 3\).</p>
+                        <p>Integrand: \(x+y = (2u+v) + (u+2v) = 3u+3v\).</p>
+                        <p>Integral: \(\int_0^1 \int_0^1 (3u+3v)|3| du dv = 9 \int_0^1 \int_0^1 (u+v) du dv\).</p>
+                        <p>\(= 9 \int_0^1 [\frac{u^2}{2}+vu]_0^1 dv = 9 \int_0^1 (\frac{1}{2}+v) dv = 9[\frac{v}{2}+\frac{v^2}{2}]_0^1 = 9(\frac{1}{2}+\frac{1}{2}) = 9\).</p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">True or False: The Jacobian is always positive.</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>False.</p>
+                        <p>The Jacobian determinant can be positive, negative, or zero. Its sign relates to whether the transformation preserves or reverses orientation.</p>
+                        <ul>
+                            <li>\(J > 0\): Orientation is preserved.</li>
+                            <li>\(J < 0\): Orientation is reversed (like a reflection).</li>
+                            <li>\(J = 0\): The transformation is singular.</li>
+                        </ul>
+                        <p>However, in the change of variables formula, we use the absolute value of the Jacobian, \(|J|\), to ensure the area element is positive.</p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the solid above the xy-plane bounded by the paraboloid \(z=x^2+y^2\) and the cylinder \(x^2+y^2=2x\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is the disk \(x^2-2x+y^2 \le 0 \Rightarrow (x-1)^2+y^2 \le 1\). This is a circle of radius 1 centered at (1,0).</p>
+                        <p>We use polar coordinates. The region is \(-\pi/2 \le \theta \le \pi/2\) and \(0 \le r \le 2\cos\theta\). The integrand is \(z=r^2\).</p>
+                        <p>\(V = \int_{-\pi/2}^{\pi/2} \int_0^{2\cos\theta} r^2 \cdot r \, dr \, d\theta = \int_{-\pi/2}^{\pi/2} [\frac{r^4}{4}]_0^{2\cos\theta} d\theta\).</p>
+                        <p>\(= \int_{-\pi/2}^{\pi/2} 4\cos^4\theta d\theta = 4 \cdot \frac{3\pi}{8} = \frac{3\pi}{2}\) (using Wallis' formula or repeated integration by parts).</p>
+                        <p class="source">Source: Based on methods from MT2176 SG, Section 5.2.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What is the relation between a double integral and a triple integral?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>A double integral \(\iint_D f(x,y) dA\) can be seen as a special case of a triple integral.</p>
+                        <p>If you have a 3D region E which is a cylinder with base D in the xy-plane and height defined by \(0 \le z \le f(x,y)\), then its volume is given by the triple integral:</p>
+                        <p>\[ V = \iiint_E 1 \, dV = \iint_D \left( \int_0^{f(x,y)} dz \right) dA = \iint_D f(x,y) dA \]
+                        </p>
+                        <p>So, the double integral for volume under a surface is equivalent to a triple integral for the volume of the corresponding solid region.</p>
+                        <p class="source">Source: Conceptual link between integral types.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Set up an integral for the surface area of the cone \(z = \sqrt{x^2+y^2}\) for \(0 \le z \le R\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is the projection onto the xy-plane, which is the disk \(x^2+y^2 \le R^2\).</p>
+                        <p>\(f(x,y) = \sqrt{x^2+y^2}\). \(f_x = \frac{x}{\sqrt{x^2+y^2}}\), \(f_y = \frac{y}{\sqrt{x^2+y^2}}\).</p>
+                        <p>\(1+f_x^2+f_y^2 = 1 + \frac{x^2+y^2}{x^2+y^2} = 1+1=2\).</p>
+                        <p>The surface area integrand is \(\sqrt{2}\).</p>
+                        <p>\[ A(S) = \iint_D \sqrt{2} \, dA = \sqrt{2} \cdot \text{Area}(D) \]
+                        </p>
+                        <p>Area(D) is the area of a disk of radius R, which is \(\pi R^2\). So the surface area is \(\pi R^2 \sqrt{2}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">If \(f(x,y)\) is an odd function with respect to y (i.e. \(f(x,-y)=-f(x,y)\)) and D is a region symmetric about the x-axis, what is \(\iint_D f(x,y) dA\)?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The integral is 0.</p>
+                        <p>Let D be split into \(D_+\) (above the x-axis) and \(D_-\) (below the x-axis). For every point \((x,y)\) in \(D_+\), the point \((x,-y)\) is in \(D_-\). The function values at these points are opposites: \(f(x,-y) = -f(x,y)\).</p>
+                        <p>The integral over \(D_-\) will be the exact negative of the integral over \(D_+\), causing them to cancel out completely.</p>
+                        <p>\[ \iint_D f = \iint_{D_+} f + \iint_{D_-} f = \iint_{D_+} f - \iint_{D_+} f = 0 \]
+                        </p>
+                        <p>A similar rule applies if the function is odd with respect to x and the domain is symmetric about the y-axis.</p>
+                        <p class="source">Source: Conceptual question based on symmetry.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Evaluate \(\int_0^1 \int_0^{\sqrt{1-x^2}} y^2 \, dy \, dx\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is the quarter of the unit disk in the first quadrant. This is a good candidate for polar coordinates.</p>
+                        <p>Region: \(0 \le r \le 1, 0 \le \theta \le \pi/2\).</p>
+                        <p>Integrand: \(y^2 = (r\sin\theta)^2 = r^2\sin^2\theta\).</p>
+                        <p>Integral: \(\int_0^{\pi/2} \int_0^1 (r^2\sin^2\theta) r \, dr \, d\theta = (\int_0^1 r^3 dr)(\int_0^{\pi/2} \sin^2\theta d\theta)\).</p>
+                        <p>\(\int_0^1 r^3 dr = [r^4/4]_0^1 = 1/4\).</p>
+                        <p>\(\int_0^{\pi/2} \sin^2\theta d\theta = \int_0^{\pi/2} \frac{1-\cos(2\theta)}{2} d\theta = [\frac{\theta}{2}-\frac{\sin(2\theta)}{4}]_0^{\pi/2} = \pi/4\).</p>
+                        <p>The result is \((1/4)(\pi/4) = \pi/16\).</p>
+                        <p class="source">Source: Based on methods from MT2176 SG, Section 5.2.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the solid bounded by \(z=e^{-x^2}\), \(x=0, x=1, y=0, y=2\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is the rectangle \([0,1] \times [0,2]\). The integrand \(e^{-x^2}\) does not depend on y.</p>
+                        <p>\(V = \int_0^2 \int_0^1 e^{-x^2} dx \, dy\).</p>
+                        <p>Since the inner integral is a constant with respect to y, we can separate:</p>
+                        <p>\[ V = \left( \int_0^2 dy \right) \left( \int_0^1 e^{-x^2} dx \right) \]
+                        </p>
+                        <p>The integral \(\int_0^1 e^{-x^2} dx\) cannot be evaluated in terms of elementary functions. It represents the area under the Gaussian curve and its value is approximately 0.7468. The value of the integral is often expressed in terms of the error function, erf(x).</p>
+                        <p>The volume is \(2 \int_0^1 e^{-x^2} dx = \sqrt{\pi} \text{erf}(1)\).</p>
+                        <p class="source">Source: Conceptual question about non-elementary integrals.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What is the polar moment of inertia, \(I_0\), of a uniform disk of radius R and mass M, centered at the origin?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Mass \(M = \rho_0 \cdot \pi R^2\), so \(\rho_0 = M/(\pi R^2)\).</p>
+                        <p>\(I_0 = \iint_D (x^2+y^2)\rho_0 dA\). In polar coordinates, this is:</p>
+                        <p>\[ I_0 = \rho_0 \int_0^{2\pi} \int_0^R (r^2) r \, dr \, d\theta = \rho_0 (\int_0^{2\pi} d\theta) (\int_0^R r^3 dr) \]
+                        </p>
+                        <p>\[ = \rho_0 (2\pi) [\frac{r^4}{4}]_0^R = \rho_0 \frac{\pi R^4}{2} \]
+                        </p>
+                        <p>Substituting \(\rho_0\): \(I_0 = \frac{M}{\pi R^2} \frac{\pi R^4}{2} = \frac{1}{2}MR^2\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Use a double integral to find the area of an ellipse \(\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>We use a modified polar coordinates transformation: \(x = ar\cos\theta, y = br\sin\theta\).</p>
+                        <p>The region of integration in the r\(\theta\)-plane becomes the rectangle \(0 \le r \le 1, 0 \le \theta \le 2\pi\).</p>
+                        <p>Jacobian: \(J = \det \begin{pmatrix} a\cos\theta & -ar\sin\theta \\ b\sin\theta & br\cos\theta \end{pmatrix} = abr\cos^2\theta + abr\sin^2\theta = abr\).</p>
+                        <p>The area is \(\iint_D 1 dA\). The integral becomes:
+                        \[ \int_0^{2\pi} \int_0^1 |abr| \, dr \, d\theta = ab \int_0^{2\pi} \int_0^1 r \, dr \, d\theta \]
+                        \[ = ab (\int_0^{2\pi} d\theta) (\int_0^1 r dr) = ab (2\pi) (1/2) = \pi ab \]
+                        </p>
+                        <p class="source">Source: Based on methods from Ostaszewski, Chapter 19.5.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">If \(f(x,y)\) is always positive on a domain D, can \(\iint_D f(x,y) dA\) be negative?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>No.</p>
+                        <p>By the comparison property of integrals, if \(f(x,y) \ge m\) on D, then \(\iint_D f(x,y) dA \ge m \cdot \text{Area}(D)\).</p>
+                        <p>If \(f(x,y) > 0\) on D, we can choose a minimum value \(m > 0\) (on any compact subregion). Since the area of D is positive, the integral must be positive.</p>
+                        <p>Geometrically, if the surface is always above the xy-plane, the volume it encloses must be positive.</p>
+                        <p class="source">Source: Conceptual question based on integral properties.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Sketch the region and change the order of integration for \(\int_0^4 \int_{y/2}^{\sqrt{y}} f(x,y) dx dy\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>1. <strong>Sketch Region:</strong> The region D is bounded on the left by \(x=y/2\) (line \(y=2x\)) and on the right by \(x=\sqrt{y}\) (parabola \(y=x^2\)). The region is enclosed by these curves, from their intersection at (0,0) up to \(y=4\). The other intersection is at \(x=2, y=4\).</p>
+                        <p>2. <strong>Re-describe:</strong> For a Type I integral, we need to split the region at \(x=2\). The bounding functions for y change.
+                        <ul>
+                            <li>For \(0 \le x \le 2\), y is bounded by the parabola below (\(y=x^2\)) and the line above (\(y=2x\)).</li>
+                        </ul>
+                        This description is incorrect. Let's re-examine. The region is bounded by \(x=y/2\) and \(x=\sqrt{y}\) from y=0 to y=4. At y=4, x=2 and x=2. The region is between the line and the parabola. The line is to the left of the parabola for y in (0,4).</p>
+                        <p>Let's re-describe for Type I. The region is bounded below by \(y=x^2\) and above by \(y=2x\). The intersection points are \(x^2=2x \Rightarrow x=0, x=2\). So the region is \(0 \le x \le 2, x^2 \le y \le 2x\).</p>
+                        <p>3. <strong>New Integral:</strong>
+                        \[ \int_0^2 \int_{x^2}^{2x} f(x, y) \, dy \, dx \]
+                        </p>
+                        <p class="source">Source: Ostaszewski, Chapter 19.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the volume of the solid under the plane \(z=x\) and over the region D enclosed by \(y=x\) and \(y=x^2\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region D is bounded by \(y=x\) and \(y=x^2\). The intersection points are (0,0) and (1,1). In this region, \(x^2 \le x\), so the region is \(0 \le x \le 1, x^2 \le y \le x\).</p>
+                        <p>The volume is \(V = \iint_D x \, dA\).</p>
+                        <p>\[ V = \int_0^1 \int_{x^2}^x x \, dy \, dx \]
+                        </p>
+                        <p>Inner integral: \(\int_{x^2}^x x dy = x[y]_{x^2}^x = x(x-x^2) = x^2-x^3\).</p>
+                        <p>Outer integral: \(\int_0^1 (x^2-x^3) dx = [\frac{x^3}{3} - \frac{x^4}{4}]_0^1 = \frac{1}{3} - \frac{1}{4} = \frac{1}{12}\).</p>
+                        <p class="source">Source: Based on methods from Wrede & Spiegel, Chapter 9.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">What is the value of \(\iint_D (x^3 \cos(y) - y^3 \sin(x)) dA\) where D is the disk \(x^2+y^2 \le 1\)?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The integral is 0.</p>
+                        <p>We can split the integral into two parts:
+                        \[ \iint_D x^3 \cos(y) dA - \iint_D y^3 \sin(x) dA \]
+                        </p>
+                        <p>For the first integral, the integrand \(f(x,y) = x^3\cos(y)\) is an odd function with respect to x. The domain D is symmetric with respect to the y-axis. Therefore, the first integral is 0.</p>
+                        <p>For the second integral, the integrand \(g(x,y) = y^3\sin(x)\) is an odd function with respect to y. The domain D is symmetric with respect to the x-axis. Therefore, the second integral is also 0.</p>
+                        <p>The total integral is \(0 - 0 = 0\).</p>
+                        <p class="source">Source: Conceptual question using symmetry.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Find the area of one loop of the rose curve \(r = \cos(2\theta)\).</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>One loop of the rose \(r=\cos(2\theta)\) is traced as \(2\theta\) goes from \(-\pi/2\) to \(\pi/2\), which means \(\theta\) goes from \(-\pi/4\) to \(\pi/4\).</p>
+                        <p>Area = \(\iint_D 1 dA\). In polar coordinates:</p>
+                        <p>\[ A = \int_{-\pi/4}^{\pi/4} \int_0^{\cos(2\theta)} r \, dr \, d\theta \]
+                        </p>
+                        <p>Inner integral: \([\frac{r^2}{2}]_0^{\cos(2\theta)} = \frac{1}{2}\cos^2(2\theta)\).</p>
+                        <p>Outer integral: \(\frac{1}{2} \int_{-\pi/4}^{\pi/4} \cos^2(2\theta) d\theta = \frac{1}{2} \int_{-\pi/4}^{\pi/4} \frac{1+\cos(4\theta)}{2} d\theta \]
+                        \[ = \frac{1}{4} [\theta + \frac{\sin(4\theta)}{4}]_{-\pi/4}^{\pi/4} = \frac{1}{4} [(\frac{\pi}{4}+0) - (-\frac{\pi}{4}+0)] = \frac{1}{4}(\frac{\pi}{2}) = \frac{\pi}{8} \]
+                        </p>
+                        <p class="source">Source: Based on methods from Binmore & Davies, Chapter 11.4.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Is it always better to integrate with respect to y first for Type I regions?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>No, not necessarily. The choice of integration order depends on two factors:</p>
+                        <p>1. <strong>The complexity of the region's bounds:</strong> Sometimes a region is simple to describe in one form (e.g., Type I) but requires splitting into multiple regions in the other form (Type II).</p>
+                        <p>2. <strong>The complexity of the integrand:</strong> Even if the bounds are simple, the resulting inner integral might be difficult or impossible to compute in one order, but easy in the other. For example, \(\int e^{y^2} dy\) is non-elementary, so if you encounter it, you should try changing the order of integration.</p>
+                        <p>You should always consider both the region and the integrand when deciding the order of integration.</p>
+                        <p class="source">Source: Conceptual question based on integration strategy.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">Final Card: What are the key takeaways of studying double integrals?</div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>Double integrals are a powerful tool for moving from one dimension to two.</p>
+                        <ul>
+                            <li>They generalize the idea of an area under a curve to the volume under a surface.</li>
+                            <li><strong>Fubini's Theorem</strong> is the cornerstone, allowing us to compute these integrals using familiar iterated single-variable integration.</li>
+                            <li>The choice of <strong>integration order</strong> or <strong>coordinate system</strong> (like polar) is a critical strategic decision to simplify problems.</li>
+                            <li>The <strong>Jacobian</strong> is the essential scaling factor that makes changes of variables possible, measuring how a transformation distorts area.</li>
+                            <li>They have wide applications in physics and engineering for calculating quantities like mass, center of mass, and moment of inertia for 2D objects.</li>
+                        </ul>
+                        <p class="source">Source: Summary of the topic.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What does it mean geometrically to change the order of integration?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            Geometrically, changing the order of integration corresponds to changing the way you "slice" the volume under the surface \(z = f(x, y)\).
+                        </p>
+                        <ul>
+                            <li>
+                                An integral of the form \(\int_a^b \int_{g_1(x)}^{g_2(x)} f(x, y) \, dy \, dx\) (Type I) corresponds to first finding the area of vertical cross-sections for a fixed \(x\), and then summing up the volumes of these slices as \(x\) moves from \(a\) to \(b\).
+                            </li>
+                            <li>
+                                An integral of the form \(\int_c^d \int_{h_1(y)}^{h_2(y)} f(x, y) \, dx \, dy\) (Type II) corresponds to first finding the area of horizontal cross-sections for a fixed \(y\), and then summing up the volumes of these slices as \(y\) moves from \(c\) to \(d\).
+                            </li>
+                        </ul>
+                        <p>Changing the order of integration is switching from slicing the volume vertically to slicing it horizontally, or vice-versa.</p>
+                        <p class="source">
+                            Source: MT2176 SG, Section 5.1.3; Binmore & Davies, Chapter 11.2.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Find the Jacobian for the linear transformation \(x = au + bv, y = cu + dv\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The Jacobian is the determinant of the matrix of partial derivatives:
+                            \[ J(u, v) = \frac{\partial(x, y)}{\partial(u, v)} = \det \begin{pmatrix} \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{pmatrix} 
+                            \]
+                        </p>
+                        <p>
+                            The partial derivatives are:
+                            <ul>
+                                <li>\(\frac{\partial x}{\partial u} = a\)</li>
+                                <li>\(\frac{\partial x}{\partial v} = b\)</li>
+                                <li>\(\frac{\partial y}{\partial u} = c\)</li>
+                                <li>\(\frac{\partial y}{\partial v} = d\)</li>
+                            </ul>
+                            So the Jacobian is:
+                            \[ J(u, v) = \det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc 
+                            \]
+                            This is a constant, which is a characteristic of linear transformations. It represents the constant factor by which area is scaled.
+                        </p>
+                        <p class="source">
+                            Source: Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Evaluate \( \iint_D x \, dA \) where \(D\) is the region in the first quadrant bounded by \(y=x^2\) and \(y=4\) and \(x=0\).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>It is easier to set this up as a Type II integral (integrating with respect to \(x\) first).</p>
+                        <p>1. <strong>Describe the region:</strong> The region \(D\) is defined by \(0 \le y \le 4\) and \(0 \le x \le \sqrt{y}\).</p>
+                        <p>2. <strong>Set up the integral:</strong>
+                            \[ \int_0^4 \int_0^{\sqrt{y}} x \, dx \, dy 
+                            \]
+                            Evaluate the inner integral:
+                            \[ \int_0^{\sqrt{y}} x \, dx = \left[ \frac{x^2}{2} \right]_0^{\sqrt{y}} = \frac{(\sqrt{y})^2}{2} - 0 = \frac{y}{2} 
+                            \]
+                            Evaluate the outer integral:
+                            \[ \int_0^4 \frac{y}{2} \, dy = \frac{1}{2} \left[ \frac{y^2}{2} \right]_0^4 = \frac{1}{4} [y^2]_0^4 = \frac{1}{4} (16 - 0) = 4 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from MT2176 SG, Section 5.1.5.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        What is the geometric interpretation of the Jacobian determinant at a point?
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>
+                            The absolute value of the Jacobian determinant, \(|J(u_0, v_0)|\), at a point \((u_0, v_0)\) represents the local area distortion factor of the transformation at that point.
+                        </p>
+                        <p>
+                            More specifically, it is the ratio of the area of an infinitesimal rectangle in the xy-plane to the area of the corresponding infinitesimal rectangle in the uv-plane.
+                            \[ |J(u_0, v_0)| \approx \frac{\text{Area in xy-plane}}{\text{Area in uv-plane}} 
+                            \]
+                            If \(|J| > 1\), the transformation stretches areas. If \(|J| < 1\), it compresses areas. If \(J=0\), the transformation is singular and may collapse an area to a line or a point.
+                        </p>
+                        <p class="source">
+                            Source: Binmore & Davies, Chapter 11.3.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card-container" style="display: none;">
+            <div class="card">
+                <div class="card-face front">
+                    <div class="card-content question">
+                        Find the volume of the solid under the plane \(z = 2 - x - y\) and over the triangular region with vertices (0,0), (1,0), and (0,1).
+                    </div>
+                    
+                </div>
+                <div class="card-face back">
+                    <div class="card-content">
+                        <p>The region \(D\) is bounded by \(x=0, y=0\), and \(x+y=1\). We can set this up as a Type I integral.</p>
+                        <p>1. <strong>Describe the region:</strong> \(0 \le x \le 1\) and \(0 \le y \le 1-x\).</p>
+                        <p>2. <strong>Set up the integral:</strong>
+                            \[ V = \int_0^1 \int_0^{1-x} (2 - x - y) \, dy \, dx 
+                            \]
+                            Evaluate the inner integral:
+                            \[ \int_0^{1-x} (2 - x - y) \, dy = \left[ (2-x)y - \frac{y^2}{2} \right]_0^{1-x} 
+                            \]
+                            \[ = (2-x)(1-x) - \frac{(1-x)^2}{2} = (1-x) \left( (2-x) - \frac{1-x}{2} \right) 
+                            \]
+                            \[ = (1-x) \left( \frac{4-2x-1+x}{2} \right) = \frac{1}{2}(1-x)(3-x) = \frac{1}{2}(3 - 4x + x^2) 
+                            \]
+                            Evaluate the outer integral:
+                            \[ V = \frac{1}{2} \int_0^1 (3 - 4x + x^2) \, dx = \frac{1}{2} \left[ 3x - 2x^2 + \frac{x^3}{3} \right]_0^1 = \frac{1}{2} \left( 3 - 2 + \frac{1}{3} \right) = \frac{1}{2} \left( \frac{4}{3} \right) = \frac{2}{3} 
+                            \]
+                        </p>
+                        <p class="source">
+                            Source: Based on methods from Wrede & Spiegel, Chapter 9.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn">Previous</button>
+        <div class="card-counter" id="cardCounter"></div>
+        <button class="nav-btn" id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card-container');
+            let currentCard = 0;
+            const totalCards = cards.length;
+
+            const cardCounter = document.getElementById('cardCounter');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+
+            function showCard(index) {
+                cards.forEach((card, i) => {
+                    card.style.display = i === index ? 'block' : 'none';
+                    card.querySelector('.card').classList.remove('flipped');
+                });
+                cardCounter.textContent = `Card ${index + 1} of ${totalCards}`;
+            }
+
+            function flipCard(cardElement) {
+                cardElement.querySelector('.card').classList.toggle('flipped');
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentCard = (currentCard + 1) % totalCards;
+                showCard(currentCard);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentCard = (currentCard - 1 + totalCards) % totalCards;
+                showCard(currentCard);
+            });
+
+            cards.forEach(cardContainer => {
+                cardContainer.addEventListener('click', (e) => {
+                    // Flip if the click is on the card itself or the flip button
+                    if (e.target.closest('.card')) {
+                        flipCard(cardContainer);
+                    }
+                });
+            });
+
+            showCard(currentCard);
+        });
+    </script>
+
+</body>
+</html>

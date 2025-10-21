@@ -10,7 +10,7 @@ This document provides links to the study materials for the MT2176 Further Calcu
 
 * [Chapter 3: Improper Integrals](./flashcards/ch3-flashcards.html)
 
-
+* [Chapter 4: Double Integrals](./flashcards/ch3-flashcards.html)
 
 
 ## Quizzes
