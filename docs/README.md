@@ -12,6 +12,7 @@ This document provides links to the study materials for the MT2176 Further Calcu
 
 * [Chapter 4: Double Integrals](./flashcards/ch4-flashcards.html)
 
+* [Chapter 5: Manipulation of Integrals](./flashcards/ch5-flashcards.html)
 
 ## Quizzes
 
