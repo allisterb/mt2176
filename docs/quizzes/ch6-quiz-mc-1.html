@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT2176 Further Calculus - Chapter 6 Quiz</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #005a9c;
+        }
+        .question-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9f5ff;
+            border-left: 5px solid #005a9c;
+        }
+        .explanation.correct {
+            border-left-color: #28a745;
+            background-color: #e9fde9;
+        }
+        .explanation.incorrect {
+            border-left-color: #dc3545;
+            background-color: #fde9e9;
+        }
+        .source {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MT2176 Further Calculus - Chapter 6 Quiz</h1>
+    <h2>Laplace Transforms</h2>
+
+    <div id="quiz-container">
+        <div class="question-container" id="q-container-1">
+            <div class="question-title">Question 1: What is the definition of the Laplace transform, \( \mathcal{L}\{f(t)\} \), of a function \(f(t)\) defined for \(t \ge 0\)?</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question1" value="0"> \( \int_{-\infty}^{\infty} e^{-st} f(t) dt \)</label>
+                <label>B. <input type="radio" name="question1" value="1"> \( \int_{0}^{\infty} e^{-st} f(t) dt \)</label>
+                <label>C. <input type="radio" name="question1" value="2"> \( \int_{0}^{\infty} e^{st} f(t) dt \)</label>
+                <label>D. <input type="radio" name="question1" value="3"> \( \int_{0}^{t} e^{-su} f(u) du \)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Laplace transform of a function \(f(t)\) is defined as \( F(s) = \mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) dt \). This integral transforms a function of a real variable \(t\) (often time) to a function of a complex variable \(s\) (frequency).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 221)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-2">
+            <div class="question-title">Question 2: For the Laplace transform of \(f(t)\) to exist, the function must be of exponential growth. What does this mean?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question2" value="0"> \(|f(t)| \le Me^{\gamma t}\) for some constants \(M, \gamma\)</label>
+                <label>B. <input type="radio" name="question2" value="1"> \(|f(t)| \ge Me^{\gamma t}\) for some constants \(M, \gamma\)</label>
+                <label>C. <input type="radio" name="question2" value="2"> \(f(t)\) is a periodic function</label>
+                <label>D. <input type="radio" name="question2" value="3"> \(f(t)\) is a polynomial</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> A function \(f(t)\) is of exponential growth if there exist constants \(M > 0\) and \(\gamma\) such that \(|f(t)| \le Me^{\gamma t}\) for all \(t \ge 0\). This condition ensures that the integral for the Laplace transform converges for \(s > \gamma\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 223)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-3">
+            <div class="question-title">Question 3: What is the Laplace transform of the constant function \(f(t) = c\)?</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question3" value="0"> \(cs\)</label>
+                <label>B. <input type="radio" name="question3" value="1"> \(c/s^2\)</label>
+                <label>C. <input type="radio" name="question3" value="2"> \(c/s\)</label>
+                <label>D. <input type="radio" name="question3" value="3"> \(s/c\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the definition, \(\mathcal{L}\{c\} = \int_0^\infty c e^{-st} dt = c [-\frac{1}{s}e^{-st}]_0^\infty = c(0 - (-\frac{1}{s})) = \frac{c}{s}\), for \(s>0\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-4">
+            <div class="question-title">Question 4: Find the Laplace transform of \(f(t) = t\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question4" value="0"> \(1/s\)</label>
+                <label>B. <input type="radio" name="question4" value="1"> \(1/s^2\)</label>
+                <label>C. <input type="radio" name="question4" value="2"> \(1/s^3\)</label>
+                <label>D. <input type="radio" name="question4" value="3"> \(1\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using integration by parts: \(\mathcal{L}\{t\} = \int_0^\infty t e^{-st} dt = [t(-\frac{e^{-st}}{s})]_0^\infty - \int_0^\infty -\frac{e^{-st}}{s} dt = 0 + \frac{1}{s} \int_0^\infty e^{-st} dt = \frac{1}{s} (\frac{1}{s}) = \frac{1}{s^2}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 242, Solution to Activity 7.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-5">
+            <div class="question-title">Question 5: What is \(\mathcal{L}\{t^n\}\) for a positive integer \(n\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question5" value="0"> \(n!/s^{n+1}\)</label>
+                <label>B. <input type="radio" name="question5" value="1"> \(n/s^{n+1}\)</label>
+                <label>C. <input type="radio" name="question5" value="2"> \(s^n/n!\)</label>
+                <label>D. <input type="radio" name="question5" value="3"> \(s^{n+1}/n!\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is a standard result, often derived using integration by parts recursively or using the Gamma function. \(\mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}}\)
+ for \(s>0\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 225)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-6">
+            <div class="question-title">Question 6: Find the Laplace transform of \(f(t) = e^{at}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question6" value="0"> \(1/(s+a)\)</label>
+                <label>B. <input type="radio" name="question6" value="1"> \(1/(s-a)\)</label>
+                <label>C. <input type="radio" name="question6" value="2"> \(a/(s-a)\)</label>
+                <label>D. <input type="radio" name="question6" value="3"> \(s/(s-a)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> \(\mathcal{L}\{e^{at}\} = \int_0^\infty e^{at}e^{-st} dt = \int_0^\infty e^{-(s-a)t} dt = [-\frac{1}{s-a}e^{-(s-a)t}]_0^\infty = \frac{1}{s-a}\) for \(s>a\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 222)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-7">
+            <div class="question-title">Question 7: What is the Laplace transform of \(\sin(at)\)?</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question7" value="0"> \(s/(s^2 + a^2)\)</label>
+                <label>B. <input type="radio" name="question7" value="1"> \(a/(s^2 + a^2)\)</label>
+                <label>C. <input type="radio" name="question7" value="2"> \(s/(s^2 - a^2)\)</label>
+                <label>D. <input type="radio" name="question7" value="3"> \(a/(s^2 - a^2)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Laplace transform of \(\sin(at)\) is given by \(\mathcal{L}\{\sin(at)\} = \frac{a}{s^2 + a^2}\). This can be derived using integration by parts twice or by using Euler's formula for \(\sin(at)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-8">
+            <div class="question-title">Question 8: What is the Laplace transform of \(\cos(at)\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question8" value="0"> \(s/(s^2 + a^2)\)</label>
+                <label>B. <input type="radio" name="question8" value="1"> \(a/(s^2 + a^2)\)</label>
+                <label>C. <input type="radio" name="question8" value="2"> \(s/(s^2 - a^2)\)</label>
+                <label>D. <input type="radio" name="question8" value="3"> \(a/(s^2 - a^2)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Laplace transform of \(\cos(at)\) is given by \(\mathcal{L}\{\cos(at)\} = \frac{s}{s^2 + a^2}\). This can also be derived using integration by parts or Euler's formula.</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-9">
+            <div class="question-title">Question 9: The first shifting theorem (or s-shifting) states that if \(\mathcal{L}\{f(t)\} = F(s)\), then \(\mathcal{L}\{e^{at}f(t)\} = ?\)</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question9" value="0"> \(F(s-a)\)</label>
+                <label>B. <input type="radio" name="question9" value="1"> \(F(s+a)\)</label>
+                <label>C. <input type="radio" name="question9" value="2"> \(e^{as}F(s)\)</label>
+                <label>D. <input type="radio" name="question9" value="3"> \(F(s)/a\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The first shifting theorem is a fundamental property. \(\mathcal{L}\{e^{at}f(t)\} = \int_0^\infty e^{at}f(t)e^{-st}dt = \int_0^\infty f(t)e^{-(s-a)t}dt = F(s-a)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 227)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-10">
+            <div class="question-title">Question 10: Using the first shifting theorem, find \(\mathcal{L}\{e^{3t}t^2\}
+.</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question10" value="0"> \(2/(s-3)^3\)</label>
+                <label>B. <input type="radio" name="question10" value="1"> \(2/(s+3)^3\)</label>
+                <label>C. <input type="radio" name="question10" value="2"> \(1/(s-3)^2\)</label>
+                <label>D. <input type="radio" name="question10" value="3"> \(2/s^3\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We know that \( \mathcal{L}\{t^2\} = \frac{2!}{s^{2+1}} = \frac{2}{s^3}\). By the first shifting theorem, with \(a=3\), we have \(\mathcal{L}\{e^{3t}t^2\} = F(s-3) = \frac{2}{(s-3)^3}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 229, Example 7.5)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-11">
+            <div class="question-title">Question 11: Find the Laplace transform of \(f(t) = \cosh(at)\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question11" value="0"> \(a/(s^2 + a^2)\)</label>
+                <label>B. <input type="radio" name="question11" value="1"> \(s/(s^2 + a^2)\)</label>
+                <label>C. <input type="radio" name="question11" value="2"> \(a/(s^2 - a^2)\)</label>
+                <label>D. <input type="radio" name="question11" value="3"> \(s/(s^2 - a^2)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Since \(\cosh(at) = \frac{e^{at} + e^{-at}}{2}\), we can use the linearity of the Laplace transform: \(\mathcal{L}\{\cosh(at)\} = \frac{1}{2}(\mathcal{L}\{e^{at}\} + \mathcal{L}\{e^{-at}\}) = \frac{1}{2}(\frac{1}{s-a} + \frac{1}{s+a}) = \frac{1}{2}(\frac{s+a+s-a}{s^2-a^2}) = \frac{s}{s^2-a^2}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-12">
+            <div class="question-title">Question 12: What is the Laplace transform of the derivative of a function, \(\mathcal{L}\{f'(t)\}?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question12" value="0"> \(sF(s) - f(0)\)</label>
+                <label>B. <input type="radio" name="question12" value="1"> \(sF(s)\)</label>
+                <label>C. <input type="radio" name="question12" value="2"> \(F(s)/s\)</label>
+                <label>D. <input type="radio" name="question12" value="3"> \(s^2F(s) - sf(0) - f'(0)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The transform of a derivative is given by \(\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0) = sF(s) - f(0)\). This property is key to solving differential equations.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 224, Equation 7.4)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-13">
+            <div class="question-title">Question 13: What is \(\mathcal{L}\{f''(t)\}?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question13" value="0"> \(s^2F(s) - sf(0) - f'(0)\)</label>
+                <label>B. <input type="radio" name="question13" value="1"> \(s^2F(s) - f(0)\)</label>
+                <label>C. <input type="radio" name="question13" value="2"> \(sF(s) - f'(0)\)</label>
+                <label>D. <input type="radio" name="question13" value="3"> \(s^2F(s)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Applying the derivative rule twice: \(\mathcal{L}\{f''(t)\} = s\mathcal{L}\{f'(t)\} - f'(0) = s(sF(s) - f(0)) - f'(0) = s^2F(s) - sf(0) - f'(0)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 225, Equation 7.5)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-14">
+            <div class="question-title">Question 14: Find the inverse Laplace transform of \(F(s) = \frac{1}{s-5}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question14" value="0"> \(e^{-5t}\)</label>
+                <label>B. <input type="radio" name="question14" value="1"> \(t^5\)</label>
+                <label>C. <input type="radio" name="question14" value="2"> \(e^{5t}\)</label>
+                <label>D. <input type="radio" name="question14" value="3"> \(\cos(5t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is the standard transform pair for an exponential function. Since \(\mathcal{L}\{e^{at}\} = \frac{1}{s-a}\), the inverse transform is \(\mathcal{L}^{-1}\{\frac{1}{s-5}\} = e^{5t}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 222)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-15">
+            <div class="question-title">Question 15: Find \(\mathcal{L}^{-1}\{\frac{1}{s^2+9}\}
+.</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question15" value="0"> \(\cos(3t)\)</label>
+                <label>B. <input type="radio" name="question15" value="1"> \(\frac{1}{3}\sin(3t)\)</label>
+                <label>C. <input type="radio" name="question15" value="2"> \(\sin(3t)\)</label>
+                <label>D. <input type="radio" name="question15" value="3"> \(e^{-3t}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We know \(\mathcal{L}\{\sin(at)\} = \frac{a}{s^2+a^2}\). Here, \(a^2=9\) so \(a=3\). The given transform is \(\frac{1}{s^2+9}\). We need to adjust for the constant 'a' in the numerator. \(\mathcal{L}^{-1}\{\frac{1}{s^2+9}\} = \frac{1}{3}\mathcal{L}^{-1}\{\frac{3}{s^2+9}\} = \frac{1}{3}\sin(3t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-16">
+            <div class="question-title">Question 16: Find the inverse Laplace transform of \(F(s) = \frac{s+1}{s^2-4}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question16" value="0"> \(\cosh(2t) + \frac{1}{2}\sinh(2t)\)</label>
+                <label>B. <input type="radio" name="question16" value="1"> \(\cos(2t) + \sin(2t)\)</label>
+                <label>C. <input type="radio" name="question16" value="2"> \(e^{2t} + e^{-2t}\)</label>
+                <label>D. <input type="radio" name="question16" value="3"> \(\sinh(2t) + \frac{1}{2}\cosh(2t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We can split the fraction: \(F(s) = \frac{s}{s^2-4} + \frac{1}{s^2-4}\). The inverse transform of the first term is \(\cosh(2t)\). The inverse transform of the second term is \(\frac{1}{2}\sinh(2t)\). By linearity, the result is \(\cosh(2t) + \frac{1}{2}\sinh(2t)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 230, Example 7.6)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-17">
+            <div class="question-title">Question 17: Use Laplace transforms to solve the ODE \(y' + y = 1\) with \(y(0) = 0\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question17" value="0"> \(y(t) = 1 - e^{-t}\)</label>
+                <label>B. <input type="radio" name="question17" value="1"> \(y(t) = e^{-t}\)</label>
+                <label>C. <input type="radio" name="question17" value="2"> \(y(t) = 1 + e^{-t}\)</label>
+                <label>D. <input type="radio" name="question17" value="3"> \(y(t) = t\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Transforming the equation gives \(sY(s) - y(0) + Y(s) = \frac{1}{s}\). With \(y(0)=0\), we get \((s+1)Y(s) = \frac{1}{s}\), so \(Y(s) = \frac{1}{s(s+1)}\). Using partial fractions, \(Y(s) = \frac{1}{s} - \frac{1}{s+1}\). The inverse transform is \(y(t) = 1 - e^{-t}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 233)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-18">
+            <div class="question-title">Question 18: Solve \(y'' + 4y = 0\) with \(y(0) = 1, y'(0) = 0\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question18" value="0"> \(y(t) = \sin(2t)\)</label>
+                <label>B. <input type="radio" name="question18" value="1"> \(y(t) = \cos(2t)\)</label>
+                <label>C. <input type="radio" name="question18" value="2"> \(y(t) = e^{-2t}\)</label>
+                <label>D. <input type="radio" name="question18" value="3"> \(y(t) = \cosh(2t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Transforming gives \(s^2Y(s) - sy(0) - y'(0) + 4Y(s) = 0\). Substituting initial conditions: \(s^2Y(s) - s + 4Y(s) = 0 \Rightarrow (s^2+4)Y(s) = s \Rightarrow Y(s) = \frac{s}{s^2+4}\). The inverse transform is \(y(t) = \cos(2t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-19">
+            <div class="question-title">Question 19: What is the convolution \((f*g)(t)\) of two functions \(f(t)\) and \(g(t)\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question19" value="0"> \(\int_0^t f(u)g(t-u)du\)</label>
+                <label>B. <input type="radio" name="question19" value="1"> \(\int_0^\infty f(u)g(t-u)du\)</label>
+                <label>C. <input type="radio" name="question19" value="2"> \(f(t)g(t)\)</label>
+                <label>D. <input type="radio" name="question19" value="3"> \(\frac{d}{dt}(f(t)g(t))\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The convolution of \(f\) and \(g\) is defined as \((f*g)(t) = \int_0^t f(u)g(t-u)du\). It is a special kind of integral that arises in many areas of mathematics and engineering.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 236)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-20">
+            <div class="question-title">Question 20: The Convolution Theorem states that \(\mathcal{L}\{(f*g)(t)\} = ?\)</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question20" value="0"> \(F(s) + G(s)\)</label>
+                <label>B. <input type="radio" name="question20" value="1"> \(F(s)G(s)\)</label>
+                <label>C. <input type="radio" name="question20" value="2"> \(F(s)/G(s)\)</label>
+                <label>D. <input type="radio" name="question20" value="3"> \(F(G(s))\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Convolution Theorem is a powerful tool that states the Laplace transform of a convolution of two functions is the product of their individual Laplace transforms: \(\mathcal{L}\{(f*g)(t)\} = \mathcal{L}\{f(t)\} \mathcal{L}\{g(t)\} = F(s)G(s)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 236, Theorem 7.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-21">
+            <div class="question-title">Question 21: Use the Convolution Theorem to find the inverse Laplace transform of \(H(s) = \frac{1}{s(s-1)}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question21" value="0"> \(e^t - 1\)</label>
+                <label>B. <input type="radio" name="question21" value="1"> \(1 - e^t\)</label>
+                <label>C. <input type="radio" name="question21" value="2"> \(t - e^t\)</label>
+                <label>D. <input type="radio" name="question21" value="3"> \(e^t\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(H(s) = F(s)G(s)\) where \(F(s) = 1/s\) and \(G(s) = 1/(s-1)\). Then \(f(t) = 1\) and \(g(t) = e^t\). The inverse transform is their convolution: \(h(t) = (f*g)(t) = \int_0^t 1 \cdot e^{t-u} du = e^t \int_0^t e^{-u} du = e^t [-e^{-u}]_0^t = e^t(-e^{-t} + 1) = e^t - 1\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 237, Example 7.9)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-22">
+            <div class="question-title">Question 22: What is the definition of the Gamma function, \(\Gamma(\alpha)\)?</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question22" value="0"> \(\int_0^\infty t^{\alpha} e^{-t} dt\)</label>
+                <label>B. <input type="radio" name="question22" value="1"> \(\int_0^1 t^{\alpha-1} (1-t)^{\beta-1} dt\)</label>
+                <label>C. <input type="radio" name="question22" value="2"> \(\int_0^\infty t^{\alpha-1} e^{-t} dt\)</label>
+                <label>D. <input type="radio" name="question22" value="3"> \((\alpha-1)!\]</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Gamma function is defined by the improper integral \(\Gamma(\alpha) = \int_0^\infty t^{\alpha-1} e^{-t} dt\). This integral converges for \(\alpha > 0\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 231)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-23">
+            <div class="question-title">Question 23: A key property of the Gamma function is \(\Gamma(\alpha+1) = ?\)</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question23" value="0"> \(\alpha\Gamma(\alpha)\)</label>
+                <label>B. <input type="radio" name="question23" value="1"> \(\Gamma(\alpha) + 1\)</label>
+                <label>C. <input type="radio" name="question23" value="2"> \(\Gamma(\alpha)^2\)</label>
+                <label>D. <input type="radio" name="question23" value="3"> \(\alpha!\]</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using integration by parts on the definition of \(\Gamma(\alpha+1)\), we find the recurrence relation \(\Gamma(\alpha+1) = \alpha\Gamma(\alpha)\). This is a generalization of the factorial function.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 232, Equation 7.10)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-24">
+            <div class="question-title">Question 24: If \(n\) is a positive integer, what is \(\Gamma(n)\)?</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question24" value="0"> \(n!\)</label>
+                <label>B. <input type="radio" name="question24" value="1"> \(n\)</label>
+                <label>C. <input type="radio" name="question24" value="2"> \((n-1)!\]</label>
+                <label>D. <input type="radio" name="question24" value="3"> \((n+1)!\]</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the property \(\Gamma(\alpha+1) = \alpha\Gamma(\alpha)\) and the fact that \(\Gamma(1) = \int_0^\infty e^{-t} dt = 1\), we can show by induction that \(\Gamma(n) = (n-1)!\) for any positive integer \(n\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 232, Equation 7.11)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-25">
+            <div class="question-title">Question 25: What is the value of \(\Gamma(1/2)\)?</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question25" value="0"> \(1/2\)</label>
+                <label>B. <input type="radio" name="question25" value="1"> \(\pi\)</label>
+                <label>C. <input type="radio" name="question25" value="2"> \(\sqrt{\pi}\)</label>
+                <label>D. <input type="radio" name="question25" value="3"> \(1\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The value of \(\Gamma(1/2)\) is a famous result. It is equal to \(\sqrt{\pi}\). This can be shown by evaluating the Gaussian integral.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 231, Activity 7.10)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-26">
+            <div class="question-title">Question 26: The Laplace transform of \(t^\alpha\) for \(\alpha > -1\) is given by:</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question26" value="0"> \(\frac{\Gamma(\alpha)}{s^\alpha}\)</label>
+                <label>B. <input type="radio" name="question26" value="1"> \(\frac{\Gamma(\alpha+1)}{s^{\alpha+1}}\)</label>
+                <label>C. <input type="radio" name="question26" value="2"> \(\frac{\alpha!}{s^\alpha}\)</label>
+                <label>D. <input type="radio" name="question26" value="3"> \(\frac{s^{\alpha+1}}{\Gamma(\alpha+1)}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The general formula for the Laplace transform of a power of \(t\) is \(\mathcal{L}\{t^\alpha\} = \frac{\Gamma(\alpha+1)}{s^{\alpha+1}}\). This generalizes the result for integer powers.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 232, Equation 7.12)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-27">
+            <div class="question-title">Question 27: What is the definition of the Beta function, \(B(p,q)\)?</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question27" value="0"> \(\int_0^1 t^{p-1}(1-t)^{q-1} dt\)</label>
+                <label>B. <input type="radio" name="question27" value="1"> \(\int_0^\infty t^{p-1}(1+t)^{-p-q} dt\)</label>
+                <label>C. <input type="radio" name="question27" value="2"> \(\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\)</label>
+                <label>D. <input type="radio" name="question27" value="3"> All of the above</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Beta function has several equivalent definitions. The standard integral definition is \(\int_0^1 t^{p-1}(1-t)^{q-1} dt\). It can also be expressed in terms of Gamma functions as \(\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\). The second option is another valid integral representation.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 239-240)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-28">
+            <div class="question-title">Question 28: The Beta function is related to the convolution of what two functions?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question28" value="0"> \(t^{p-1}\) and \(t^{q-1}\)</label>
+                <label>B. <input type="radio" name="question28" value="1"> \(e^{pt}\) and \(e^{qt}\)</label>
+                <label>C. <input type="radio" name="question28" value="2"> \(\sin(pt)\) and \(\cos(qt)\)</label>
+                <label>D. <input type="radio" name="question28" value="3"> \(t^p\) and \(t^q\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Beta function \(B(p,q)\) can be seen as the convolution of \(f(t)=t^{p-1}\) and \(g(t)=t^{q-1}\) evaluated at \(t=1\). Specifically, \(B(p,q) = (t^{p-1} * t^{q-1})|_{t=1}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 240)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-29">
+            <div class="question-title">Question 29: Find \(\mathcal{L}\{t e^{-2t}\}
+.</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question29" value="0"> \(1/s^2\)</label>
+                <label>B. <input type="radio" name="question29" value="1"> \(1/(s-2)^2\)</label>
+                <label>C. <input type="radio" name="question29" value="2"> \(1/(s+2)^2\)</label>
+                <label>D. <input type="radio" name="question29" value="3"> \(1/(s^2+4)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We know \(\mathcal{L}\{t\} = 1/s^2\). Using the first shifting theorem with \(a=-2\), we get \(\mathcal{L}\{t e^{-2t}\} = F(s-(-2)) = F(s+2) = \frac{1}{(s+2)^2}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386, Table 21.7)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-30">
+            <div class="question-title">Question 30: Find the inverse Laplace transform of \(\frac{1}{(s-2)^4}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question30" value="0"> \(t^3 e^{2t} / 6\)</label>
+                <label>B. <input type="radio" name="question30" value="1"> \(t^4 e^{2t} / 24\)</label>
+                <label>C. <input type="radio" name="question30" value="2"> \(t^3 e^{-2t} / 6\)</label>
+                <label>D. <input type="radio" name="question30" value="3"> \(t^3 / 6\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We recognize the form \(F(s-a)\) with \(a=2\). The base transform is \(1/s^4\). We know \(\mathcal{L}^{-1}\{\frac{n!}{s^{n+1}}\} = t^n\). So, \(\mathcal{L}^{-1}\{\frac{1}{s^4}\} = \frac{1}{3!}\mathcal{L}^{-1}\{\frac{3!}{s^4}\} = \frac{1}{6}t^3\). Applying the shifting theorem, \(\mathcal{L}^{-1}\{\frac{1}{(s-2)^4}\} = e^{2t} \frac{t^3}{6}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386, Table 21.7)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-31">
+            <div class="question-title">Question 31: If \(\mathcal{L}\{f(t)\} = F(s)\), what is \(\mathcal{L}\{tf(t)\}?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question31" value="0"> \(-F'(s)\)</label>
+                <label>B. <input type="radio" name="question31" value="1"> \(F'(s)\)</label>
+                <label>C. <input type="radio" name="question31" value="2"> \(sF(s)\)</label>
+                <label>D. <input type="radio" name="question31" value="3"> \(F(s)/s\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is the 'multiplication by t' property. Differentiating \(F(s) = \int_0^\infty e^{-st}f(t)dt\) with respect to \(s\) gives \(F'(s) = \int_0^\infty -t e^{-st}f(t)dt = -\mathcal{L}\{tf(t)\}\). Therefore, \(\mathcal{L}\{tf(t)\} = -F'(s)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 228, Equation 7.9)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-32">
+            <div class="question-title">Question 32: Use the property \(\mathcal{L}\{tf(t)\} = -F'(s)\) to find \(\mathcal{L}\{t\sin(t)\}
+.</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question32" value="0"> \(1/(s^2+1)^2\)</label>
+                <label>B. <input type="radio" name="question32" value="1"> \(s/(s^2+1)^2\)</label>
+                <label>C. <input type="radio" name="question32" value="2"> \(2s/(s^2+1)^2\)</label>
+                <label>D. <input type="radio" name="question32" value="3"> \(2/(s^2+1)^2\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(f(t) = \sin(t)\), so \(F(s) = \mathcal{L}\{\sin(t)\} = \frac{1}{s^2+1}\). Then \(\mathcal{L}\{t\sin(t)\} = -F'(s) = -\frac{d}{ds}(\frac{1}{s^2+1}) = -(-1)(s^2+1)^{-2}(2s) = \frac{2s}{(s^2+1)^2}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-33">
+            <div class="question-title">Question 33: What is the Laplace transform of the Heaviside step function \(u(t-a)\), where \(u(t-a) = 0\) for \(t<a\) and \(1\) for \(t \ge a\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question33" value="0"> \(e^{-as}/s\)</label>
+                <label>B. <input type="radio" name="question33" value="1"> \(e^{as}/s\)</label>
+                <label>C. <input type="radio" name="question33" value="2"> \(1/s\)</label>
+                <label>D. <input type="radio" name="question33" value="3"> \(e^{-as}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> By definition, \(\mathcal{L}\{u(t-a)\} = \int_0^\infty u(t-a)e^{-st}dt = \int_a^\infty e^{-st}dt = [-\frac{1}{s}e^{-st}]_a^\infty = 0 - (-\frac{1}{s}e^{-as}) = \frac{e^{-as}}{s}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-34">
+            <div class="question-title">Question 34: The second shifting theorem (or t-shifting) states that if \(\mathcal{L}\{f(t)\} = F(s)\), then \(\mathcal{L}\{f(t-a)u(t-a)\} = ?\)</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question34" value="0"> \(e^{-as}F(s)\)</label>
+                <label>B. <input type="radio" name="question34" value="1"> \(e^{as}F(s)\)</label>
+                <label>C. <input type="radio" name="question34" value="2"> \(F(s-a)\)</label>
+                <label>D. <input type="radio" name="question34" value="3"> \(F(s+a)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The second shifting theorem is used for functions that are shifted in time. It states that \(\mathcal{L}\{f(t-a)u(t-a)\} = e^{-as}F(s)\), where \(F(s)\) is the transform of the unshifted function \(f(t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-35">
+            <div class="question-title">Question 35: Find the inverse Laplace transform of \(H(s) = \frac{e^{-2s}}{s^2}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question35" value="0"> \(t u(t-2)\)</label>
+                <label>B. <input type="radio" name="question35" value="1"> \((t-2) u(t-2)\)</label>
+                <label>C. <input type="radio" name="question35" value="2"> \(t-2\)</label>
+                <label>D. <input type="radio" name="question35" value="3"> \(t^2 u(t-2) / 2\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This transform has the form \(e^{-as}F(s)\) with \(a=2\) and \(F(s) = 1/s^2\). The inverse transform of \(F(s)\) is \(f(t) = t\). By the second shifting theorem, \(\mathcal{L}^{-1}\{e^{-2s}F(s)\} = f(t-2)u(t-2) = (t-2)u(t-2)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-36">
+            <div class="question-title">Question 36: What is the value of \(B(1,1)\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question36" value="0"> \(1\)</label>
+                <label>B. <input type="radio" name="question36" value="1"> \(0\)</label>
+                <label>C. <input type="radio" name="question36" value="2"> \(1/2\)</label>
+                <label>D. <input type="radio" name="question36" value="3"> \(\pi\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the integral definition, \(B(1,1) = \int_0^1 t^{1-1}(1-t)^{1-1} dt = \int_0^1 1 dt = [t]_0^1 = 1\). Alternatively, using the Gamma function relation, \(B(1,1) = \frac{\Gamma(1)\Gamma(1)}{\Gamma(2)} = \frac{1 \cdot 1}{1!} = 1\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 240)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-37">
+            <div class="question-title">Question 37: Solve the integral equation \(y(t) = t + \int_0^t y(u)\sin(t-u)du\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question37" value="0"> \(y(t) = t + t^3/6\)</label>
+                <label>B. <input type="radio" name="question37" value="1"> \(y(t) = t - t^3/6\)</label>
+                <label>C. <input type="radio" name="question37" value="2"> \(y(t) = t + t^2/2\)</label>
+                <label>D. <input type="radio" name="question37" value="3"> \(y(t) = \sin(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The integral is a convolution \(y(t) * \sin(t)\). Taking the Laplace transform of the entire equation gives \(Y(s) = \frac{1}{s^2} + Y(s)\frac{1}{s^2+1}\). Solving for \(Y(s)\): \(Y(s)(1 - \frac{1}{s^2+1}) = \frac{1}{s^2} \Rightarrow Y(s)(\frac{s^2}{s^2+1}) = \frac{1}{s^2} \Rightarrow Y(s) = \frac{s^2+1}{s^4} = \frac{1}{s^2} + \frac{1}{s^4}\). Taking the inverse transform is \(y(t) = t + \frac{t^3}{3!} = t + \frac{t^3}{6}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402, Problem 8)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-38">
+            <div class="question-title">Question 38: The property \(B(p,q) = B(q,p)\) is known as:</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question38" value="0"> Symmetry</label>
+                <label>B. <input type="radio" name="question38" value="1"> Commutativity</label>
+                <label>C. <input type="radio" name="question38" value="2"> Associativity</label>
+                <label>D. <input type="radio" name="question38" value="3"> Reflexivity</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The property \(B(p,q) = B(q,p)\) is called the symmetry property of the Beta function. It can be proven by a simple substitution \(u=1-t\) in the integral definition.</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 392)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-39">
+            <div class="question-title">Question 39: Find \(\mathcal{L}\{\frac{\sin t}{t}\}
+.</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question39" value="0"> \(\arctan(s)\)</label>
+                <label>B. <input type="radio" name="question39" value="1"> \(\frac{\pi}{2} - \arctan(s)\)</label>
+                <label>C. <input type="radio" name="question39" value="2"> \(\ln(s^2+1)\)</label>
+                <label>D. <input type="radio" name="question39" value="3"> \(1/(s(s^2+1))\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We use the property \(\mathcal{L}\{\frac{f(t)}{t}\} = \int_s^\infty F(u)du\). Here \(f(t) = \sin t\), so \(F(u) = \frac{1}{u^2+1}\). Then \(\mathcal{L}\{\frac{\sin t}{t}\} = \int_s^\infty \frac{1}{u^2+1}du = [\arctan(u)]_s^\infty = \frac{\pi}{2} - \arctan(s)\). This is also equal to \(\text{arccot}(s)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402, Problem 12)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-40">
+            <div class="question-title">Question 40: If \(y'' - 3y' + 2y = 4e^{3t}\) with \(y(0)=1, y'(0)=-1\), what is \(Y(s)\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question40" value="0"> \(\frac{s-4}{s^2-3s+2} + \frac{4}{(s-3)(s^2-3s+2)}\)</label>
+                <label>B. <input type="radio" name="question40" value="1"> \(\frac{s+4}{s^2-3s+2} + \frac{4}{(s-3)(s^2-3s+2)}\)</label>
+                <label>C. <input type="radio" name="question40" value="2"> \(\frac{s-4}{s^2-3s+2} - \frac{4}{(s-3)(s^2-3s+2)}\)</label>
+                <label>D. <input type="radio" name="question40" value="3"> \(\frac{s-2}{s^2-3s+2}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Transforming the ODE: \([s^2Y-sy(0)-y'(0)] - 3[sY-y(0)] + 2Y = \frac{4}{s-3}\). Substituting initial conditions: \(s^2Y-s+1 - 3sY+3 + 2Y = \frac{4}{s-3}\). Grouping terms: \((s^2-3s+2)Y -s+4 = \frac{4}{s-3}\). Solving for Y(s): \(Y(s) = \frac{s-4}{s^2-3s+2} + \frac{4}{(s-3)(s^2-3s+2)}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 382, Example 21.4)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-41">
+            <div class="question-title">Question 41: What is the value of the convolution \((t*t)(t)\)?</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question41" value="0"> \(t^2\)</label>
+                <label>B. <input type="radio" name="question41" value="1"> \(t^3/6\)</label>
+                <label>C. <input type="radio" name="question41" value="2"> \(t^3/3\)</label>
+                <label>D. <input type="radio" name="question41" value="3"> \(t^2/2\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> By definition, \((t*t)(t) = \int_0^t u(t-u)du = \int_0^t (tu - u^2)du = [t\frac{u^2}{2} - \frac{u^3}{3}]_0^t = \frac{t^3}{2} - \frac{t^3}{3} = \frac{t^3}{6}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 236)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-42">
+            <div class="question-title">Question 42: Find \(\mathcal{L}^{-1}\{\frac{s}{(s^2+1)^2}\}
+.</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question42" value="0"> \(\frac{1}{2}t\sin(t)\)</label>
+                <label>B. <input type="radio" name="question42" value="1"> \(\frac{1}{2}t\cos(t)\)</label>
+                <label>C. <input type="radio" name="question42" value="2"> \(t\sin(t)\)</label>
+                <label>D. <input type="radio" name="question42" value="3"> \(t\cos(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This can be solved using the convolution theorem or the multiplication by t property in reverse. Let \(F(s) = G(s) = \frac{s}{s^2+1}\). Then \(f(t)=g(t)=\cos(t)\). The inverse transform is \((f*g)(t) = \int_0^t \cos(u)\cos(t-u)du = \frac{1}{2}t\sin(t) + \frac{1}{2}\cos(t)\sin(t)\). A simpler method is to note that \(\mathcal{L}\{t\sin(t)\} = \frac{2s}{(s^2+1)^2}\). Therefore, \(\mathcal{L}^{-1}\{\frac{s}{(s^2+1)^2}\} = \frac{1}{2}t\sin(t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 394)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-43">
+            <div class="question-title">Question 43: The Gamma function is not defined for:</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question43" value="0"> Positive integers</label>
+                <label>B. <input type="radio" name="question43" value="1"> Positive real numbers</label>
+                <label>C. <input type="radio" name="question43" value="2"> Zero and negative integers</label>
+                <label>D. <input type="radio" name="question43" value="3"> Complex numbers</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The integral defining \(\Gamma(\alpha)\) diverges if \(\alpha \le 0\). The recurrence relation \(\Gamma(\alpha) = \frac{\Gamma(\alpha+1)}{\alpha}\) can be used to extend the definition to negative non-integers, but it reveals that \(\Gamma(\alpha)\) has simple poles at \(\alpha = 0, -1, -2, ...\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 389)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-44">
+            <div class="question-title">Question 44: Evaluate \(\int_0^\infty t^3 e^{-2t} dt\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question44" value="0"> \(3/8\)</label>
+                <label>B. <input type="radio" name="question44" value="1"> \(3/16\)</label>
+                <label>C. <input type="radio" name="question44" value="2"> \(3/4\)</label>
+                <label>D. <input type="radio" name="question44" value="3"> \(1/16\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This integral is in the form of a Laplace transform. It is \(\mathcal{L}\{t^3\}\) evaluated at \(s=2\). We know \(\mathcal{L}\{t^3\} = \frac{3!}{s^4} = \frac{6}{s^4}\). Substituting \(s=2\) gives \(\frac{6}{2^4} = \frac{6}{16} = \frac{3}{8}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 384)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-45">
+            <div class="question-title">Question 45: Find the inverse Laplace transform of \(\ln(\frac{s+a}{s+b})\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question45" value="0"> \(\frac{e^{-bt} - e^{-at}}{t}\)</label>
+                <label>B. <input type="radio" name="question45" value="1"> \(\frac{e^{-at} - e^{-bt}}{t}\)</label>
+                <label>C. <input type="radio" name="question45" value="2"> \(e^{-bt} - e^{-at}\)</label>
+                <label>D. <input type="radio" name="question45" value="3"> \(t(e^{-at} - e^{-bt})\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(F(s) = \ln(s+a) - \ln(s+b)\). We use the property \(\mathcal{L}\{tf(t)\} = -F'(s)\). Here, \(-F'(s) = -(\frac{1}{s+a} - \frac{1}{s+b}) = \frac{1}{s+b} - \frac{1}{s+a}\). The inverse transform of this is \(e^{-bt} - e^{-at}\). So, \(tf(t) = e^{-bt} - e^{-at}\), which means \(f(t) = \frac{e^{-bt} - e^{-at}}{t}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402, Problem 12)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-46">
+            <div class="question-title">Question 46: The Final Value Theorem states that if all poles of \(sF(s)\) are in the left half-plane, then \(\lim_{t \to \infty} f(t) = ?\)</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question46" value="0"> \(\lim_{s \to \infty} sF(s)\)</label>
+                <label>B. <input type="radio" name="question46" value="1"> \(\lim_{s \to 0} F(s)\)</label>
+                <label>C. <input type="radio" name="question46" value="2"> \(\lim_{s \to 0} sF(s)\)</label>
+                <label>D. <input type="radio" name="question46" value="3"> \(\lim_{s \to \infty} F(s)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Final Value Theorem allows finding the steady-state value of a function from its transform. It states \(\lim_{t \to \infty} f(t) = \lim_{s \to 0} sF(s)\), provided the limit exists and the stability condition on the poles of \(sF(s)\) is met.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Advanced mathematical methods</em>. Cambridge University Press. (p. 389)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-47">
+            <div class="question-title">Question 47: The Initial Value Theorem states that \(\lim_{t \to 0^+} f(t) = ?\)</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question47" value="0"> \(\lim_{s \to \infty} sF(s)\)</label>
+                <label>B. <input type="radio" name="question47" value="1"> \(\lim_{s \to 0} F(s)\)</label>
+                <label>C. <input type="radio" name="question47" value="2"> \(\lim_{s \to 0} sF(s)\)</label>
+                <label>D. <input type="radio" name="question47" value="3"> \(\lim_{s \to \infty} F(s)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Initial Value Theorem allows finding the initial value of a function from its transform. It states \(\lim_{t \to 0^+} f(t) = \lim_{s \to \infty} sF(s)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Advanced mathematical methods</em>. Cambridge University Press. (p. 390)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-48">
+            <div class="question-title">Question 48: Find the Laplace transform of \(f(t) = t^2\cos(t)\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question48" value="0"> \(\frac{2s(s^2-3)}{(s^2+1)^3}\)</label>
+                <label>B. <input type="radio" name="question48" value="1"> \(\frac{2s(3-s^2)}{(s^2+1)^3}\)</label>
+                <label>C. <input type="radio" name="question48" value="2"> \(\frac{s^2-2}{(s^2+1)^3}\)</label>
+                <label>D. <input type="radio" name="question48" value="3"> \(\frac{2s^3-6s}{(s^2+1)^4}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We use the property \(\mathcal{L}\{t^n f(t)\} = (-1)^n \frac{d^n}{ds^n}F(s)\). Here \(n=2\) and \(f(t)=\cos(t)\), so \(F(s) = \frac{s}{s^2+1}\). We need to compute \(\frac{d^2}{ds^2}(\frac{s}{s^2+1})\). The first derivative is \(\frac{(s^2+1)-s(2s)}{(s^2+1)^2} = \frac{1-s^2}{(s^2+1)^2}\). The second derivative is \(\frac{-2s(s^2+1)^2 - (1-s^2)2(s^2+1)(2s)}{(s^2+1)^4} = \frac{-2s(s^2+1) - 4s(1-s^2)}{(s^2+1)^3} = \frac{-2s^3-2s-4s+4s^3}{(s^2+1)^3} = \frac{2s^3-6s}{(s^2+1)^3} = \frac{2s(s^2-3)}{(s^2+1)^3}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-49">
+            <div class="question-title">Question 49: Evaluate \(B(4, 5)\) using Gamma functions.</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question49" value="0"> \(1/60\)</label>
+                <label>B. <input type="radio" name="question49" value="1"> \(1/280\)</label>
+                <label>C. <input type="radio" name="question49" value="2"> \(1/140\)</label>
+                <label>D. <input type="radio" name="question49" value="3"> \(1/12\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the formula \(B(p,q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\). For integers, \(\Gamma(n)=(n-1)!\). We have \(B(4,5) = \frac{\Gamma(4)\Gamma(5)}{\Gamma(9)} = \frac{3! \cdot 4!}{8!} = \frac{6 \cdot 24}{40320} = \frac{144}{40320} = \frac{1}{280}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 392)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-50">
+            <div class="question-title">Question 50: The Laplace transform is a linear operator.</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question50" value="0"> True</label>
+                <label>B. <input type="radio" name="question50" value="1"> False</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> True. The Laplace transform satisfies the property of linearity, which means \(\mathcal{L}\{\alpha f(t) + \beta g(t)\} = \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}\). This follows directly from the linearity of integration.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 223)</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="controls">
+        <button onclick="clearProgress()">Clear All Answers</button>
+    </div>
+
+    <script>
+        function handleAnswer() {
+            const questionContainers = document.querySelectorAll('.question-container');
+            questionContainers.forEach((container, index) => {
+                const questionIndex = index + 1;
+                const radios = container.querySelectorAll(`input[name="question${questionIndex}"]`);
+                const explanationDiv = container.querySelector('.explanation');
+                const optionsDiv = container.querySelector('.options');
+                const correctValue = parseInt(optionsDiv.dataset.correctAnswer);
+
+                radios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        const selectedValue = parseInt(this.value);
+                        const correctLabel = String.fromCharCode(65 + correctValue);
+
+                        // Add correct answer label if it doesn't exist
+                        if (!explanationDiv.querySelector('.correct-answer-label')) {
+                            const correctAnswerEl = document.createElement('p');
+                            correctAnswerEl.innerHTML = `<strong>Correct Answer: ${correctLabel}</strong>`;
+                            correctAnswerEl.classList.add('correct-answer-label');
+                            explanationDiv.prepend(correctAnswerEl);
+                        }
+
+                        explanationDiv.style.display = 'block';
+                        if (selectedValue === correctValue) {
+                            explanationDiv.classList.remove('incorrect');
+                            explanationDiv.classList.add('correct');
+                        } else {
+                            explanationDiv.classList.remove('correct');
+                            explanationDiv.classList.add('incorrect');
+                        }
+                        saveProgress();
+                    });
+                });
+            });
+        }
+
+        // Cookie functions
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function saveProgress() {
+            const answers = {};
+            const questionContainers = document.querySelectorAll('.question-container');
+            questionContainers.forEach((container, index) => {
+                const questionIndex = index + 1;
+                const radios = document.getElementsByName(`question${questionIndex}`);
+                for (let j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        answers[questionIndex] = j;
+                        break;
+                    }
+                }
+            });
+            setCookie('mt2176-quiz-answers', JSON.stringify(answers), 7);
+        }
+
+        function loadProgress() {
+            const savedAnswers = getCookie('mt2176-quiz-answers');
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const questionId in answers) {
+                    const answerIndex = answers[questionId];
+                    const radios = document.getElementsByName(`question${questionId}`);
+                    if (radios && radios[answerIndex]) {
+                        radios[answerIndex].checked = true;
+                        // Trigger change event to show explanation
+                        radios[answerIndex].dispatchEvent(new Event('change'));
+                    }
+                }
+            }
+        }
+
+        function clearProgress() {
+            setCookie('mt2176-quiz-answers', '', -1);
+            location.reload();
+        }
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            handleAnswer();
+            loadProgress();
+            // MathJax typeset
+            if (window.MathJax) {
+                window.MathJax.typeset();
+            }
+        });
+    </script>
+
+</body>
+</html>

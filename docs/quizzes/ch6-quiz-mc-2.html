@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT2176 Further Calculus - Chapter 6 Quiz (Set 2)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #005a9c;
+        }
+        .question-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9f5ff;
+            border-left: 5px solid #005a9c;
+        }
+        .explanation.correct {
+            border-left-color: #28a745;
+            background-color: #e9fde9;
+        }
+        .explanation.incorrect {
+            border-left-color: #dc3545;
+            background-color: #fde9e9;
+        }
+        .source {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MT2176 Further Calculus - Chapter 6 Quiz (Set 2)</h1>
+    <h2>Laplace Transforms</h2>
+
+    <div id="quiz-container">
+        
+        <div class="question-container" id="q-container-1">
+            <div class="question-title">Question 1: Find \(\mathcal{L}\{e^{-t}\sin^2(t)\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question1" value="0"> \(\frac{1}{2(s+1)} - \frac{s+1}{2((s+1)^2+4)}\)</label>
+                <label>B. <input type="radio" name="question1" value="1"> \(\frac{1}{s+1} - \frac{s+1}{(s+1)^2+4}\)</label>
+                <label>C. <input type="radio" name="question1" value="2"> \(\frac{1}{2(s+1)} - \frac{s+1}{2((s+1)^2+4)}\)</label>
+                <label>D. <input type="radio" name="question1" value="3"> \(\frac{1}{2s} - \frac{s}{2(s^2+4)}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> First, use the identity \(\sin^2(t) = \frac{1-\cos(2t)}{2}\). So, \(f(t) = \frac{1}{2} - \frac{1}{2}\cos(2t)\). The Laplace transform is \(F(s) = \frac{1}{2s} - \frac{1}{2}\frac{s}{s^2+4}\). Now apply the first shifting theorem for \(e^{-t}f(t)\) (so \(a=-1\)), which means we replace \(s\) with \(s+1\). This gives \(\frac{1}{2(s+1)} - \frac{1}{2}\frac{s+1}{(s+1)^2+4}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-2">
+            <div class="question-title">Question 2: Using the Final Value Theorem, find the final value of \(f(t)\) if \(F(s) = \frac{1}{s(s^2+2s+2)}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question2" value="0"> \(1/2\)</label>
+                <label>B. <input type="radio" name="question2" value="1"> \(1\)</label>
+                <label>C. <input type="radio" name="question2" value="2"> \(0\)</label>
+                <label>D. <input type="radio" name="question2" value="3"> The theorem is not applicable.</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Final Value Theorem states \(\lim_{t \to \infty} f(t) = \lim_{s \to 0} sF(s)\). The poles of \(sF(s)\) are the roots of \(s^2+2s+2=0\), which are \(s = -1 \pm i\). Since these are in the left half-plane, the theorem is applicable. \(\lim_{s \to 0} s \frac{1}{s(s^2+2s+2)} = \lim_{s \to 0} \frac{1}{s^2+2s+2} = \frac{1}{2}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Advanced mathematical methods</em>. Cambridge University Press. (p. 389)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-3">
+            <div class="question-title">Question 3: Find \(\mathcal{L}^{-1}\{\frac{1}{s^{3/2}}\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question3" value="0"> \(\frac{1}{2\sqrt{\pi t}}\)</label>
+                <label>B. <input type="radio" name="question3" value="1"> \(\sqrt{t/\pi}\)</label>
+                <label>C. <input type="radio" name="question3" value="2"> \(2\sqrt{t}\)</label>
+                <label>D. <input type="radio" name="question3" value="3"> \(2\sqrt{t/\pi}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We use the formula \(\mathcal{L}\{t^\alpha\} = \frac{\Gamma(\alpha+1)}{s^{\alpha+1}}\). We want to match \(\frac{1}{s^{3/2}}\), so \(\alpha+1 = 3/2 \Rightarrow \alpha = 1/2\). Then \(\mathcal{L}\{t^{1/2}\} = \frac{\Gamma(3/2)}{s^{3/2}} = \frac{\frac{1}{2}\Gamma(1/2)}{s^{3/2}} = \frac{\sqrt{\pi}}{2s^{3/2}}\). To get the desired inverse transform, we must have \(\mathcal{L}^{-1}\{\frac{1}{s^{3/2}}\} = \frac{2}{\sqrt{\pi}} \mathcal{L}^{-1}\{\frac{\sqrt{\pi}}{2s^{3/2}}\} = \frac{2}{\sqrt{\pi}} t^{1/2} = 2\sqrt{t/\pi}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 394)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-4">
+            <div class="question-title">Question 4: Solve the differential equation \(y'' - 2y' + y = e^t\) with \(y(0)=0, y'(0)=0\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question4" value="0"> \(t e^t\)</label>
+                <label>B. <input type="radio" name="question4" value="1"> \(\frac{1}{2}t^2 e^t\)</label>
+                <label>C. <input type="radio" name="question4" value="2"> \(t^2 e^t\)</label>
+                <label>D. <input type="radio" name="question4" value="3"> \(e^t - e^{-t}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Taking the Laplace transform gives \(s^2Y - 2sY + Y = \frac{1}{s-1}\). So, \(Y(s)(s-1)^2 = \frac{1}{s-1} \Rightarrow Y(s) = \frac{1}{(s-1)^3}\). We know \(\mathcal{L}\{t^2\} = \frac{2}{s^3}\). So \(\mathcal{L}^{-1}\{\frac{1}{s^3}\} = \frac{t^2}{2}\). Using the first shifting theorem, \(\mathcal{L}^{-1}\{\frac{1}{(s-1)^3}\} = \frac{1}{2}t^2 e^t\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 234)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-5">
+            <div class="question-title">Question 5: What is the convolution \((\cos(t) * \sin(t))(t)\)?</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question5" value="0"> \(\frac{1}{2}t\cos(t)\)</label>
+                <label>B. <input type="radio" name="question5" value="1"> \(\frac{1}{2}\sin(t)\)</label>
+                <label>C. <input type="radio" name="question5" value="2"> \(\frac{1}{2}t\sin(t)\)</label>
+                <label>D. <input type="radio" name="question5" value="3"> \(\frac{1}{2}\cos(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We can use the convolution theorem. \(\mathcal{L}\{\cos(t)\} = \frac{s}{s^2+1}\) and \(\mathcal{L}\{\sin(t)\} = \frac{1}{s^2+1}\). The transform of the convolution is their product: \(\frac{s}{(s^2+1)^2}\). We know from the property \(\mathcal{L}\{tf(t)\} = -F'(s)\) that \(\mathcal{L}\{t\sin(t)\} = \frac{2s}{(s^2+1)^2}\). Therefore, the inverse transform of \(\frac{s}{(s^2+1)^2}\) is \(\frac{1}{2}t\sin(t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 394)</p>
+            </div>
+        </div>
+        
+        <div class="question-container" id="q-container-6">
+            <div class="question-title">Question 6: Find \(\mathcal{L}^{-1}\{\frac{s e^{-s}}{s^2+\pi^2}\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question6" value="0"> \(\cos(\pi(t-1))u(t-1)\)</label>
+                <label>B. <input type="radio" name="question6" value="1"> \(\sin(\pi t)u(t-1)\)</label>
+                <label>C. <input type="radio" name="question6" value="2"> \(-\cos(\pi t)u(t-1)\)</label>
+                <label>D. <input type="radio" name="question6" value="3"> \(\cos(\pi(t-1))u(t-1)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This requires the second shifting theorem. Let \(F(s) = \frac{s}{s^2+\pi^2}\), so \(f(t) = \cos(\pi t)\). The transform is \(e^{-s}F(s)\) with \(a=1\). The inverse is \(f(t-1)u(t-1) = \cos(\pi(t-1))u(t-1)\). Note that \(\cos(\pi(t-1)) = \cos(\pi t - \pi) = -\cos(\pi t)\). So an equivalent answer is \(-\cos(\pi t)u(t-1)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-7">
+            <div class="question-title">Question 7: Evaluate \(\int_0^\infty t e^{-3t} \sin(t) dt\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question7" value="0"> \(3/50\)</label>
+                <label>B. <input type="radio" name="question7" value="1"> \(1/25\)</label>
+                <label>C. <input type="radio" name="question7" value="2"> \(1/10\)</label>
+                <label>D. <input type="radio" name="question7" value="3"> \(3/100\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This integral is \(\mathcal{L}\{t\sin(t)\}\) evaluated at \(s=3\). First, find \(\mathcal{L}\{\sin(t)\} = F(s) = \frac{1}{s^2+1}\). Then \(\mathcal{L}\{t\sin(t)\} = -F'(s) = -\frac{d}{ds}(\frac{1}{s^2+1}) = \frac{2s}{(s^2+1)^2}\). Now substitute \(s=3\): \(\frac{2(3)}{(3^2+1)^2} = \frac{6}{10^2} = \frac{6}{100} = \frac{3}{50}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-8">
+            <div class="question-title">Question 8: Find \(\mathcal{L}^{-1}\{\text{arccot}(s)\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question8" value="0"> \(\frac{\cos(t)}{t}\)</label>
+                <label>B. <input type="radio" name="question8" value="1"> \(\frac{\sin(t)}{t}\)</label>
+                <label>C. <input type="radio" name="question8" value="2"> \(t\sin(t)\)</label>
+                <label>D. <input type="radio" name="question8" value="3"> \(t\cos(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(F(s) = \text{arccot}(s)\). We use the property \(\mathcal{L}\{tf(t)\} = -F'(s)\). The derivative is \(F'(s) = -\frac{1}{1+s^2}\). So, \(\mathcal{L}\{tf(t)\} = \frac{1}{1+s^2}\). The inverse transform of this is \(\sin(t)\). Therefore, \(tf(t) = \sin(t) \Rightarrow f(t) = \frac{\sin(t)}{t}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402, Problem 12)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-9">
+            <div class="question-title">Question 9: The convolution operation \(*\) is associative, meaning \((f*g)*h = f*(g*h)\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question9" value="0"> True</label>
+                <label>B. <input type="radio" name="question9" value="1"> False</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> True. The convolution operation is associative. This can be proven by applying the Convolution Theorem: \(\mathcal{L}\{(f*g)*h\} = \mathcal{L}\{f*g\}\mathcal{L}\{h\} = (F(s)G(s))H(s)\). And \(\mathcal{L}\{f*(g*h)\} = \mathcal{L}\{f\}\mathcal{L}\{g*h\} = F(s)(G(s)H(s))\). Since multiplication is associative, the transforms are equal, and thus the functions are equal.</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 236)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-10">
+            <div class="question-title">Question 10: Find \(\mathcal{L}^{-1}\{\frac{s^2}{(s^2+4)^2}\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question10" value="0"> \(\frac{1}{4}t\cos(2t) + \frac{1}{8}\sin(2t)\)</label>
+                <label>B. <input type="radio" name="question10" value="1"> \(\frac{1}{2}t\cos(2t) - \frac{1}{4}\sin(2t)\)</label>
+                <label>C. <input type="radio" name="question10" value="2"> \(\frac{1}{4}t\cos(2t) + \frac{1}{8}\sin(2t)\)</label>
+                <label>D. <input type="radio" name="question10" value="3"> \(\frac{1}{2}t\sin(2t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use the convolution theorem with \(F(s) = G(s) = \frac{s}{s^2+4}\). Then \(f(t) = g(t) = \cos(2t)\). The inverse transform is \((f*g)(t) = \int_0^t \cos(2u)\cos(2(t-u))du\). Using the identity \(\cos(A)\cos(B) = \frac{1}{2}[\cos(A-B)+\cos(A+B)]\), the integral becomes \(\frac{1}{2}\int_0^t [\cos(4u-2t) + \cos(2t)]du = \frac{1}{2}[\frac{1}{4}\sin(4u-2t) + u\cos(2t)]_0^t = \frac{1}{2}[(\frac{1}{4}\sin(2t) + t\cos(2t)) - (\frac{1}{4}\sin(-2t))] = \frac{1}{2}[\frac{1}{2}\sin(2t) + t\cos(2t)] = \frac{1}{4}t\cos(2t) + \frac{1}{8}\sin(2t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 394)</p>
+            </div>
+        </div>
+        
+        <div class="question-container" id="q-container-11">
+            <div class="question-title">Question 11: Find \(\mathcal{L}\{\frac{1-e^{-t}}{t}\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question11" value="0"> \(\ln(s+1)\)</label>
+                <label>B. <input type="radio" name="question11" value="1"> \(\ln(s) - \ln(s-1)\)</label>
+                <label>C. <input type="radio" name="question11" value="2"> \(\ln(s+1) - \ln(s)\)</label>
+                <label>D. <input type="radio" name="question11" value="3"> \(\ln(s/(s-1))\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use the property \(\mathcal{L}\{\frac{f(t)}{t}\} = \int_s^\infty F(u)du\). Here \(f(t) = 1 - e^{-t}\), so \(F(u) = \frac{1}{u} - \frac{1}{u+1}\). The integral is \(\int_s^\infty (\frac{1}{u} - \frac{1}{u+1})du = [\ln(u) - \ln(u+1)]_s^\infty = [\ln(\frac{u}{u+1})]_s^\infty\). As \(u \to \infty\), \(\ln(\frac{u}{u+1}) \to \ln(1) = 0\). So the result is \(0 - \ln(\frac{s}{s+1}) = \ln((\frac{s}{s+1})^{-1}) = \ln(\frac{s+1}{s}) = \ln(s+1) - \ln(s)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-12">
+            <div class="question-title">Question 12: What is the relationship between the Beta function and the convolution of powers of t?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question12" value="0"> \(\mathcal{L}\{t^p * t^q\} = \frac{\Gamma(p+1)\Gamma(q+1)}{s^{p+q+2}}\)</label>
+                <label>B. <input type="radio" name="question12" value="1"> \(t^p * t^q = B(p,q) t^{p+q}\)</label>
+                <label>C. <input type="radio" name="question12" value="2"> \(t^p * t^q = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)} t^{p+q-1}\)</label>
+                <label>D. <input type="radio" name="question12" value="3"> \(t^p * t^q = B(p+1,q+1) t^{p+q+1}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the convolution theorem, \(\mathcal{L}\{t^p * t^q\} = \mathcal{L}\{t^p\} \mathcal{L}\{t^q\} = \frac{\Gamma(p+1)}{s^{p+1}} \frac{\Gamma(q+1)}{s^{q+1}} = \frac{\Gamma(p+1)\Gamma(q+1)}{s^{p+q+2}}\). Taking the inverse transform, we get \(t^p * t^q = \frac{\Gamma(p+1)\Gamma(q+1)}{\Gamma(p+q+2)} t^{p+q+1} = B(p+1,q+1)t^{p+q+1}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 240)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-13">
+            <div class="question-title">Question 13: Find \(\mathcal{L}^{-1}\{\frac{1}{(s^2+1)(s^2+4)}\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question13" value="0"> \(\sin(t) - \sin(2t)\)</label>
+                <label>B. <input type="radio" name="question13" value="1"> \(\frac{1}{3}\sin(t) - \frac{1}{6}\sin(2t)\)</label>
+                <label>C. <input type="radio" name="question13" value="2"> \(\cos(t) - \cos(2t)\)</label>
+                <label>D. <input type="radio" name="question13" value="3"> \(\frac{1}{3}\sin(t) - \frac{1}{6}\sin(2t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use partial fractions for \(s^2\). Let \(x=s^2\). \(\frac{1}{(x+1)(x+4)} = \frac{A}{x+1} + \frac{B}{x+4}\). This gives \(A=1/3, B=-1/3\). So the transform is \(\frac{1}{3}\frac{1}{s^2+1} - \frac{1}{3}\frac{1}{s^2+4}\). The inverse transform is \(\frac{1}{3}\sin(t) - \frac{1}{3} \frac{1}{2}\sin(2t) = \frac{1}{3}\sin(t) - \frac{1}{6}\sin(2t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-14">
+            <div class="question-title">Question 14: If \(f(t)\) is a periodic function with period \(T\), what is \(\mathcal{L}\{f(t)\}\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question14" value="0"> \(\frac{\int_0^T e^{-st}f(t)dt}{1-e^{-sT}}\)</label>
+                <label>B. <input type="radio" name="question14" value="1"> \(\frac{\int_0^\infty e^{-st}f(t)dt}{1-e^{-sT}}\)</label>
+                <label>C. <input type="radio" name="question14" value="2"> \((1-e^{-sT})\int_0^T e^{-st}f(t)dt\)</label>
+                <label>D. <input type="radio" name="question14" value="3"> \(\int_0^T e^{-st}f(t)dt\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> For a periodic function with period \(T\), the Laplace transform is given by the integral over one period divided by \(1-e^{-sT}\). This accounts for all subsequent periods of the function.</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-15">
+            <div class="question-title">Question 15: Find the Laplace transform of the square wave \(f(t) = 1\) for \(0 \le t < 1\) and \(f(t) = -1\) for \(1 \le t < 2\), with period \(T=2\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question15" value="0"> \(\frac{1-e^{-s}}{s(1+e^{-s})}\)</label>
+                <label>B. <input type="radio" name="question15" value="1"> \(\frac{(1-e^{-s})^2}{s(1-e^{-2s})}\)</label>
+                <label>C. <input type="radio" name="question15" value="2"> \(\frac{1}{s}\tanh(s/2)\)</label>
+                <label>D. <input type="radio" name="question15" value="3"> \(\frac{1-e^{-s}}{s(1-e^{-2s})}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We calculate \(\int_0^2 e^{-st}f(t)dt = \int_0^1 e^{-st}(1)dt + \int_1^2 e^{-st}(-1)dt = [-\frac{1}{s}e^{-st}]_0^1 - [-\frac{1}{s}e^{-st}]_1^2 = (\frac{1-e^{-s}}{s}) - (\frac{e^{-s}-e^{-2s}}{s}) = \frac{1-2e^{-s}+e^{-2s}}{s} = \frac{(1-e^{-s})^2}{s}\). Then we divide by \((1-e^{-2s})\). This can be simplified to \(\frac{1}{s}\tanh(s/2)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 398)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-16">
+            <div class="question-title">Question 16: Find \(\mathcal{L}^{-1}\{\frac{s^2-a^2}{(s^2+a^2)^2}\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question16" value="0"> \(t\sin(at)\)</label>
+                <label>B. <input type="radio" name="question16" value="1"> \(\frac{t}{2a}\sin(at)\)</label>
+                <label>C. <input type="radio" name="question16" value="2"> \(t\cos(at)\)</label>
+                <label>D. <input type="radio" name="question16" value="3"> \(\frac{t}{2a}\cos(at)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is a standard transform pair, often derived using the multiplication by \(t\) property. We know \(\mathcal{L}\{\cos(at)\} = \frac{s}{s^2+a^2}\). Differentiating with respect to \(s\) gives \(\frac{d}{ds}(\frac{s}{s^2+a^2}) = \frac{(s^2+a^2)-s(2s)}{(s^2+a^2)^2} = \frac{a^2-s^2}{(s^2+a^2)^2}\). Since \(\mathcal{L}\{t\cos(at)\} = -\frac{d}{ds}F(s)\), we have \(\mathcal{L}\{t\cos(at)\} = -\frac{a^2-s^2}{(s^2+a^2)^2} = \frac{s^2-a^2}{(s^2+a^2)^2}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-17">
+            <div class="question-title">Question 17: Evaluate \(\int_0^1 (\ln x)^3 dx\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question17" value="0"> \(-3\)</label>
+                <label>B. <input type="radio" name="question17" value="1"> \(6\)</label>
+                <label>C. <input type="radio" name="question17" value="2"> Not defined</label>
+                <label>D. <input type="radio" name="question17" value="3"> \(-6\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(x = e^{-t}\), so \(dx = -e^{-t}dt\) and \(\ln x = -t\). When \(x=1, t=0\). When \(x \to 0, t \to \infty\). The integral becomes \(\int_\infty^0 (-t)^3 (-e^{-t})dt = \int_0^\infty (-t^3)(-e^{-t})dt = \int_0^\infty t^3 e^{-t} dt = \Gamma(4) = 3! = 6\). Wait, there is a sign error. \(\int_\infty^0 (-t)^3 (-e^{-t})dt = -\int_0^\infty (-t)^3 e^{-t} dt = \int_0^\infty t^3 e^{-t} dt = \Gamma(4) = 6\). Let me re-check. The substitution is correct. \(\int_0^1 (\ln x)^3 dx = [x(\ln x)^3]_0^1 - \int_0^1 x \cdot 3(\ln x)^2 \frac{1}{x} dx = 0 - 3\int_0^1 (\ln x)^2 dx\). Repeating this gives \(-3[-2\int_0^1 \ln x dx] = 6[x\ln x - x]_0^1 = 6(0-1) = -6\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 393)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-18">
+            <div class="question-title">Question 18: Find \(\mathcal{L}^{-1}\{\frac{s^3}{s^4+4}\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question18" value="0"> \(\cos(t)\cosh(t)\)</label>
+                <label>B. <input type="radio" name="question18" value="1"> \(\sin(t)\sinh(t)\)</label>
+                <label>C. <input type="radio" name="question18" value="2"> \(\cos(t)\sinh(t)\)</label>
+                <label>D. <input type="radio" name="question18" value="3"> \(\sin(t)\cosh(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> First, factor the denominator using Sophie Germain's identity: \(s^4+4 = (s^2+2s+2)(s^2-2s+2)\). Then use partial fractions: \(\frac{s^3}{s^4+4} = \frac{As+B}{s^2+2s+2} + \frac{Cs+D}{s^2-2s+2}\). This is complicated. A standard result is \(\mathcal{L}\{\cos(at)\cosh(at)\} = \frac{s^3}{s^4+4a^4}\). For \(a=1\), we get the desired transform.</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (Table of Laplace Transforms)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-19">
+            <div class="question-title">Question 19: Find \(\mathcal{L}\{\text{erf}(\sqrt{t})\}\), where erf is the error function.</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question19" value="0"> \(\frac{1}{s\sqrt{s+1}}\)</label>
+                <label>B. <input type="radio" name="question19" value="1"> \(\frac{1}{s(s+1)}\)</label>
+                <label>C. <input type="radio" name="question19" value="2"> \(\frac{1}{s\sqrt{s+1}}\)</label>
+                <label>D. <input type="radio" name="question19" value="3"> \(\frac{1}{\sqrt{s}(s-1)}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The error function is defined as \(\text{erf}(t) = \frac{2}{\sqrt{\pi}}\int_0^t e^{-u^2}du\). A standard, but non-trivial, Laplace transform pair is \(\mathcal{L}\{\text{erf}(\sqrt{t})\} = \frac{1}{s\sqrt{s+1}}\). This is often found in tables.</p>
+                <p class="source">Source: Standard Laplace Transform Tables.</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-20">
+            <div class="question-title">Question 20: Solve the system of differential equations: \(x' = -y, y' = x\) with \(x(0)=1, y(0)=0\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question20" value="0"> \(x(t) = \cos(t), y(t) = \sin(t)\)</label>
+                <label>B. <input type="radio" name="question20" value="1"> \(x(t) = \sin(t), y(t) = \cos(t)\)</label>
+                <label>C. <input type="radio" name="question20" value="2"> \(x(t) = e^{-t}, y(t) = e^t\)</label>
+                <label>D. <input type="radio" name="question20" value="3"> \(x(t) = \cosh(t), y(t) = -\sinh(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Take the Laplace transform of both equations: \(sX(s) - x(0) = -Y(s)\) and \(sY(s) - y(0) = X(s)\). Substitute initial conditions: \(sX(s) - 1 = -Y(s)\) and \(sY(s) = X(s)\). Substitute the second into the first: \(s(sY(s)) - 1 = -Y(s) \Rightarrow s^2Y(s) + Y(s) = 1 \Rightarrow Y(s) = \frac{1}{s^2+1}\). So, \(y(t) = \sin(t)\). Then \(X(s) = sY(s) = \frac{s}{s^2+1}\), so \(x(t) = \cos(t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 400)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-21">
+            <div class="question-title">Question 21: Find \(\mathcal{L}^{-1}\{\frac{s}{(s+1)^5}\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question21" value="0"> \(e^{-t}(\frac{t^3}{6} - \frac{t^4}{24})\)</label>
+                <label>B. <input type="radio" name="question21" value="1"> \(e^{-t}(\frac{t^3}{6} - \frac{t^4}{24})\)</label>
+                <label>C. <input type="radio" name="question21" value="2"> \(e^{-t}(\frac{t^4}{24} - \frac{t^5}{120})\)</label>
+                <label>D. <input type="radio" name="question21" value="3"> \(e^{-t}(\frac{t^3}{6} + \frac{t^4}{24})\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(s+1 = u\), so \(s = u-1\). The transform becomes \(\frac{u-1}{u^5} = \frac{1}{u^4} - \frac{1}{u^5}\). The inverse transform in terms of \(u\) is \(\frac{t^3}{3!} - \frac{t^4}{4!} = \frac{t^3}{6} - \frac{t^4}{24}\). Now apply the shifting theorem with \(a=-1\) to get \(e^{-t}(\frac{t^3}{6} - \frac{t^4}{24})\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-22">
+            <div class="question-title">Question 22: What is the value of \(\int_0^\pi \sin^4(x) dx\)?</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question22" value="0"> \(\frac{3\pi}{16}\)</label>
+                <label>B. <input type="radio" name="question22" value="1"> \(\frac{3\pi}{4}\)</label>
+                <label>C. <input type="radio" name="question22" value="2"> \(\frac{3\pi}{8}\)</label>
+                <label>D. <input type="radio" name="question22" value="3"> \(\frac{\pi}{4}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We can use the Beta function. Let \(t = \sin^2(x)\). The integral is \(2\int_0^{\pi/2} \sin^4(x) dx\). Using the formula \(\int_0^{\pi/2} \sin^{2m-1}(x)\cos^{2n-1}(x)dx = \frac{1}{2}B(m,n)\), we have \(2m-1=4 \Rightarrow m=5/2\) and \(2n-1=0 \Rightarrow n=1/2\). So the integral is \(2 \cdot \frac{1}{2} B(5/2, 1/2) = \frac{\Gamma(5/2)\Gamma(1/2)}{\Gamma(3)} = \frac{(\frac{3}{2}\frac{1}{2}\sqrt{\pi})\sqrt{\pi}}{2!} = \frac{3\pi/4}{2} = \frac{3\pi}{8}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 392)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-23">
+            <div class="question-title">Question 23: If \(\mathcal{L}\{f(t)\} = F(s)\), what is \(\mathcal{L}\{f(at)\}\) for \(a>0\)?</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question23" value="0"> \(\frac{1}{a}F(\frac{s}{a})\)</label>
+                <label>B. <input type="radio" name="question23" value="1"> \(aF(as)\)</label>
+                <label>C. <input type="radio" name="question23" value="2"> \(F(\frac{s}{a})\)</label>
+                <label>D. <input type="radio" name="question23" value="3"> \(\frac{1}{a}F(as)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is the change of scale theorem. \(\mathcal{L}\{f(at)\} = \int_0^\infty e^{-st}f(at)dt\). Let \(u=at\), so \(t=u/a\) and \(dt = du/a\). The integral becomes \(\int_0^\infty e^{-s(u/a)}f(u)\frac{du}{a} = \frac{1}{a}\int_0^\infty e^{-(s/a)u}f(u)du = \frac{1}{a}F(\frac{s}{a})\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 228)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-24">
+            <div class="question-title">Question 24: Find \(\mathcal{L}^{-1}\{\frac{1}{s^2+s+1}\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question24" value="0"> \(e^{-t/2}\sin(\frac{\sqrt{3}}{2}t)\)</label>
+                <label>B. <input type="radio" name="question24" value="1"> \(\frac{2}{\sqrt{3}}e^{-t/2}\cos(\frac{\sqrt{3}}{2}t)\)</label>
+                <label>C. <input type="radio" name="question24" value="2"> \(e^{-t/2}\cos(\frac{\sqrt{3}}{2}t)\)</label>
+                <label>D. <input type="radio" name="question24" value="3"> \(\frac{2}{\sqrt{3}}e^{-t/2}\sin(\frac{\sqrt{3}}{2}t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Complete the square in the denominator: \(s^2+s+1 = (s+1/2)^2 + 3/4\). The transform is \(\frac{1}{(s+1/2)^2 + (\sqrt{3}/2)^2}\). This matches the form for a shifted sine. We need to adjust the numerator: \(\frac{2}{\sqrt{3}} \frac{\sqrt{3}/2}{(s+1/2)^2 + (\sqrt{3}/2)^2}\). The inverse transform is \(\frac{2}{\sqrt{3}}e^{-t/2}\sin(\frac{\sqrt{3}}{2}t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-25">
+            <div class="question-title">Question 25: Find the Laplace transform of \(f(t) = \int_0^t \frac{\sin(x)}{x} dx\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question25" value="0"> \(\frac{\arctan(s)}{s}\)</label>
+                <label>B. <input type="radio" name="question25" value="1"> \(\frac{\text{arccot}(s)}{s}\)</label>
+                <label>C. <input type="radio" name="question25" value="2"> \(\frac{\ln(s^2+1)}{s}\)</label>
+                <label>D. <input type="radio" name="question25" value="3"> \(\frac{\arctan(s)}{s^2}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(g(t) = \frac{\sin(t)}{t}\). We know \(\mathcal{L}\{g(t)\} = G(s) = \text{arccot}(s)\). The given function is \(\int_0^t g(x)dx\). Using the transform of an integral property, \(\mathcal{L}\{\int_0^t g(x)dx\} = \frac{G(s)}{s} = \frac{\text{arccot}(s)}{s}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-26">
+            <div class="question-title">Question 26: Find \(\mathcal{L}\{\delta(t)\} \), the Laplace transform of the Dirac delta function at t=0.</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question26" value="0"> \(1\)</label>
+                <label>B. <input type="radio" name="question26" value="1"> \(0\)</label>
+                <label>C. <input type="radio" name="question26" value="2"> \(1/s\)</label>
+                <label>D. <input type="radio" name="question26" value="3"> It is not defined.</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the sifting property of the delta function, \(\mathcal{L}\{\delta(t)\} = \int_0^\infty e^{-st}\delta(t)dt = e^{-s(0)} = 1\). This is a fundamental result.</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 396)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-27">
+            <div class="question-title">Question 27: Solve \(y' + y = \delta(t-1)\) with \(y(0)=0\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question27" value="0"> \(e^t u(t-1)\)</label>
+                <label>B. <input type="radio" name="question27" value="1"> \(e^{-(t+1)} u(t-1)\)</label>
+                <label>C. <input type="radio" name="question27" value="2"> \(e^{-(t-1)} u(t-1)\)</label>
+                <label>D. <input type="radio" name="question27" value="3"> \(e^{t-1} u(t-1)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Taking the Laplace transform gives \(sY(s) + Y(s) = e^{-s}\). So \(Y(s) = \frac{e^{-s}}{s+1}\). This is of the form \(e^{-as}F(s)\) with \(a=1\) and \(F(s) = \frac{1}{s+1}\). The inverse of \(F(s)\) is \(f(t) = e^{-t}\). By the second shifting theorem, the solution is \(y(t) = f(t-1)u(t-1) = e^{-(t-1)}u(t-1)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 396)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-28">
+            <div class="question-title">Question 28: Using the Initial Value Theorem, find the initial value of \(f(t)\) if \(F(s) = \frac{2s+3}{s^2+5s+4}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question28" value="0"> \(0\)</label>
+                <label>B. <input type="radio" name="question28" value="1"> \(2\)</label>
+                <label>C. <input type="radio" name="question28" value="2"> \(3/4\)</label>
+                <label>D. <input type="radio" name="question28" value="3"> \(\infty\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> The Initial Value Theorem states \(\lim_{t \to 0^+} f(t) = \lim_{s \to \infty} sF(s)\). We have \(\lim_{s \to \infty} s \frac{2s+3}{s^2+5s+4} = \lim_{s \to \infty} \frac{2s^2+3s}{s^2+5s+4}\). Dividing numerator and denominator by \(s^2\) gives \(\lim_{s \to \infty} \frac{2+3/s}{1+5/s+4/s^2} = 2\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Advanced mathematical methods</em>. Cambridge University Press. (p. 390)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-29">
+            <div class="question-title">Question 29: Find \(\mathcal{L}\{\frac{\cos(at) - \cos(bt)}{t}\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question29" value="0"> \(\frac{1}{2} \ln(\frac{s^2+a^2}{s^2+b^2})\)</label>
+                <label>B. <input type="radio" name="question29" value="1"> \(\ln(\frac{s^2+b^2}{s^2+a^2})\)</label>
+                <label>C. <input type="radio" name="question29" value="2"> \(\arctan(s/a) - \arctan(s/b)\)</label>
+                <label>D. <input type="radio" name="question29" value="3"> \(\frac{1}{2} \ln(\frac{s^2+b^2}{s^2+a^2})\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(f(t) = \cos(at) - \cos(bt)\). Then \(F(u) = \frac{u}{u^2+a^2} - \frac{u}{u^2+b^2}\). We compute \(\int_s^\infty F(u)du = [\frac{1}{2}\ln(u^2+a^2) - \frac{1}{2}\ln(u^2+b^2)]_s^\infty = \frac{1}{2}[\ln(\frac{u^2+a^2}{u^2+b^2})]_s^\infty\). As \(u \to \infty\), the term goes to \(\ln(1)=0\). So the result is \(-\frac{1}{2}\ln(\frac{s^2+a^2}{s^2+b^2})) = \frac{1}{2}\ln(\frac{s^2+b^2}{s^2+a^2})\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-30">
+            <div class="question-title">Question 30: Find \(\mathcal{L}^{-1}\{\ln(1+\frac{1}{s^2})\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question30" value="0"> \(\frac{2(1-\cos t)}{t}\)</label>
+                <label>B. <input type="radio" name="question30" value="1"> \(\frac{2(1-\sin t)}{t}\)</label>
+                <label>C. <input type="radio" name="question30" value="2"> \(2t(1-\cos t)\)</label>
+                <label>D. <input type="radio" name="question30" value="3"> \(\frac{1-\cos t}{t}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(F(s) = \ln(1+\frac{1}{s^2}) = \ln(\frac{s^2+1}{s^2}) = \ln(s^2+1) - 2\ln(s)\). Let \(f(t) = \mathcal{L}^{-1}\{F(s)\}\). Then \(\mathcal{L}\{tf(t)\} = -F'(s) = -(\frac{2s}{s^2+1} - \frac{2}{s}) = \frac{2}{s} - \frac{2s}{s^2+1}\). The inverse transform of this is \(2 - 2\cos(t)\). So, \(tf(t) = 2(1-\cos t)\), which means \(f(t) = \frac{2(1-\cos t)}{t}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402)</p>
+            </div>
+        </div>
+        
+        <div class="question-container" id="q-container-31">
+            <div class="question-title">Question 31: Find \(\mathcal{L}\{t^2\sin(t)\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question31" value="0"> \(\frac{2(3s^2-1)}{(s^2+1)^3}\)</label>
+                <label>B. <input type="radio" name="question31" value="1"> \(\frac{2(3s^2-1)}{(s^2+1)^3}\)</label>
+                <label>C. <input type="radio" name="question31" value="2"> \(\frac{6s^2-2}{(s^2+1)^4}\)</label>
+                <label>D. <input type="radio" name="question31" value="3"> \(\frac{2s(3-s^2)}{(s^2+1)^3}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use \(\mathcal{L}\{t^n f(t)\} = (-1)^n \frac{d^n}{ds^n}F(s)\) with \(n=2\) and \(f(t)=\sin(t)\). So \(F(s) = \frac{1}{s^2+1}\). We need \((-1)^2 \frac{d^2}{ds^2}(\frac{1}{s^2+1})\). The first derivative is \(\frac{-2s}{(s^2+1)^2}\). The second derivative is \(\frac{-2(s^2+1)^2 - (-2s)2(s^2+1)(2s)}{(s^2+1)^4} = \frac{-2(s^2+1) + 8s^2}{(s^2+1)^3} = \frac{6s^2-2}{(s^2+1)^3} = \frac{2(3s^2-1)}{(s^2+1)^3}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-32">
+            <div class="question-title">Question 32: Evaluate \(\int_0^\infty \frac{e^{-t} - e^{-3t}}{t} dt\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question32" value="0"> \(\ln(3)\)</label>
+                <label>B. <input type="radio" name="question32" value="1"> \(\ln(1/3)\)</label>
+                <label>C. <input type="radio" name="question32" value="2"> \(3\)</label>
+                <label>D. <input type="radio" name="question32" value="3"> \(1/3\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is the integral form of a Laplace transform. Specifically, \(\mathcal{L}\{\frac{f(t)}{t}\} = \int_s^\infty F(u)du\). The given integral is \(\mathcal{L}\{\frac{e^{-t} - e^{-3t}}{t}\}|_{s=0}\). Let \(g(t) = e^{-t} - e^{-3t}\), so \(G(u) = \frac{1}{u+1} - \frac{1}{u+3}\). The transform is \(\int_s^\infty (\frac{1}{u+1} - \frac{1}{u+3})du = [\ln(u+1)-\ln(u+3)]_s^\infty = [\ln(\frac{u+1}{u+3})]_s^\infty = 0 - \ln(\frac{s+1}{s+3}) = \ln(\frac{s+3}{s+1})\). Evaluating at \(s=0\) gives \(\ln(3)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-33">
+            <div class="question-title">Question 33: Find \(\mathcal{L}^{-1}\{\frac{1}{s^4-1}\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question33" value="0"> \(\frac{1}{2}(\cosh(t) - \cos(t))\)</label>
+                <label>B. <input type="radio" name="question33" value="1"> \(\frac{1}{2}(\sinh(t) - \sin(t))\)</label>
+                <label>C. <input type="radio" name="question33" value="2"> \(\frac{1}{2}(\cosh(t) - \cos(t))\)</label>
+                <label>D. <input type="radio" name="question33" value="3"> \(\frac{1}{2}(\sinh(t) + \sin(t))\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use partial fractions: \(\frac{1}{s^4-1} = \frac{1}{(s^2-1)(s^2+1)} = \frac{A}{s^2-1} + \frac{B}{s^2+1}\). This gives \(A=1/2, B=-1/2\). So we have \(\frac{1}{2}\frac{1}{s^2-1} - \frac{1}{2}\frac{1}{s^2+1}\). The inverse transform is \(\frac{1}{2}\sinh(t) - \frac{1}{2}\sin(t) = \frac{1}{2}(\sinh(t) - \sin(t))\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-34">
+            <div class="question-title">Question 34: Find \(\mathcal{L}\{t^{5/2}\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question34" value="0"> \(\frac{15\sqrt{\pi}}{8s^{7/2}}\)</label>
+                <label>B. <input type="radio" name="question34" value="1"> \(\frac{15\sqrt{\pi}}{8s^{7/2}}\)</label>
+                <label>C. <input type="radio" name="question34" value="2"> \(\frac{3\sqrt{\pi}}{4s^{5/2}}\)</label>
+                <label>D. <input type="radio" name="question34" value="3"> \(\frac{15}{8s^{7/2}}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use \(\mathcal{L}\{t^\alpha\} = \frac{\Gamma(\alpha+1)}{s^{\alpha+1}}\). Here \(\alpha = 5/2\). We need \(\Gamma(5/2+1) = \Gamma(7/2) = \frac{5}{2}\Gamma(5/2) = \frac{5}{2}\frac{3}{2}\frac{1}{2}\Gamma(1/2) = \frac{15}{8}\sqrt{\pi}\). So the transform is \(\frac{15\sqrt{\pi}/8}{s^{7/2}} = \frac{15\sqrt{\pi}}{8s^{7/2}}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 394)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-35">
+            <div class="question-title">Question 35: Find \(\mathcal{L}^{-1}\{\frac{e^{-3s}}{s^2-1}\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question35" value="0"> \(\sinh(t-3)u(t-3)\)</label>
+                <label>B. <input type="radio" name="question35" value="1"> \(\cosh(t-3)u(t-3)\)</label>
+                <label>C. <input type="radio" name="question35" value="2"> \(\sinh(t)u(t-3)\)</label>
+                <label>D. <input type="radio" name="question35" value="3"> \(\cosh(t)u(t-3)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use the second shifting theorem. \(F(s) = \frac{1}{s^2-1}\), so \(f(t) = \sinh(t)\). The transform is \(e^{-3s}F(s)\) with \(a=3\). The inverse is \(f(t-3)u(t-3) = \sinh(t-3)u(t-3)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-36">
+            <div class="question-title">Question 36: Find \(\mathcal{L}\{\int_0^t e^x dx\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question36" value="0"> \(\frac{1}{s-1}\)</label>
+                <label>B. <input type="radio" name="question36" value="1"> \(\frac{1}{s(s+1)}\)</label>
+                <label>C. <input type="radio" name="question36" value="2"> \(\frac{1}{s^2-s}\)</label>
+                <label>D. <input type="radio" name="question36" value="3"> \(\frac{1}{s(s-1)}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> First, evaluate the integral: \(\int_0^t e^x dx = [e^x]_0^t = e^t - 1\). Now find the Laplace transform of this result: \(\mathcal{L}\{e^t - 1\} = \frac{1}{s-1} - \frac{1}{s} = \frac{s - (s-1)}{s(s-1)} = \frac{1}{s(s-1)}\). Alternatively, use the transform of an integral property with \(f(t)=e^t\) and \(F(s)=\frac{1}{s-1}\). The transform is \(\frac{F(s)}{s} = \frac{1}{s(s-1)}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 226)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-37">
+            <div class="question-title">Question 37: Find \(\mathcal{L}^{-1}\{\frac{s+2}{s^3}\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question37" value="0"> \(t+t^2\)</label>
+                <label>B. <input type="radio" name="question37" value="1"> \(t+t^2\)</label>
+                <label>C. <input type="radio" name="question37" value="2"> \(1+2t\)</label>
+                <label>D. <input type="radio" name="question37" value="3"> \(t+2t^2\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Split the fraction: \(\frac{s+2}{s^3} = \frac{s}{s^3} + \frac{2}{s^3} = \frac{1}{s^2} + \frac{2}{s^3}\). The inverse transform is \(t + 2(\frac{t^2}{2!}) = t+t^2\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-38">
+            <div class="question-title">Question 38: Find \(\mathcal{L}\{t\cosh(3t)\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question38" value="0"> \(\frac{s^2+9}{(s^2-9)^2}\)</label>
+                <label>B. <input type="radio" name="question38" value="1"> \(\frac{s^2-9}{(s^2+9)^2}\)</label>
+                <label>C. <input type="radio" name="question38" value="2"> \(\frac{2s}{(s^2-9)^2}\)</label>
+                <label>D. <input type="radio" name="question38" value="3"> \(\frac{6s}{(s^2-9)^2}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(f(t) = \cosh(3t)\), so \(F(s) = \frac{s}{s^2-9}\). Then \(\mathcal{L}\{tf(t)\} = -F'(s) = -\frac{(s^2-9) - s(2s)}{(s^2-9)^2} = -\frac{-s^2-9}{(s^2-9)^2} = \frac{s^2+9}{(s^2-9)^2}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-39">
+            <div class="question-title">Question 39: Find \(\mathcal{L}^{-1}\{\frac{1}{s(s+1)^2}\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question39" value="0"> \(1 - e^{-t} - t\)</label>
+                <label>B. <input type="radio" name="question39" value="1"> \(1 - e^{-t} + te^{-t}\)</label>
+                <label>C. <input type="radio" name="question39" value="2"> \(1 - e^{-t} - te^{-t}\)</label>
+                <label>D. <input type="radio" name="question39" value="3"> \(1 - (1+t)e^t\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use partial fractions: \(\frac{1}{s(s+1)^2} = \frac{A}{s} + \frac{B}{s+1} + \frac{C}{(s+1)^2}\). Solving gives \(A=1, B=-1, C=-1\). The transform is \(\frac{1}{s} - \frac{1}{s+1} - \frac{1}{(s+1)^2}\). The inverse transform is \(1 - e^{-t} - te^{-t}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-40">
+            <div class="question-title">Question 40: Find \(\mathcal{L}\{\sin(t)u(t-\pi)\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question40" value="0"> \(\frac{e^{-\pi s}}{s^2+1}\)</label>
+                <label>B. <input type="radio" name="question40" value="1"> \(\frac{-e^{-\pi s}}{s^2+1}\)</label>
+                <label>C. <input type="radio" name="question40" value="2"> \(e^{-\pi s} \frac{s}{s^2+1}\)</label>
+                <label>D. <input type="radio" name="question40" value="3"> \(\frac{-e^{-\pi s}}{s^2+1}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> We need to write the function in the form \(f(t-a)u(t-a)\). Here \(a=\pi\). We have \(\sin(t) = \sin(t-\pi+\pi) = \sin(t-\pi)\cos(\pi) + \cos(t-\pi)\sin(\pi) = -\sin(t-\pi)\). So we need \(\mathcal{L}\{-\sin(t-\pi)u(t-\pi)\}\). The transform of \(-\sin(t)\) is \(-\frac{1}{s^2+1}\). Applying the second shifting theorem gives \(-e^{-\pi s} \frac{1}{s^2+1}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 386)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-41">
+            <div class="question-title">Question 41: Find \(\mathcal{L}^{-1}\{\frac{s^2}{s^4+4}\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question41" value="0"> \(\frac{1}{2}(\cos(t)\cosh(t) - \sin(t)\sinh(t))\)</label>
+                <label>B. <input type="radio" name="question41" value="1"> \(\frac{1}{2}(\sin(t)\cosh(t) - \cos(t)\sinh(t))\)</label>
+                <label>C. <input type="radio" name="question41" value="2"> \(\frac{1}{2}(\cos(t)\cosh(t) + \sin(t)\sinh(t))\)</label>
+                <label>D. <input type="radio" name="question41" value="3"> \(\frac{1}{2}(\sin(t)\cosh(t) + \cos(t)\sinh(t))\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is a known, but complex, transform pair. A standard result from tables is \(\mathcal{L}\{\frac{1}{2a}(\sin(at)\cosh(at) + \cos(at)\sinh(at))\} = \frac{s^2}{s^4+4a^4}\). For \(a=1\), we get the desired result.</p>
+                <p class="source">Source: Standard Laplace Transform Tables.</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-42">
+            <div class="question-title">Question 42: Evaluate \(B(1/2, 1/2)\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question42" value="0"> \(1\)</label>
+                <label>B. <input type="radio" name="question42" value="1"> \(\sqrt{\pi}\)</label>
+                <label>C. <input type="radio" name="question42" value="2"> \(\pi\)</label>
+                <label>D. <input type="radio" name="question42" value="3"> \(\pi/2\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Using the formula \(B(p,q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\). We have \(B(1/2, 1/2) = \frac{\Gamma(1/2)\Gamma(1/2)}{\Gamma(1)} = \frac{\sqrt{\pi}\sqrt{\pi}}{1} = \pi\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 240)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-43">
+            <div class="question-title">Question 43: Find \(\mathcal{L}^{-1}\{\frac{1}{s^2(s+1)}\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question43" value="0"> \(t - 1 + e^{-t}\)</label>
+                <label>B. <input type="radio" name="question43" value="1"> \(t - 1 - e^{-t}\)</label>
+                <label>C. <input type="radio" name="question43" value="2"> \(t + 1 + e^{-t}\)</label>
+                <label>D. <input type="radio" name="question43" value="3"> \(t^2 - 1 + e^{-t}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use partial fractions: \(\frac{1}{s^2(s+1)} = \frac{A}{s} + \frac{B}{s^2} + \frac{C}{s+1}\). Solving gives \(A=-1, B=1, C=1\). The transform is \(-\frac{1}{s} + \frac{1}{s^2} + \frac{1}{s+1}\). The inverse transform is \(-1 + t + e^{-t}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-44">
+            <div class="question-title">Question 44: Find \(\mathcal{L}\{e^{4t}\cosh(t)\}\).</div>
+            <div class="options" data-correct-answer="3">
+                <label>A. <input type="radio" name="question44" value="0"> \(\frac{s+4}{(s+4)^2-1}\)</label>
+                <label>B. <input type="radio" name="question44" value="1"> \(\frac{s-4}{(s-4)^2+1}\)</label>
+                <label>C. <input type="radio" name="question44" value="2"> \(\frac{s+4}{(s+4)^2+1}\)</label>
+                <label>D. <input type="radio" name="question44" value="3"> \(\frac{s-4}{(s-4)^2-1}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> First, \(\mathcal{L}\{\cosh(t)\} = \frac{s}{s^2-1}\). Now apply the first shifting theorem with \(a=4\), replacing \(s\) with \(s-4\). This gives \(\frac{s-4}{(s-4)^2-1}\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 227)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-45">
+            <div class="question-title">Question 45: Find \(\mathcal{L}^{-1}\{\frac{6}{s^4+10s^2+9}\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question45" value="0"> \(\frac{3}{4}\cos(t) - \frac{1}{4}\cos(3t)\)</label>
+                <label>B. <input type="radio" name="question45" value="1"> \(\frac{3}{4}\sin(t) - \frac{1}{4}\sin(3t)\)</label>
+                <label>C. <input type="radio" name="question45" value="2"> \(\frac{3}{4}\sin(t) + \frac{1}{4}\sin(3t)\)</label>
+                <label>D. <input type="radio" name="question45" value="3"> \(\sin(t) - \sin(3t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Factor the denominator: \(s^4+10s^2+9 = (s^2+1)(s^2+9)\). Use partial fractions: \(\frac{6}{(s^2+1)(s^2+9)} = \frac{A}{s^2+1} + \frac{B}{s^2+9}\). This gives \(A=3/4, B=-3/4\). So we have \(\frac{3}{4}\frac{1}{s^2+1} - \frac{3}{4}\frac{1}{s^2+9}\). The inverse transform is \(\frac{3}{4}\sin(t) - \frac{3}{4}\frac{1}{3}\sin(3t) = \frac{3}{4}\sin(t) - \frac{1}{4}\sin(3t)\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 330)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-46">
+            <div class="question-title">Question 46: Find \(\mathcal{L}\{t^{-1/2}\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question46" value="0"> \(\sqrt{\pi/s}\)</label>
+                <label>B. <input type="radio" name="question46" value="1"> \(\sqrt{\pi}/s\)</label>
+                <label>C. <input type="radio" name="question46" value="2"> \(1/\sqrt{s}\)</label>
+                <label>D. <input type="radio" name="question46" value="3"> \(\Gamma(-1/2)/\sqrt{s}\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Use \(\mathcal{L}\{t^\alpha\} = \frac{\Gamma(\alpha+1)}{s^{\alpha+1}}\). Here \(\alpha = -1/2\). We need \(\Gamma(-1/2+1) = \Gamma(1/2) = \sqrt{\pi}\). So the transform is \(\frac{\sqrt{\pi}}{s^{1/2}} = \sqrt{\frac{\pi}{s}}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 394)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-47">
+            <div class="question-title">Question 47: Solve \(y'' + 2y' + 2y = 0\) with \(y(0)=0, y'(0)=1\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question47" value="0"> \(e^{-t}\cos(t)\)</label>
+                <label>B. <input type="radio" name="question47" value="1"> \(e^{-t}(\cos(t)+\sin(t))\)</label>
+                <label>C. <input type="radio" name="question47" value="2"> \(e^{-t}\sin(t)\)</label>
+                <label>D. <input type="radio" name="question47" value="3"> \(\sin(t)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Take the Laplace transform: \(s^2Y - sy(0) - y'(0) + 2(sY-y(0)) + 2Y = 0\). Substitute initial conditions: \(s^2Y - 1 + 2sY + 2Y = 0 \Rightarrow (s^2+2s+2)Y = 1\). So \(Y(s) = \frac{1}{s^2+2s+2} = \frac{1}{(s+1)^2+1}\). This is the transform of \(e^{-t}\sin(t)\).</p>
+                <p class="source">Source: Ostaszewski, A. (2012). <em>Further calculus</em>. University of London. (p. 234)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-48">
+            <div class="question-title">Question 48: Find \(\mathcal{L}^{-1}\{\frac{s}{s^4+4a^4}\}\).</div>
+            <div class="options" data-correct-answer="1">
+                <label>A. <input type="radio" name="question48" value="0"> \(\frac{1}{a^2}\sin(at)\sinh(at)\)</label>
+                <label>B. <input type="radio" name="question48" value="1"> \(\frac{1}{2a^2}\sin(at)\sinh(at)\)</label>
+                <label>C. <input type="radio" name="question48" value="2"> \(\frac{1}{a^2}\cos(at)\cosh(at)\)</label>
+                <label>D. <input type="radio" name="question48" value="3"> \(\frac{1}{2a^2}\cos(at)\cosh(at)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is a standard transform pair, usually found in tables. \(\mathcal{L}\{\frac{1}{2a^2}\sin(at)\sinh(at)\} = \frac{s}{s^4+4a^4}\).</p>
+                <p class="source">Source: Standard Laplace Transform Tables.</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-49">
+            <div class="question-title">Question 49: Find \(\mathcal{L}\{\frac{\sinh(t)}{t}\}\).</div>
+            <div class="options" data-correct-answer="0">
+                <label>A. <input type="radio" name="question49" value="0"> \(\frac{1}{2}\ln(\frac{s+1}{s-1})\)</label>
+                <label>B. <input type="radio" name="question49" value="1"> \(\frac{1}{2}\ln(\frac{s-1}{s+1})\)</label>
+                <label>C. <input type="radio" name="question49" value="2"> \(\ln(s^2-1)\)</label>
+                <label>D. <input type="radio" name="question49" value="3"> \(\text{arctanh}(s)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> Let \(f(t) = \sinh(t)\), so \(F(u) = \frac{1}{u^2-1}\). We compute \(\int_s^\infty \frac{1}{u^2-1}du = \frac{1}{2}\int_s^\infty (\frac{1}{u-1} - \frac{1}{u+1})du = \frac{1}{2}[\ln(u-1)-\ln(u+1)]_s^\infty = \frac{1}{2}[\ln(\frac{u-1}{u+1})]_s^\infty\). As \(u \to \infty\), the term goes to \(\ln(1)=0\). So the result is \(-\frac{1}{2}\ln(\frac{s-1}{s+1})) = \frac{1}{2}\ln(\frac{s+1}{s-1})\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 402)</p>
+            </div>
+        </div>
+
+        <div class="question-container" id="q-container-50">
+            <div class="question-title">Question 50: Find \(\mathcal{L}^{-1}\{\frac{s^2-a^2}{(s^2+a^2)^2}\}\).</div>
+            <div class="options" data-correct-answer="2">
+                <label>A. <input type="radio" name="question50" value="0"> \(t\sin(at)\)</label>
+                <label>B. <input type="radio" name="question50" value="1"> \(\frac{t}{2a}\sin(at)\)</label>
+                <label>C. <input type="radio" name="question50" value="2"> \(t\cos(at)\)</label>
+                <label>D. <input type="radio" name="question50" value="3"> \(\frac{t}{2a}\cos(at)\)</label>
+            </div>
+            <div class="explanation">
+                <p><strong>Explanation:</strong> This is a standard transform pair, often derived using the multiplication by \(t\) property. We know \(\mathcal{L}\{\cos(at)\} = \frac{s}{s^2+a^2}\). Differentiating with respect to \(s\) gives \(\frac{d}{ds}(\frac{s}{s^2+a^2}) = \frac{(s^2+a^2)-s(2s)}{(s^2+a^2)^2} = \frac{a^2-s^2}{(s^2+a^2)^2}\). Since \(\mathcal{L}\{t\cos(at)\} = -\frac{d}{ds}F(s)\), we have \(\mathcal{L}\{t\cos(at)\} = -\frac{a^2-s^2}{(s^2+a^2)^2} = \frac{s^2-a^2}{(s^2+a^2)^2}\).</p>
+                <p class="source">Source: Wrede, R., & Spiegel, M. R. (2010). <em>Schaum's outline of Advanced Calculus</em>. McGraw-Hill. (p. 329, Table 12.1)</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="controls">
+        <button onclick="clearProgress()">Clear All Answers</button>
+    </div>
+
+    <script>
+        function handleAnswer() {
+            const questionContainers = document.querySelectorAll('.question-container');
+            questionContainers.forEach((container, index) => {
+                const questionIndex = index + 1;
+                const radios = container.querySelectorAll(`input[name="question${questionIndex}"]`);
+                const explanationDiv = container.querySelector('.explanation');
+                const optionsDiv = container.querySelector('.options');
+                const correctValue = parseInt(optionsDiv.dataset.correctAnswer);
+
+                radios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        const selectedValue = parseInt(this.value);
+                        const correctLabel = String.fromCharCode(65 + correctValue);
+
+                        if (!explanationDiv.querySelector('.correct-answer-label')) {
+                            const correctAnswerEl = document.createElement('p');
+                            correctAnswerEl.innerHTML = `<strong>Correct Answer: ${correctLabel}</strong>`;
+                            correctAnswerEl.classList.add('correct-answer-label');
+                            explanationDiv.prepend(correctAnswerEl);
+                        }
+
+                        explanationDiv.style.display = 'block';
+                        if (selectedValue === correctValue) {
+                            explanationDiv.classList.remove('incorrect');
+                            explanationDiv.classList.add('correct');
+                        } else {
+                            explanationDiv.classList.remove('correct');
+                            explanationDiv.classList.add('incorrect');
+                        }
+                        saveProgress();
+                    });
+                });
+            });
+        }
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function saveProgress() {
+            const answers = {};
+            const questionContainers = document.querySelectorAll('.question-container');
+            questionContainers.forEach((container, index) => {
+                const questionIndex = index + 1;
+                const radios = document.getElementsByName(`question${questionIndex}`);
+                for (let j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        answers[questionIndex] = j;
+                        break;
+                    }
+                }
+            });
+            setCookie('mt2176-quiz-answers-2', JSON.stringify(answers), 7); // Changed cookie name
+        }
+
+        function loadProgress() {
+            const savedAnswers = getCookie('mt2176-quiz-answers-2'); // Changed cookie name
+            if (savedAnswers) {
+                const answers = JSON.parse(savedAnswers);
+                for (const questionId in answers) {
+                    const answerIndex = answers[questionId];
+                    const radios = document.getElementsByName(`question${questionId}`);
+                    if (radios && radios[answerIndex]) {
+                        radios[answerIndex].checked = true;
+                        radios[answerIndex].dispatchEvent(new Event('change'));
+                    }
+                }
+            }
+        }
+
+        function clearProgress() {
+            setCookie('mt2176-quiz-answers-2', '', -1); // Changed cookie name
+            location.reload();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            handleAnswer();
+            loadProgress();
+            if (window.MathJax) {
+                window.MathJax.typeset();
+            }
+        });
+    </script>
+
+</body>
+</html>
