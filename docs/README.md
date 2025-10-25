@@ -31,3 +31,7 @@ This document provides links to the study materials for the MT2176 Further Calcu
 * [Chapter 4: Double Integrals - Multiple Choice Quiz 1](./quizzes/ch4-quiz-mc-1.html)
 
 * [Chapter 4: Double Integrals - Multiple Choice Quiz 2](./quizzes/ch4-quiz-mc-2.html)
+
+* [Chapter 6: Laplace Transforms - Multiple Choice Quiz 1](./quizzes/ch6-quiz-mc-1.html)
+
+* [Chapter 6: Laplace Transforms - Multiple Choice Quiz 2](./quizzes/ch6-quiz-mc-2.html)
